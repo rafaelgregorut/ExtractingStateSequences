@@ -9,6 +9,6 @@ public interface TestSequenceProcessor {
 	
 	public void processSequence();
 	
-	public ArrayList<Event> getEventSequence();
+	public ArrayList<EventList> getEventSequence();
 	
 }

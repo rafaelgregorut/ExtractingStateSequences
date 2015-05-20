@@ -4,6 +4,11 @@ public class Event {
 	private String name;
 	private String output;
 	
+	Event(String n, String o) {
+		name = n;
+		output = o;
+	}
+	
 	public String getName() {
 		return name;
 	}
