@@ -28,6 +28,32 @@ public class Main {
 				}
 				break;
 			case 'u':
+				UIOSequenceProcessor uio = new UIOSequenceProcessor();
+				uio.setRawSequence(rawSequence);
+				uio.processSequence();
+				ArrayList<EventList> l2 = uio.getEventSequence();
+				for (int i = 0; i < l2.size(); i++) {
+					EventList el = l2.get(i);
+					for (Iterator<Event> it = el.iterator(); it.hasNext();) {
+						Event e = it.next();
+						System.out.print(e.getName());
+					}
+					System.out.println();
+				}
+				break;
+			case 'h':
+				HSwitchCoverSequenceProcessor hsc = new HSwitchCoverSequenceProcessor();
+				hsc.setRawSequence(rawSequence);
+				hsc.processSequence();
+				ArrayList<EventList> l3 = hsc.getEventSequence();
+				for (int i = 0; i < l3.size(); i++) {
+					EventList el = l3.get(i);
+					for (Iterator<Event> it = el.iterator(); it.hasNext();) {
+						Event e = it.next();
+						System.out.print(e.getName()+"/"+e.getOutput()+"->");
+					}
+					System.out.println();
+				}
 				break;
 			default:
 				System.out.println("Modo não é válido");

@@ -1,10 +1,10 @@
-public class DSSequenceProcessor extends FSMSequenceProcessor {
+public class UIOSequenceProcessor extends FSMSequenceProcessor {
 	
-	DSSequenceProcessor() {
+	UIOSequenceProcessor() {
 		super();
-		setBeginPattern(" ####### SEQUÊNCIAS DE TESTES FINAL  ###### \n\n");
+		setBeginPattern(" ####### FINAL TEST SEQUENCE  ###### \n\n");
 	}
-
+	
 	@Override
 	public void processSequence() {
 		
@@ -16,12 +16,12 @@ public class DSSequenceProcessor extends FSMSequenceProcessor {
 			//System.out.println(sequencias[i]);
 			EventList el = new EventList();
 			String events[] = sequencias[i].split(" ");
-			for (int j = 0; j < events.length; j++) {
+			for (int j = 0; j < events.length; j++) { 
 				Event e = new Event(events[j],null);
 				el.add(e);
 			}
 			eventSequence.add(el);
 		}
 	}
-
+	
 }
