@@ -55,6 +55,20 @@ public class Main {
 					System.out.println();
 				}
 				break;
+			case 't':
+				AllTransitionsSequenceProcessor at = new AllTransitionsSequenceProcessor();
+				at.setRawSequence(rawSequence);
+				at.processSequence();
+				ArrayList<EventList> l4 = at.getEventSequence();
+				for (int i = 0; i < l4.size(); i++) {
+					EventList el = l4.get(i);
+					for (Iterator<Event> it = el.iterator(); it.hasNext();) {
+						Event e = it.next();
+						System.out.print(e.getName()+"/"+e.getOutput()+"->");
+					}
+					System.out.println();
+				}
+				break;
 			default:
 				System.out.println("Modo não é válido");
 		}
