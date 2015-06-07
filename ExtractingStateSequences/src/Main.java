@@ -8,6 +8,10 @@ public class Main {
 	public static void main(String[] args) {
 		char mode = args[0].charAt(0);
 		String filePath = args[1];
+		boolean propDef = false;
+		if (args.length == 3 && args[2].charAt(0) == 'p') {
+			propDef = true;
+		}
 		
 		FileHandler file = new FileHandler(filePath);
 		String rawSequence = file.fileToString();
