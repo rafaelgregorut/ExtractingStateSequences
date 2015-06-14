@@ -6,8 +6,11 @@ public class EventList {
 
 	private ArrayList<Event> list;
 	
+	private String type;
+	
 	EventList() {
 		list = new ArrayList<Event>();
+		type = "";
 	}
 	
 	public void add(Event e) {
@@ -24,5 +27,13 @@ public class EventList {
 	
 	public int size() {
 		return list.size();
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 }

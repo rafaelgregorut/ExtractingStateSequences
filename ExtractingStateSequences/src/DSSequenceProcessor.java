@@ -20,6 +20,7 @@ public class DSSequenceProcessor extends FSMSequenceProcessor {
 				Event e = new Event(events[j],null);
 				el.add(e);
 			}
+			el.setType("DS");
 			eventSequence.add(el);
 		}
 	}

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 
-public abstract class FSMSequenceProcessor implements TestSequenceProcessor {
+public abstract class FSMSequenceProcessor {
 
 	protected String rawSequence;
 	
@@ -21,13 +21,13 @@ public abstract class FSMSequenceProcessor implements TestSequenceProcessor {
 		return rawSequence;
 	}
 
-	@Override
+	
 	public void setRawSequence(String s) {
 		rawSequence = s;
 		
 	}
 
-	@Override
+	
 	abstract public void processSequence();
 	
 	public ArrayList<EventList> getEventSequence() {
