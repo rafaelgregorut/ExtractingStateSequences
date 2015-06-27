@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 
 public class GenerateCTL implements PropertyGenerator {
@@ -13,7 +14,7 @@ public class GenerateCTL implements PropertyGenerator {
 				generatePropDS(eventSeq);
 			break;
 			default:
-				System.out.println("Tipo de sequência não é válido");
+				System.out.println("Tipo de sequencia nao e valido");
 		}
 		return null;
 	}
@@ -35,6 +36,17 @@ public class GenerateCTL implements PropertyGenerator {
 		existLast.setType(Property.EXISTENCE);
 		existLast.setRepresentation("AF("+last.getName()+")");
 		properties.add(existLast);
+		
+		for (int i = 0; i < el.size()-1; i++) {
+			Property precedence = new Property();
+			precedence.setType(Property.PRECEDENCE);
+			Event Q = first;
+			Event R = last;
+			Event S = el.get(i);
+			Event P = el.get(i+1);
+			precedence.setRepresentation("AG("+Q.getName()+" & !"+R.getName()+" -> A[(!"+P.getName()+" | AG(!"+R.getName()+")) W ("+S.getName()+" | "+R.getName()+")])");
+			properties.add(precedence);
+		}
 		
 		return properties;
 	}

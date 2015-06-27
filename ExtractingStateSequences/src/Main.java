@@ -29,7 +29,15 @@ public class Main {
 						System.out.print(e.getName()+"->");
 					}
 					System.out.println();
+					System.out.println("Propriedades");
+					GenerateCTL genProp = new GenerateCTL();
+					ArrayList<Property> listProp = genProp.generateProperties(el);
+					for (int j = 0; j < listProp.size(); j++) {
+						System.out.println(listProp.get(i).getRepresentation());
+					}
 				}
+				
+				
 				break;
 			case 'u':
 				UIOSequenceProcessor uio = new UIOSequenceProcessor();
@@ -74,7 +82,7 @@ public class Main {
 				}
 				break;
 			default:
-				System.out.println("Modo não é válido");
+				System.out.println("Modo nï¿½o ï¿½ vï¿½lido");
 		}
 	}
 
