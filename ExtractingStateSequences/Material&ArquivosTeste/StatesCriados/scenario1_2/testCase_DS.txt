@@ -1,0 +1,25 @@
+
+ ####### SEQUENCE DS ###### 
+
+SwitchPDCOn
+SwitchPDCOff
+endtime
+VER_OP_MODE
+POSTOk
+Menor DS: POSTOk
+
+ ####### SEQUÊNCIAS DE TESTES ###### 
+
+SwitchPDCOn
+SwitchPDCOn POSTOk
+SwitchPDCOn POSTOk endtime
+SwitchPDCOn POSTOk endtime VER_OP_MODE
+SwitchPDCOn POSTOk endtime VER_OP_MODE SwitchPDCOff
+
+ ####### SEQUÊNCIAS DE TESTES FINAL  ###### 
+
+SwitchPDCOn POSTOk
+SwitchPDCOn POSTOk POSTOk
+SwitchPDCOn POSTOk endtime POSTOk
+SwitchPDCOn POSTOk endtime VER_OP_MODE POSTOk
+SwitchPDCOn POSTOk endtime VER_OP_MODE SwitchPDCOff POSTOk

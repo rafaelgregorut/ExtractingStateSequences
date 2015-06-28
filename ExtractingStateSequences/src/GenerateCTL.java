@@ -11,8 +11,7 @@ public class GenerateCTL implements PropertyGenerator {
 		String type = eventSeq.getType();
 		switch (type) {
 		case "DS":
-				generatePropDS(eventSeq);
-			break;
+				return generatePropDS(eventSeq);
 			default:
 				System.out.println("Tipo de sequencia nao e valido");
 		}
@@ -25,7 +24,9 @@ public class GenerateCTL implements PropertyGenerator {
 		ArrayList<Property> properties = new ArrayList<Property>();
 		
 		Event first = el.get(0);
+		//System.out.println("first "+first.getName());
 		Event last = el.get(el.size()-1);
+		//System.out.println("last "+last.getName());
 		
 		Property existFirst = new Property();
 		existFirst.setType(Property.EXISTENCE);
@@ -36,6 +37,8 @@ public class GenerateCTL implements PropertyGenerator {
 		existLast.setType(Property.EXISTENCE);
 		existLast.setRepresentation("AF("+last.getName()+")");
 		properties.add(existLast);
+		
+		//System.out.println(properties.get(0).getRepresentation()+" "+properties.get(1).getRepresentation());
 		
 		for (int i = 0; i < el.size()-1; i++) {
 			Property precedence = new Property();

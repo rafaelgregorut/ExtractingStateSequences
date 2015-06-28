@@ -1,0 +1,6 @@
+
+ ###### SEQUENCE H-SWITCH COVER ###### 
+
+1 -  SwitchPDCOn/start60s POSTOk/ endtime/ VER_OP_MODE/VER_OP_MODE SwitchPDCOff/
+
+2 -  SwitchPDCOn/start60s

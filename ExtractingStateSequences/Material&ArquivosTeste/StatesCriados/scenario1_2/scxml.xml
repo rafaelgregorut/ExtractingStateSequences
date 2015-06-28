@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<scxml id="Scenario1">
+  <State>
+    <state id="Initiation" initial="PDCOff">
+      <State>
+        <state id="PDCOff">
+          <transition event="SwitchPDCOn" target="IniM_POST" />
+        </state>
+        <state id="IniM_POST">
+          <transition event="POSTOk" target="SafeM_Entered" />
+        </state>
+        <state id="SafeM_Entered">
+          <transition event="tsinc" target="SafeM_verOp" />
+        </state>
+        <state id="SafeM_EPPsOff">
+          <transition event="SwitchPDCOff" target="PDCOff" />
+        </state>
+        <state id="SafeM_verOp">
+          <transition event="VER_OP_MODE" target="SafeM_EPPsOff" />
+        </state>
+      </State>
+    </state>
+    <state id="Timing" initial="Idle">
+      <State>
+        <state id="Idle">
+          <transition event="cev1" target="CountingTime" />
+        </state>
+        <state id="CountingTime">
+          <transition event="cev2" target="Idle" />
+        </state>
+      </State>
+    </state>
+  </State>
+</scxml>
+

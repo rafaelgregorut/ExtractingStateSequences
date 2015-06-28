@@ -1,0 +1,24 @@
+
+ ####### SEQUENCE UIO ###### 
+
+UIO state: safeMEPPsOffIdle is ->>  SwitchPDCOff
+UIO state: safeMEnteredCountingTime is ->>  endtime
+UIO state: iniMPOSTCountingTime is ->>  POSTOk
+UIO state: pDCOffIdle is ->>  SwitchPDCOn
+UIO state: safeMverOpIdle is ->>  VER_OP_MODE
+
+ ####### TEST SEQUENCE ###### 
+
+SwitchPDCOn
+SwitchPDCOn POSTOk
+SwitchPDCOn POSTOk endtime
+SwitchPDCOn POSTOk endtime VER_OP_MODE
+SwitchPDCOn POSTOk endtime VER_OP_MODE SwitchPDCOff
+
+ ####### FINAL TEST SEQUENCE  ###### 
+
+SwitchPDCOn POSTOk
+SwitchPDCOn POSTOk endtime
+SwitchPDCOn POSTOk endtime VER_OP_MODE
+SwitchPDCOn POSTOk endtime VER_OP_MODE SwitchPDCOff
+SwitchPDCOn POSTOk endtime VER_OP_MODE SwitchPDCOff SwitchPDCOn

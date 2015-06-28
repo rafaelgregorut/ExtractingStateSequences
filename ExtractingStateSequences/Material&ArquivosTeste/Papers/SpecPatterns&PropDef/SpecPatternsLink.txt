@@ -1,0 +1,3 @@
+Spec Patterns
+
+http://patterns.projects.cis.ksu.edu/

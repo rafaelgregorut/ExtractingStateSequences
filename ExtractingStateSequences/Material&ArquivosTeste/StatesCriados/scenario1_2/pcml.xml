@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Pcml Title="untitledModel" Date="2015-05-17" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
+  <Info>
+    <Author>
+      <Name>Author</Name>
+    </Author>
+  </Info>
+  <States>
+    <Root Name="Scenario1" Type="AND">
+      <State Name="Initiation" Type="XOR" Default="PDCOff">
+        <State Name="PDCOff" Type="BASIC" />
+        <State Name="IniM_POST" Type="BASIC" />
+        <State Name="SafeM_Entered" Type="BASIC" />
+        <State Name="SafeM_EPPsOff" Type="BASIC" />
+        <State Name="SafeM_verOp" Type="BASIC" />
+      </State>
+      <State Name="Timing" Type="XOR" Default="Idle">
+        <State Name="Idle" Type="BASIC" />
+        <State Name="CountingTime" Type="BASIC" />
+      </State>
+    </Root>
+  </States>
+  <Conditions>
+    <InState Name="in1" State="IniM_POST" />
+    <InState Name="in2" State="SafeM_Entered" />
+  </Conditions>
+  <Outputs>
+    <Output Name="start60s" Value="output1" />
+    <Output Name="VER_OP_MODE" Value="output2" />
+  </Outputs>
+  <Actions>
+    <OutputTriggerAction Name="ota1" Output="start60s" />
+    <OutputTriggerAction Name="ota2" Output="VER_OP_MODE" />
+    <EventTriggerAction Name="eta1" Event="tsinc" />
+  </Actions>
+  <Events>
+    <Stochastic Name="SwitchPDCOn" Value="1.0" />
+    <Stochastic Name="POSTOk" Value="1.0" />
+    <Stochastic Name="" Value="1.0" />
+    <Stochastic Name="VER_OP_MODE" Value="1.0" />
+    <Stochastic Name="SwitchPDCOff" Value="1.0" />
+    <Stochastic Name="endtime" Value="1.0" />
+    <TrueCondition Name="cev1" Condition="in1" />
+    <Conditioned Name="cev2" Condition="in2" Value="endtime" />
+  </Events>
+  <Transitions>
+    <Transition Source="PDCOff" Event="SwitchPDCOn" Action="ota1" Destination="IniM_POST" />
+    <Transition Source="IniM_POST" Event="POSTOk" Destination="SafeM_Entered" />
+    <Transition Source="SafeM_verOp" Event="VER_OP_MODE" Action="ota2" Destination="SafeM_EPPsOff" />
+    <Transition Source="SafeM_EPPsOff" Event="SwitchPDCOff" Destination="PDCOff" />
+    <Transition Source="Idle" Event="cev1" Destination="CountingTime" />
+    <Transition Source="CountingTime" Event="cev2" Action="eta1" Destination="Idle" />
+    <Transition Source="SafeM_Entered" Event="tsinc" Destination="SafeM_verOp" />
+  </Transitions>
+</Pcml>
+

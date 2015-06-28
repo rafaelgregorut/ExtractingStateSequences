@@ -1,0 +1,5 @@
+***REQUISITOS DE TESTE - All Simple Paths
+1 - (pDCOffIdle),(iniMPOSTCountingTime),(safeMEnteredCountingTime),(safeMverOpIdle),(safeMEPPsOffIdle),(pDCOffIdle),.
+
+***SEQUÊNCIAS DE TESTE
+1 - SwitchPDCOn/start60s,POSTOk/start60s,endtime/start60s,VER_OP_MODE/VER_OP_MODE,SwitchPDCOff/VER_OP_MODE,.

@@ -32,8 +32,10 @@ public class Main {
 					System.out.println("Propriedades");
 					GenerateCTL genProp = new GenerateCTL();
 					ArrayList<Property> listProp = genProp.generateProperties(el);
-					for (int j = 0; j < listProp.size(); j++) {
-						System.out.println(listProp.get(i).getRepresentation());
+					if (listProp != null) {
+						for (int j = 0; j < listProp.size(); j++) {
+							System.out.println(listProp.get(j).getRepresentation());
+						}
 					}
 				}
 				
