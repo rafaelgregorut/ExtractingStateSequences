@@ -28,6 +28,7 @@ public class HSwitchCoverSequenceProcessor extends FSMSequenceProcessor {
 					}
 					el.add(e);
 				}
+				el.setType("HSwitch");
 				eventSequence.add(el);
 			}
 		}

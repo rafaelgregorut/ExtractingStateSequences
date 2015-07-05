@@ -20,6 +20,7 @@ public class UIOSequenceProcessor extends FSMSequenceProcessor {
 				Event e = new Event(events[j],null);
 				el.add(e);
 			}
+			el.setType("UIO");
 			eventSequence.add(el);
 		}
 	}

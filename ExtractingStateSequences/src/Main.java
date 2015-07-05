@@ -50,9 +50,19 @@ public class Main {
 					EventList el = l2.get(i);
 					for (Iterator<Event> it = el.iterator(); it.hasNext();) {
 						Event e = it.next();
-						System.out.print(e.getName());
+						System.out.print(e.getName()+"->");
 					}
 					System.out.println();
+					System.out.println("Propriedades");
+					GenerateCTL genProp = new GenerateCTL();
+					ArrayList<Property> listProp = genProp.generateProperties(el);
+					if (listProp != null) {
+						for (int j = 0; j < listProp.size(); j++) {
+							System.out.println(listProp.get(j).getRepresentation());
+						}
+					} else {
+						System.out.println("Lista de prop vazia");
+					}
 				}
 				break;
 			case 'h':
@@ -67,6 +77,16 @@ public class Main {
 						System.out.print(e.getName()+"/"+e.getOutput()+"->");
 					}
 					System.out.println();
+					System.out.println("Propriedades");
+					GenerateCTL genProp = new GenerateCTL();
+					ArrayList<Property> listProp = genProp.generateProperties(el);
+					if (listProp != null) {
+						for (int j = 0; j < listProp.size(); j++) {
+							System.out.println(listProp.get(j).getRepresentation());
+						}
+					} else {
+						System.out.println("Lista de prop vazia");
+					}
 				}
 				break;
 			case 't':
