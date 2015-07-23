@@ -24,4 +24,8 @@ public class Event {
 	public void setOutput(String o) {
 		output = o;
 	}
+	
+	public boolean equals(Event other){
+		return (this.name == other.name);
+	}
 }

@@ -1,0 +1,10 @@
+SwitchPDCOn POSTOk
+SwitchPDCOn POSTOk endtime
+SwitchPDCOn POSTOk endtime VER_OP_MODE
+SwitchPDCOn POSTOk endtime VER_OP_MODE SwitchPDCOff
+SwitchPDCOn POSTOk endtime VER_OP_MODE SwitchPDCOff SwitchPDCOn
+SwitchPDCOn POSTOk
+SwitchPDCOn POSTOk POSTOk
+SwitchPDCOn POSTOk endtime POSTOk
+SwitchPDCOn POSTOk endtime VER_OP_MODE POSTOk
+SwitchPDCOn POSTOk endtime VER_OP_MODE SwitchPDCOff POSTOk

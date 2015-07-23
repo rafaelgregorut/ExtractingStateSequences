@@ -103,6 +103,30 @@ public class Main {
 					System.out.println();
 				}
 				break;
+			case 'm':
+				//Processa sequencias UIO e DS
+				FileHandler dsFileHand = new FileHandler(args[2]);
+				String dsRawSequence = dsFileHand.fileToString();
+				
+				FileHandler uioFileHand = new FileHandler(args[3]);
+				String uioRawSequence = uioFileHand.fileToString();
+				
+				DSSequenceProcessor dsMix = new DSSequenceProcessor();
+				dsMix.setRawSequence(dsRawSequence);
+				dsMix.processSequence();
+				ArrayList<EventList> eventListDs = dsMix.getEventSequence();
+				
+				UIOSequenceProcessor uioMix = new UIOSequenceProcessor();
+				uioMix.setRawSequence(uioRawSequence);
+				uioMix.processSequence();
+				ArrayList<EventList> eventListUio = uioMix.getEventSequence();
+				
+				ArrayList<EventList> eventListMix = new ArrayList<EventList>();
+				eventListMix.addAll(eventListDs);
+				eventListMix.addAll(eventListUio);
+				
+				
+				break;
 			default:
 				System.out.println("Modo n�o � v�lido");
 		}
