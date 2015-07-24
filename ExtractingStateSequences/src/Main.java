@@ -105,10 +105,10 @@ public class Main {
 				break;
 			case 'm':
 				//Processa sequencias UIO e DS
-				FileHandler dsFileHand = new FileHandler(args[2]);
+				FileHandler dsFileHand = new FileHandler(args[1]);
 				String dsRawSequence = dsFileHand.fileToString();
 				
-				FileHandler uioFileHand = new FileHandler(args[3]);
+				FileHandler uioFileHand = new FileHandler(args[2]);
 				String uioRawSequence = uioFileHand.fileToString();
 				
 				DSSequenceProcessor dsMix = new DSSequenceProcessor();
@@ -125,7 +125,8 @@ public class Main {
 				eventListMix.addAll(eventListDs);
 				eventListMix.addAll(eventListUio);
 				
-				
+				PrefixTreeAcceptor pta = new PrefixTreeAcceptor(eventListMix);
+				pta.printTree();
 				break;
 			default:
 				System.out.println("Modo n�o � v�lido");

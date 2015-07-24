@@ -26,6 +26,6 @@ public class Event {
 	}
 	
 	public boolean equals(Event other){
-		return (this.name == other.name);
+		return (this.name.equals(other.name));
 	}
 }

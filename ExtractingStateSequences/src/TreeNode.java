@@ -1,33 +1,33 @@
 import java.util.ArrayList;
 
 
-public class TreeNode<T> {
+public class TreeNode {
 
-	private ArrayList<TreeNode<T>> children;
+	private ArrayList<TreeNode> children;
 	
-	private TreeNode<T> parent;
+	private TreeNode parent;
 	
-	private T content;
+	private Event content;
 	
 	//Creates a node with content
-	TreeNode(T cont) {
-		children = new ArrayList<TreeNode<T>>();
+	TreeNode(Event cont) {
+		children = new ArrayList<TreeNode>();
 		parent = null;
 		content = cont;
 	}
 	
 	//Creates empty tree node. Different than leaf!
 	TreeNode() {
-		children = new ArrayList<TreeNode<T>>();
+		children = new ArrayList<TreeNode>();
 		parent = null;
 		content = null;
 	}
 
-	public ArrayList<TreeNode<T>> getChildren() {
+	public ArrayList<TreeNode> getChildren() {
 		return children;
 	}
 	
-	public boolean childrenContains(T item) {
+	public boolean childrenContains(Event item) {
 		for (int i = 0; i < children.size(); i++) {
 			if (item.equals(children.get(i).getContent()))
 				return true;
@@ -35,7 +35,7 @@ public class TreeNode<T> {
 		return false;
 	}
 	
-	public TreeNode<T> getChildWith(T item) {
+	public TreeNode getChildWith(Event item) {
 		for (int i = 0; i < children.size(); i++) {
 			if (item.equals(children.get(i).getContent()))
 				return children.get(i);
@@ -43,19 +43,19 @@ public class TreeNode<T> {
 		return null;
 	}
 
-	public TreeNode<T> getParent() {
+	public TreeNode getParent() {
 		return parent;
 	}
 
-	public void setParent(TreeNode<T> parent) {
+	public void setParent(TreeNode parent) {
 		this.parent = parent;
 	}
 
-	public T getContent() {
+	public Event getContent() {
 		return content;
 	}
 
-	public void setContent(T content) {
+	public void setContent(Event content) {
 		this.content = content;
 	}
 	
@@ -63,10 +63,9 @@ public class TreeNode<T> {
 		return (children.size() == 0);
 	}
 	
-	public void addChild(T childContent) {
-		TreeNode<T> child = new TreeNode<T>(childContent);
+	public void addChild(Event childContent) {
+		TreeNode child = new TreeNode(childContent);
 		child.setParent(this);
 		this.children.add(child);
 	}
-	
 }
