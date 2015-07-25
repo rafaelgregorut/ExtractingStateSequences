@@ -127,6 +127,13 @@ public class Main {
 				
 				PrefixTreeAcceptor pta = new PrefixTreeAcceptor(eventListMix);
 				pta.printTree();
+				
+				EventList pref = pta.maxCommonPrefix();
+				System.out.println("Max pref:");
+				for (Iterator<Event> i =pref.iterator(); i.hasNext();) {
+					System.out.print(i.next().getName()+" ");
+				}
+				System.out.println();
 				break;
 			default:
 				System.out.println("Modo n�o � v�lido");

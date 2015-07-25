@@ -21,16 +21,18 @@ public class PrefixTreeAcceptor {
 	}
 	
 	private void insereLista(EventList el, TreeNode t) {
+		TreeNode prevT = t;
 		for (Iterator<Event> i = el.iterator(); i.hasNext();) {
-			insereEvento(i.next(),t);
+			prevT = insereEvento(i.next(),prevT);
 		}
 	}
 	
-	private void insereEvento(Event e, TreeNode t) {
+	private TreeNode insereEvento(Event e, TreeNode t) {
 		if (t.isLeaf() || !(t.childrenContains(e))) {
 			t.addChild(e);
+			return t.getChildWith(e);
 		} else {
-			insereEvento(e,t.getChildWith(e));
+			return t.getChildWith(e);
 		}
 	}
 	
@@ -55,5 +57,20 @@ public class PrefixTreeAcceptor {
 				printTreeRec(children.get(j),quantEspacos+1);
 			}
 		}
+	}
+	
+	public EventList maxCommonPrefix() {
+		EventList maxPref = new EventList();
+		TreeNode t = root;
+		
+		while (t.getChildren().size() == 1) {
+			maxPref.add(t.getContent());
+			t = t.getChildren().get(0);
+		}
+		maxPref.add(t.getContent());
+		
+		//removo a raiz da lista
+		maxPref.remove(0);
+		return maxPref;
 	}
 }

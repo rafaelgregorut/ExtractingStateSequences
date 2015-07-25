@@ -21,6 +21,10 @@ public class EventList {
 		return list.get(index);
 	}
 	
+	public void remove(int index) {
+		list.remove(index);
+	}
+	
 	public Iterator<Event> iterator() {
 		return list.iterator();
 	}
