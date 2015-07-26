@@ -21,7 +21,7 @@ public class Property {
 			for (int i = 0; i < eventsInvolved.size(); i++)
 				System.out.println(eventsInvolved.get(i).getName());
 		} else
-			System.out.println("Lista de eventos involvidos esta vazia");
+			System.out.println("Lista de eventos esta vazia");
 	}
 
 	public String getType() {

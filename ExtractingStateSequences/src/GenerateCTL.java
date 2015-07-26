@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class GenerateCTL implements PropertyGenerator {
 
@@ -7,7 +8,7 @@ public class GenerateCTL implements PropertyGenerator {
 		
 		//Preciso saber o tipo da sequencia de eventos
 		String type = eventSeq.getType();
-		if (type == "DS" || type == "UIO") {
+		if (type == "DS_UIO") {
 			return generatePropDS_UIO(eventSeq);
 		} else if (type == "HSwitch") {
 			return generatePropHSwitch(eventSeq);
@@ -16,7 +17,6 @@ public class GenerateCTL implements PropertyGenerator {
 		}
 		return null;
 	}
-
 	
 	private ArrayList<Property> generatePropDS_UIO(EventList el) {
 		
@@ -88,5 +88,16 @@ public class GenerateCTL implements PropertyGenerator {
 		}
 
 		return properties;
+	}
+	
+	public ArrayList<Property> generateProperties(ArrayList<State> stateList) {
+		ArrayList<Property> resp = new ArrayList<Property>();
+		for (Iterator<State> i = stateList.iterator(); i.hasNext();) {
+			Property existState = new Property();
+			existState.setType(Property.EXISTENCE);
+			existState.setRepresentation("AF("+i.next().getName()+")");
+			resp.add(existState);
+		}
+		return resp;
 	}
 }

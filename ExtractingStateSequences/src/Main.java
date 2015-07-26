@@ -1,53 +1,24 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-
-
 public class Main {
-
+	
 	public static void main(String[] args) {
 		char mode = args[0].charAt(0);
 		String filePath = args[1];
-		boolean propDef = false;
-		if (args.length == 3 && args[2].charAt(0) == 'p') {
-			propDef = true;
-		}
 		
 		FileHandler file = new FileHandler(filePath);
 		String rawSequence = file.fileToString();
-		//System.out.println(rawSequence);
-		switch (mode) {
-			case 'd':
-				DSSequenceProcessor ds = new DSSequenceProcessor();
-				ds.setRawSequence(rawSequence);
-				ds.processSequence();
-				ArrayList<EventList> l = ds.getEventSequence();
-				for (int i = 0; i < l.size(); i++) {
-					EventList el = l.get(i);
-					for (Iterator<Event> it = el.iterator(); it.hasNext();) {
-						Event e = it.next();
-						System.out.print(e.getName()+"->");
-					}
-					System.out.println();
-					System.out.println("Propriedades");
-					GenerateCTL genProp = new GenerateCTL();
-					ArrayList<Property> listProp = genProp.generateProperties(el);
-					if (listProp != null) {
-						for (int j = 0; j < listProp.size(); j++) {
-							System.out.println(listProp.get(j).getRepresentation());
-						}
-					}
-				}
+		switch (mode) {		
+			case 'm':
 				
-				
-				break;
-			case 'u':
-				UIOSequenceProcessor uio = new UIOSequenceProcessor();
-				uio.setRawSequence(rawSequence);
-				uio.processSequence();
-				ArrayList<EventList> l2 = uio.getEventSequence();
-				for (int i = 0; i < l2.size(); i++) {
-					EventList el = l2.get(i);
+				DS_UIOSequenceProcessor ds_uio = new DS_UIOSequenceProcessor();
+				ds_uio.setRawSequence(rawSequence);
+				ds_uio.processSequence();
+				ArrayList<EventList> eventsSeqsLists = ds_uio.getEventSequence();
+				System.out.println("Sequencias de testes");
+				for (int i = 0; i < eventsSeqsLists.size(); i++) {
+					EventList el = eventsSeqsLists.get(i);
 					for (Iterator<Event> it = el.iterator(); it.hasNext();) {
 						Event e = it.next();
 						System.out.print(e.getName()+"->");
@@ -64,6 +35,16 @@ public class Main {
 						System.out.println("Lista de prop vazia");
 					}
 				}
+				
+				PrefixTreeAcceptor pta = new PrefixTreeAcceptor(eventsSeqsLists);
+				pta.printTree();
+				
+				EventList pref = pta.maxCommonPrefix();
+				System.out.println("Max pref:");
+				for (Iterator<Event> i =pref.iterator(); i.hasNext();) {
+					System.out.print(i.next().getName()+" ");
+				}
+				System.out.println();
 				break;
 			case 'h':
 				HSwitchCoverSequenceProcessor hsc = new HSwitchCoverSequenceProcessor();
@@ -89,54 +70,23 @@ public class Main {
 					}
 				}
 				break;
-			case 't':
-				AllTransitionsSequenceProcessor at = new AllTransitionsSequenceProcessor();
-				at.setRawSequence(rawSequence);
-				at.processSequence();
-				ArrayList<EventList> l4 = at.getEventSequence();
-				for (int i = 0; i < l4.size(); i++) {
-					EventList el = l4.get(i);
-					for (Iterator<Event> it = el.iterator(); it.hasNext();) {
-						Event e = it.next();
-						System.out.print(e.getName()+"/"+e.getOutput()+"->");
-					}
-					System.out.println();
+			case 'r':
+				RequisiteProcessor req = new RequisiteProcessor();
+				req.setRawStates(rawSequence);
+				req.processStates();
+				ArrayList<State> lState = req.getStateList();
+				System.out.println("Estados:");
+				for (int i = 0; i < lState.size(); i++) {
+					System.out.println(lState.get(i).getName());
 				}
-				break;
-			case 'm':
-				//Processa sequencias UIO e DS
-				FileHandler dsFileHand = new FileHandler(args[1]);
-				String dsRawSequence = dsFileHand.fileToString();
-				
-				FileHandler uioFileHand = new FileHandler(args[2]);
-				String uioRawSequence = uioFileHand.fileToString();
-				
-				DSSequenceProcessor dsMix = new DSSequenceProcessor();
-				dsMix.setRawSequence(dsRawSequence);
-				dsMix.processSequence();
-				ArrayList<EventList> eventListDs = dsMix.getEventSequence();
-				
-				UIOSequenceProcessor uioMix = new UIOSequenceProcessor();
-				uioMix.setRawSequence(uioRawSequence);
-				uioMix.processSequence();
-				ArrayList<EventList> eventListUio = uioMix.getEventSequence();
-				
-				ArrayList<EventList> eventListMix = new ArrayList<EventList>();
-				eventListMix.addAll(eventListDs);
-				eventListMix.addAll(eventListUio);
-				
-				PrefixTreeAcceptor pta = new PrefixTreeAcceptor(eventListMix);
-				pta.printTree();
-				
-				EventList pref = pta.maxCommonPrefix();
-				System.out.println("Max pref:");
-				for (Iterator<Event> i =pref.iterator(); i.hasNext();) {
-					System.out.print(i.next().getName()+" ");
+				GenerateCTL ctl = new GenerateCTL();
+				ArrayList<Property> props = ctl.generateProperties(lState);
+				for (Iterator<Property> i = props.iterator(); i.hasNext();) {
+					System.out.println(i.next().getRepresentation());
 				}
-				System.out.println();
 				break;
 			default:
-				System.out.println("Modo n�o � v�lido");
+				System.out.println("Modo invalido");
 		}
 	}
 

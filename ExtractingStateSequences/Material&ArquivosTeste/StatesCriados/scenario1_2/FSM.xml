@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-stylesheet type="text/xsl" href="mfeeTesteX.xsl"?> 
+<MFEE>
+	<STATES>
+		<STATE NAME="pDCOffIdle" TYPE="inicial"/>
+		<STATE NAME="iniMPOSTCountingTime" TYPE="normal"/>
+		<STATE NAME="safeMEnteredCountingTime" TYPE="normal"/>
+		<STATE NAME="safeMverOpIdle" TYPE="normal"/>
+		<STATE NAME="safeMEPPsOffIdle" TYPE="normal"/>
+		<STATE NAME="pDCOffIdle" TYPE="final"/>
+	</STATES>
+	<EVENTS>
+		<EVENT VALUE="1" NAME="SwitchPDCOn"/>
+		<OUTPUT VALUE="output1" EVENT="start60s"/>
+		<EVENT VALUE="1" NAME="POSTOk"/>
+		<EVENT VALUE="1" NAME="endtime"/>
+		<EVENT VALUE="1" NAME="VER_OP_MODE"/>
+		<EVENT VALUE="1" NAME="SwitchPDCOff"/>
+	</EVENTS>
+	<INPUTS>
+		<INPUT EVENT="SwitchPDCOn"/>
+		<INPUT EVENT="POSTOk"/>
+		<INPUT EVENT="endtime"/>
+		<INPUT EVENT="VER_OP_MODE"/>
+		<INPUT EVENT="SwitchPDCOff"/>
+	</INPUTS>
+	<OUTPUTS>
+		<OUTPUT EVENT="start60s" VALUE="output1"/>
+		<OUTPUT EVENT="VER_OP_MODE" VALUE="output2"/>
+	</OUTPUTS>
+	<TRANSITIONS>
+		<TRANSITION SOURCE="pDCOffIdle" DESTINATION="iniMPOSTCountingTime">
+			<INPUT INTERFACE="L">SwitchPDCOn</INPUT>
+				<OUTPUT INTERFACE="L">start60s</OUTPUT>
+	</TRANSITION>
+		<TRANSITION SOURCE="iniMPOSTCountingTime" DESTINATION="safeMEnteredCountingTime">
+			<INPUT INTERFACE="L">POSTOk</INPUT>
+				<OUTPUT></OUTPUT>
+	</TRANSITION>
+		<TRANSITION SOURCE="safeMEnteredCountingTime" DESTINATION="safeMverOpIdle">
+			<INPUT INTERFACE="L">endtime</INPUT>
+				<OUTPUT></OUTPUT>
+	</TRANSITION>
+		<TRANSITION SOURCE="safeMverOpIdle" DESTINATION="safeMEPPsOffIdle">
+			<INPUT INTERFACE="L">VER_OP_MODE</INPUT>
+				<OUTPUT INTERFACE="L">VER_OP_MODE</OUTPUT>
+	</TRANSITION>
+		<TRANSITION SOURCE="safeMEPPsOffIdle" DESTINATION="pDCOffIdle">
+			<INPUT INTERFACE="L">SwitchPDCOff</INPUT>
+				<OUTPUT></OUTPUT>
+	</TRANSITION>
+	</TRANSITIONS>
+</MFEE>

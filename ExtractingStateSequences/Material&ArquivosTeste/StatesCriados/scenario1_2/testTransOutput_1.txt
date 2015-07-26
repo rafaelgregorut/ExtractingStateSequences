@@ -1,0 +1,1 @@
+SwitchPDCOn/start60s POSTOk/ endtime/ VER_OP_MODE/VER_OP_MODE SwitchPDCOff/
