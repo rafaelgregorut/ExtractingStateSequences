@@ -9,6 +9,7 @@ public class Main {
 		
 		FileHandler file = new FileHandler(filePath);
 		String rawSequence = file.fileToString();
+		GenerateCTL genProp = new GenerateCTL();
 		switch (mode) {		
 			case 'm':
 				
@@ -25,7 +26,7 @@ public class Main {
 					}
 					System.out.println();
 					System.out.println("Propriedades");
-					GenerateCTL genProp = new GenerateCTL();
+					
 					ArrayList<Property> listProp = genProp.generateProperties(el);
 					if (listProp != null) {
 						for (int j = 0; j < listProp.size(); j++) {
@@ -59,7 +60,6 @@ public class Main {
 					}
 					System.out.println();
 					System.out.println("Propriedades");
-					GenerateCTL genProp = new GenerateCTL();
 					ArrayList<Property> listProp = genProp.generateProperties(el);
 					if (listProp != null) {
 						for (int j = 0; j < listProp.size(); j++) {
@@ -79,8 +79,7 @@ public class Main {
 				for (int i = 0; i < lState.size(); i++) {
 					System.out.println(lState.get(i).getName());
 				}
-				GenerateCTL ctl = new GenerateCTL();
-				ArrayList<Property> props = ctl.generateProperties(lState);
+				ArrayList<Property> props = genProp.generateProperties(lState);
 				for (Iterator<Property> i = props.iterator(); i.hasNext();) {
 					System.out.println(i.next().getRepresentation());
 				}

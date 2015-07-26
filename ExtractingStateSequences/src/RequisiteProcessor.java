@@ -12,7 +12,7 @@ public class RequisiteProcessor {
 	
 	RequisiteProcessor() {
 		super();
-		stateHash = new Hashtable<String,State>();
+		stateList = new ArrayList<State>();
 	}
 	
 	public ArrayList<State> processStates() {
@@ -21,13 +21,11 @@ public class RequisiteProcessor {
 		finalStates = finalStates.replaceAll("[( ,\\.\\n)]", " ");
 		String estado[] = finalStates.split(" +");
 		for (int i = 1; i < estado.length; i++) {
-			if(estado[i] != "" && !(stateHash.containsKey(estado[i]))) {
-				//System.out.println(estado[i]+";");
+			if(estado[i] != "") {
 				State st = new State(estado[i]);
-				stateHash.put(estado[i], st);
+				stateList.add(st);
 			}
 		}
-		stateList = new ArrayList<State>(stateHash.values());
 		return stateList;
 	}
 	

@@ -1,26 +1,22 @@
-public class DSSequenceProcessor extends FSMSequenceProcessor {
+public class DS_UIOSequenceProcessor extends FSMSequenceProcessor {
 	
-	DSSequenceProcessor() {
+	DS_UIOSequenceProcessor() {
 		super();
-		setBeginPattern(" ####### SEQUÊNCIAS DE TESTES FINAL  ###### \n\n");
 	}
 
 	@Override
 	public void processSequence() {
-		
-		int indexFinalSequences = rawSequence.indexOf(beginPattern);
-		String finalSequences = rawSequence.substring(indexFinalSequences+beginPattern.length());
-		//System.out.println(finalSequences);
+
+		String finalSequences = rawSequence;
 		String sequencias[] = finalSequences.split("\n");
 		for (int i = 0; i < sequencias.length; i++) {
-			//System.out.println(sequencias[i]);
 			EventList el = new EventList();
 			String events[] = sequencias[i].split(" ");
 			for (int j = 0; j < events.length; j++) {
 				Event e = new Event(events[j],null);
 				el.add(e);
 			}
-			el.setType("DS");
+			el.setType("DS_UIO");
 			eventSequence.add(el);
 		}
 	}

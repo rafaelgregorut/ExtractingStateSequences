@@ -1,8 +1,15 @@
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.Iterator;
 
 public class GenerateCTL implements PropertyGenerator {
-
+	
+	Hashtable<String,Property> propertyHash;
+	
+	GenerateCTL() {
+		propertyHash = new Hashtable<String,Property>();
+	}
+	
 	@Override
 	public ArrayList<Property> generateProperties(EventList eventSeq) {
 		
@@ -23,22 +30,25 @@ public class GenerateCTL implements PropertyGenerator {
 		ArrayList<Property> properties = new ArrayList<Property>();
 		
 		Event first = el.get(0);
-		//System.out.println("first "+first.getName());
 		Event last = el.get(el.size()-1);
-		//System.out.println("last "+last.getName());
 		
 		Property existFirst = new Property();
 		existFirst.setType(Property.EXISTENCE);
 		existFirst.setRepresentation("AF("+first.getName()+")");
-		properties.add(existFirst);
+		if (!propertyHash.containsKey(existFirst.getRepresentation())) {
+			properties.add(existFirst);
+			propertyHash.put(existFirst.getRepresentation(), existFirst);
+		}
 		
 		Property existLast = new Property();
 		existLast.setType(Property.EXISTENCE);
 		existLast.setRepresentation("AF("+last.getName()+")");
-		properties.add(existLast);
-		
-		//System.out.println(properties.get(0).getRepresentation()+" "+properties.get(1).getRepresentation());
-		
+		if (!propertyHash.containsKey(existLast.getRepresentation())) {
+			properties.add(existLast);
+			propertyHash.put(existLast.getRepresentation(), existLast);
+
+		}
+				
 		for (int i = 0; i < el.size()-1; i++) {
 			Property precedence = new Property();
 			precedence.setType(Property.PRECEDENCE);
@@ -48,9 +58,11 @@ public class GenerateCTL implements PropertyGenerator {
 			Event S = el.get(i);
 			Event P = el.get(i+1);
 			precedence.setRepresentation("AG("+Q.getName()+" & !"+R.getName()+" -> A[(!"+P.getName()+" | AG(!"+R.getName()+")) W ("+S.getName()+" | "+R.getName()+")])");
-			properties.add(precedence);
+			if (!propertyHash.containsKey(precedence.getRepresentation())) {
+				properties.add(precedence);
+				propertyHash.put(precedence.getRepresentation(), precedence);
+			}
 		}
-		
 		return properties;
 	}
 	
@@ -58,19 +70,23 @@ public class GenerateCTL implements PropertyGenerator {
 		ArrayList<Property> properties = new ArrayList<Property>();
 			
 		Event first = el.get(0);
-		//System.out.println("first "+first.getName());
 		Event last = el.get(el.size()-1);
-		//System.out.println("last "+last.getName());
 			
 		Property existFirst = new Property();
 		existFirst.setType(Property.EXISTENCE);
 		existFirst.setRepresentation("AF("+first.getName()+")");
-		properties.add(existFirst);
+		if (!propertyHash.containsKey(existFirst.getRepresentation())) {
+			properties.add(existFirst);
+			propertyHash.put(existFirst.getRepresentation(), existFirst);
+		}
 			
 		Property existLast = new Property();
 		existLast.setType(Property.EXISTENCE);
 		existLast.setRepresentation("AF("+last.getName()+")");
-		properties.add(existLast);
+		if (!propertyHash.containsKey(existLast.getRepresentation())) {
+			properties.add(existLast);
+			propertyHash.put(existLast.getRepresentation(), existLast);
+		}
 		
 		//Nesse tipo de sequencia pode ver o output dos eventos
 		for (int i = 0; i < el.size(); i++) {
@@ -83,10 +99,12 @@ public class GenerateCTL implements PropertyGenerator {
 				Event S = el.get(i);
 				String P_name = el.get(i).getOutput();
 				precedence.setRepresentation("AG("+Q.getName()+" & !"+R.getName()+" -> A[(!"+P_name+" | AG(!"+R.getName()+")) W ("+S.getName()+" | "+R.getName()+")])");
-				properties.add(precedence);
+				if (!propertyHash.containsKey(precedence.getRepresentation())) {
+					properties.add(precedence);
+					propertyHash.put(precedence.getRepresentation(), precedence);
+				}
 			}
 		}
-
 		return properties;
 	}
 	
@@ -96,7 +114,11 @@ public class GenerateCTL implements PropertyGenerator {
 			Property existState = new Property();
 			existState.setType(Property.EXISTENCE);
 			existState.setRepresentation("AF("+i.next().getName()+")");
-			resp.add(existState);
+			if (!propertyHash.containsKey(existState.getRepresentation())) {
+				resp.add(existState);
+				propertyHash.put(existState.getRepresentation(), existState);
+			}
+			
 		}
 		return resp;
 	}
