@@ -4,10 +4,10 @@
 
 A especificação de um software é um documento de referência que contém os requisitos que o programa
 deve satisfazer. Ela pode ser elaborada em linguagem natural, com casos de uso por exemplo, ou utilizando
-técnicas de engenharia formal de software.
+técnicas de engenharia formal de software. No caso de uma especificação em linguagem natural, a descrição dos requisitos
+pode ser ambígua, prejudicando o desenvolvimento de um software que satisfaça as necessidades do cliente ou usuário. Em uma especificação formal, @@@@@
 
-Statecharts são um tipo de especifição formal de software baseado em diagramas de estado.
-Eles podem ser considerados máquinas de estados finitas (MEF) extendidas, pois, assim como um autômato, um statechart possui um conjunto de estados e transições entre eles. Porém, o statechart pode fazer uso das seguintes propriedades:
+Statecharts são um tipo de especifição formal de software baseados em máquinas de estados finitas (MEF) e utilizados em sistemas complexos, como sistemas reativos(@@@@@ CITAR HAREL). Assim como um autômato, um statechart possui um conjunto de estados e transições entre eles. Porém, o statechart pode fazer uso dos seguintes recursos:
 
 \begin{itemize}
 \item Ortogonalidade
@@ -19,16 +19,16 @@ Um estado pode conter sub-estados e transições internas, elevando a capacidade d
 \item Condições de guarda
 
 É possível condicionar a ocorrência de uma transição baseando-se no valor de uma variável, entrada de um estado ou ocorrência de uma ação
+
+\item Broadcasting
+
+Uma transição possui um evento de entrada, necessário para que a transição aconteça, mas também pode ter uma ação de saída, que será disparada ao final da transição. Esse artefato permite que reações em cadeia ocorram em um statechart.
 \item História
+
+Um statechart é capaz de lembrar estados já visitados anteriormente.
 \end{itemize}
 
 O que
-
-Diferencas de um statechart para um automato
-	Ortogonalidade
-	Hierarquia
-	Condicoes de guarda
-	Historia	
 
 Pra que serve/onde eh usado
 
