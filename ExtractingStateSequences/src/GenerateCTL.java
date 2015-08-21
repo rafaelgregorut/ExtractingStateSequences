@@ -2,6 +2,11 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
 
+import ltl.extraction.Property;
+import mef.basics.Event;
+import mef.basics.EventList;
+import mef.basics.State;
+
 public class GenerateCTL implements PropertyGenerator {
 	
 	Hashtable<String,Property> propertyHash;

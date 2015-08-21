@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import mef.basics.Event;
+import mef.basics.EventList;
+
 
 public class PrefixTreeAcceptor {
 

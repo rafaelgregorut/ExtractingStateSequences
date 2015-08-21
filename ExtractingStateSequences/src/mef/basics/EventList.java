@@ -1,3 +1,4 @@
+package mef.basics;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -8,7 +9,7 @@ public class EventList {
 	
 	private String type;
 	
-	EventList() {
+	public EventList() {
 		list = new ArrayList<Event>();
 		type = "";
 	}
@@ -39,5 +40,12 @@ public class EventList {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+	
+	public void print() {
+		int i = 0;
+		for (i = 0; i < this.list.size() - 1; i++)
+			System.out.print(this.list.get(i).getName()+",");
+		System.out.println(this.list.get(i).getName());
 	}
 }

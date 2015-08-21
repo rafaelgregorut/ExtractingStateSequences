@@ -1,3 +1,4 @@
+package mef.basics;
 
 public class State {
 

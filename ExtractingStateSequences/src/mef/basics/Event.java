@@ -1,10 +1,11 @@
+package mef.basics;
 
 public class Event {
 
 	private String name;
 	private String output;
 	
-	Event(String n, String o) {
+	public Event(String n, String o) {
 		name = n;
 		output = o;
 	}

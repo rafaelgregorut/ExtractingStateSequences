@@ -1,3 +1,6 @@
+import mef.basics.Event;
+import mef.basics.EventList;
+
 public class UIOSequenceProcessor extends FSMSequenceProcessor {
 	
 	UIOSequenceProcessor() {

@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import mef.basics.EventList;
+
 
 public abstract class FSMSequenceProcessor {
 
