@@ -1,0 +1,53 @@
+a -1  #SUP: 4
+a b -1  #SUP: 2
+a b -1 c -1  #SUP: 2
+a b -1 d -1  #SUP: 2
+a b -1 d -1 c -1  #SUP: 2
+a b -1 f -1  #SUP: 2
+a -1 a -1  #SUP: 2
+a -1 b -1  #SUP: 4
+a -1 b c -1  #SUP: 2
+a -1 b c -1 a -1  #SUP: 2
+a -1 b -1 a -1  #SUP: 2
+a -1 b -1 c -1  #SUP: 2
+a -1 c -1  #SUP: 4
+a -1 c -1 a -1  #SUP: 2
+a -1 c -1 b -1  #SUP: 3
+a -1 c -1 c -1  #SUP: 3
+a -1 d -1  #SUP: 2
+a -1 d -1 c -1  #SUP: 2
+a -1 f -1  #SUP: 2
+b -1  #SUP: 4
+b c -1  #SUP: 2
+b c -1 a -1  #SUP: 2
+b -1 a -1  #SUP: 2
+b -1 c -1  #SUP: 3
+b -1 d -1  #SUP: 2
+b -1 d -1 c -1  #SUP: 2
+b -1 f -1  #SUP: 2
+c -1  #SUP: 4
+c -1 a -1  #SUP: 2
+c -1 b -1  #SUP: 3
+c -1 c -1  #SUP: 3
+d -1  #SUP: 3
+d -1 b -1  #SUP: 2
+d -1 c -1  #SUP: 3
+d -1 c -1 b -1  #SUP: 2
+e -1  #SUP: 3
+e -1 a -1  #SUP: 2
+e -1 a -1 b -1  #SUP: 2
+e -1 a -1 c -1  #SUP: 2
+e -1 a -1 c -1 b -1  #SUP: 2
+e -1 b -1  #SUP: 2
+e -1 b -1 c -1  #SUP: 2
+e -1 c -1  #SUP: 2
+e -1 c -1 b -1  #SUP: 2
+e -1 f -1  #SUP: 2
+e -1 f -1 b -1  #SUP: 2
+e -1 f -1 c -1  #SUP: 2
+e -1 f -1 c -1 b -1  #SUP: 2
+f -1  #SUP: 3
+f -1 b -1  #SUP: 2
+f -1 b -1 c -1  #SUP: 2
+f -1 c -1  #SUP: 2
+f -1 c -1 b -1  #SUP: 2

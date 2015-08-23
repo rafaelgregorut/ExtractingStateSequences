@@ -17,8 +17,8 @@ public class ResponsePropertyExtract {
 	//S responds to P
 	//Globally: [](P -> <>S)
 	
-	public void printResponseProperties(EventList listaDeEventos) {
-		listaDeEventos.print();
+	public void extractResponseProperties(EventList listaDeEventos) {
+		//listaDeEventos.print();
 
 		for (int i = 0; i < listaDeEventos.size()-1; i++) {
 			Event P = listaDeEventos.get(i);
@@ -27,7 +27,7 @@ public class ResponsePropertyExtract {
 			prop.setRepresentation("[]("+P.getName()+" -> <>"+S.getName()+")");
 			if (!propertyHash.containsKey(prop.getRepresentation()))
 				propertyHash.put(prop.getRepresentation(), prop);
-			System.out.println(prop.getRepresentation());
+			//System.out.println(prop.getRepresentation());
 		}
 	}
 	
@@ -35,7 +35,5 @@ public class ResponsePropertyExtract {
 		Enumeration<String> allRep = propertyHash.keys();
 		while(allRep.hasMoreElements())
 			System.out.println(allRep.nextElement());
-		
-
 	}
 }

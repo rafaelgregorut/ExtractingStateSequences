@@ -29,6 +29,13 @@ public class SequencePatternsInputHandler {
 		}
 	}
 	
+	public String parseSequencePatternsString(String str) {
+		str = str.replaceAll("  #SUP: [0-9]*","");
+		str = str.replaceAll(" -1 ", ",");
+		str = str.replaceAll(" -1", "");
+		return str;
+	}
+	
 	public EventList lineToEventList(String line) {
 		EventList list = new EventList();
 		String eventosInOut[] = line.split(",");
@@ -43,6 +50,15 @@ public class SequencePatternsInputHandler {
 	public ArrayList<EventList> fileToManyEventLists(String filePath) {
 		String raw = fileToString(filePath);
 		String lines[] = raw.split("\n");
+		ArrayList<EventList> sequencias = new ArrayList<EventList>();
+		for (int i = 0; i < lines.length; i++) {
+			sequencias.add(lineToEventList(lines[i]));
+		}
+		return sequencias;
+	}
+	
+	public ArrayList<EventList> seqPattStringsToManyEventLists(String str) {
+		String lines[] = str.split("\n");
 		ArrayList<EventList> sequencias = new ArrayList<EventList>();
 		for (int i = 0; i < lines.length; i++) {
 			sequencias.add(lineToEventList(lines[i]));
