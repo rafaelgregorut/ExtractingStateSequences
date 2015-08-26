@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import ltl.extraction.ResponsePropertyExtract;
+import ltl.extraction.UniversalPropertyExtract;
 import mef.basics.EventList;
 import ca.pfv.spmf.algorithms.sequentialpatterns.BIDE_and_prefixspan_with_strings.AlgoPrefixSpan_with_Strings;
 import ca.pfv.spmf.input.sequence_database_list_strings.SequenceDatabase;
@@ -15,19 +16,14 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		String filePath = args[0];
 		double minSupRelative = Double.parseDouble(args[1]);
-		//System.out.println("min relative "+minSupRelative);
 		
 		SequenceDatabase sequenceDatabase = new SequenceDatabase(); 
 		sequenceDatabase.loadFile(filePath);
-		// print the database to console
-		//sequenceDatabase.printDatabase();
 		
 		AlgoPrefixSpan_with_Strings algo = new AlgoPrefixSpan_with_Strings(); 
 				
 		int absoluteMinSup = (int)Math.ceil((minSupRelative * sequenceDatabase.size()));
 		
-		////System.out.println("absolute min sup: "+absoluteMinSup);
-		// execute the algorithm
 		algo.runAlgorithm(sequenceDatabase, null, absoluteMinSup);   
 		String sequencePatt = algo.getFileContent();
 		System.out.println("Padroes presentes em pelo menos "+minSupRelative+"% dos casos de teste");
@@ -37,7 +33,6 @@ public class Main {
 
 		SequencePatternsInputHandler seqPattIn = new SequencePatternsInputHandler();
 		sequencePatt = seqPattIn.parseSequencePatternsString(sequencePatt);
-		//System.out.print(sequencePatt);
 		
 		ArrayList<EventList> sequencias = seqPattIn.seqPattStringsToManyEventLists(sequencePatt);
 		ResponsePropertyExtract respExtract = new ResponsePropertyExtract();
@@ -49,7 +44,29 @@ public class Main {
 		System.out.println("==============================================");
 		respExtract.printAllResponseProperties();
 		System.out.println("==============================================");
+		
+		AlgoPrefixSpan_with_Strings algo_uni = new AlgoPrefixSpan_with_Strings(); 
+		
+		algo_uni.runAlgorithm(sequenceDatabase, null, sequenceDatabase.size());
+		String sequencePatt_Universal = algo_uni.getFileContent();
 
+		System.out.println("Padroes presentes em todos os casos de teste");
+		System.out.println("==============================================");
+		System.out.print(sequencePatt_Universal);
+		System.out.println("==============================================");
+				
+		sequencePatt_Universal = seqPattIn.parseSequencePatternsString(sequencePatt_Universal);
+		
+		ArrayList<EventList> sequencias_universais = seqPattIn.seqPattStringsToManyEventLists(sequencePatt_Universal);
+		UniversalPropertyExtract uniExtract = new UniversalPropertyExtract();
+		
+		for (Iterator<EventList> it = sequencias_universais.iterator(); it.hasNext(); ){
+			uniExtract.extractUniversalProperties(it.next());
+		}
+		System.out.println("Todas as propriedades universais criadas:");
+		System.out.println("==============================================");
+		uniExtract.printAllUniversalProperties();
+		System.out.println("==============================================");
 	}
 
 }

@@ -6,34 +6,32 @@ import java.util.Hashtable;
 import mef.basics.Event;
 import mef.basics.EventList;
 
-public class ResponsePropertyExtract {
-
+public class UniversalPropertyExtract {
+	
 	private Hashtable<String,Property> propertyHash;
 	
-	public ResponsePropertyExtract() {
+	public UniversalPropertyExtract() {
 		propertyHash = new Hashtable<String,Property>();
 	}
-	
-	//S responds to P
-	//Globally: [](P -> <>S)
-	
-	public void extractResponseProperties(EventList listaDeEventos) {
+
+	public void extractUniversalProperties(EventList listaDeEventos) {
 		//listaDeEventos.print();
 
-		for (int i = 0; i < listaDeEventos.size()-1; i++) {
+		for (int i = 0; i < listaDeEventos.size(); i++) {
 			Event P = listaDeEventos.get(i);
-			Event S = listaDeEventos.get(i+1);
 			Property prop = new Property();
-			prop.setRepresentation("[]("+P.getName()+" -> <>"+S.getName()+")");
+			prop.setRepresentation("[]("+P.getName()+")");
 			if (!propertyHash.containsKey(prop.getRepresentation()))
 				propertyHash.put(prop.getRepresentation(), prop);
 			//System.out.println(prop.getRepresentation());
 		}
 	}
 	
-	public void printAllResponseProperties() {
+	public void printAllUniversalProperties() {
 		Enumeration<String> allRep = propertyHash.keys();
 		while(allRep.hasMoreElements())
 			System.out.println(allRep.nextElement());
 	}
+
+
 }
