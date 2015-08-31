@@ -3,29 +3,40 @@
 \label{sec:statecharts}
 
 A especificação de um software é um documento de referência que contém os requisitos que o programa
-deve satisfazer. Ela pode ser elaborada em linguagem natural, com casos de uso por exemplo, ou utilizando
-técnicas de engenharia formal de software. No caso de uma especificação em linguagem natural, a descrição dos requisitos
-pode ser ambígua, prejudicando o desenvolvimento de um software que satisfaça as necessidades do cliente ou usuário. Em uma especificação formal, @@@@@
+deve satisfazer. Ela também pode ser vista como um modelo de como o software deve se comportar.
+É possível elaborá-la usando linguagem natural, com casos de uso, ou utilizando
+técnicas de engenharia formal de software. 
 
-Statecharts são um tipo de especifição formal de software baseados em máquinas de estados finitas (MEF) e utilizados em sistemas complexos, como sistemas reativos(@@@@@ CITAR HAREL). Assim como um autômato, um statechart possui um conjunto de estados e transições entre eles. Porém, o statechart pode fazer uso dos seguintes recursos:
+Statecharts são um tipo de especifição formal de software baseados em máquinas de estados finitas (MEF) utilizados em sistemas complexos, como sistemas reativos \citep{harel87:semantics_statecharts}. Assim como um autômato, um statechart possui um conjunto de estados, transições e eventos de entrada que proporcionam mudanças de estados. Porém, um statechart possui os seguintes recursos adicionais:
 
 \begin{itemize}
 \item Ortogonalidade
 
-Um statechart pode estar em mais de um estado simultaneamente, o que é útil para modelar situações de concorrência e paralelismo. O conjunto de estados ativos é denominado de configuração. Na figura @@@@@, os estados $F$ e $G$ são ortogonais. Assim, se o statechart se encontrar no estado $A$ e o evento $a$ ocorrer, a configuração do statechart irá mudar para os estados $F$ e $G$ simultaneamente.
+Um statechart pode estar em mais de um estado simultaneamente, o que é útil para modelar situações de concorrência e paralelismo. O conjunto de estados ativos em determinado instante é denominado de configuração. Na figura~\ref{fig:fig1}, os estados $F$ e $G$ são ortogonais. Assim, se o statechart se encontrar no estado $A$ e o evento $a$ ocorrer, a configuração do statechart irá mudar para os estados $F$ e $G$ simultaneamente.
 \item Hierarquia
 
-Um estado pode conter sub-estados e transições internas, elevando a capacidade de abstração e encapsulamento. Na figura @@@@@, Os estados $F$ e $G$ são sub-estados do estado $I$. Já os estados $B$ e $C$ são sub-estados do estado $F$.
+Um estado pode conter sub-estados e transições internas, elevando a capacidade de abstração e encapsulamento. Na figura~\ref{fig:fig1}, Os estados $F$ e $G$ são sub-estados do estado $I$. Já os estados $B$ e $C$ são sub-estados do estado $F$.
 \item Condições de guarda
 
-É possível condicionar a ocorrência de uma transição baseando-se no valor de uma variável, entrada de um estado ou ocorrência de uma ação. Na figura @@@@@, a transição do estado $D$ para o estado $E$ possui uma condição de guarda: $in(C)$, que é verdadeira quando o statechart se encontra no estado $C$ e falsa caso contrário. Então, a mudança de $D$ para $E$ acontecerá de fato se o evento $e$ ocorrer e a condição $in(C)$ for verdadeira, ou seja, quando $e$ ocorrer e o statechart estiver concorrentemente no estado $C$. 
+É possível condicionar a ocorrência de uma transição ao valor de uma variável, à entrada de um estado ou à ocorrência de uma ação. Na figura~\ref{fig:fig1}, a transição do estado $D$ para o estado $E$ possui uma condição de guarda: $in(C)$, que é verdadeira quando o statechart se encontra no estado $C$ e falsa caso contrário. Então, a mudança de $D$ para $E$ acontecerá de fato se o evento $e$ ocorrer e a condição $in(C)$ for verdadeira, ou seja, quando $e$ ocorrer e a configuração atual do statechart contiver o estado $C$. 
 
 \item Broadcasting
 
-Uma transição possui um evento de entrada, necessário para que a transição aconteça, mas também pode ter uma ação de saída, que será disparada ao final da transição. Esse artefato permite que reações em cadeia ocorram em um statechart. Na figura @@@@@, a transição do estado $E$ para $D$ possui um evento de entrada $c$ e uma ação de saída $d$. Assim, suponha que os estados $C$ e $E$ sejam a atual configuração do statechart e o evento $c$ ocorra. A transição $E$ para $D$ ocorrerá e desencadeará a ação $d$, que por sua vez acarretará a transição de $C$ para $B$. No final, statechart estará com sua configuração nos estados $D$ e $B$, ainda que somente o evento $c$ tenha ocorrido. 
+Uma transição possui um evento de entrada, necessário para que a transição aconteça, mas também pode ter uma ação de saída, que será disparada ao final da mudança de estado. Esse artefato permite que reações em cadeia ocorram em um statechart. Na figura~\ref{fig:fig1}, a transição do estado $E$ para $D$ possui um evento de entrada $c$ e uma ação de saída $d$. Assim, suponha que os estados $C$ e $E$ constituam a atual configuração do statechart e o evento $c$ ocorra. A transição $E$ para $D$ ocorrerá e desencadeará a ação $d$, que por sua vez acarretará a transição de $C$ para $B$. No final, statechart estará com sua configuração nos estados $D$ e $B$, ainda que somente o evento $c$ tenha ocorrido. 
 \item História
 
-Um statechart é capaz de lembrar estados já visitados anteriormente. Na figura @@@@@, o armazenamento da história do statechart é representado pelo pseudo-estado $H$. Se a configuração atual é $D$ e o evento $a$ ocorre, a próxima configuração será constituída pelo sub-estado de $A$ mais recetemente visitado: $B$ ou $C$. 
+Um statechart é capaz de lembrar estados já visitados anteriormente. Na figura~\ref{fig:fig2}, o armazenamento da história do statechart é representado pelo pseudo-estado $H$. Se a configuração atual é $D$ e o evento $a$ ocorre, a próxima configuração será constituída pelo sub-estado de $A$ mais recentemente visitado: $B$ ou $C$. 
 \end{itemize}
 
-Um statechart também possui um estado inicial e um estado final. Ainda é possível que um estado tenha um sub-estado inicial que é a entrada padrão para as transições que incidem nele. Considere o statechart da figura @@@@@ e suponha que sua cofiguração seja o estado $D$. Se o evento $b$ ocorrer, a entrada padrão do estado $A$ será tomada e passaremos para o sub-estado $B$. 
+Um statechart também possui um estado inicial e pode possuir um estado final. Em casos de sistemas reativos, é comum que o estado final esteja ausente. O estado inicial é representado por um círculo completamente preenchido e o estado final, por um círculo preenchido contido em uma circunferência.
+
+Um exemplo de figura está na figura~\ref{fig:fig1}.
+\begin{figure}[htb]
+\includegraphics[width=10cm]{figuras/fig1}
+\caption{\label{fig:fig1}Exemplo de statechart}
+\end{figure}
+
+\begin{figure}[htb]
+\includegraphics[width=12cm]{figuras/fig2}
+\caption{\label{fig:fig2}Exemplo de statechart}
+\end{figure}

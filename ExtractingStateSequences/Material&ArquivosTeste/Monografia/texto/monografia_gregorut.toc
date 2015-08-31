@@ -1,0 +1,20 @@
+\select@language {brazil}
+\contentsline {chapter}{\numberline {1}Introdu\c c\~ao}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Conceitos}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Statecharts}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Testes e crit\'erios de teste}{5}{section.2.2}
+\contentsline {section}{\numberline {2.3}Minera\c c\~ao de Padr\~oes em Sequ\^encias}{5}{section.2.3}
+\contentsline {section}{\numberline {2.4}Spefication patterns}{5}{section.2.4}
+\contentsline {section}{\numberline {2.5}Verifica\c c\~ao formal}{6}{section.2.5}
+\contentsline {chapter}{\numberline {3}Tecnologias}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Ferramenta GTSC}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}Model checker}{7}{section.3.2}
+\contentsline {chapter}{\numberline {4}An\'alise dos casos de teste e extra\c c\~ao das propriedades}{9}{chapter.4}
+\contentsline {section}{\numberline {4.1}An\'alise dos crit\'erios DS e UIO}{9}{section.4.1}
+\contentsline {section}{\numberline {4.2}An\'alise do crit\'erio HSwitch-Cover}{9}{section.4.2}
+\contentsline {section}{\numberline {4.3}An\'alise dos crit\'erios All-simple-paths e All-paths-K-configuration}{9}{section.4.3}
+\contentsline {chapter}{\numberline {5}Verifica\c c\~ao das propriedades obtidas}{11}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclus\~oes}{13}{chapter.6}
+\contentsline {chapter}{\numberline {A}T\IeC {\'\i }tulo do ap\^endice}{15}{appendix.A}
+\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{17}{appendix*.9}
+\contentsfinish 

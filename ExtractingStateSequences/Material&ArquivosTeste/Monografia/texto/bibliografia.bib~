@@ -23,7 +23,7 @@
  month    = May
 }
 
-@Article{pei04:prefixSpan,
+@Article{MenaChalco08,
  author   = {Jian Pei and Behzad Mortazavi-Asl and Umeshwar Dayal},
  title    = {Mining Sequential Patterns by Pattern-Growth: The PrefixSpan Approach},
  journal  = {IEEE Transactions on Knowledge and Data Engineering},

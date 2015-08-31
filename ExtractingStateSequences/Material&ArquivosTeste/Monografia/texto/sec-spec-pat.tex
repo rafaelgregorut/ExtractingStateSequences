@@ -1,3 +1,34 @@
 %% ------------------------------------------------------------------------- %%
 \section{Spefication patterns}
+
+\emph{Specification patterns}, ou padrões de especificação, são modelos de propriedades formais pré-definidos, que podem ser usados e adaptados de acordo com os requisitos a serem verificados. Os padrões foram definidos a partir de uma pesquisa de requisitos na literatura e em diversos projetos, somando 555 especificações coletadas de 35 fontes diferentes \citep{dwyer99:specpatt_survey}.
+
+Os padrões de especificação podem ser classificados em duas categorias principais: ocorrência e ordem. Os padrões de ocorrência estabelecem a ocorrência ou ausência de um determinado evento ou estado em uma região definida da especificação. Eles ainda podem ser classificados em universalidade, ausência, existência e existência limitada. Os padrões de ordem relacionam-se com a ordem de ocorrência de eventos ou estados. Eles podem ser sub-divididos em precedência, resposta, precedência em cadeia e resposta em cadeia.
+
+Para cada padrão é necessário um escopo, o qual define a região da especificação onde a propriedade deve ser válida. Os escopos disponíveis são: global, antes de $Q$, depois de $Q$, entre $Q$ e $R$ e depois de $Q$ até $R$, onde $Q$ e $R$ são eventos ou estados.
+
+Significado de cada padrão \citep{dwyer98:specpatt}:
+
+\begin{itemize}
+
+\item Ausência: um dado estado ou evento não ocorre dentro do escopo
+
+\item Existência: um dado estado ou evento deve ocorrer dentro do escopo
+
+\item Existência limitada: um dado estado ou evento deve ocorrer $k$ vezes dentro do escopo
+
+\item Universalidade: um dado estado ou evento ocorre em todo o escopo
+
+\item Precedência: um estado ou evento $P$ deve sempre ser precedido por um estado ou evento $Q$ dentro do escopo
+
+\item Resposta: um estado ou evento $P$ deve sempre ser seguido por um estado estado ou evento $Q$ dentro do escopo
+
+\item Precedência em cadeia: uma sequência de estados ou eventos $P_1,...,P_n$ deve sempre ser precedida por uma sequência de estados ou eventos $Q_1,...,Q_n$
+
+\item Resposta em cadeia: uma sequência de estados ou eventos $P_1,...,P_n$ deve sempre ser seguida por uma sequência de estados ou eventos $Q_1,...,Q_n$
+
+\end{itemize}
+
+Os padrões estão disponíveis, por exemplo, em LTL e CTL no site do projeto \url{http://patterns.projects.cis.ksu.edu}
+
 \label{sec:spec-pat}

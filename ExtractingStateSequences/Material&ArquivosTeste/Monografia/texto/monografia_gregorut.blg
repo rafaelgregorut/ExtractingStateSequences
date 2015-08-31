@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: monografia_gregorut.aux
+A level-1 auxiliary file: ape-exemplo.aux
+The style file: plainnat-ime.bst
+Database file #1: bibliografia.bib
+Warning--string name "june" is undefined
+--line 7 of file bibliografia.bib
+You've used 7 entries,
+            2750 wiz_defined-function locations,
+            642 strings with 6089 characters,
+and the built_in function-call counts, 2706 in all, are:
+= -- 221
+> -- 159
+< -- 4
++ -- 55
+- -- 48
+* -- 179
+:= -- 433
+add.period$ -- 21
+call.type$ -- 7
+change.case$ -- 30
+chr.to.int$ -- 7
+cite$ -- 14
+duplicate$ -- 138
+empty$ -- 233
+format.name$ -- 55
+if$ -- 568
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 10
+newline$ -- 43
+num.names$ -- 28
+pop$ -- 92
+preamble$ -- 1
+purify$ -- 23
+quote$ -- 0
+skip$ -- 88
+stack$ -- 0
+substring$ -- 34
+swap$ -- 17
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 62
+warning$ -- 0
+while$ -- 23
+width$ -- 0
+write$ -- 110
+(There was 1 warning)
