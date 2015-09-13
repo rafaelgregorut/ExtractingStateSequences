@@ -1,0 +1,62 @@
+RESULTADO DA EXTRACAO PARA O ALL-SIMPLE-PATHS COM 95%
+
+Padroes presentes em pelo menos 0.95% dos casos de teste
+==============================================
+processOderID/null -1  #SUP: 65
+processOderID/null -1 processCustomerNumber/null -1  #SUP: 65
+processOderID/null -1 processCustomerNumber/null -1 getNextHeaderFile/null -1  #SUP: 65
+processOderID/null -1 getNextHeaderFile/null -1  #SUP: 65
+processOderID/null -1 getNextMaterialFile/null -1  #SUP: 64
+processQuantidade/null -1  #SUP: 65
+processQuantidade/null -1 getNextMaterialFile/null -1  #SUP: 65
+processCustomerNumber/null -1  #SUP: 65
+processCustomerNumber/null -1 getNextHeaderFile/null -1  #SUP: 65
+getNextHeaderFile/null -1  #SUP: 65
+getNextMaterialFile/null -1  #SUP: 65
+processMaterialNumber/null -1  #SUP: 65
+processMaterialNumber/null -1 processQuantidade/null -1  #SUP: 65
+processMaterialNumber/null -1 processQuantidade/null -1 getNextMaterialFile/null -1  #SUP: 65
+processMaterialNumber/null -1 getNextMaterialFile/null -1  #SUP: 65
+processMaterialOrderID/null -1  #SUP: 65
+processMaterialOrderID/null -1 processQuantidade/null -1  #SUP: 65
+processMaterialOrderID/null -1 processQuantidade/null -1 getNextMaterialFile/null -1  #SUP: 65
+processMaterialOrderID/null -1 processMaterialNumber/null -1  #SUP: 65
+processMaterialOrderID/null -1 processMaterialNumber/null -1 processQuantidade/null -1  #SUP: 65
+processMaterialOrderID/null -1 processMaterialNumber/null -1 processQuantidade/null -1 getNextMaterialFile/null -1  #SUP: 65
+processMaterialOrderID/null -1 processMaterialNumber/null -1 getNextMaterialFile/null -1  #SUP: 65
+processMaterialOrderID/null -1 getNextHeaderFile/null -1  #SUP: 64
+processMaterialOrderID/null -1 getNextMaterialFile/null -1  #SUP: 65
+TOTAL DE PADROES: 24
+==============================================
+Todas as propriedades de resposta criadas:
+==============================================
+getNextHeaderFile responds to processCustomerNumber:
+[](processCustomerNumber -> <>getNextHeaderFile)
+getNextHeaderFile responds to processOderID:
+[](processOderID -> <>getNextHeaderFile)
+processMaterialNumber responds to processMaterialOrderID:
+[](processMaterialOrderID -> <>processMaterialNumber)
+getNextMaterialFile responds to processMaterialNumber:
+[](processMaterialNumber -> <>getNextMaterialFile)
+processQuantidade responds to processMaterialOrderID:
+[](processMaterialOrderID -> <>processQuantidade)
+getNextMaterialFile responds to processMaterialOrderID:
+[](processMaterialOrderID -> <>getNextMaterialFile)
+getNextHeaderFile responds to processMaterialOrderID:
+[](processMaterialOrderID -> <>getNextHeaderFile)
+processCustomerNumber responds to processOderID:
+[](processOderID -> <>processCustomerNumber)
+getNextMaterialFile responds to processQuantidade:
+[](processQuantidade -> <>getNextMaterialFile)
+getNextMaterialFile responds to processOderID:
+[](processOderID -> <>getNextMaterialFile)
+processQuantidade responds to processMaterialNumber:
+[](processMaterialNumber -> <>processQuantidade)
+TOTAL DE PROPRIEDADES: 11
+==============================================
+Padroes presentes em todos os casos de teste
+==============================================
+==============================================
+Todas as propriedades universais criadas:
+==============================================
+==============================================

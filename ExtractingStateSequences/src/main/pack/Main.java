@@ -9,6 +9,7 @@ import ltl.extraction.ResponsePropertyExtract;
 import ltl.extraction.UniversalPropertyExtract;
 import mef.basics.EventList;
 import ca.pfv.spmf.algorithms.sequentialpatterns.BIDE_and_prefixspan_with_strings.AlgoPrefixSpan_with_Strings;
+import ca.pfv.spmf.algorithms.sequentialpatterns.BIDE_and_prefixspan_with_strings.SequentialPatterns;
 import ca.pfv.spmf.input.sequence_database_list_strings.SequenceDatabase;
 
 public class Main {
@@ -29,6 +30,7 @@ public class Main {
 		System.out.println("Padroes presentes em pelo menos "+minSupRelative+"% dos casos de teste");
 		System.out.println("==============================================");
 		System.out.print(sequencePatt);
+		System.out.println("TOTAL DE PADROES: "+algo.getPatternCount());
 		System.out.println("==============================================");
 
 		SequencePatternsInputHandler seqPattIn = new SequencePatternsInputHandler();

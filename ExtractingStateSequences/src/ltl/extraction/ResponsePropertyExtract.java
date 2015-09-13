@@ -1,6 +1,6 @@
 package ltl.extraction;
 
-import java.util.Enumeration;
+import java.util.Collection;
 import java.util.Hashtable;
 
 import mef.basics.Event;
@@ -25,6 +25,7 @@ public class ResponsePropertyExtract {
 			Event S = listaDeEventos.get(i+1);
 			Property prop = new Property();
 			prop.setRepresentation("[]("+P.getName()+" -> <>"+S.getName()+")");
+			prop.setMeaning(S.getName()+" responds to "+P.getName());
 			if (!propertyHash.containsKey(prop.getRepresentation()))
 				propertyHash.put(prop.getRepresentation(), prop);
 			//System.out.println(prop.getRepresentation());
@@ -32,8 +33,11 @@ public class ResponsePropertyExtract {
 	}
 	
 	public void printAllResponseProperties() {
-		Enumeration<String> allRep = propertyHash.keys();
-		while(allRep.hasMoreElements())
-			System.out.println(allRep.nextElement());
+		Collection<Property> allResp = propertyHash.values();
+		for (Property it : allResp) {
+			System.out.println(it.getMeaning()+":");
+			System.out.println(it.getRepresentation());
+		}
+		System.out.println("TOTAL DE PROPRIEDADES: "+allResp.size());
 	}
 }

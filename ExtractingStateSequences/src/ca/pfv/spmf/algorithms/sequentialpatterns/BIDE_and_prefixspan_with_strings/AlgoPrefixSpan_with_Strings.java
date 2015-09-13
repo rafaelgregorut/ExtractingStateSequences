@@ -420,6 +420,11 @@ public class AlgoPrefixSpan_with_Strings{
 		r.append("===================================================\n");
 		System.out.println(r.toString());
 	}
+	
+	/******EU QUE FIZ!!!!!*************/
+	public int getPatternCount() {
+		return patternCount;
+	}
 
 	public String getFileContent() {
 		return fileContent;

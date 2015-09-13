@@ -1,0 +1,105 @@
+RESULTADO DA EXTRACAO PARA O ALL-SIMPLE-PATHS COM 80%
+
+Padroes presentes em pelo menos 0.8% dos casos de teste
+==============================================
+processOderID/null -1  #SUP: 65
+processOderID/null -1 processQuantidade/null -1  #SUP: 62
+processOderID/null -1 processQuantidade/null -1 getNextHeaderFile/null -1  #SUP: 54
+processOderID/null -1 processQuantidade/null -1 getNextMaterialFile/null -1  #SUP: 62
+processOderID/null -1 processCustomerNumber/null -1  #SUP: 65
+processOderID/null -1 processCustomerNumber/null -1 processQuantidade/null -1  #SUP: 54
+processOderID/null -1 processCustomerNumber/null -1 processQuantidade/null -1 getNextMaterialFile/null -1  #SUP: 54
+processOderID/null -1 processCustomerNumber/null -1 getNextHeaderFile/null -1  #SUP: 65
+processOderID/null -1 processCustomerNumber/null -1 getNextMaterialFile/null -1  #SUP: 61
+processOderID/null -1 processMaterialNumber/null -1  #SUP: 56
+processOderID/null -1 processMaterialNumber/null -1 processQuantidade/null -1  #SUP: 56
+processOderID/null -1 processMaterialNumber/null -1 processQuantidade/null -1 getNextMaterialFile/null -1  #SUP: 56
+processOderID/null -1 processMaterialNumber/null -1 getNextHeaderFile/null -1  #SUP: 54
+processOderID/null -1 processMaterialNumber/null -1 getNextMaterialFile/null -1  #SUP: 56
+processOderID/null -1 getNextHeaderFile/null -1  #SUP: 65
+processOderID/null -1 getNextMaterialFile/null -1  #SUP: 64
+processQuantidade/null -1  #SUP: 65
+processQuantidade/null -1 getNextHeaderFile/null -1  #SUP: 56
+processQuantidade/null -1 getNextMaterialFile/null -1  #SUP: 65
+processCustomerNumber/null -1  #SUP: 65
+processCustomerNumber/null -1 processQuantidade/null -1  #SUP: 54
+processCustomerNumber/null -1 processQuantidade/null -1 getNextMaterialFile/null -1  #SUP: 54
+processCustomerNumber/null -1 getNextHeaderFile/null -1  #SUP: 65
+processCustomerNumber/null -1 getNextMaterialFile/null -1  #SUP: 61
+getNextHeaderFile/null -1  #SUP: 65
+getNextMaterialFile/null -1  #SUP: 65
+processMaterialNumber/null -1  #SUP: 65
+processMaterialNumber/null -1 processQuantidade/null -1  #SUP: 65
+processMaterialNumber/null -1 processQuantidade/null -1 getNextHeaderFile/null -1  #SUP: 56
+processMaterialNumber/null -1 processQuantidade/null -1 getNextMaterialFile/null -1  #SUP: 65
+processMaterialNumber/null -1 processCustomerNumber/null -1  #SUP: 54
+processMaterialNumber/null -1 processCustomerNumber/null -1 getNextHeaderFile/null -1  #SUP: 54
+processMaterialNumber/null -1 getNextHeaderFile/null -1  #SUP: 62
+processMaterialNumber/null -1 getNextMaterialFile/null -1  #SUP: 65
+processMaterialOrderID/null -1  #SUP: 65
+processMaterialOrderID/null -1 processQuantidade/null -1  #SUP: 65
+processMaterialOrderID/null -1 processQuantidade/null -1 getNextHeaderFile/null -1  #SUP: 56
+processMaterialOrderID/null -1 processQuantidade/null -1 getNextMaterialFile/null -1  #SUP: 65
+processMaterialOrderID/null -1 processCustomerNumber/null -1  #SUP: 61
+processMaterialOrderID/null -1 processCustomerNumber/null -1 getNextHeaderFile/null -1  #SUP: 61
+processMaterialOrderID/null -1 processCustomerNumber/null -1 getNextMaterialFile/null -1  #SUP: 58
+processMaterialOrderID/null -1 processMaterialNumber/null -1  #SUP: 65
+processMaterialOrderID/null -1 processMaterialNumber/null -1 processQuantidade/null -1  #SUP: 65
+processMaterialOrderID/null -1 processMaterialNumber/null -1 processQuantidade/null -1 getNextHeaderFile/null -1  #SUP: 56
+processMaterialOrderID/null -1 processMaterialNumber/null -1 processQuantidade/null -1 getNextMaterialFile/null -1  #SUP: 65
+processMaterialOrderID/null -1 processMaterialNumber/null -1 processCustomerNumber/null -1  #SUP: 54
+processMaterialOrderID/null -1 processMaterialNumber/null -1 processCustomerNumber/null -1 getNextHeaderFile/null -1  #SUP: 54
+processMaterialOrderID/null -1 processMaterialNumber/null -1 getNextHeaderFile/null -1  #SUP: 62
+processMaterialOrderID/null -1 processMaterialNumber/null -1 getNextMaterialFile/null -1  #SUP: 65
+processMaterialOrderID/null -1 getNextHeaderFile/null -1  #SUP: 64
+processMaterialOrderID/null -1 getNextMaterialFile/null -1  #SUP: 65
+TOTAL DE PADROES: 51
+==============================================
+Todas as propriedades de resposta criadas:
+==============================================
+getNextMaterialFile responds to processQuantidade:
+[](processQuantidade -> <>getNextMaterialFile)
+processQuantidade responds to processMaterialNumber:
+[](processMaterialNumber -> <>processQuantidade)
+processCustomerNumber responds to processMaterialNumber:
+[](processMaterialNumber -> <>processCustomerNumber)
+processQuantidade responds to processCustomerNumber:
+[](processCustomerNumber -> <>processQuantidade)
+processCustomerNumber responds to processMaterialOrderID:
+[](processMaterialOrderID -> <>processCustomerNumber)
+getNextHeaderFile responds to processMaterialNumber:
+[](processMaterialNumber -> <>getNextHeaderFile)
+processCustomerNumber responds to processOderID:
+[](processOderID -> <>processCustomerNumber)
+processMaterialNumber responds to processMaterialOrderID:
+[](processMaterialOrderID -> <>processMaterialNumber)
+getNextMaterialFile responds to processCustomerNumber:
+[](processCustomerNumber -> <>getNextMaterialFile)
+processMaterialNumber responds to processOderID:
+[](processOderID -> <>processMaterialNumber)
+getNextMaterialFile responds to processOderID:
+[](processOderID -> <>getNextMaterialFile)
+getNextHeaderFile responds to processMaterialOrderID:
+[](processMaterialOrderID -> <>getNextHeaderFile)
+getNextHeaderFile responds to processOderID:
+[](processOderID -> <>getNextHeaderFile)
+getNextMaterialFile responds to processMaterialNumber:
+[](processMaterialNumber -> <>getNextMaterialFile)
+getNextHeaderFile responds to processCustomerNumber:
+[](processCustomerNumber -> <>getNextHeaderFile)
+getNextMaterialFile responds to processMaterialOrderID:
+[](processMaterialOrderID -> <>getNextMaterialFile)
+processQuantidade responds to processMaterialOrderID:
+[](processMaterialOrderID -> <>processQuantidade)
+getNextHeaderFile responds to processQuantidade:
+[](processQuantidade -> <>getNextHeaderFile)
+processQuantidade responds to processOderID:
+[](processOderID -> <>processQuantidade)
+TOTAL DE PROPRIEDADES: 19
+==============================================
+Padroes presentes em todos os casos de teste
+==============================================
+==============================================
+Todas as propriedades universais criadas:
+==============================================
+==============================================

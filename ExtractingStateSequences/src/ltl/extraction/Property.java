@@ -6,12 +6,11 @@ public class Property {
 		
 	protected String representation;
 	
-	public final static String EXISTENCE = "EXISTENCE";
-
-	public final static String PRECEDENCE = "PRECEDENCE";
-
+	protected String meaning;
+	
 	Property() {
 		representation = null;
+		meaning = null;
 	}
 	
 
@@ -29,5 +28,13 @@ public class Property {
 	
 	public void setRepresentation(String prop) {
 		this.representation = prop;
+	}
+	
+	public void setMeaning(String mean) {
+		this.meaning = mean;
+	}
+	
+	public String getMeaning() {
+		return this.meaning;
 	}
 }

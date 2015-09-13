@@ -1,0 +1,18 @@
+RESULTADO DA EXTRACAO PARA O ALL-TRANSITIONS COM 80%
+
+Padroes presentes em pelo menos 0.8% dos casos de teste
+==============================================
+processOderID/null -1  #SUP: 20
+processMaterialOrderID/null -1  #SUP: 21
+TOTAL DE PADROES: 2
+==============================================
+Todas as propriedades de resposta criadas:
+==============================================
+TOTAL DE PROPRIEDADES: 0
+==============================================
+Padroes presentes em todos os casos de teste
+==============================================
+==============================================
+Todas as propriedades universais criadas:
+==============================================
+==============================================
