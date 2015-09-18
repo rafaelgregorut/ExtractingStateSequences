@@ -4,7 +4,7 @@
 \contentsline {section}{\numberline {2.1}Statecharts}{3}{section.2.1}
 \contentsline {section}{\numberline {2.2}Testes e crit\'erios de teste}{5}{section.2.2}
 \contentsline {section}{\numberline {2.3}Minera\c c\~ao de Padr\~oes em Sequ\^encias}{5}{section.2.3}
-\contentsline {section}{\numberline {2.4}Spefication patterns}{5}{section.2.4}
+\contentsline {section}{\numberline {2.4}Spefication patterns}{6}{section.2.4}
 \contentsline {section}{\numberline {2.5}Verifica\c c\~ao formal}{6}{section.2.5}
 \contentsline {chapter}{\numberline {3}Tecnologias}{7}{chapter.3}
 \contentsline {section}{\numberline {3.1}Ferramenta GTSC}{7}{section.3.1}
