@@ -23,7 +23,7 @@
  month    = May
 }
 
-@Article{MenaChalco08,
+@Article{pei04:prefixSpan,
  author   = {Jian Pei and Behzad Mortazavi-Asl and Umeshwar Dayal},
  title    = {Mining Sequential Patterns by Pattern-Growth: The PrefixSpan Approach},
  journal  = {IEEE Transactions on Knowledge and Data Engineering},
@@ -31,6 +31,13 @@
  year     = {2004},
 }
 
+@Book{Myers:12,
+ author   = {Glenford J. Myers and Tom Badgett and Corey Sandler},
+ title    = {The art of software testing},
+ edition  = {3º},
+ publisher= {John Wiley \& Sons, Inc},
+ year     = {2012},
+}
 %%---------------------------------------------------------------------------------%%
 @Book{eco:09,
  author   = {Umberto Eco},

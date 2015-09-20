@@ -2,7 +2,10 @@
 \backcite {waz:09}{{1}{1}{chapter.1}}
 \backcite {tufte01:visualDisplay}{{1}{1}{chapter.1}}
 \backcite {harel87:semantics_statecharts}{{3}{2.1}{section.2.1}}
-\backcite {pei04:prefixSpan}{{5}{2.3}{section.2.3}}
-\backcite {pei04:prefixSpan}{{5}{2.3}{section.2.3}}
-\backcite {dwyer99:specpatt_survey}{{6}{2.4}{section.2.4}}
-\backcite {dwyer98:specpatt}{{6}{2.4}{section.2.4}}
+\backcite {Myers:12}{{5}{2.2}{section.2.2}}
+\backcite {Myers:12}{{5}{2.2}{section.2.2}}
+\backcite {introSoftTest}{{5}{2.2}{section.2.2}}
+\backcite {pei04:prefixSpan}{{6}{2.3}{section.2.3}}
+\backcite {pei04:prefixSpan}{{7}{2.3}{section.2.3}}
+\backcite {dwyer99:specpatt_survey}{{7}{2.4}{section.2.4}}
+\backcite {dwyer98:specpatt}{{7}{2.4}{section.2.4}}

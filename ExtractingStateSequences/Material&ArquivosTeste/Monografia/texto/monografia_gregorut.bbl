@@ -1,4 +1,4 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{9}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -25,6 +25,21 @@ David Harel, Amir Pnueli, Jeanette Schmidt e Rivi Sherman.
 \newblock On the formal semantics of statecharts.
 \newblock Em \emph{Proceedings of Symposium on Logic in Computer Science},
   p\'{a}ginas 55--64.   {\scriptsize Citado na p\'{a}g.}
+
+\bibitem[Maldonado {\rm{\em et~al.}}(2004)Maldonado, Barbosa, Vincenzi,
+  Delamaro, do~Roccio Senger~de Souza, e Jino]{introSoftTest}{\bf Maldonado
+  {\rm{\em et~al.}}(2004)}
+José~Carlos Maldonado, Ellen~Franciane Barbosa, Auri M.~R. Vincenzi,
+  Márcio~Eduardo Delamaro, Simone do~Roccio Senger~de Souza e Mario Jino.
+\newblock Introdução ao teste de software, 2004.   {\scriptsize Citado na
+  p\'{a}g.}
+
+\bibitem[Myers {\rm{\em et~al.}}(2012)Myers, Badgett, e Sandler]{Myers:12}{\bf
+  Myers {\rm{\em et~al.}}(2012)}
+Glenford~J. Myers, Tom Badgett e Corey Sandler.
+\newblock \emph{The art of software testing}.
+\newblock John Wiley \& Sons, Inc, 3º edi\c{c}\~{a}o.   {\scriptsize Citado na
+  p\'{a}g.}
 
 \bibitem[Pei {\rm{\em et~al.}}(2004)Pei, Mortazavi-Asl, e
   Dayal]{pei04:prefixSpan}{\bf Pei {\rm{\em et~al.}}(2004)}
