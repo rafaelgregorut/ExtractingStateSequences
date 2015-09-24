@@ -1,0 +1,9 @@
+***REQUISITOS DE TESTE - All Simple Paths
+1 - (usuarioDeslogado),(usuarioLogado),(linhaSelecionada),(autenticacaodeFuncionario),(usuarioFuncionario),(carrinhoVazio),(usuarioDeslogado),.
+2 - (usuarioDeslogado),(usuarioLogado),(linhaSelecionada),(autenticacaodeFuncionario),(usuarioregular),(autenticacaodeContrato),(usuariosemFidelizacao),(checkout),(usuarioDeslogado),.
+3 - (usuarioDeslogado),(usuarioLogado),(linhaSelecionada),(autenticacaodeFuncionario),(usuarioregular),(autenticacaodeContrato),(usuariocomFidelizacao),(carrinhoVazio),(usuarioDeslogado),.
+
+***SEQUÊNCIAS DE TESTE
+1 - fazerLogin/null,buscaLinhas/null,buscaFuncionario/null,setUsuarioFuncionario/null,esvaziaCarrinho/null,dummy/null,.
+2 - fazerLogin/null,buscaLinhas/null,buscaFuncionario/null,setUsuarioRegular/null,buscaContrato/null,setUsuarioSemFidelizacao/null,continuaCheckout/null,dummy/null,.
+3 - fazerLogin/null,buscaLinhas/null,buscaFuncionario/null,setUsuarioRegular/null,buscaContrato/null,setUsuarioComFidelizacao/null,esvaziaCarrinho/null,dummy/null,.

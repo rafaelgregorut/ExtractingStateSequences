@@ -32,6 +32,21 @@ public class ResponsePropertyExtract {
 		}
 	}
 	
+	public void extractSpecificReponseProperties(EventList listaDeEventos, String eventSpec) {
+		for (int i = 0; i < listaDeEventos.size()-1; i++) {
+			Event P = listaDeEventos.get(i);
+			Event S = listaDeEventos.get(i+1);
+			if (P.getName().equals(eventSpec) || S.getName().equals(eventSpec)) {
+				Property prop = new Property();
+				prop.setRepresentation("[]("+P.getName()+" -> <>"+S.getName()+")");
+				prop.setMeaning(S.getName()+" responds to "+P.getName());
+				if (!propertyHash.containsKey(prop.getRepresentation()))
+					propertyHash.put(prop.getRepresentation(), prop);
+				//System.out.println(prop.getRepresentation());
+			}
+		}
+	}
+	
 	public void printAllResponseProperties() {
 		Collection<Property> allResp = propertyHash.values();
 		for (Property it : allResp) {

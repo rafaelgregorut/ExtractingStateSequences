@@ -44,15 +44,18 @@ public class SequenceDatabase {
 	 * Method to load a sequence database from a text file in SPMF format.
 	 * @param path  the input file path.
 	 * @throws IOException exception if error while reading the file.
+	 * MODIFIFQUEI PARA RETORNAR O DATABASE EM STRING
 	 */
-	public void loadFile(String path) throws IOException {
+	public String loadFile(String path) throws IOException {
 		String thisLine; // variable to read each line.
+		String databaseString = "";
 		BufferedReader myInput = null;
 		try {
 			FileInputStream fin = new FileInputStream(new File(path));
 			myInput = new BufferedReader(new InputStreamReader(fin));
 			// for each line until the end of the file
 			while ((thisLine = myInput.readLine()) != null) {
+				databaseString += thisLine+"\n";
 				// if the line is not a comment, is not empty or is not other
 				// kind of metadata
 				if (thisLine.isEmpty() == false &&
@@ -67,6 +70,24 @@ public class SequenceDatabase {
 		} finally {
 			if (myInput != null) {
 				myInput.close();
+			}
+		}
+		return databaseString;
+	}
+	
+	/*
+	 * CRIEI PARA CARREGAR O DATABASE A PARTIR DE UMA STRING
+	 * SO CARREGA AS LINHAS QUE CONTEM A STRING PASSADA COMO ARGUMENTO
+	 */
+	
+	public void loadFromStringWithSubstring(String db, String sub) {
+		String lines[] = db.split("\n");
+		for (String thisLine : lines) {
+			if (thisLine.isEmpty() == false && thisLine.contains(sub) &&
+					thisLine.charAt(0) != '#' && thisLine.charAt(0) != '%'
+					&& thisLine.charAt(0) != '@') {
+				// split this line according to spaces and process the line
+				addSequence(thisLine.split(" "));
 			}
 		}
 	}

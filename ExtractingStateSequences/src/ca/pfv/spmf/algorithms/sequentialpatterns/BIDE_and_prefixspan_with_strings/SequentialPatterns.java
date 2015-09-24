@@ -19,7 +19,7 @@ package ca.pfv.spmf.algorithms.sequentialpatterns.BIDE_and_prefixspan_with_strin
 import java.util.ArrayList;
 import java.util.List;
 
-import ca.pfv.spmf.patterns.itemset_list_integers_without_support.Itemset;
+//import ca.pfv.spmf.patterns.itemset_list_integers_without_support.Itemset;
 
 /**
  * This class represents a set of sequential patterns found either by the PrefixSpan or BIDE+ algorithms,
@@ -34,7 +34,7 @@ public class SequentialPatterns {
 	/** A list of list is used to stored the sequential patterns.
 	// At position i, a list of sequential patterns contains
 	// all sequential patterns of size i. */
-	private final List<List<SequentialPattern>> levels = new ArrayList<List<SequentialPattern>>();  // itemset classé par taille
+	private final List<List<SequentialPattern>> levels = new ArrayList<List<SequentialPattern>>();  // itemset classï¿½ par taille
 	/** the total number of sequential patterns **/
 	private int sequenceCount=0;
 	
@@ -47,7 +47,7 @@ public class SequentialPatterns {
 	 */
 	public SequentialPatterns(String name){
 		this.name = name;
-		levels.add(new ArrayList<SequentialPattern>()); // on créé le niveau zéro vide par défaut.
+		levels.add(new ArrayList<SequentialPattern>()); // on crï¿½ï¿½ le niveau zï¿½ro vide par dï¿½faut.
 	}
 	
 	/**

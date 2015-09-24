@@ -30,23 +30,23 @@ TOTAL DE PADROES: 24
 ==============================================
 Todas as propriedades de resposta criadas:
 ==============================================
-getNextHeaderFile responds to processCustomerNumber:
+getNextHeaderFile responds to processCustomerNumber: (2)
 [](processCustomerNumber -> <>getNextHeaderFile)
 getNextHeaderFile responds to processOderID:
 [](processOderID -> <>getNextHeaderFile)
-processMaterialNumber responds to processMaterialOrderID:
+processMaterialNumber responds to processMaterialOrderID: (4)
 [](processMaterialOrderID -> <>processMaterialNumber)
-getNextMaterialFile responds to processMaterialNumber:
+getNextMaterialFile responds to processMaterialNumber: 
 [](processMaterialNumber -> <>getNextMaterialFile)
-processQuantidade responds to processMaterialOrderID:
+processQuantidade responds to processMaterialOrderID: (5)
 [](processMaterialOrderID -> <>processQuantidade)
-getNextMaterialFile responds to processMaterialOrderID:
+getNextMaterialFile responds to processMaterialOrderID: 
 [](processMaterialOrderID -> <>getNextMaterialFile)
-getNextHeaderFile responds to processMaterialOrderID:
+getNextHeaderFile responds to processMaterialOrderID: 
 [](processMaterialOrderID -> <>getNextHeaderFile)
-processCustomerNumber responds to processOderID:
+processCustomerNumber responds to processOderID: (1)
 [](processOderID -> <>processCustomerNumber)
-getNextMaterialFile responds to processQuantidade:
+getNextMaterialFile responds to processQuantidade: (6)
 [](processQuantidade -> <>getNextMaterialFile)
 getNextMaterialFile responds to processOderID:
 [](processOderID -> <>getNextMaterialFile)

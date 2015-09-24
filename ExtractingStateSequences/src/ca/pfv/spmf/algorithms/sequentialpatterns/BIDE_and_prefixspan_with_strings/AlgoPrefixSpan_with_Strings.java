@@ -429,5 +429,15 @@ public class AlgoPrefixSpan_with_Strings{
 	public String getFileContent() {
 		return fileContent;
 	}
+	
+	public String getFileContent(String sub) {
+		String lines[] = fileContent.split("\n");
+		String filteredContent = "";
+		for (String line : lines) {
+			if(line.contains(sub))
+				filteredContent += line+"\n";
+		}
+		return filteredContent;
+	}
 
 }

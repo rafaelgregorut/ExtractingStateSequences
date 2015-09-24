@@ -4,12 +4,12 @@ import io.handler.SequencePatternsInputHandler;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
 
 import ltl.extraction.ResponsePropertyExtract;
 import ltl.extraction.UniversalPropertyExtract;
 import mef.basics.EventList;
 import ca.pfv.spmf.algorithms.sequentialpatterns.BIDE_and_prefixspan_with_strings.AlgoPrefixSpan_with_Strings;
-import ca.pfv.spmf.algorithms.sequentialpatterns.BIDE_and_prefixspan_with_strings.SequentialPatterns;
 import ca.pfv.spmf.input.sequence_database_list_strings.SequenceDatabase;
 
 public class Main {
@@ -19,7 +19,8 @@ public class Main {
 		double minSupRelative = Double.parseDouble(args[1]);
 		
 		SequenceDatabase sequenceDatabase = new SequenceDatabase(); 
-		sequenceDatabase.loadFile(filePath);
+		String databaseInString = sequenceDatabase.loadFile(filePath);
+		//System.out.println("AQUI: "+databaseInString);		
 		
 		AlgoPrefixSpan_with_Strings algo = new AlgoPrefixSpan_with_Strings(); 
 				
@@ -69,6 +70,49 @@ public class Main {
 		System.out.println("==============================================");
 		uniExtract.printAllUniversalProperties();
 		System.out.println("==============================================");
-	}
+		
+		/*
+		 * Usuario pode passar eventos especificos para gerar as propriedades de resposta
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Digite evento para o qual deseja propriedades de resposta:");
+		while (sc.hasNext()) {
+			String eventSpec = sc.next();
+			if(eventSpec.equals("Q"))
+				break;
+			System.out.println("evento eh "+eventSpec);
+			
+			SequenceDatabase databaseSpecific = new SequenceDatabase();
+			databaseSpecific.loadFromStringWithSubstring(databaseInString, eventSpec);
+			
+			databaseSpecific.printDatabase();
+			
+			AlgoPrefixSpan_with_Strings algoSpec = new AlgoPrefixSpan_with_Strings();
+			algoSpec.runAlgorithm(databaseSpecific, null, 0);
+			
+			String sequencePatt_Spec = algoSpec.getFileContent(eventSpec);
+			System.out.println("Padroes presentes em nas sequencias que contem "+eventSpec);
+			System.out.println("==============================================");
+			System.out.print(sequencePatt_Spec);
+			//System.out.println("TOTAL DE PADROES: "+algoSpec.getPatternCount());
+			System.out.println("==============================================");
 
+			sequencePatt_Spec = seqPattIn.parseSequencePatternsString(sequencePatt_Spec);
+			
+			ArrayList<EventList> sequencias_spec = seqPattIn.seqPattStringsToManyEventLists(sequencePatt_Spec);
+			ResponsePropertyExtract respSpecExtract = new ResponsePropertyExtract();
+			
+			for (Iterator<EventList> it = sequencias_spec.iterator(); it.hasNext(); ){
+				respSpecExtract.extractSpecificReponseProperties(it.next(),eventSpec);
+			}
+			System.out.println("Todas as propriedades de resposta relacionadas ao evento "+eventSpec+":");
+			System.out.println("==============================================");
+			respSpecExtract.printAllResponseProperties();
+			System.out.println("==============================================");
+			
+		}
+		sc.close();
+	}
 }

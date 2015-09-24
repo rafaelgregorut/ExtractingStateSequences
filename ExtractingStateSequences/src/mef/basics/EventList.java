@@ -42,6 +42,10 @@ public class EventList {
 		this.type = type;
 	}
 	
+	public boolean contains(Event e) {
+		return list.contains(e);
+	}
+	
 	public void print() {
 		int i = 0;
 		for (i = 0; i < this.list.size() - 1; i++)
