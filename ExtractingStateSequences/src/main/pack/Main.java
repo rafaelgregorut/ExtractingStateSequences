@@ -115,22 +115,21 @@ public class Main {
 			String eventSpec = sc.next();
 			if(eventSpec.equals("Q"))
 				break;
-			System.out.println("evento eh "+eventSpec);
 			
 			SequenceDatabase databaseSpecific = new SequenceDatabase();
 			databaseSpecific.loadFromStringWithSubstring(databaseInString, eventSpec);
 			
-			databaseSpecific.printDatabase();
+			//databaseSpecific.printDatabase();
 			
 			AlgoPrefixSpan_with_Strings algoSpec = new AlgoPrefixSpan_with_Strings();
 			algoSpec.runAlgorithm(databaseSpecific, null, 0);
 			
 			String sequencePatt_Spec = algoSpec.getFileContent(eventSpec);
-			System.out.println("Padroes presentes em nas sequencias que contem "+eventSpec);
+			/*System.out.println("Padroes presentes em nas sequencias que contem "+eventSpec);
 			System.out.println("==============================================");
 			System.out.print(sequencePatt_Spec);
 			//System.out.println("TOTAL DE PADROES: "+algoSpec.getPatternCount());
-			System.out.println("==============================================");
+			System.out.println("==============================================");*/
 
 			sequencePatt_Spec = seqPattIn.parseSequencePatternsString(sequencePatt_Spec);
 			
@@ -145,6 +144,17 @@ public class Main {
 			respSpecExtract.printAllResponseProperties(eventSpec);
 			System.out.println("==============================================");
 			
+			/*
+			 * Combinacao das propriedades de resposta
+			 */
+			System.out.println("Propriedades de resposta combinadas:");
+			System.out.println("==============================================");
+			respSpecExtract.combinePropertiesSpecific(eventSpec);
+			respSpecExtract.printCombinedProperties();
+			System.out.println("==============================================");
+			
+			System.out.println("Digite evento para o qual deseja propriedades de resposta:");
+
 		}
 		sc.close();
 	}

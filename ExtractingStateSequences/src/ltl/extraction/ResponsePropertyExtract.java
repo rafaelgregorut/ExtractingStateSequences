@@ -123,10 +123,41 @@ public class ResponsePropertyExtract {
 	
 	public void printCombinedProperties() {
 		Enumeration<String> firstEvents = combinedProps.keys();
+		Matcher matcher;
 
 		while(firstEvents.hasMoreElements()) {
 			String next = firstEvents.nextElement();
 			System.out.println("[]("+next+" -> <>("+combinedProps.get(next)+"))");
 		}
+	}
+	
+	public void combinePropertiesSpecific(String e) {
+		combineProperties();
+		Enumeration<String> propReps = propertyHash.keys();
+		Pattern pattern1 = Pattern.compile("\\[\\]\\((.*?) \\-\\>");
+		Matcher matcher;
+		String disjunctionFirst = "";
+		
+		while (propReps.hasMoreElements()) {
+			String next = propReps.nextElement();
+			
+			matcher = pattern1.matcher(next);
+			if (matcher.find()) {
+				String disjEvent = matcher.group(1);
+				if (!disjEvent.equals(e)) {
+					combinedProps.remove(disjEvent);
+					if (disjunctionFirst == "") {
+						disjunctionFirst = "("+disjEvent;
+					} else {
+						disjunctionFirst += " v "+disjEvent;
+					}
+				}
+			}
+		}
+		
+		if (disjunctionFirst != "")
+			disjunctionFirst += ")";
+		
+		combinedProps.put(disjunctionFirst, e);
 	}
 }
