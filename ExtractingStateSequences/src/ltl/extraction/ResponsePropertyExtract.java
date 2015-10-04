@@ -1,7 +1,14 @@
 package ltl.extraction;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Enumeration;
 import java.util.Hashtable;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import mef.basics.Event;
 import mef.basics.EventList;
@@ -10,8 +17,13 @@ public class ResponsePropertyExtract {
 
 	private Hashtable<String,Property> propertyHash;
 	
+	//chave -> primeiro evento
+	//valor -> eventos de resposta
+	private Hashtable<String, String> combinedProps;
+	
 	public ResponsePropertyExtract() {
 		propertyHash = new Hashtable<String,Property>();
+		combinedProps = new Hashtable<String, String>();
 	}
 	
 	//S responds to P
@@ -42,6 +54,11 @@ public class ResponsePropertyExtract {
 				prop.setMeaning(S.getName()+" responds to "+P.getName());
 				if (!propertyHash.containsKey(prop.getRepresentation()))
 					propertyHash.put(prop.getRepresentation(), prop);
+				else {
+					Property needUpdate = propertyHash.remove(prop.getRepresentation());
+					prop.freq += needUpdate.freq;
+					propertyHash.put(prop.getRepresentation(), prop);
+				}
 				//System.out.println(prop.getRepresentation());
 			}
 		}
@@ -49,10 +66,67 @@ public class ResponsePropertyExtract {
 	
 	public void printAllResponseProperties() {
 		Collection<Property> allResp = propertyHash.values();
+		
 		for (Property it : allResp) {
 			System.out.println(it.getMeaning()+":");
 			System.out.println(it.getRepresentation());
 		}
 		System.out.println("TOTAL DE PROPRIEDADES: "+allResp.size());
+	}
+	
+	public void printAllResponseProperties(String e) {
+		List<Property> allResp = new ArrayList<Property>(propertyHash.values());
+		
+		Comparator<Property> comparator = new Comparator<Property>() {
+		    public int compare(Property c1, Property c2) {
+		        return c2.freq - c1.freq;
+		    }
+		};
+
+		Collections.sort(allResp, comparator);
+		
+		for (Property it : allResp) {
+			System.out.println(it.getMeaning()+":");
+			System.out.println(it.getRepresentation()+" #"+it.freq);
+		}
+		System.out.println("TOTAL DE PROPRIEDADES: "+allResp.size());
+	}
+	
+	public void combineProperties() {
+		
+		Enumeration<String> propReps = propertyHash.keys();
+		Pattern pattern1 = Pattern.compile("\\[\\]\\((.*?) \\-\\>");
+		Pattern pattern2 = Pattern.compile("\\<\\>(.*?)\\)");
+		Matcher matcher;
+		
+		while (propReps.hasMoreElements()) {
+			String prop = propReps.nextElement();
+			//System.out.println(prop);
+			matcher = pattern1.matcher(prop);
+			if (matcher.find()) {
+				String firstEvent = matcher.group(1);
+				//System.out.println(firstEvent);
+				matcher = pattern2.matcher(prop);
+				if (matcher.find()) {
+					String secEvent = matcher.group(1);
+					if (!combinedProps.containsKey(firstEvent)) {
+						combinedProps.put(firstEvent, secEvent);
+					} else {
+						String temp = combinedProps.remove(firstEvent);
+						temp += " ^ "+secEvent;
+						combinedProps.put(firstEvent, temp);
+					}
+				}
+			}
+		}
+	}
+	
+	public void printCombinedProperties() {
+		Enumeration<String> firstEvents = combinedProps.keys();
+
+		while(firstEvents.hasMoreElements()) {
+			String next = firstEvents.nextElement();
+			System.out.println("[]("+next+" -> <>("+combinedProps.get(next)+"))");
+		}
 	}
 }

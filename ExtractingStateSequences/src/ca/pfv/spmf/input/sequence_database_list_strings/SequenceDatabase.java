@@ -39,6 +39,16 @@ public class SequenceDatabase {
 	
 	// variable that contains the sequences of this database
 	private final List<Sequence> sequences = new ArrayList<Sequence>();
+	
+	private final Set<Integer> usedSequences = new HashSet<Integer>();
+	
+	public Set<Integer> getUsedSequences() {
+		return usedSequences;
+	}
+	
+	public void addUsedSequence(Integer id) {
+		usedSequences.add(id);
+	}
 
 	/**
 	 * Method to load a sequence database from a text file in SPMF format.

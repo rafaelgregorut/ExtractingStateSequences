@@ -75,6 +75,8 @@ public class AlgoPrefixSpan_with_Strings{
 	
 	private String fileContent;
 	
+	private SequenceDatabase db;
+	
 	/**
 	 * Default constructor
 	 */
@@ -92,6 +94,8 @@ public class AlgoPrefixSpan_with_Strings{
 	 * @throws IOException  exception if error while writing the file
 	 */
 	public SequentialPatterns runAlgorithm(SequenceDatabase database, String outputFilePath, int minsup) throws IOException {
+		db = database;
+		
 		// initialize variables for statistics
 		patternCount =0;
 		MemoryLogger.getInstance().reset(); // to check the memory usage
@@ -198,13 +202,15 @@ public class AlgoPrefixSpan_with_Strings{
 		}
 	//
 	//		//  print the list of Pattern IDs that contains this pattern.
-	//		if(prefix.getSequencesID() != null){
-	//			r.append("SID: ");
-	//			for(Integer id : prefix.getSequencesID()){
-	//				r.append(id);
-	//				r.append(' ');
-	//			}
-	//		}
+			if(prefix.getSequencesID() != null){
+				//r.append("{SID: ");
+				for(Integer id : prefix.getSequencesID()){
+					//r.append(id);
+					db.addUsedSequence(id);
+					//r.append(' ');
+				}
+				//r.append("}");
+			}
 		r.append(" #SUP: ");
 		r.append(prefix.getSequencesID().size());
 			

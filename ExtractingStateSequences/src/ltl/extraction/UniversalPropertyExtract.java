@@ -2,6 +2,8 @@ package ltl.extraction;
 
 import java.util.Enumeration;
 import java.util.Hashtable;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import mef.basics.Event;
 import mef.basics.EventList;
@@ -10,10 +12,15 @@ public class UniversalPropertyExtract {
 	
 	private Hashtable<String,Property> propertyHash;
 	
+	String combinedProps;
+
+	
 	public UniversalPropertyExtract() {
 		propertyHash = new Hashtable<String,Property>();
+		combinedProps = "";
 	}
 
+	
 	public void extractUniversalProperties(EventList listaDeEventos) {
 		//listaDeEventos.print();
 
@@ -33,5 +40,34 @@ public class UniversalPropertyExtract {
 			System.out.println(allRep.nextElement());
 	}
 
+	public void combineProperties() {
+		Enumeration<String> propReps = propertyHash.keys();
+		Pattern pattern = Pattern.compile("\\[\\]\\((.*?)\\)");
+		Matcher matcher;
+		
+		if (propReps.hasMoreElements()) {
+			String prop = propReps.nextElement();
+			matcher = pattern.matcher(prop);
+			if (matcher.find()) {
+				combinedProps = "[]("+matcher.group(1);
+			}
+		}
 
+		
+		while (propReps.hasMoreElements()) {
+			String prop = propReps.nextElement();
+			//System.out.println(prop);
+			matcher = pattern.matcher(prop);
+			if (matcher.find()) {
+				combinedProps += " ^ "+matcher.group(1);
+			}
+		}
+		
+		if (combinedProps != "")
+			combinedProps += ")";
+	}
+	
+	public void printCombinedProperties() {
+		System.out.println(combinedProps);
+	}
 }

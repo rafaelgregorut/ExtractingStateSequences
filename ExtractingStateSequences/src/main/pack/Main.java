@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Set;
 
 import ltl.extraction.ResponsePropertyExtract;
 import ltl.extraction.UniversalPropertyExtract;
@@ -28,11 +29,11 @@ public class Main {
 		
 		algo.runAlgorithm(sequenceDatabase, null, absoluteMinSup);   
 		String sequencePatt = algo.getFileContent();
-		System.out.println("Padroes presentes em pelo menos "+minSupRelative+"% dos casos de teste");
+		/*System.out.println("Padroes presentes em pelo menos "+minSupRelative+"% dos casos de teste");
 		System.out.println("==============================================");
 		System.out.print(sequencePatt);
 		System.out.println("TOTAL DE PADROES: "+algo.getPatternCount());
-		System.out.println("==============================================");
+		System.out.println("==============================================");*/
 
 		SequencePatternsInputHandler seqPattIn = new SequencePatternsInputHandler();
 		sequencePatt = seqPattIn.parseSequencePatternsString(sequencePatt);
@@ -48,15 +49,24 @@ public class Main {
 		respExtract.printAllResponseProperties();
 		System.out.println("==============================================");
 		
+		/*
+		 * Combinacao das propriedades de resposta
+		 */
+		System.out.println("Propriedades de resposta combinadas:");
+		System.out.println("==============================================");
+		respExtract.combineProperties();
+		respExtract.printCombinedProperties();
+		System.out.println("==============================================");
+		
 		AlgoPrefixSpan_with_Strings algo_uni = new AlgoPrefixSpan_with_Strings(); 
 		
 		algo_uni.runAlgorithm(sequenceDatabase, null, sequenceDatabase.size());
 		String sequencePatt_Universal = algo_uni.getFileContent();
 
-		System.out.println("Padroes presentes em todos os casos de teste");
+		/*System.out.println("Padroes presentes em todos os casos de teste");
 		System.out.println("==============================================");
 		System.out.print(sequencePatt_Universal);
-		System.out.println("==============================================");
+		System.out.println("==============================================");*/
 				
 		sequencePatt_Universal = seqPattIn.parseSequencePatternsString(sequencePatt_Universal);
 		
@@ -70,6 +80,29 @@ public class Main {
 		System.out.println("==============================================");
 		uniExtract.printAllUniversalProperties();
 		System.out.println("==============================================");
+		
+		/*
+		 * Combinacao das propriedades universais
+		 */
+		
+		System.out.println("Propriedades universais combinadas:");
+		System.out.println("==============================================");
+		uniExtract.combineProperties();
+		uniExtract.printCombinedProperties();
+		System.out.println("==============================================");
+		
+		/*
+		 * Aqui preciso mostrar quais sequencias de teste nao foram usados para criacao de propriedades
+		 * */
+		Set<Integer> notUsed = sequenceDatabase.getSequenceIDs();
+		notUsed.removeAll(sequenceDatabase.getUsedSequences());
+		
+		System.out.println("Sequencias de teste nao utilizadas: ");
+		for(Integer i : notUsed) 
+			System.out.print(i+" ");
+		System.out.println("\n==============================================");
+
+		/*Seria interessate mostrar os eventos nao usados tbm...*/
 		
 		/*
 		 * Usuario pode passar eventos especificos para gerar as propriedades de resposta
@@ -109,7 +142,7 @@ public class Main {
 			}
 			System.out.println("Todas as propriedades de resposta relacionadas ao evento "+eventSpec+":");
 			System.out.println("==============================================");
-			respSpecExtract.printAllResponseProperties();
+			respSpecExtract.printAllResponseProperties(eventSpec);
 			System.out.println("==============================================");
 			
 		}

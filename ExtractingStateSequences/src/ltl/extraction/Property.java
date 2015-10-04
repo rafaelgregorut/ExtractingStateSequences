@@ -8,9 +8,16 @@ public class Property {
 	
 	protected String meaning;
 	
+	public int freq;
+	
+	protected final String RESPONSE = "response";
+	
+	protected final String UNIVERSAL = "universal";
+	
 	Property() {
 		representation = null;
 		meaning = null;
+		freq = 1;
 	}
 	
 
