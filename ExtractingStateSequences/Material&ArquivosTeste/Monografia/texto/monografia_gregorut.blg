@@ -2,49 +2,49 @@ This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: monografia_gregorut.aux
 A level-1 auxiliary file: ape-exemplo.aux
-The style file: plainnat-ime.bst
+The style file: plain.bst
 Database file #1: bibliografia.bib
 Warning--string name "june" is undefined
 --line 7 of file bibliografia.bib
-You've used 9 entries,
-            2750 wiz_defined-function locations,
-            653 strings with 6422 characters,
-and the built_in function-call counts, 3642 in all, are:
-= -- 292
-> -- 246
-< -- 4
-+ -- 84
-- -- 75
-* -- 259
-:= -- 585
-add.period$ -- 26
-call.type$ -- 9
-change.case$ -- 43
-chr.to.int$ -- 9
-cite$ -- 18
-duplicate$ -- 171
-empty$ -- 294
-format.name$ -- 84
-if$ -- 757
-int.to.chr$ -- 1
-int.to.str$ -- 1
-missing$ -- 12
-newline$ -- 52
-num.names$ -- 36
-pop$ -- 128
+You've used 2 entries,
+            2118 wiz_defined-function locations,
+            510 strings with 4351 characters,
+and the built_in function-call counts, 744 in all, are:
+= -- 67
+> -- 36
+< -- 1
++ -- 14
+- -- 12
+* -- 46
+:= -- 123
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 12
+chr.to.int$ -- 0
+cite$ -- 2
+duplicate$ -- 33
+empty$ -- 61
+format.name$ -- 12
+if$ -- 162
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 3
+newline$ -- 13
+num.names$ -- 4
+pop$ -- 18
 preamble$ -- 1
-purify$ -- 34
+purify$ -- 10
 quote$ -- 0
-skip$ -- 117
+skip$ -- 24
 stack$ -- 0
-substring$ -- 38
-swap$ -- 19
+substring$ -- 30
+swap$ -- 10
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 79
+type$ -- 6
 warning$ -- 0
-while$ -- 29
-width$ -- 0
-write$ -- 138
+while$ -- 6
+width$ -- 3
+write$ -- 24
 (There was 1 warning)

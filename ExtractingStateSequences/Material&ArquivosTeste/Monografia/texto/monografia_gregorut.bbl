@@ -1,68 +1,14 @@
-\begin{thebibliography}{9}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+\begin{thebibliography}{1}
 
-\bibitem[Dwyer {\rm{\em et~al.}}(1998)Dwyer, Avrunin, e
-  Corbett]{dwyer98:specpatt}{\bf Dwyer {\rm{\em et~al.}}(1998)}
-Matthew~B. Dwyer, George~S. Avrunin e James~C. Corbett.
-\newblock Property specification patterns for finite-state verification.
-\newblock Em \emph{2nd Workshop on Formal Methods in Software Practice}.
-  {\scriptsize Citado na p\'{a}g.}
-
-\bibitem[Dwyer {\rm{\em et~al.}}(1999)Dwyer, Avrunin, e
-  Corbett]{dwyer99:specpatt_survey}{\bf Dwyer {\rm{\em et~al.}}(1999)}
-Matthew~B. Dwyer, George~S. Avrunin e James~C. Corbett.
-\newblock Patterns in property specifications for finite-state verification.
-\newblock Em \emph{Proceedings of the 21st International Conference on Software
-  Engineering}.   {\scriptsize Citado na p\'{a}g.}
-
-\bibitem[Harel {\rm{\em et~al.}}(1987)Harel, Pnueli, Schmidt, e
-  Sherman]{harel87:semantics_statecharts}{\bf Harel {\rm{\em et~al.}}(1987)}
-David Harel, Amir Pnueli, Jeanette Schmidt e Rivi Sherman.
+\bibitem{harel87:semantics_statecharts}
+David Harel, Amir Pnueli, Jeanette Schmidt, and Rivi Sherman.
 \newblock On the formal semantics of statecharts.
-\newblock Em \emph{Proceedings of Symposium on Logic in Computer Science},
-  p\'{a}ginas 55--64.   {\scriptsize Citado na p\'{a}g.}
+\newblock In {\em Proceedings of Symposium on Logic in Computer Science}, pages
+  55--64, 1987.
 
-\bibitem[Maldonado {\rm{\em et~al.}}(2004)Maldonado, Barbosa, Vincenzi,
-  Delamaro, do~Roccio Senger~de Souza, e Jino]{introSoftTest}{\bf Maldonado
-  {\rm{\em et~al.}}(2004)}
-José~Carlos Maldonado, Ellen~Franciane Barbosa, Auri M.~R. Vincenzi,
-  Márcio~Eduardo Delamaro, Simone do~Roccio Senger~de Souza e Mario Jino.
-\newblock Introdução ao teste de software, 2004.   {\scriptsize Citado na
-  p\'{a}g.}
-
-\bibitem[Myers {\rm{\em et~al.}}(2012)Myers, Badgett, e Sandler]{Myers:12}{\bf
-  Myers {\rm{\em et~al.}}(2012)}
-Glenford~J. Myers, Tom Badgett e Corey Sandler.
-\newblock \emph{The art of software testing}.
-\newblock John Wiley \& Sons, Inc, 3º edi\c{c}\~{a}o.   {\scriptsize Citado na
-  p\'{a}g.}
-
-\bibitem[Pei {\rm{\em et~al.}}(2004)Pei, Mortazavi-Asl, e
-  Dayal]{pei04:prefixSpan}{\bf Pei {\rm{\em et~al.}}(2004)}
-Jian Pei, Behzad Mortazavi-Asl e Umeshwar Dayal.
-\newblock Mining sequential patterns by pattern-growth: The prefixspan
-  approach.
-\newblock \emph{IEEE Transactions on Knowledge and Data Engineering}, 16.
-  {\scriptsize Citado na p\'{a}g.}
-
-\bibitem[Tufte(2001)]{tufte01:visualDisplay}{\bf Tufte(2001)}
-Edward Tufte.
-\newblock \emph{The Visual Display of Quantitative Information}.
-\newblock Graphics Pr, 2nd edi\c{c}\~{a}o.   {\scriptsize Citado na p\'{a}g.}
-
-\bibitem[Wazlawick(2009)]{waz:09}{\bf Wazlawick(2009)}
-Raul~S. Wazlawick.
-\newblock \emph{Metodologia de Pesquisa em Ciencia da Computação}.
-\newblock Campus, primeira edi\c{c}\~{a}o.   {\scriptsize Citado na p\'{a}g.}
-
-\bibitem[Zobel(2004)]{zobel:04}{\bf Zobel(2004)}
-Justin Zobel.
-\newblock \emph{Writing for Computer Science: The art of effective
-  communication}.
-\newblock Springer, segunda edi\c{c}\~{a}o.   {\scriptsize Citado na p\'{a}g.}
+\bibitem{Lewis:98}
+Harry~R. Lewis and Christos~H. Papadimitriou.
+\newblock {\em Elements of the Theory of Computation}.
+\newblock Prentice Hall, Inc, 2 edition, 1998.
 
 \end{thebibliography}

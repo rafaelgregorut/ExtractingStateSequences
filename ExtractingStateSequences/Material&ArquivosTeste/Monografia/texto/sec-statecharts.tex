@@ -2,13 +2,46 @@
 \section{Statecharts}
 \label{sec:statecharts}
 
-A especificação de um software é um documento de referência que contém os requisitos que o programa
-deve satisfazer. Ela também pode ser vista como um modelo de como o software deve se comportar.
-É possível elaborá-la usando linguagem natural, com casos de uso, ou utilizando
-técnicas de engenharia formal de software. 
+A software specification is a reference document which contains the requisites the program should satisfy. It can also be understood as a model of how the system should behave. A specification may be developed with natural language, with user cases for example, or usisng formal software engeering techniques.
 
-Statecharts são um tipo de especifição formal de software baseados em máquinas de estados finitas (MEF) utilizados em sistemas complexos, como sistemas reativos \citep{harel87:semantics_statecharts}. Assim como um autômato, um statechart possui um conjunto de estados, transições e eventos de entrada que proporcionam mudanças de estados. Porém, um statechart possui os seguintes recursos adicionais:
+Statechats are a type of formal software specification based on finite states machines (FSM) specially used in complex systems modeling, such as reactive systems and were defined in \cite{harel87:semantics_statecharts}. Similar to an automaton, a statechart has sets of states, transitions and input events that cause change of state. However, a statechart has additional features: orthogonality, hierarchy, broadcasting and history.
 
+\subsection{Nondeterministic finite automata}
+
+\textbf{Definition:} A nondeterministic finite automaton is a quintuple $M = (K,\Sigma,\Delta,s,F)$, where:
+
+\begin{itemize}
+
+\item $K$ is the set of states
+
+\item $\Sigma$ is the input alphabet
+
+\item $\Delta$ is the transition relation, a subset of $K\times(\Sigma\cup{e})\times K$, where $e$ is the empty string
+
+\item $s \in K$ is the initial state
+
+\item $F \subseteq K$ is the set of final states
+\end{itemize}
+
+Each tripe $(q,a,p) \in \Delta$ is a transition of $M$. If $M$ is currently in state $q$ and the next input is $a$, then $M$ may follow any transition of the form $(q,a,p)$ or $(q,e,p)$. In the later case, no input is read. A configuration of $M$ is an element of $K\time \Sigma^*$ and the relation $\vdash$ (yields one step) between two configuarions is defined as: $(q,w) \vdash (q',w') \Leftrightarrow$ there is a $u \in \Sigma \cup {e}$ such that $w = uw'$ and $(q,u,q') \in \Delta$.
+
+Further information and formalism regarding finite automata can be obtained in \cite{Lewis:98}. 
+
+\subsection{A nondeterministic automaton example}
+
+\subsection{Statechart models}
+
+\subsection{Orthogonality}
+
+\subsection{Hierarchy}
+
+\subsection{Broadcasting}
+
+\subsection{History}
+
+\subsection{A statechart example}
+
+\iffalse
 \begin{itemize}
 \item Ortogonalidade
 
@@ -40,3 +73,4 @@ Um exemplo de figura está na figura~\ref{fig:fig1}.
 \includegraphics[width=12cm]{figuras/fig2}
 \caption{\label{fig:fig2}Exemplo de statechart}
 \end{figure}
+\fi
