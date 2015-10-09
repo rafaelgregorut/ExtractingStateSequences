@@ -1,5 +1,5 @@
 %% ------------------------------------------------------------------------- %%
-\section{Statecharts}
+\section{Statecharts and Automata}
 \label{sec:statecharts}
 
 A software specification is a reference document which contains the requisites the program should satisfy. It can also be understood as a model of how the system should behave. A specification may be developed with natural language, with user cases for example, or usisng formal software engeering techniques.
@@ -27,19 +27,54 @@ Each tripe $(q,a,p) \in \Delta$ is a transition of $M$. If $M$ is currently in s
 
 Further information and formalism regarding finite automata can be obtained in \cite{Lewis:98}. 
 
-\subsection{A nondeterministic automaton example}
+\subsubsection{A nondeterministic finite automaton example}
+
+%%ADICIONAR EXEMPLO DE FSM
 
 \subsection{Statechart models}
 
-\subsection{Orthogonality}
+A statechart model can be considered a extended finite state machine. The syntax of statechart is defined over the set of states, transitions, events, actions, conditions, expressions and labels \cite{harel87:semantics_statecharts}. In short terms:
 
-\subsection{Hierarchy}
+\begin{itemize}
 
-\subsection{Broadcasting}
+\item Transitions are the relations between states
 
-\subsection{History}
+\item Events are the input that might cause a transition to happen
 
-\subsection{A statechart example}
+\item Actions are generally triggered when a transition occurs
+
+\item Conditions are boolean verifications added to a transition in order to restrict the occurence of that transitions
+
+\item Expressions are composed are variables and algebraic operations over them
+
+\item A label is a pair made of an event and an action that is used to label a transition
+\end{itemize}
+
+Furthermore, it is worth to notice that a statechart model possess other features, described over the next sections of this chapter, that do not appear in a common finite state machine. These extra resources are useful, for instance, to model concurrency and different abstraction levels in a more practical way.
+
+\subsubsection{Orthogonality}
+
+More than one state may be active at the same time in a statechart, which is called orthogonality. It can be used to model concurrent and parallel situations. The set of active states in a certain moment is called configuration.
+
+\subsubsection{Hierarchy}
+
+It is possible that a state contains other states, called substates, and internal transitions, increasing the abstraction and encapsulation level of the model.
+
+\subsubsection{Guard conditions}
+
+In a transition, a guard condition is always verified before the change of states take place. If the condition is satisfied, in other words, e expression returns true, the transition will happen. Otherwise, that transition is not allowed to happen. A expression in a guard condition involve variables and operations. It is possible to check whether a state was entered for example.
+
+\subsubsection{Broadcasting}
+
+Besides an input event, a transition might have a action that is triggered when the transition is done.  An action may cause another transition to happen, that is called broadcasting. This features makes it possible that chain reactions occurr in a statechart model.
+
+\subsubsection{History}
+
+A statechart is capable of remembering previously visited states by accessing the history state.
+
+\subsubsection{A statechart example}
+
+Find below an example of a statechart model. When compared to the nondeterministic finite automaton displayed previously, we can notice that the number of states is reduced due the increase in the abstraction level using hierarchy and orthogonality. Besides, in the statechart we can make usage of guard transitions and broadcasting, enriching the model with more information.
 
 \iffalse
 \begin{itemize}

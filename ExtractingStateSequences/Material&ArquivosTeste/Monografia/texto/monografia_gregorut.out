@@ -1,12 +1,6 @@
 \BOOKMARK [0][]{chapter.1}{Concepts}{}% 1
-\BOOKMARK [1][]{section.1.1}{Statecharts}{chapter.1}% 2
+\BOOKMARK [1][]{section.1.1}{Statecharts and Automata}{chapter.1}% 2
 \BOOKMARK [2][]{subsection.1.1.1}{Nondeterministic finite automata}{section.1.1}% 3
-\BOOKMARK [2][]{subsection.1.1.2}{A nondeterministic automaton example}{section.1.1}% 4
-\BOOKMARK [2][]{subsection.1.1.3}{Statechart models}{section.1.1}% 5
-\BOOKMARK [2][]{subsection.1.1.4}{Orthogonality}{section.1.1}% 6
-\BOOKMARK [2][]{subsection.1.1.5}{Hierarchy}{section.1.1}% 7
-\BOOKMARK [2][]{subsection.1.1.6}{Broadcasting}{section.1.1}% 8
-\BOOKMARK [2][]{subsection.1.1.7}{History}{section.1.1}% 9
-\BOOKMARK [2][]{subsection.1.1.8}{A statechart example}{section.1.1}% 10
-\BOOKMARK [0][]{appendix.A}{Título do apêndice}{}% 11
-\BOOKMARK [0][]{appendix*.4}{Bibliography}{}% 12
+\BOOKMARK [2][]{subsection.1.1.2}{Statechart models}{section.1.1}% 4
+\BOOKMARK [0][]{appendix.A}{Título do apêndice}{}% 5
+\BOOKMARK [0][]{appendix*.11}{Bibliography}{}% 6
