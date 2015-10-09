@@ -10,6 +10,11 @@
 \contentsline {subsubsection}{Broadcasting}{2}{section*.8}
 \contentsline {subsubsection}{History}{3}{section*.9}
 \contentsline {subsubsection}{A statechart example}{3}{section*.10}
+\contentsline {section}{\numberline {1.2}Tests}{3}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Importance}{3}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}The processes of testing}{3}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Functional and Structural tests}{3}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}Formal methods and tests}{3}{subsection.1.2.4}
 \contentsline {chapter}{\numberline {A}Título do apêndice}{5}{appendix.A}
 \contentsline {chapter}{Bibliography}{7}{appendix*.11}
 \contentsfinish 
