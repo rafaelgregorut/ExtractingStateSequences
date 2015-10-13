@@ -1,5 +1,15 @@
 \begin{thebibliography}{1}
 
+\bibitem{Ammann:08}
+Paul Ammann and Jeff Offutt.
+\newblock {\em Introduction to Software Testing}.
+\newblock Cambridge University Press, 2008.
+
+\bibitem{Beizer}
+Boris Beizer.
+\newblock {\em Software Testing Techniques}.
+\newblock 2 edition, 1990.
+
 \bibitem{harel87:semantics_statecharts}
 David Harel, Amir Pnueli, Jeanette Schmidt, and Rivi Sherman.
 \newblock On the formal semantics of statecharts.
@@ -10,5 +20,22 @@ David Harel, Amir Pnueli, Jeanette Schmidt, and Rivi Sherman.
 Harry~R. Lewis and Christos~H. Papadimitriou.
 \newblock {\em Elements of the Theory of Computation}.
 \newblock Prentice Hall, Inc, 2 edition, 1998.
+
+\bibitem{Luo}
+Lu~Luo.
+\newblock Software testing techniques - technology maturation and research
+  strategy.
+\newblock Technical report, Institute for Software Research International,
+  Carnegie Mellon University, Pittsburgh,{USA}.
+
+\bibitem{introSoftTest}
+José~Carlos Maldonado, Ellen~Franciane Barbosa, Auri M.~R. Vincenzi,
+  Márcio~Eduardo Delamaro, Simone do~Roccio Senger~de Souza, and Mario Jino.
+\newblock Introdução ao teste de software, 2004.
+
+\bibitem{Myers:12}
+Glenford~J. Myers, Tom Badgett, and Corey Sandler.
+\newblock {\em The art of software testing}.
+\newblock John Wiley \& Sons, Inc, 3º edition, 2012.
 
 \end{thebibliography}

@@ -6,45 +6,47 @@ The style file: plain.bst
 Database file #1: bibliografia.bib
 Warning--string name "june" is undefined
 --line 7 of file bibliografia.bib
-You've used 2 entries,
+Warning--empty publisher in Beizer
+Warning--empty year in Luo
+You've used 7 entries,
             2118 wiz_defined-function locations,
-            510 strings with 4351 characters,
-and the built_in function-call counts, 744 in all, are:
-= -- 67
-> -- 36
+            539 strings with 5024 characters,
+and the built_in function-call counts, 2069 in all, are:
+= -- 184
+> -- 114
 < -- 1
-+ -- 14
-- -- 12
-* -- 46
-:= -- 123
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 12
++ -- 46
+- -- 38
+* -- 126
+:= -- 358
+add.period$ -- 20
+call.type$ -- 7
+change.case$ -- 40
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 33
-empty$ -- 61
-format.name$ -- 12
-if$ -- 162
+cite$ -- 9
+duplicate$ -- 84
+empty$ -- 164
+format.name$ -- 38
+if$ -- 431
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 3
-newline$ -- 13
-num.names$ -- 4
-pop$ -- 18
+int.to.str$ -- 7
+missing$ -- 9
+newline$ -- 37
+num.names$ -- 14
+pop$ -- 62
 preamble$ -- 1
-purify$ -- 10
+purify$ -- 33
 quote$ -- 0
-skip$ -- 24
+skip$ -- 55
 stack$ -- 0
-substring$ -- 30
-swap$ -- 10
+substring$ -- 56
+swap$ -- 14
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 6
-warning$ -- 0
-while$ -- 6
-width$ -- 3
-write$ -- 24
-(There was 1 warning)
+type$ -- 20
+warning$ -- 2
+while$ -- 16
+width$ -- 8
+write$ -- 74
+(There were 3 warnings)

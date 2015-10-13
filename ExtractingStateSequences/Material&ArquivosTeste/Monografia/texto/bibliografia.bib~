@@ -46,12 +46,35 @@
 }
 
 @Book{Lewis:98,
- author   = {Harry R. Lewis and Christos H. Papadimitriou and bla},
+ author   = {Harry R. Lewis and Christos H. Papadimitriou},
  title    = {Elements of the Theory of Computation},
  edition  = {2},
  publisher= {Prentice Hall, Inc},
  year     = {1998}
 }
+
+@Book{Ammann:08,
+ author   = {Paul Ammann and Jeff Offutt},
+ title    = {Introduction to Software Testing},
+ publisher= {Cambridge University Press},
+year ={2008}
+}
+
+
+@Techreport{Luo,
+ author   = {Lu Luo},
+ title    = {Software Testing Techniques - Technology Maturation and Research Strategy},
+ institution= {Institute for Software Research International, Carnegie Mellon University},
+ address  = {Pittsburgh,{USA}}
+}
+
+@Book{Beizer,
+ author   = {Boris Beizer},
+ title    = {Software Testing Techniques},
+ publisher= {Cambridge University Press},
+year ={2008}
+}
+
 %%---------------------------------------------------------------------------------%%
 @Book{eco:09,
  author   = {Umberto Eco},
@@ -114,6 +137,7 @@
  year     = {2008},
 }
 
+Sofotware Testing Techniques - Technology Maturation and Research Strategy
 @Techreport{alvisi99:analysisCIC,
  author   = {Lorenzo Alvisi and Elmootazbellah Elnozahy and Sriram S. Rao and Syed A. Husain and Asanka Del Mel},
  title    = {An Analysis of Comunication-Induced Checkpointing},

@@ -2,17 +2,95 @@
 \section{Tests}
 \label{sec:testes-criterios}
 
+Since code has been written, programs have been tested. Testing is one of the most important means of assessing the software quality and it typically consumes from 40\% up to 50\% of the software development effort \cite{Luo}. Therefore, it constitute an important area in software engineering.
 
+Testing evolved from an activity related debugging code to way of checking specification, design as well as implementation\cite{Luo}. It can be considered a process not only to detect bugs, but to also prevent them \cite{Beizer}.
 
-\subsection{Importance}
+\subsection{Testing goals}
+
+In a organization, the goals of testing vary depending on the level of maturity of the team \cite{Ammann:08}: At a more inexperienced approach, testing could be viewed as the same as debugging the code. A further step would be to consider testing as the process to make sure that a software does what it is supposed to do. But, in this case, if a team runs a test suite and every test case passed, should the team consider that the software is correct or could it be that the test cases were not enough? How does the team decide when to stop? 
+
+A different perspective, then, would be to understand testing as the process of finding erros. Therefore a successful test case would be the one that indicated an error in the system \cite{Myers:12}. Altough descovering unexpected results and behaviour is a valid goal, it might put tester and developers in an adversarial relationship, which certainly demages the team interaction. 
+
+Testing shows the presence, but not the absence of errors. Hence, realizing that when executing a software we are under some risk that may have unimportant or great consequences leads to another way to see the intention of the test process: to reduce the risk of using the program, an effort that should be performed by both testers and developers. 
+
+Thus, testing can be seen as a mental discipline that helps all professionals in the software industry to increase quality. \cite{Ammann:08}. The whole software development process could benefit from that thinking: Design and specification would be more clear and precise and the implementation would have fewer errors and would be more easily valdilated, for example.
+
 
 \subsection{The processes of testing}
 
+Since testing is a time consuiming activity, the creation of test cases can be done during each stage of the development procress, even though their execution will only be possible after some part of the code is implemented.
+
+\subsubsection{V-Model}
+
+The V-model in figure (@@@@@ COLOCAR FIGURA) associates each level of testing to a different phase in the development process. This model is typically viewd as an extansion of the waterfall methodology, but it does not mandatorily implies the waterfall approach since the synthesis and anlysis activities generically apply to any development process \cite{Ammann:08}. 
+
+\begin{itemize}
+
+\item Requirerment analysis phase: Customer's needs are registered. \textbf{ User acceptance tests (UAT)} are constructed to validated that the delivered system meets the customer's requirerments.
+
+\item System design phase: Technical team analyzed the captured requirerments and study the possibilities to implement them and document a technical specification. \textbf{System tests} are designed at this stage assuming that all pieces work individually and checks if the system works as a whole.
+
+\item Architectural design phase: Specify interface relationships, dependencies, structure and behaviour of subsystems. \textbf{Integration tests} are developded, with the assumption that each module works correctly, in order to verify all interfaces and communication among subsystems.
+
+\item Detailed design phase: A low-level design is done to divide the system in smaller pieces, each one of them with the corresponding behaviour specified so that the programmer can code. \textbf{Module testing} is designed to check eahc module individually.
+
+\item Implementation phase: Code is actually produced. \textbf{Unit tests} are designed to test every smallest unit of code, such a method, can work correclty when isolated.
+ 
+\end{itemize}
+
 \subsection{Functional and Structural tests}
 
-\subsection{Formal methods and tests}
+Testing techniques can be divided in functional and structural categories.
+
+\subsubsection{Functional technique (black box)}
+
+Functionalities described in the specification are considered to create the test cases. It is necessary to study the behaviour and functionalities presented, develop the corresponding test cases, submit the system to the test cases and analyze the results observed comparing them to what was exected according to the description in the specification. Examples of criteria in this technique\cite{introSoftTest}:
+
+	\begin{itemize}
+	\item \textbf{Equivalence classes partitioning}
+	
+	Input data are partitioned into valid and invalid classes according to the conditions specified. The test cases are created based on each class by selecting a element in each class are a representative of the whole class. Using this criterion, the test cases can be executed sistematicaly according to the requisites.
+
+	\item \textbf{Analysis of the limit value}
+	
+	Similar to the previous criterion, but the selection of the representative is done based on the classes' boundary. For that reason, the conditions associated with the limit values are exercised more strictly.
+
+	\end{itemize}
+
+Since many specifications are written in descriptive way, the test cases developed using the functional technique can be informal and not specific enough, which makes it difficult to automate their execution and human intervention becomes necessary. However, this technique only requirers that requisites, input and corresponding output are identified. Thus, it can be apllied during several testing phases, such as integration and system.
+
+\subsubsection{Structural technique (white box)}
+
+The structure of the code implementation is considered to create the test cases. In this technique, the program is represented by an oriented graph of flow control, in which each vertice corresponds to a block of code, a statement in the code for instance, and each edge corresponds to a trasition between the blocks. The criteria related to this technique are generally concerned with the coverage of the program graph, such as \cite{Ammann:08}:
+
+	\begin{itemize}
+	\item \textbf{Node coverage}
+
+	Every reachable node in the graph must be exercised by the test set. Node coverage is implemented by many testing tools, most often in the form of statement coverage
+	
+	\item \textbf{Edge coverage}
+
+	Every edge in the graph must be tested in the test set.
+	\item \textbf{Complete path coverage}
+
+	All paths in the graph must be tested by the test set. This criterion is infeasible if there are cycles in the graph due to the infinity number of paths.
+
+	\item \textbf{Prime path coverage}
+
+	A path is a prime path if it is a simple path and it does not appear as a proper subpath of any other simple path. In this criterion, all prime paths should be tested.
+
+	\item \textbf{Specified Path Coverage}
+
+	A specific set $S$ of paths is given and the test set must exercise all paths in S. In sutiation might occurr if the use scenarios provided by the customer are converted to paths in the graph and the team wishes to test them. 
+	\end{itemize}
+
+Tests obtained via structural technique contribute specially to code maintenance and increase the reliability of the implementation. But, they do not represent a way to validate the system against customer's requirerments, since the specified requisites are not considered in their design.
+
+%\subsection{Formal methods and tests}
 
 \iffalse
+
 Testar é o processo de executar um programa com o objetivo de encontrar erros \citep{Myers:12}. Muitas vezes o processo de teste é visto erroneamente somente como um meio de garantir que um programa faz aquilo que deveria fazer. Entretanto, a atividade de testar uma aplicação deve ser encarada como uma forma de encontrar comportamentos e resultados inesperados. Sendo assim, pode-se dizer que um teste bem sucessido é aquele que encontra um defeito no sistema\citep{Myers:12}, embora tal terminologia seja comumente utilzada na indústria para referir-se a testes que não detectem nenhuma anomalia.
 
 As técnicas de testes podem ser classificadas em duas categorias:
