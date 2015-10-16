@@ -71,8 +71,8 @@ year ={2008}
 @Book{Beizer,
  author   = {Boris Beizer},
  title    = {Software Testing Techniques},
- publisher= {Cambridge University Press},
-year ={2008}
+ edition  = {2},
+year ={1990}
 }
 
 %%---------------------------------------------------------------------------------%%
