@@ -17,19 +17,24 @@ Testing shows the presence, but not the absence of errors. Hence, realizing that
 Thus, testing can be seen as a mental discipline that helps all professionals in the software industry to increase quality. \cite{Ammann:08}. The whole software development process could benefit from that thinking: Design and specification would be more clear and precise and the implementation would have fewer errors and would be more easily valdilated, for example.
 
 
-\subsection{The processes of testing}
+\subsection{The process of testing}
 
 Since testing is a time consuiming activity, the creation of test cases can be done during each stage of the development procress, even though their execution will only be possible after some part of the code is implemented.
 
 \subsubsection{V-Model}
 
-The V-model in figure (@@@@@ COLOCAR FIGURA) associates each level of testing to a different phase in the development process. This model is typically viewd as an extansion of the waterfall methodology, but it does not mandatorily implies the waterfall approach since the synthesis and anlysis activities generically apply to any development process \cite{Ammann:08}. 
+\begin{figure}[htb]
+\includegraphics[width=1.0\textwidth]{figuras/vModel}
+\caption{\label{fig:vModel}The V-model}
+\end{figure}
+
+The V-model in figure~\ref{fig:vModel} associates each level of testing to a different phase in the development process. This model is typically viewd as an extansion of the waterfall methodology, but it does not mandatorily implies the waterfall approach since the synthesis and anlysis activities generically apply to any development process \cite{Ammann:08}. 
 
 \begin{itemize}
 
-\item Requirerment analysis phase: Customer's needs are registered. \textbf{ User acceptance tests (UAT)} are constructed to validated that the delivered system meets the customer's requirerments.
+\item requirement analysis phase: Customer's needs are registered. \textbf{ User acceptance tests (UAT)} are constructed to validated that the delivered system meets the customer's requirements.
 
-\item System design phase: Technical team analyzed the captured requirerments and study the possibilities to implement them and document a technical specification. \textbf{System tests} are designed at this stage assuming that all pieces work individually and checks if the system works as a whole.
+\item System design phase: Technical team analyzed the captured requirements and study the possibilities to implement them and document a technical specification. \textbf{System tests} are designed at this stage assuming that all pieces work individually and checks if the system works as a whole.
 
 \item Architectural design phase: Specify interface relationships, dependencies, structure and behaviour of subsystems. \textbf{Integration tests} are developded, with the assumption that each module works correctly, in order to verify all interfaces and communication among subsystems.
 
@@ -85,7 +90,7 @@ The structure of the code implementation is considered to create the test cases.
 	A specific set $S$ of paths is given and the test set must exercise all paths in S. In sutiation might occurr if the use scenarios provided by the customer are converted to paths in the graph and the team wishes to test them. 
 	\end{itemize}
 
-Tests obtained via structural technique contribute specially to code maintenance and increase the reliability of the implementation. But, they do not represent a way to validate the system against customer's requirerments, since the specified requisites are not considered in their design.
+Tests obtained via structural technique contribute specially to code maintenance and increase the reliability of the implementation. But, they do not represent a way to validate the system against customer's requirements, since the specified requisites are not considered in their design.
 
 %\subsection{Formal methods and tests}
 

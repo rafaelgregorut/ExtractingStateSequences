@@ -4,19 +4,19 @@
 \contentsline {subsection}{\numberline {1.1.1}Nondeterministic finite automata}{1}{subsection.1.1.1}
 \contentsline {subsubsection}{A nondeterministic finite automaton example}{2}{section*.4}
 \contentsline {subsection}{\numberline {1.1.2}Statechart models}{2}{subsection.1.1.2}
-\contentsline {subsubsection}{Orthogonality}{2}{section*.6}
+\contentsline {subsubsection}{Orthogonality}{3}{section*.6}
 \contentsline {subsubsection}{Hierarchy}{3}{section*.7}
 \contentsline {subsubsection}{Guard conditions}{3}{section*.8}
 \contentsline {subsubsection}{Broadcasting}{3}{section*.9}
 \contentsline {subsubsection}{History}{3}{section*.10}
-\contentsline {subsubsection}{A statechart example}{3}{section*.11}
-\contentsline {section}{\numberline {1.2}Tests}{3}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Testing goals}{3}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}The processes of testing}{4}{subsection.1.2.2}
-\contentsline {subsubsection}{V-Model}{4}{section*.12}
-\contentsline {subsection}{\numberline {1.2.3}Functional and Structural tests}{4}{subsection.1.2.3}
-\contentsline {subsubsection}{Functional technique (black box)}{5}{section*.13}
-\contentsline {subsubsection}{Structural technique (white box)}{5}{section*.14}
-\contentsline {chapter}{\numberline {A}Título do apêndice}{7}{appendix.A}
-\contentsline {chapter}{Bibliography}{9}{appendix*.15}
+\contentsline {subsubsection}{A statechart and its correponsing automaton}{4}{section*.11}
+\contentsline {section}{\numberline {1.2}Tests}{4}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Testing goals}{4}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}The process of testing}{5}{subsection.1.2.2}
+\contentsline {subsubsection}{V-Model}{5}{section*.13}
+\contentsline {subsection}{\numberline {1.2.3}Functional and Structural tests}{6}{subsection.1.2.3}
+\contentsline {subsubsection}{Functional technique (black box)}{6}{section*.15}
+\contentsline {subsubsection}{Structural technique (white box)}{7}{section*.16}
+\contentsline {chapter}{\numberline {A}Título do apêndice}{9}{appendix.A}
+\contentsline {chapter}{Bibliography}{11}{appendix*.17}
 \contentsfinish 
