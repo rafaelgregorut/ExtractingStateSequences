@@ -4,19 +4,19 @@
 \contentsline {subsection}{\numberline {1.1.1}Nondeterministic finite automata}{1}{subsection.1.1.1}
 \contentsline {subsubsection}{A nondeterministic finite automaton example}{1}{section*.4}
 \contentsline {subsection}{\numberline {1.1.2}Statechart models}{2}{subsection.1.1.2}
-\contentsline {subsubsection}{Orthogonality}{3}{section*.7}
+\contentsline {subsubsection}{Orthogonality}{2}{section*.7}
 \contentsline {subsubsection}{Hierarchy}{3}{section*.8}
 \contentsline {subsubsection}{Guard conditions}{3}{section*.9}
-\contentsline {subsubsection}{Broadcasting}{4}{section*.10}
+\contentsline {subsubsection}{Broadcasting}{3}{section*.10}
 \contentsline {subsubsection}{History}{4}{section*.11}
 \contentsline {subsubsection}{A statechart and its correponsing automaton}{4}{section*.12}
-\contentsline {section}{\numberline {1.2}Tests}{4}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Testing goals}{4}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}The process of testing}{5}{subsection.1.2.2}
-\contentsline {subsubsection}{V-Model}{5}{section*.14}
+\contentsline {section}{\numberline {1.2}Tests}{5}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Testing goals}{5}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}The process of testing}{6}{subsection.1.2.2}
+\contentsline {subsubsection}{V-Model}{6}{section*.15}
 \contentsline {subsection}{\numberline {1.2.3}Functional and Structural tests}{7}{subsection.1.2.3}
-\contentsline {subsubsection}{Functional technique (black box)}{7}{section*.16}
-\contentsline {subsubsection}{Structural technique (white box)}{7}{section*.17}
+\contentsline {subsubsection}{Functional technique (black box)}{7}{section*.17}
+\contentsline {subsubsection}{Structural technique (white box)}{7}{section*.18}
 \contentsline {chapter}{\numberline {A}Título do apêndice}{9}{appendix.A}
-\contentsline {chapter}{Bibliography}{11}{appendix*.18}
+\contentsline {chapter}{Bibliography}{11}{appendix*.19}
 \contentsfinish 
