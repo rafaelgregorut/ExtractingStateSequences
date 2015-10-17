@@ -9,7 +9,7 @@
 \contentsline {subsubsection}{Guard conditions}{3}{section*.9}
 \contentsline {subsubsection}{Broadcasting}{3}{section*.10}
 \contentsline {subsubsection}{History}{4}{section*.11}
-\contentsline {subsubsection}{A statechart and its correponsing automaton}{4}{section*.12}
+\contentsline {subsubsection}{A statechart and its correponding automaton}{4}{section*.12}
 \contentsline {section}{\numberline {1.2}Tests}{5}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Testing goals}{5}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}The process of testing}{6}{subsection.1.2.2}
