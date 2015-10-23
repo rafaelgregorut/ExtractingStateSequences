@@ -18,8 +18,22 @@
 \contentsline {subsubsection}{Functional technique (black box)}{7}{section*.17}
 \contentsline {subsubsection}{Structural technique (white box)}{7}{section*.18}
 \contentsline {chapter}{\numberline {2}Test case generation}{9}{chapter.2}
-\contentsline {chapter}{\numberline {3}Properties extraction}{11}{chapter.3}
-\contentsline {chapter}{\numberline {4}Verification}{13}{chapter.4}
-\contentsline {chapter}{\numberline {A}Linear Temporal Logic (LTL)}{15}{appendix.A}
-\contentsline {chapter}{Bibliography}{17}{appendix*.19}
+\contentsline {section}{\numberline {2.1}Manual creation of test cases}{9}{section.2.1}
+\contentsline {section}{\numberline {2.2}Automatic generation of test cases}{9}{section.2.2}
+\contentsline {section}{\numberline {2.3}Test cases for statecharts}{9}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Test case for simple statecharts}{9}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Test case for complex statecharts: hierarchy}{9}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Test case for complex statecharts: orthogonality}{9}{subsection.2.3.3}
+\contentsline {chapter}{\numberline {3}Property extraction}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}Test case as a sequence of events}{11}{section.3.1}
+\contentsline {section}{\numberline {3.2}Sequence mining: finding frequent subsequences}{11}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}The Prefix-Span algorithm}{11}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}The SPMF framework}{11}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Specification patterns}{11}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Ocurrence patterns}{11}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Order patterns}{11}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Chosen patterns for this project}{11}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Extracting properties from most frequent subsequences}{11}{section.3.4}
+\contentsline {chapter}{\numberline {A}Linear Temporal Logic (LTL)}{13}{appendix.A}
+\contentsline {chapter}{Bibliography}{15}{appendix*.19}
 \contentsfinish 

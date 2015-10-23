@@ -7,7 +7,21 @@
 \BOOKMARK [2][]{subsection.1.2.2}{The process of testing}{section.1.2}% 7
 \BOOKMARK [2][]{subsection.1.2.3}{Functional and Structural tests}{section.1.2}% 8
 \BOOKMARK [0][]{chapter.2}{Test case generation}{}% 9
-\BOOKMARK [0][]{chapter.3}{Properties extraction}{}% 10
-\BOOKMARK [0][]{chapter.4}{Verification}{}% 11
-\BOOKMARK [0][]{appendix.A}{Linear Temporal Logic \(LTL\)}{}% 12
-\BOOKMARK [0][]{appendix*.19}{Bibliography}{}% 13
+\BOOKMARK [1][]{section.2.1}{Manual creation of test cases}{chapter.2}% 10
+\BOOKMARK [1][]{section.2.2}{Automatic generation of test cases}{chapter.2}% 11
+\BOOKMARK [1][]{section.2.3}{Test cases for statecharts}{chapter.2}% 12
+\BOOKMARK [2][]{subsection.2.3.1}{Test case for simple statecharts}{section.2.3}% 13
+\BOOKMARK [2][]{subsection.2.3.2}{Test case for complex statecharts: hierarchy}{section.2.3}% 14
+\BOOKMARK [2][]{subsection.2.3.3}{Test case for complex statecharts: orthogonality}{section.2.3}% 15
+\BOOKMARK [0][]{chapter.3}{Property extraction}{}% 16
+\BOOKMARK [1][]{section.3.1}{Test case as a sequence of events}{chapter.3}% 17
+\BOOKMARK [1][]{section.3.2}{Sequence mining: finding frequent subsequences}{chapter.3}% 18
+\BOOKMARK [2][]{subsection.3.2.1}{The Prefix-Span algorithm}{section.3.2}% 19
+\BOOKMARK [2][]{subsection.3.2.2}{The SPMF framework}{section.3.2}% 20
+\BOOKMARK [1][]{section.3.3}{Specification patterns}{chapter.3}% 21
+\BOOKMARK [2][]{subsection.3.3.1}{Ocurrence patterns}{section.3.3}% 22
+\BOOKMARK [2][]{subsection.3.3.2}{Order patterns}{section.3.3}% 23
+\BOOKMARK [2][]{subsection.3.3.3}{Chosen patterns for this project}{section.3.3}% 24
+\BOOKMARK [1][]{section.3.4}{Extracting properties from most frequent subsequences}{chapter.3}% 25
+\BOOKMARK [0][]{appendix.A}{Linear Temporal Logic \(LTL\)}{}% 26
+\BOOKMARK [0][]{appendix*.19}{Bibliography}{}% 27
