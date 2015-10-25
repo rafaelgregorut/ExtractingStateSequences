@@ -1,0 +1,27 @@
+\section{Desiging test cases}
+\label{sec:testcasesdesign}
+
+For simple programs, a test case might be a pair composed by the software input and the expected output. But, for more complex software, such as web applications or reactive systems, a test case can be a series os consecutive steps or events and their expected consequence.
+
+Given a specification, a test engineer can systematically design test cases: for each functionality defined, use the equivalence class partitioning technique described in~\ref{funcTests} to select the input representatives; enumarate the steps necessary to activate the functionality; and add the expected outputs.
+
+One test case example to test the login of an online store would be the following:
+
+@@@@@ ADICIONAR EXEMPLO DE CASO DE TESTE DE LOGIN
+
+It is also interesting to project test cases for negative scenarios, in which the program should handle an incorrect action done by the user. A test engineer could consider the following:
+
+@@@@@ ADICIONAR EXEMPLO DE CASO DE TESTE DE LOGIN - CENARIO NEGATIVO
+
+\subsection{Use cases vs Test cases}
+
+More detalied use cases provide a series of steps to perform flows related to a determined functionality. Each step might contain the description of system behaviour and user actions. There are also preconditions so that the use case be considered for execution and an actor is associate with the case. Besides, one use case might describe more than one flow for the functionality by extending the basic flow. 
+
+@@@@@ ADICIONAR EXEMPLO DE CASO DE USO DE LOGIN
+
+In a test case, however, one step have to specify one single action and its corresponding consequence in the system. We can add precondtions to each step in a test case, even if the precondition is that the previous step was executed successfully. In addition, it is not possible to have more than one flow in one test case, otherwise the tester would have no clear direction during the test run. Therefore, we need to create test cases for each flow.
+
+An use case serves as an guide for during the implementation process used by developers. It is a way to understand how the functionality is being coded is going to be used. An use case will not be executed directly. Test cases are used to direct tester regarding the precise actions that should be performed in each flow and are a way to detect errors. They are directly executed during the test phase.
+
+Use cases are a great source for the creation of test cases because they detail main flows and contain action steps. However, they are different in structure and purpose; therefore, one cannot replace the other.
+

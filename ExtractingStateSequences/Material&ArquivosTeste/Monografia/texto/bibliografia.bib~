@@ -45,6 +45,15 @@
  year     = {2004}
 }
 
+@Book{Maldonado:98,
+ author   = {Harry R. Lewis and Christos H. Papadimitriou},
+ title    = {Elements of the Theory of Computation},
+ edition  = {2},
+ publisher= {Prentice Hall, Inc},
+ year     = {1998}
+}
+
+
 @Book{Lewis:98,
  author   = {Harry R. Lewis and Christos H. Papadimitriou},
  title    = {Elements of the Theory of Computation},
@@ -74,6 +83,7 @@ year ={2008}
  edition  = {2},
 year ={1990}
 }
+
 
 %%---------------------------------------------------------------------------------%%
 @Book{eco:09,

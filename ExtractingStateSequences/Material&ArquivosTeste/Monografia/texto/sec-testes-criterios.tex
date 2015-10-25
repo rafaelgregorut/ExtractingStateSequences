@@ -49,6 +49,7 @@ The V-model in figure~\ref{fig:vModel} associates each level of testing to a dif
 Testing techniques can be divided in functional and structural categories.
 
 \subsubsection{Functional technique (black box)}
+\label{funcTests}
 
 Functionalities described in the specification are considered to create the test cases. It is necessary to study the behaviour and functionalities presented, develop the corresponding test cases, submit the system to the test cases and analyze the results observed comparing them to what was exected according to the description in the specification. Examples of criteria in this technique\cite{introSoftTest}:
 
@@ -57,7 +58,7 @@ Functionalities described in the specification are considered to create the test
 	
 	Input data are partitioned into valid and invalid classes according to the conditions specified. The test cases are created based on each class by selecting a element in each class are a representative of the whole class. Using this criterion, the test cases can be executed sistematicaly according to the requisites.
 
-	\item \textbf{Analysis of the limit value}
+	\item \textbf{Analysis of the boundary value}
 	
 	Similar to the previous criterion, but the selection of the representative is done based on the classes' boundary. For that reason, the conditions associated with the limit values are exercised more strictly.
 
