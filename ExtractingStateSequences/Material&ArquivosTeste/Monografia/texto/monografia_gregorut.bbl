@@ -43,4 +43,11 @@ Glenford~J. Myers, Tom Badgett, and Corey Sandler.
 \newblock {\em The art of software testing}.
 \newblock John Wiley \& Sons, Inc, 3º edition, 2012.
 
+\bibitem{inpe10}
+Érica Ferreira~de Souza.
+\newblock Geração de casos de teste para sistemas da área espacial usando
+  critérios de teste para máquinas de estados finitos.
+\newblock Master's thesis, Instituto Nacional de Pesquisas Espaciais - INPE,
+  São José dos Campos,{Brazil}, February 2010.
+
 \end{thebibliography}

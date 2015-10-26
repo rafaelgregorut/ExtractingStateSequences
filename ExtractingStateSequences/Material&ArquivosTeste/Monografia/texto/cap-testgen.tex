@@ -7,8 +7,31 @@ In this section, we will be concerned with test case creation from the functiona
 
 \section{Automatic generation of test cases}
 
-A model, a statechart for instance, can also be used to specify certain scenarios and funcionalities relevant to the software. Considering that such model is correct, one can use it to automatically generate functional test cases \cite{Maldonado:07}. This technique, in which test cases are automatically derived from a model, is called Model Based Test.
+A model, a statechart for instance, can also be used to specify certain scenarios and funcionalities relevant to the software. Considering that such model correct, is readable by a machine and its interpretation is well defined, one can use it to automatically generate functional test cases \cite{Maldonado:07}(@@@@@CITRAR WIKIPEDIA TBM). This technique, in which test cases are automatically derived from a model, is called Model Based Test.
 
+Since models are commonly based on finite state machines, the test cases in Model Based Test are often paths in the model. A path corresponds to a sequence of consecutive transitions. There are several ways to explore the model to obtain the paths. Depending on the complexity of the model and the exploration mode chosen, the number of test cases found will be huge. In fact, if one searches for all possible paths, the number of test cases will be infity if the model contains cycles.
+
+Hence, there are several criteria intended to guide the model exploration and generate the paths as test cases. Some of the them are described below and with further details in \cite{inpe10}:
+
+\begin{itemize}
+
+\item \textbf{All transitions}
+
+\item \textbf{All simple paths}
+
+\item \textbf{Distinguishing Sequence}
+
+This criterion should be used for finite state machine models. Besides, the finite state machine must be deterministic, complete, strongly connected and minimal. 
+
+First, a distinguishing sequence, SD, is searched. SD is an input sequence such that when applied to each state in the machine, the output produced is different, making it possible to identify the initial state to which SD was applied. The distinguishing sequence may not exist, in this case the criterion cannot be applied.
+
+Second, for each transition $t$, an input sequence from the initial state up to including $t$ is generated. That sequence is called $\beta-sequence$.
+
+We can concatenate SD to end of each $\beta-sequence$ to obtain the test cases. When one of these test cases is executed, it will be specifically testing a transition and checking if this transition reached the expected state.
+
+\item \textbf{Unique Input-Output}
+
+\end{itemize}
 
 
 \section{Test cases for statecharts}
