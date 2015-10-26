@@ -1,0 +1,45 @@
+\section{Automatic generation of test cases}
+\label{sec-autotestcases}
+
+A model, a statechart for instance, can also be used to specify certain scenarios and funcionalities relevant to the software. Considering that such model correct, is readable by a machine and its interpretation is well defined, one can use it to automatically generate functional test cases \cite{Maldonado:07}(@@@@@CITRAR WIKIPEDIA TBM). This technique, in which test cases are automatically derived from a model, is called Model Based Test.
+
+Since models are commonly based on finite state machines, the test cases in Model Based Test are often paths in the model. A path corresponds to a sequence of consecutive transitions. There are several ways to explore the model to obtain the paths. Depending on the complexity of the model and the exploration mode chosen, the number of test cases found will be huge. In fact, if one searches for all possible paths, the number of test cases will be infinite if the model contains cycles.
+
+Hence, there are several criteria intended to guide the model exploration and generate the paths as test cases. Some of the them are described below and with further details in \cite{inpe10}:
+
+\begin{itemize}
+
+\item \textbf{All transitions}
+
+A criterion that can be used to obtain test cases from statechart specifications. It requirers that every transition should be exercised at least once during testing.
+
+\item \textbf{All simple paths}
+
+Another criterion can be used with statecharts. Since all paths is an impossible achivement given the possibility that an infinite number of paths may exist, it is possible to requirer that every simple path in the model is exercised at least once during testing.
+
+It is important to note that even though this two previous criteria seem similar to the ones described in~\ref{strucTest}, they are distinct. The ones described in this section are based on functional requirements and therefore constitute a kind of black-box test. The ones discribed in~\ref{strucTest} are based on the code implementation and are a type of white-box test.
+
+\item \textbf{Distinguishing Sequence}
+
+This criterion should be used for finite state machine models. Besides, the finite state machine must be deterministic, complete, strongly connected and minimal. 
+
+First, a distinguishing sequence, SD, is searched. SD is an input sequence such that when applied to each state in the machine, the output produced is different, making it possible to identify the initial state to which SD was applied. The distinguishing sequence may not exist, in this case the criterion cannot be applied.
+
+Second, for each transition $t$, an input sequence from the initial state up to including $t$ is generated. That sequence is called $\beta-sequence$.
+
+We can then concatenate SD to end of each $\beta-sequence$ to obtain the test cases. When one of these test cases is executed, it will be specifically testing a transition and checking if this transition reached the expected state.
+
+\item \textbf{Unique Input-Output}
+
+As mentioned in the previous criterion, the machine might not have a distinguishing sequence. In this case, it is still possible to identify each state based not only on the input, but on the output as well.
+
+This criterion should be used for finite state machine models. Besides, the finite state machine must be deterministic, complete, strongly connected and minimal. 
+
+First, for each state, an unique input-output sequence, UES, is searched. In each state, a breadth search is done and at every step, it is checked if the input and output is unique in comparison to the other states.
+
+Second, a process to find $\beta-sequences$ is performed in the same way as the previous criterion.
+
+Then, we can check to which state each final transition os the $\beta-sequences$ leads to by applying the UES sequences and observing their output.
+
+\end{itemize}
+
