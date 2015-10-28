@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Ammann:08}
 Paul Ammann and Jeff Offutt.
@@ -9,6 +9,12 @@ Paul Ammann and Jeff Offutt.
 Boris Beizer.
 \newblock {\em Software Testing Techniques}.
 \newblock 2 edition, 1990.
+
+\bibitem{bogdanov}
+Kirill Bogdanov.
+\newblock {\em Automated testing of Harel's statecharts}.
+\newblock PhD thesis, Department of Computer Science, University of Sheffield,
+  January 2000.
 
 \bibitem{harel87:semantics_statecharts}
 David Harel, Amir Pnueli, Jeanette Schmidt, and Rivi Sherman.

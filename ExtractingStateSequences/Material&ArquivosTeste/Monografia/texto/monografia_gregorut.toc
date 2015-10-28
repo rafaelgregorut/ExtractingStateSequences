@@ -23,8 +23,8 @@
 \contentsline {section}{\numberline {2.2}Automatic generation of test cases}{10}{section.2.2}
 \contentsline {section}{\numberline {2.3}Implementation test case generation for statecharts}{11}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Test case for simple statecharts}{11}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Test case for complex statecharts: hierarchy}{11}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Test case for complex statecharts: orthogonality}{11}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.2}Test case for complex statecharts: hierarchy}{12}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Test case for complex statecharts: orthogonality}{12}{subsection.2.3.3}
 \contentsline {chapter}{\numberline {3}Property extraction}{13}{chapter.3}
 \contentsline {section}{\numberline {3.1}Test case as a sequence of events}{13}{section.3.1}
 \contentsline {section}{\numberline {3.2}Sequence mining: finding frequent subsequences}{13}{section.3.2}

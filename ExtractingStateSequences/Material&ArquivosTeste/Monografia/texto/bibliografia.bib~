@@ -92,7 +92,12 @@ year ={1990}
  address  = {São José dos Campos,{Brazil}}
 }
 
-@online{
+@PhdThesis{garcia01:PhD,
+ author   = {Kirill Bogdanov},
+ title    = {Automated testing of Harel's statecharts},
+ school   = {Department of Computer Science, University of Sheffield},
+ year     = {2000},
+ month    = {January}
 }
 
 %%---------------------------------------------------------------------------------%%

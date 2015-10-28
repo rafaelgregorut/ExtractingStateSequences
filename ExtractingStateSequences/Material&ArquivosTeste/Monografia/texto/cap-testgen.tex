@@ -9,7 +9,24 @@ In this section, we will be concerned with test case creation from the functiona
 
 \section{Implementation test case generation for statecharts}
 
+In this project, we implemented the test case generation for statecharts based on the criteria described in \cite{bogdanov}. We test every transition by visiting every state and trigger events for all transitions that start in it. 
+
 \subsection{Test case for simple statecharts}
+
+For this section, we consider only statecharts that do not contain hierarchy and concurrency. Statecharts with hierarchy and concurrency will be explained later.
+
+
+We start by making sure every reachable state in the statechart is covered. In order to do so, for each state $s$ in the statechart, we construct a path $p$ from the initial state to $s$. The path $p$ in said to be the coverage path of $s$. All coverage paths generated are stored in a set called $State Cover$, which is denoted by $C$. Therefore, C is a set of sequence of transition labels, such that we can find an element from this set to reach any desired state starting from the initial one \cite{bogdanov}.
+
+Since there is no hierarchy or concurrency in the statechart, the construction of $C$ is similar to covering states of an automaton. The process can be done through a depth search:
+
+@@@@@ ADICIONAR PSEUDO-CODIGO DA COBERTURA
+
+Now that we have the coverage for every reachable state, we need to trigger each transition on each state and create the test cases. For each transition there will be a test case, thus every transition in the diagram will be exercides at least once during testing.
+
+Consider the transition $t = (s,e,q)$, where $s$ is the original state, $e$ is the event label that triggers $t$ and $q$ is the destinity state. Previously, we computed that $s$ has coverage path $p$ such that $p \in C$ and $p$ is a sequence of label. The test case $TC$ to $t$ would be the concatenation of the event label $e$ to the end of $p$ expecting to get to state $q$. The process is repeated to every transition in the statechart.
+
+@@@@@ADICIONAR EXEMPLO!!!!!
 
 \subsection{Test case for complex statecharts: hierarchy}
 
