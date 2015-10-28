@@ -21,7 +21,7 @@
 \contentsline {section}{\numberline {2.1}Desiging test cases}{9}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Use cases vs Test cases}{9}{subsection.2.1.1}
 \contentsline {section}{\numberline {2.2}Automatic generation of test cases}{10}{section.2.2}
-\contentsline {section}{\numberline {2.3}Implementation test case generation for statecharts}{11}{section.2.3}
+\contentsline {section}{\numberline {2.3}Implementation of test case generation for statecharts}{11}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Test case for simple statecharts}{11}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Test case for complex statecharts: hierarchy}{12}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Test case for complex statecharts: orthogonality}{12}{subsection.2.3.3}

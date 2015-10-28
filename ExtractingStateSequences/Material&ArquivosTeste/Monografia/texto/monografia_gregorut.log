@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.22)  27 OCT 2015 23:30
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.22)  28 OCT 2015 10:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -538,7 +538,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: figuras/statechartExample2.png Graphic file (type png)
 
 <use figuras/statechartExample2.png>
-Package pdftex.def Info: figuras/statechartExample2.png used on input line 108.
+Package pdftex.def Info: figuras/statechartExample2.png used on input line 109.
 
 (pdftex.def)             Requested size: 284.52756pt x 284.54248pt.
 
@@ -546,7 +546,7 @@ Package pdftex.def Info: figuras/statechartExample2.png used on input line 108.
 File: figuras/flatState.png Graphic file (type png)
 
 <use figuras/flatState.png>
-Package pdftex.def Info: figuras/flatState.png used on input line 114.
+Package pdftex.def Info: figuras/flatState.png used on input line 115.
 (pdftex.def)             Requested size: 284.52756pt x 213.52379pt.
 ) (./sec-testes-criterios.tex [4 <./figuras/statechartExample2.png>] [5 <./figu
 ras/flatState.png>]
@@ -561,8 +561,13 @@ Package pdftex.def Info: figuras/vModel.png used on input line 27.
 Chapter 2.
 (./sec-testcasedesign.tex [9
 
-]) (./sec-autotestcases.tex [10]) [11])
-(./cap-propextract.tex [12]
+]) (./sec-autotestcases.tex [10])
+Overfull \hbox (3.86322pt too wide) in paragraph at lines 12--12
+[]\T1/cmr/bx/n/17.28 Implementation of test case gen-er-a-tion for stat-e-chart
+s 
+ []
+
+[11]) (./cap-propextract.tex [12]
 Chapter 3.
 
 Overfull \hbox (15.622pt too wide) in paragraph at lines 20--20
@@ -598,16 +603,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 278.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 278.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 278.
 Package rerunfilecheck Info: File `monografia_gregorut.out' has not changed.
-(rerunfilecheck)             Checksum: F6393B0077DC076D73A52BD59B5686E0;2060.
+(rerunfilecheck)             Checksum: 6A747BD567DC8E3FB9849DC610F5F761;2063.
 Package rerunfilecheck Info: File `monografia_gregorut.brf' has not changed.
 (rerunfilecheck)             Checksum: C452ED20CAC16B33E7DE7BE86C207C28;966.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 278.
  ) 
 Here is how much of TeX's memory you used:
- 10421 strings out of 495004
- 154690 string characters out of 6180662
+ 10422 strings out of 495004
+ 154702 string characters out of 6180662
  279168 words of memory out of 5000000
- 13367 multiletter control sequences out of 15000+600000
+ 13368 multiletter control sequences out of 15000+600000
  20004 words of font info for 52 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  36i,13n,43p,1117b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -627,10 +632,10 @@ per/sfbx2488.pfb></home/gregorut/texmf/fonts/type1/public/cm-super/sfrm1000.pfb
 /texmf/fonts/type1/public/cm-super/sfrm1728.pfb></home/gregorut/texmf/fonts/typ
 e1/public/cm-super/sfti1095.pfb></home/gregorut/texmf/fonts/type1/public/cm-sup
 er/sfti1200.pfb>
-Output written on monografia_gregorut.pdf (25 pages, 614385 bytes).
+Output written on monografia_gregorut.pdf (25 pages, 615351 bytes).
 PDF statistics:
- 427 PDF objects out of 1000 (max. 8388607)
- 368 compressed objects within 4 object streams
+ 428 PDF objects out of 1000 (max. 8388607)
+ 369 compressed objects within 4 object streams
  80 named destinations out of 1000 (max. 500000)
  250 words of extra memory for PDF output out of 10000 (max. 10000000)
 

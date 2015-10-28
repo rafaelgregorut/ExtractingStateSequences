@@ -10,7 +10,7 @@
 \BOOKMARK [1][]{section.2.1}{Desiging test cases}{chapter.2}% 10
 \BOOKMARK [2][]{subsection.2.1.1}{Use cases vs Test cases}{section.2.1}% 11
 \BOOKMARK [1][]{section.2.2}{Automatic generation of test cases}{chapter.2}% 12
-\BOOKMARK [1][]{section.2.3}{Implementation test case generation for statecharts}{chapter.2}% 13
+\BOOKMARK [1][]{section.2.3}{Implementation of test case generation for statecharts}{chapter.2}% 13
 \BOOKMARK [2][]{subsection.2.3.1}{Test case for simple statecharts}{section.2.3}% 14
 \BOOKMARK [2][]{subsection.2.3.2}{Test case for complex statecharts: hierarchy}{section.2.3}% 15
 \BOOKMARK [2][]{subsection.2.3.3}{Test case for complex statecharts: orthogonality}{section.2.3}% 16

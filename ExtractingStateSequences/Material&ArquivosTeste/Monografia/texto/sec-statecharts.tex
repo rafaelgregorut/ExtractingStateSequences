@@ -98,6 +98,7 @@ Besides an input event, a transition might have a action that is triggered when 
 A statechart is capable of remembering previously visited states by accessing the history state. Considering figure~\ref{fig:stateClock}, suppose we are in state $DisplayMinutes$ and event $set$ happened three times in a row. So, we went to $SetHour$, and then $SetMinutes$ and now we are at $ActivateAlarm$. If there is another occurance of $set$ we will be directed to the history state $hist$. Since the last active sub-state in $Display$ was $DisplayMinutes$, we will actually be directed to $DisplayMinutes$.
 
 \subsubsection{A statechart and its correponding automaton}
+\label{flattening}
 
 It is possible to get an automaton from a statechart by flattening the statechart. The hierarchy and cocurrency need to be eliminated. In addition, statechart elements such as guard conditions and actions are not present in an automaton. 
 
