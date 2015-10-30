@@ -10,6 +10,7 @@ In this section, we will be concerned with test case creation from the functiona
 \section{Automatic execution of test cases}
 
 \section{Implementation of test case generation for statecharts}
+\label{implementTestGen}
 
 In this project, we implemented the test case generation for statecharts based on the criteria described in \cite{bogdanov}. We test every transition by visiting every state and trigger events for all transitions that start in it. 
 
@@ -28,7 +29,74 @@ Now that we have the coverage for every reachable state, we need to trigger each
 
 Consider the transition $t = (s,e,q)$, where $s$ is the original state, $e$ is the event label that triggers $t$ and $q$ is the destinity state. Previously, we computed that $s$ has coverage path $p$ such that $p \in C$ and $p$ is a sequence of label. The test case $TC$ to $t$ would be the concatenation of the event label $e$ to the end of $p$ expecting to get to state $q$. The process is repeated to every transition in the statechart.
 
-@@@@@ADICIONAR EXEMPLO!!!!!
+Consider the following example in figure \ref{fig:trocaPlano} where we model the verifications in a purchase flow of a telco ecommerce. The flow is done by a user who wishes to change their cellphone plan. They will be able to change plan if their not employees from the telco company and are not committed to a loyalty contract.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=10cm]{figuras/trocaPlano}
+\caption{\label{fig:trocaPlano} A plan change flow statechart in a telco ecommerce}
+\end{figure}
+
+Hierarchy and orthogonality are not found in statechart \ref{fig:trocaPlano}. Hence, we can apply the the technique just presented.
+
+The construction of the \textit{State Cover} set, or $C$, goes as follows:
+
+We start at the inital state \textit{Unlogged User}. Since it is the initial state, its coverage path is the emtpy string, denoted by $e$.
+
+Next, we recursively visit the states that can be reached from \textit{Unlogged User}. In our example, we get to state \textit{Logged in User}. In order to get to this state, it was necessary to go through transition $doLogin$. Therefore, the coverage path for \textit{Logged in User} is \textit{e doLogin}. Note that we concatenate the coverage path of the previous state to the transition taken.
+
+When construction of $C$ is done, we have the following covage paths:
+
+\begin{center}
+\begin{tabular}{| l | p{10cm}|}
+
+\hline
+
+State & Coverage path \\ \hline
+
+Unlogged user & e \\ \hline
+
+Logged in User & e doLogin\\ \hline 
+
+Number Selected & e doLogin searchLineNumber\\ \hline
+
+Employee Authentication & e doLogin searchLineNumber searchEmployee\\ \hline
+
+Employee User & e doLogin searchLineNumber searchEmployee setEmployeeUser \\ \hline
+
+Empty Cart & e doLogin searchLineNumber searchEmployee setEmployeeUser emptyCart \\ \hline
+
+Regular User & doLogin searchLineNumber searchEmployee setRegularUser \\ \hline
+
+Contract Authentication & doLogin searchLineNumber searchEmployee setRegularUser searchContract \\ \hline
+
+Committed User & doLogin searchLineNumber searchEmployee setRegularUser searchContract setCommittedUser \\ \hline
+
+Not Committed User & doLogin searchLineNumber searchEmployee setRegularUser searchContract setNotCommittedUser \\ \hline
+
+Checkout & doLogin searchLineNumber searchEmployee setRegularUser searchContract setNotCommittedUser proceedCheckout\\
+\hline
+\end{tabular}
+\end{center}
+
+Then, we have to create a test case for every transition leaving each state. Let's take state \textit{Employee Authentication} for example. It has two leaving transitions: $setEmployeeUser$ and $setRegularUser$. To guarantee they are exercided at least once during testing and that they go to their appropriate destinity states, we need the following test cases:
+
+\begin{itemize}
+
+\item Test case for \textit{\textbf{$setEmployeeUser$}}
+
+Path: \textit{e doLogin searchLineNumber searchEmployee setEmployeeUser}
+
+Expected state: \textit{Employee User}
+
+\item Test case for \textit{\textbf{$setRegularUser$}}
+
+Path: \textit{e doLogin searchLineNumber searchEmployee setRegularUser}
+
+Expected state: \textit{Regular User}
+\end{itemize}
+
+Note that the path to test is the coverage page of the origin state concatenated with the label of the tested transition. The analogous is done for all other transitions in the model.
 
 \subsection{Test case for complex statecharts: hierarchy}
 

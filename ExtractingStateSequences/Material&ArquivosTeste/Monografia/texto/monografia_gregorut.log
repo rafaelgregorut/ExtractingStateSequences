@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.22)  29 OCT 2015 00:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.22)  30 OCT 2015 01:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -500,27 +500,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 194--197
 
 [3] [4
 
-] (./monografia_gregorut.toc)
+] (./monografia_gregorut.toc [5])
 \tf@toc=\write5
 \openout5 = `monografia_gregorut.toc'.
 
- [5] [6
-
-] (./cap-conceitos.tex
+ [6] (./cap-conceitos.tex
 Chapter 1.
 (./sec-statecharts.tex
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 15.
  [1
 
-] <figuras/nfa1.png, id=202, 289.08pt x 289.08pt>
+
+] <figuras/nfa1.png, id=208, 289.08pt x 289.08pt>
 File: figuras/nfa1.png Graphic file (type png)
 
 <use figuras/nfa1.png>
 Package pdftex.def Info: figuras/nfa1.png used on input line 48.
 (pdftex.def)             Requested size: 144.54pt x 144.53964pt.
 
-<figuras/statechartExample1.png, id=205, 808.01875pt x 469.755pt>
+<figuras/statechartExample1.png, id=211, 808.01875pt x 469.755pt>
 File: figuras/statechartExample1.png Graphic file (type png)
 
 <use figuras/statechartExample1.png>
@@ -534,7 +533,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2 <./figuras/nfa1.png>] [3 <./figuras/statechartExample1.png>]
-<figuras/statechartExample2.png, id=235, 407.5225pt x 407.5225pt>
+<figuras/statechartExample2.png, id=240, 407.5225pt x 407.5225pt>
 File: figuras/statechartExample2.png Graphic file (type png)
 
 <use figuras/statechartExample2.png>
@@ -542,7 +541,7 @@ Package pdftex.def Info: figuras/statechartExample2.png used on input line 109.
 
 (pdftex.def)             Requested size: 284.52756pt x 284.54248pt.
 
-<figuras/flatState.png, id=236, 796.47563pt x 597.73312pt>
+<figuras/flatState.png, id=241, 796.47563pt x 597.73312pt>
 File: figuras/flatState.png Graphic file (type png)
 
 <use figuras/flatState.png>
@@ -550,7 +549,7 @@ Package pdftex.def Info: figuras/flatState.png used on input line 115.
 (pdftex.def)             Requested size: 284.52756pt x 213.52379pt.
 ) (./sec-testes-criterios.tex [4 <./figuras/statechartExample2.png>] [5 <./figu
 ras/flatState.png>]
-<figuras/vModel.png, id=264, 796.47563pt x 597.73312pt>
+<figuras/vModel.png, id=269, 796.47563pt x 597.73312pt>
 File: figuras/vModel.png Graphic file (type png)
 
 <use figuras/vModel.png>
@@ -559,17 +558,62 @@ Package pdftex.def Info: figuras/vModel.png used on input line 27.
  [6 <./figuras/vModel.png>] [7])) (./cap-testgen.tex
 [8]
 Chapter 2.
-(./sec-testcasedesign.tex [9
+(./sec-testcasedesign.tex
+Underfull \hbox (badness 6708) in paragraph at lines 23--23
+[]\T1/cmr/m/n/12 Credentials are
+ []
 
-]) (./sec-autotestcases.tex [10])
+
+Underfull \hbox (badness 3803) in paragraph at lines 23--23
+\T1/cmr/m/n/12 valid and user
+ []
+
+
+Underfull \hbox (badness 1173) in paragraph at lines 29--29
+[]\T1/cmr/m/n/12 Type the user's email in
+ []
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 29--29
+[]\T1/cmr/m/n/12 Login field will hold the
+ []
+
+[9
+
+]
+Underfull \hbox (badness 6708) in paragraph at lines 50--50
+[]\T1/cmr/m/n/12 Credentials are
+ []
+
+
+Underfull \hbox (badness 1173) in paragraph at lines 56--56
+[]\T1/cmr/m/n/12 Type the user's email in
+ []
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 56--56
+[]\T1/cmr/m/n/12 Login field will hold the
+ []
+
+
+Underfull \hbox (badness 2351) in paragraph at lines 62--62
+[]\T1/cmr/m/n/12 Check the er-ror mes-sage
+ []
+
+[10]) (./sec-autotestcases.tex [11])
 Overfull \hbox (3.86322pt too wide) in paragraph at lines 12--12
 []\T1/cmr/bx/n/17.28 Implementation of test case gen-er-a-tion for stat-e-chart
 s 
  []
 
-[11] [12]) (./cap-propextract.tex [13] [14
+[12] <figuras/trocaPlano.png, id=323, 466.74374pt x 646.66594pt>
+File: figuras/trocaPlano.png Graphic file (type png)
 
-]
+<use figuras/trocaPlano.png>
+Package pdftex.def Info: figuras/trocaPlano.png used on input line 36.
+(pdftex.def)             Requested size: 284.52756pt x 394.21896pt.
+ [13 <./figuras/trocaPlano.png>] [14] [15])
+(./cap-propextract.tex [16]
 Chapter 3.
 
 Overfull \hbox (15.622pt too wide) in paragraph at lines 20--20
@@ -577,15 +621,17 @@ Overfull \hbox (15.622pt too wide) in paragraph at lines 20--20
  
  []
 
-) [15]
+) [17
+
+]
 \openout2 = `ape-exemplo.aux'.
 
- (./ape-exemplo.tex [16
+ (./ape-exemplo.tex [18
 
 
 ]
 Appendix A.
-) [17] [18
+) [19] [20
 
 
 ] (./monografia_gregorut.bbl (./monografia_gregorut.brf)
@@ -594,7 +640,7 @@ Appendix A.
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 278.
- [19
+ [21
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 278.
@@ -603,19 +649,19 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 278.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 278.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 278.
 Package rerunfilecheck Info: File `monografia_gregorut.out' has not changed.
-(rerunfilecheck)             Checksum: 6A747BD567DC8E3FB9849DC610F5F761;2063.
+(rerunfilecheck)             Checksum: EE7753DE4D0A3843E89213F08C2A00CE;2142.
 Package rerunfilecheck Info: File `monografia_gregorut.brf' has not changed.
-(rerunfilecheck)             Checksum: 50C1E3FE945DA56C73F3B053B9EA82F1;1070.
+(rerunfilecheck)             Checksum: D9A29B31AD2632F1552A0D97B4D3894A;1070.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 278.
  ) 
 Here is how much of TeX's memory you used:
- 10424 strings out of 495004
- 154716 string characters out of 6180662
- 279168 words of memory out of 5000000
- 13368 multiletter control sequences out of 15000+600000
- 20004 words of font info for 52 fonts, out of 8000000 for 9000
+ 10438 strings out of 495004
+ 154949 string characters out of 6180662
+ 284168 words of memory out of 5000000
+ 13376 multiletter control sequences out of 15000+600000
+ 20703 words of font info for 53 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 36i,13n,43p,1117b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,13n,43p,1117b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/home/gregorut/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-
@@ -632,10 +678,10 @@ per/sfbx2488.pfb></home/gregorut/texmf/fonts/type1/public/cm-super/sfrm1000.pfb
 /texmf/fonts/type1/public/cm-super/sfrm1728.pfb></home/gregorut/texmf/fonts/typ
 e1/public/cm-super/sfti1095.pfb></home/gregorut/texmf/fonts/type1/public/cm-sup
 er/sfti1200.pfb>
-Output written on monografia_gregorut.pdf (27 pages, 619464 bytes).
+Output written on monografia_gregorut.pdf (29 pages, 669359 bytes).
 PDF statistics:
- 440 PDF objects out of 1000 (max. 8388607)
- 379 compressed objects within 4 object streams
- 82 named destinations out of 1000 (max. 500000)
- 250 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 460 PDF objects out of 1000 (max. 8388607)
+ 395 compressed objects within 4 object streams
+ 86 named destinations out of 1000 (max. 500000)
+ 263 words of extra memory for PDF output out of 10000 (max. 10000000)
 

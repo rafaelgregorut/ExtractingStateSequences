@@ -1,17 +1,72 @@
 \section{Desiging test cases}
 \label{sec:testcasesdesign}
 
-For simple programs, a test case might be a pair composed by the software input and the expected output. But, for more complex software, such as web applications or reactive systems, a test case can be a series os consecutive steps or events and their expected consequence.
+For simple programs, a test case is a pair composed by the software input and the expected output. But, for more complex software, such as web applications or reactive systems, a test case can be a series os consecutive steps or events and their expected consequence.
 
-Given a specification, a test engineer can systematically design test cases: for each functionality defined, use the equivalence class partitioning technique described in~\ref{funcTests} to select the input representatives; enumarate the steps necessary to activate the functionality; and add the expected outputs.
+Given a specification, a test engineer can systematically design test cases: for each functionality defined, use the equivalence class partitioning technique described in~\ref{funcTests} to select the input representatives; enumarate the steps necessary to activate the functionality; and add the expected outputs. Note that requisites to each step can added as well, specially to guarantee that steps are not performed out of order and that the whole flow will be completely executed and tested.
 
-One test case example to test the login of an online store would be the following:
+A good design of test cases is essential to the entire testing activity since it will guide testers through the scenarios they should execute and check. The created test cases will determine which functionalities will be tested and how they will be tested. Besides, the whole test plan tends to be planned around the test cases, considering the amount of cases and their complexity to estimate deadlines and necessary resources. In other words, managers usually use test cases and their execution rate to give the client feedback about testing progress.
 
-@@@@@ ADICIONAR EXEMPLO DE CASO DE TESTE DE LOGIN
+Furthermore, when defects are identified, they can be associated to the test case that caused their detection. Since each test case is associated with a functionality, the team can easily keep track of how many defects each functionality has, what the most problematic scenarios are as well as what the most critical bugs are.
 
-It is also interesting to project test cases for negative scenarios, in which the program should handle an incorrect action done by the user. A test engineer could consider the following:
+But manually writting test cases is not an simple task. The engineer must read through all the specification, identify functionalities and the possibly many scenarios they can be executed. It requires experience and time to project test cases that have more probability to find defects and, therefore, will decrease the risk of using the application. We present in section \ref{implementTestGen} a method to automaticaly generate test cases for well defined statechart specifications.
 
-@@@@@ ADICIONAR EXEMPLO DE CASO DE TESTE DE LOGIN - CENARIO NEGATIVO
+To ilustrate, one test case example to test signing in functionality in a web application could be the following:
+
+\begin{center}
+
+\begin{tabular}{| l | p{3cm} | p{5cm} | p{5cm} |}
+\hline
+
+Step & Requisites & Description & Expected result \\ \hline
+
+1 & Credentials are valid and user is able to access home page & Access home page & Home page is loaded\\ \hline
+
+2 & Step 1 was successful & Click on Sing in link & Sign in page is displayed with the sign in form \\ \hline
+
+3 & Step 2 was successful & Check the sign in form & It should contain fields login, password and a button sign in \\ \hline
+
+4 & Step 3 was successful & Type the user's email in field login & Login field will hold the data\\ \hline
+
+5 & Step 4 was successful & Type the user's password in password field & Password field will hold the data \\ \hline
+
+6 & Step 5 was successful & Click on button sign in of the form & Credentials should be successfully validated by the system \\ \hline
+
+7 & Step 6 was successful & Check the page that was loaded & It should the user's personal home page\\
+
+\hline
+\end{tabular}
+
+\end{center}
+
+It is also interesting to project test cases for negative scenarios, in which the program should handle an incorrect action done by the user. A test engineer could consider using the following test case to test the negative scenario for the sign in functionality:
+
+\begin{center}
+\begin{tabular}{| l | p{3cm} | p{5cm} | p{5cm} |}
+\hline
+
+Step & Requisites & Description & Expected result \\ \hline
+
+1 & Credentials are invalid and user is able to access home page & Access home page & Home page is loaded\\ \hline
+
+2 & Step 1 was successful & Click on Sing in link & Sign in page is displayed with the sign in form \\ \hline
+
+3 & Step 2 was successful & Check the sign in form & It should contain fields login, password and a button sign in \\ \hline
+
+4 & Step 3 was successful & Type the user's email in field login & Login field will hold the data\\ \hline
+
+5 & Step 4 was successful & Type the user's password in password field & Password field will hold the data \\ \hline
+
+6 & Step 5 was successful & Click on button sign in of the form & Credentials should not be validated and error message should be displayed \\ \hline
+
+7 & Step 6 was successful & Check the error message displayed & It should be "Wrong email or password."\\
+
+\hline
+\end{tabular}
+
+\end{center}
+
+
 
 \subsection{Use cases vs Test cases}
 

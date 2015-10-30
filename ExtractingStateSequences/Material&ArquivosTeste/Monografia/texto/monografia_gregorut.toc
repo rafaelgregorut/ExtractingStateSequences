@@ -19,22 +19,23 @@
 \contentsline {subsubsection}{Structural technique (white box)}{7}{section*.18}
 \contentsline {chapter}{\numberline {2}Test cases}{9}{chapter.2}
 \contentsline {section}{\numberline {2.1}Desiging test cases}{9}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Use cases vs Test cases}{9}{subsection.2.1.1}
-\contentsline {section}{\numberline {2.2}Automatic generation of test cases}{10}{section.2.2}
-\contentsline {section}{\numberline {2.3}Implementation of test case generation for statecharts}{11}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Test case for simple statecharts}{11}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Test case for complex statecharts: hierarchy}{12}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Test case for complex statecharts: orthogonality}{12}{subsection.2.3.3}
-\contentsline {chapter}{\numberline {3}Property extraction}{15}{chapter.3}
-\contentsline {section}{\numberline {3.1}Test case as a sequence of events}{15}{section.3.1}
-\contentsline {section}{\numberline {3.2}Sequence mining: finding frequent subsequences}{15}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}The Prefix-Span algorithm}{15}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}The SPMF framework}{15}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Specification patterns}{15}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Ocurrence patterns}{15}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Order patterns}{15}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Chosen patterns for this project}{15}{subsection.3.3.3}
-\contentsline {section}{\numberline {3.4}Extracting properties from most frequent subsequences}{15}{section.3.4}
-\contentsline {chapter}{\numberline {A}Linear Temporal Logic (LTL)}{17}{appendix.A}
-\contentsline {chapter}{Bibliography}{19}{appendix*.19}
+\contentsline {subsection}{\numberline {2.1.1}Use cases vs Test cases}{10}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Automatic generation of test cases}{11}{section.2.2}
+\contentsline {section}{\numberline {2.3}Automatic execution of test cases}{12}{section.2.3}
+\contentsline {section}{\numberline {2.4}Implementation of test case generation for statecharts}{12}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Test case for simple statecharts}{12}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Test case for complex statecharts: hierarchy}{14}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Test case for complex statecharts: orthogonality}{15}{subsection.2.4.3}
+\contentsline {chapter}{\numberline {3}Property extraction}{17}{chapter.3}
+\contentsline {section}{\numberline {3.1}Test case as a sequence of events}{17}{section.3.1}
+\contentsline {section}{\numberline {3.2}Sequence mining: finding frequent subsequences}{17}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}The Prefix-Span algorithm}{17}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}The SPMF framework}{17}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Specification patterns}{17}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Ocurrence patterns}{17}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Order patterns}{17}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Chosen patterns for this project}{17}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Extracting properties from most frequent subsequences}{17}{section.3.4}
+\contentsline {chapter}{\numberline {A}Linear Temporal Logic (LTL)}{19}{appendix.A}
+\contentsline {chapter}{Bibliography}{21}{appendix*.20}
 \contentsfinish 
