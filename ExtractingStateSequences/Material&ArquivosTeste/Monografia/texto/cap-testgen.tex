@@ -15,6 +15,7 @@ In this section, we will be concerned with test case creation from the functiona
 In this project, we implemented the test case generation for statecharts based on the criteria described in \cite{bogdanov}. We test every transition by visiting every state and trigger events for all transitions that start in it. 
 
 \subsection{Test case for simple statecharts}
+\label{testSimpeState}
 
 For this section, we consider only statecharts that do not contain hierarchy and concurrency. Statecharts with hierarchy and concurrency will be explained later.
 
@@ -27,7 +28,7 @@ Since there is no hierarchy or concurrency in the statechart, the construction o
 
 Now that we have the coverage for every reachable state, we need to trigger each transition on each state and create the test cases. For each transition there will be a test case, thus every transition in the diagram will be exercides at least once during testing.
 
-Consider the transition $t = (s,e,q)$, where $s$ is the original state, $e$ is the event label that triggers $t$ and $q$ is the destinity state. Previously, we computed that $s$ has coverage path $p$ such that $p \in C$ and $p$ is a sequence of label. The test case $TC$ to $t$ would be the concatenation of the event label $e$ to the end of $p$ expecting to get to state $q$. The process is repeated to every transition in the statechart.
+Consider the transition $t = (s,l,q)$, where $s$ is the original state, $l$ is the event label that triggers $t$ and $q$ is the destinity state. Previously, we computed that $s$ has coverage path $p$ such that $p \in C$ and $p$ is a sequence of label. The test case $TC$ to $t$ would be the concatenation of the event label $l$ to the end of $p$ expecting to get to state $q$. The process is repeated to every transition in the statechart.
 
 Consider the following example in figure \ref{fig:trocaPlano} where we model the verifications in a purchase flow of a telco ecommerce. The flow is done by a user who wishes to change their cellphone plan. They will be able to change plan if their not employees from the telco company and are not committed to a loyalty contract.
 
@@ -83,13 +84,13 @@ Then, we have to create a test case for every transition leaving each state. Let
 
 \begin{itemize}
 
-\item Test case for \textit{\textbf{$setEmployeeUser$}}
+\item Test case for \textit{\textbf{setEmployeeUser}}
 
 Path: \textit{e doLogin searchLineNumber searchEmployee setEmployeeUser}
 
 Expected state: \textit{Employee User}
 
-\item Test case for \textit{\textbf{$setRegularUser$}}
+\item Test case for \textit{\textbf{setRegularUser}}
 
 Path: \textit{e doLogin searchLineNumber searchEmployee setRegularUser}
 
@@ -100,23 +101,179 @@ Note that the path to test is the coverage page of the origin state concatenated
 
 \subsection{Test case for complex statecharts: hierarchy}
 
-In this section, the test cases generated will be obtained from statecharts that have hierarchy: a state may contain many substates and so on. We do not limit the level of nested hierarchy for the automatic generation.
+
+In this section, the test cases generated will be obtained from statecharts that have hierarchy: a state may contain many substates and so on. We do not limit the level of nested hierarchy for the automatic generation. Consider states $A$ and $B$, such that $A$ contains $B$. We will $a$ the superstate of $b$ and $b$ the substate of $a$.
 
 One way to deal with hierarchy is to eliminate it from the model by flattening the statechart as shown in \ref{flattening}. The statechart would become an automaton and the thecniques for simple statecharts explained in the previous section could be used to generate test cases. But, the approach taken in this project, as in \cite{bogdanov}, was to keep the structure of the statechart and create the test cases incrementally.
 
-Similarly to the previous simpler case, for statecharts with hierarchy we still need to cover all states by constructing the set $C$ and then test all transitions in the model. The construction of $C$, however, needs to take into consideration substates to cover them as well. It is important to note that we considered only statecharts that do not have transitions between different hierarchy levels.
+Similarly to the previous simpler case, for statecharts with hierarchy we still need to cover all states by constructing the set $C$ and then test all transitions in the model. The construction of $C$, however, needs to take into consideration substates to cover them as well. It is important to note that we considered only statecharts that do not have transitions between different hierarchy levels. 
 
-When we get a state, we should check if it contains substates. If it does, we can compute their coverage paths going deeper in the hierarchy level and later concatenate the coverage path of the super state to the begining of each coverage path of the substates. Then, the coverage path of the super state should be removed from $C$ and the paths to the substates will be kept in $C$ instead.
+When we get to a state, we should check if it contains substates. If it does, we can compute substates' coverage paths going deeper in the hierarchy level. Later, we concatenate the coverage path of the superstate to the begining of each coverage path of the substates. Then, the coverage path of the super state should be removed from $C$ and the paths to the substates will be kept in $C$ instead. Besides, consider the case in which the coverage path $p$ of a certain state $s$ passes through a superstate $q$. We need to mark in $p$ that it passed by $q$ and that the coverage paths of $q$'s substates should be used when creating test cases for transitions leaving $s$.
 
 The algorithm to construct $C$ needs some changes then:
 
 @@@@@ALGORITMO PARA NOVA CONSTRUCAO DO C 
 
-Find an example below:
+After the set $C$ is complete, we need to in fact create the test cases based on every transition that leaves each state. In states that do not have substates andd whose coverage did not pass by a superstate, the process is the one presented in the previuos section. In case, the state's coverage path went through a superstate,  If a state contains substates, however, we must transfer the origin of every transition that leaves it to each one of its substates. Consider the case that a state $s$ has a transition $t = (s,l,q)$ and contains substates $s_1, s_2$ and $s_3$. When creating the test case to $t$, we will actually consider three new transitions: $t_1 = (s_1,l,q), t_2 = (s_2,l,q)$ and $t_3 = (s_3,l,q)$. 
 
-@@@@@ COLOCAR EXEMPLO COM HIERARQUIA
+@@@@@ALGORTIMO PARA EXPANSAO DOS COVERAGE PATHS
 
-After the set $C$ is complete, we need to in fact create the test cases based on every transition that leaves each state. In states that do not have substates, the process is the one presented in the previuos section. If a state contains substates, however, we must transfer the origin of every transition that leaves it to each one of its substates. Consider the case that a state $s$ has a transition $t = (s,e,q)$ and contains substates $s_1, s_2$ and $s_3$. When creating the test case to $t$, we will actually consider three new transitions: $t_1 = (s_1,e,q), t_2 = (s_2,e,q)$ and $t_3 = (s_3,e,q)$. 
+@@@@@ALGORITMO PARA TRANSFERIR TRANSICOES DE PAI PARA FILHO
+
+Let's take as an example the statechart in figure \ref{fig:webEDI}. It models an application that receives order files in a specific format and converts them into an well formatted xml. Each order file contains several lines, and each line contains a product and its quantity. The application also has an integration layer, that will receive the xml file and then send it to the management system.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=15cm]{figuras/webEDI}
+\caption{\label{fig:webEDI} Statechart for order file processing and transference}
+\end{figure}
+
+In figure \ref{fig:webEDI}, to contruct the coverage path to \textit{Idle} we do not need to worry about hierarchy, so approach described in the prior section (\ref{testSimpeState}) is enough.
+
+\begin{center}
+\begin{tabular}{| l | l|}
+
+\hline
+
+State & Coverage path \\ \hline
+
+Idle & e \\
+
+\hline
+\end{tabular}
+\end{center}
+
+When creating the coverage path for state \textit{File processing}, we notice that it actually is superstate. So, instead, we go deeper in the hierarchy level to obtain the coverage paths of substates \textit{File received, Line retrieved, Product processed, Quantity processed} and \textit{XML creation}. We should add the following paths to set $C$:
+
+\begin{center}
+\begin{tabular}{| l | l|}
+
+\hline
+
+State & Coverage path \\ \hline
+
+File received & e convertFileToXML e \\ \hline
+
+Line retrieved & e convertFileToXML e nextLine\\ \hline
+
+Product processed & e convertFileToXML e nextLine getProduct\\ \hline
+
+Quantity processed & e convertFileToXML e nextLine getProduct getQuantity\\ \hline
+
+XML creation & e convertFileToXML e nextLine getProduct getQuantity EOF\\ 
+
+\hline
+\end{tabular}
+\end{center}
+
+Notice that the coverage path for the superstate \textit{File processing} is removed from $C$, because we are considering its substates. Therefore, the testcases that would be created based on the superstate will be created based on the substates.
+
+We still need to cover states \textit{Integration layer} and \textit{Management system}. Observe that to cover these states, we need to pass by \textit{File processing}, a superstate. Therefore, in their coverage path, we need to use a specific notation to guide the later expansion with the substates coverage paths. We will use the notation $\Delta_{File\ processing}$ to indicate that, when creating the test cases, we need to expand the path considering the coverage of \textit{File processing}'s substates. Thus, the coverage paths for \textit{Integration layer} and \textit{Management system} are as follows:
+
+\begin{center}
+\begin{tabular}{| l | p{10cm}|}
+
+\hline
+
+State & Coverage path \\ \hline
+
+Integration layer & e convertFileToXML $\Delta_{File\ processing}$ sendXMLToIntegration \\ \hline
+
+Management system & e convertFileToXML $\Delta_{File\ processing}$ sendXMLToIntegration sendXMLToMgmSys\\
+
+\hline
+\end{tabular}
+\end{center}
+
+At this point, that we have the complete set $C$, we start to in fact create the test cases. As an example, we will examine transitions \textit{getProduct, sendXMLToIntegration} and \textit{sendXMLToMgmSys} more closely.
+
+For \textit{getProduct}, a transition leaving a substate, the process will be the same one presented in the previous section (\ref{testSimpeState}). Hence, we have the following test case:
+
+\begin{itemize}
+
+\item Test case for \textit{\textbf{getProduct}}
+
+Path: \textit{e convertFileToXML e nextLine getProduct}
+
+Expected state: \textit{Product processed}
+
+\end{itemize}
+
+In the case of \textit{sendXMLToIntegration}, a transition that leaves a superstate, we need to use the information regarding the substates to create the test cases. For each substate's coverage path $p$, there will be a test case for \textit{sendXMLToIntegration} making usage of $p$. We should append $sendXMLToIntegration$ to each $p$ in order to obtain the test paths:
+
+\begin{itemize}
+
+\item Test case \#1 for \textit{\textbf{sendXMLToIntegration}}
+
+Path: \textit{e convertFileToXML e sendXMLToIntegration}
+
+Expected state: \textit{Integration layer}
+
+\item Test case \#2 for \textit{\textbf{sendXMLToIntegration}}
+
+Path: \textit{e convertFileToXML e  nextLine sendXMLToIntegration}
+
+Expected state: \textit{Integration layer}
+
+
+\item Test case \#3 for \textit{\textbf{sendXMLToIntegration}}
+
+Path: \textit{e convertFileToXML e  nextLine  getProduct sendXMLToIntegration}
+
+Expected state: \textit{Integration layer}
+
+\item Test case \#4 for \textit{\textbf{sendXMLToIntegration}}
+
+Path: \textit{e convertFileToXML e  nextLine  getProduct  getQuantity sendXMLToIntegration}
+
+Expected state: \textit{Integration layer}
+
+\item Test case \#5 for \textit{\textbf{sendXMLToIntegration}}
+
+Path: \textit{e convertFileToXML e  nextLine  getProduct  getQuantity EOF sendXMLToIntegration}
+
+Expected state: \textit{Integration layer}
+
+\end{itemize}
+
+As for transition \textit{sendXMLToMgmSys}, the expansion of \textit{Integration layer}'s coverage path is pending. Similarly to what we did for transition \textit{sendXMLToIntegration}, we also need to consider the paths of \textit{File processing}'s substates. Therefore, the test cases for \textit{sendXMLToMgmSys} are:
+
+\begin{itemize}
+
+\item Test case \#1 for \textit{\textbf{sendXMLToMgmSys}}
+
+Path: \textit{e convertFileToXML e sendXMLToIntegration sendXMLToMgmSys}
+
+Expected state: \textit{Integration layer}
+
+\item Test case \#2 for \textit{\textbf{sendXMLToMgmSys}}
+
+Path: \textit{e convertFileToXML e  nextLine sendXMLToIntegration sendXMLToMgmSys sendXMLToMgmSys}
+
+Expected state: \textit{Integration layer}
+
+
+\item Test case \#3 for \textit{\textbf{sendXMLToMgmSys}}
+
+Path: \textit{e convertFileToXML e  nextLine  getProduct sendXMLToIntegration sendXMLToMgmSys}
+
+Expected state: \textit{Integration layer}
+
+\item Test case \#4 for \textit{\textbf{sendXMLToMgmSys}}
+
+Path: \textit{e convertFileToXML e  nextLine  getProduct  getQuantity sendXMLToIntegration sendXMLToMgmSys}
+
+Expected state: \textit{Integration layer}
+
+\item Test case \#5 for \textit{\textbf{sendXMLToMgmSys}}
+
+Path: \textit{e convertFileToXML e  nextLine  getProduct  getQuantity EOF sendXMLToIntegration sendXMLToMgmSys}
+
+Expected state: \textit{Integration layer}
+
+\end{itemize}
+
+Notice that, in each case, $\Delta_{File\ processing}$ in \textit{Integration layer}'s coverage was replaced by a substate's coverage path.
 
 \subsection{Test case for complex statecharts: orthogonality}
 

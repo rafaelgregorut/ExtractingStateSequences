@@ -25,17 +25,17 @@
 \contentsline {section}{\numberline {2.4}Implementation of test case generation for statecharts}{12}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Test case for simple statecharts}{12}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Test case for complex statecharts: hierarchy}{14}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Test case for complex statecharts: orthogonality}{15}{subsection.2.4.3}
-\contentsline {chapter}{\numberline {3}Property extraction}{17}{chapter.3}
-\contentsline {section}{\numberline {3.1}Test case as a sequence of events}{17}{section.3.1}
-\contentsline {section}{\numberline {3.2}Sequence mining: finding frequent subsequences}{17}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}The Prefix-Span algorithm}{17}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}The SPMF framework}{17}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Specification patterns}{17}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Ocurrence patterns}{17}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Order patterns}{17}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Chosen patterns for this project}{17}{subsection.3.3.3}
-\contentsline {section}{\numberline {3.4}Extracting properties from most frequent subsequences}{17}{section.3.4}
-\contentsline {chapter}{\numberline {A}Linear Temporal Logic (LTL)}{19}{appendix.A}
-\contentsline {chapter}{Bibliography}{21}{appendix*.20}
+\contentsline {subsection}{\numberline {2.4.3}Test case for complex statecharts: orthogonality}{18}{subsection.2.4.3}
+\contentsline {chapter}{\numberline {3}Property extraction}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}Test case as a sequence of events}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2}Sequence mining: finding frequent subsequences}{19}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}The Prefix-Span algorithm}{19}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}The SPMF framework}{19}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Specification patterns}{19}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Ocurrence patterns}{19}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Order patterns}{19}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Chosen patterns for this project}{19}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Extracting properties from most frequent subsequences}{19}{section.3.4}
+\contentsline {chapter}{\numberline {A}Linear Temporal Logic (LTL)}{21}{appendix.A}
+\contentsline {chapter}{Bibliography}{23}{appendix*.21}
 \contentsfinish 
