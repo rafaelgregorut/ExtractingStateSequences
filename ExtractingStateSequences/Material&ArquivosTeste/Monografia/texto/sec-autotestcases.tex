@@ -1,7 +1,7 @@
-\section{Automatic generation of test cases}
+\subsection{Automatic generation of test cases}
 \label{sec-autotestcases}
 
-A model, a statechart for instance, can also be used to specify certain scenarios and funcionalities relevant to the software. Considering that such model correct, is readable by a machine and its interpretation is well defined, one can use it to automatically generate functional test cases \cite{Maldonado:07}(@@@@@CITRAR WIKIPEDIA TBM). This technique, in which test cases are automatically derived from a model, is called Model Based Test.
+A model, a statechart for instance, can also be used to specify certain scenarios and funcionalities relevant to the software. Considering that such model correct, is readable by a machine and its interpretation is well defined, one can use it to automatically generate functional test cases \cite{Maldonado:07}. This technique, in which test cases are automatically derived from a model, is called Model Based Test.
 
 Since models are commonly based on finite state machines, the test cases in Model Based Test are often paths in the model. A path corresponds to a sequence of consecutive transitions. There are several ways to explore the model to obtain the paths. Depending on the complexity of the model and the exploration mode chosen, the number of test cases found will be huge. In fact, if one searches for all possible paths, the number of test cases will be infinite if the model contains cycles.
 
@@ -29,6 +29,36 @@ Second, for each transition $t$, an input sequence from the initial state up to 
 
 We can then concatenate SD to end of each $\beta-sequence$ to obtain the test cases. When one of these test cases is executed, it will be specifically testing a transition and checking if this transition reached the expected state.
 
+For the automaton in figure \ref{fig:automatonDS_UIO}, we have one possible SD = \textbf{B B}. In table \ref{tableDS} we have the complete set of $\beta-sequences$ to demonstrate the Distinguishing Sequence criterion.
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}{| l | l| l|}
+
+\hline
+
+$\beta-sequence$ & Transition & $\beta-sequence$ + SD \\ \hline
+
+A & (0, 3) & A B B\\ \hline
+B & (0, 0) & B B B\\ \hline
+A A A A A & (1, 4) & A A A A A B B\\ \hline
+A A A A B & (1, 2) & A A A A B B B\\ \hline
+A A A A & (2, 1) & A A A A B B\\ \hline
+A A A B & (2, 3) & A A A B B B\\ \hline
+A A & (3, 4) & A A B B\\ \hline
+A B & (3, 3) & A B B B\\ \hline
+A A A & (4, 2) & A A A B B\\ \hline
+A A B & (4, 0) & A A B B B\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Distinguishing Sequence cases for automaton \ref{fig:automatonDS_UIO}. SD = "B B".\cite{inpe10}}
+\label{tableDS}
+\end{table}
+
+
+
 \item \textbf{Unique Input-Output}
 
 As mentioned in the previous criterion, the machine might not have a distinguishing sequence. In this case, it is still possible to identify each state based not only on the input, but on the output as well.
@@ -41,5 +71,59 @@ Second, a process to find $\beta-sequences$ is performed in the same way as the 
 
 Then, we can check to which state each final transition os the $\beta-sequences$ leads to by applying the UES sequences and observing their output.
 
+For the automaton in \ref{fig:automatonDS_UIO}, table \ref{tableUES_1} shows the possible UES for each state. In table @@@@@ we the whole set of $\beta-sequences$ and their concatenation with the respective UES. Both tables can be used to ilustrate the Unique Input-Output criterion.
+
 \end{itemize}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{| l | l|}
+
+\hline
+
+State & UES \\ \hline
+
+0 & B/$\lambda$\\ \hline
+1 & A/1 A/1\\ \hline
+2 & B/0\\ \hline
+3 & B/1 B/1\\ \hline
+4 & A/1 A/0\\
+
+\hline
+\end{tabular}
+\end{center}
+\caption{UES sequences for automaton \ref{fig:automatonDS_UIO}.\cite{inpe10}}
+\label{tableUES_1}
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{| l | l| l|}
+
+\hline
+
+$\beta-sequence$ & Transition & $\beta-sequence$ + UES \\ \hline
+
+A & (0, 3) & A B B\\ \hline
+B & (0, 0) & B B\\ \hline
+A A A A A & (1, 4) & A A A A A A A\\ \hline
+A A A A B & (1, 2) & A A A A B B \\ \hline
+A A A A & (2, 1) & A A A A A A\\ \hline
+A A A B & (2, 3) & A A A B B B\\ \hline
+A A & (3, 4) & A A A A\\ \hline
+A B & (3, 3) & A B B B\\ \hline
+A A A & (4, 2) & A A A B \\ \hline
+A A B & (4, 0) & A A B B \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Unique Input-Output cases for automaton \ref{fig:automatonDS_UIO}.\cite{inpe10}}
+\label{tableDS}
+\end{table}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=7cm]{figuras/automatonDS_UIO}
+\caption{\label{fig:automatonDS_UIO} Automaton extracted from \cite{inpe10}}
+\end{figure}
 

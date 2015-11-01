@@ -1,5 +1,6 @@
-\section{Desiging test cases}
+\subsection{Desiging test cases}
 \label{sec:testcasesdesign}
+
 
 For simple programs, a test case is a pair composed by the software input and the expected output. But, for more complex software, such as web applications or reactive systems, a test case can be a series os consecutive steps or events and their expected consequence.
 
@@ -9,9 +10,9 @@ A good design of test cases is essential to the entire testing activity since it
 
 Furthermore, when defects are identified, they can be associated to the test case that caused their detection. Since each test case is associated with a functionality, the team can easily keep track of how many defects each functionality has, what the most problematic scenarios are as well as what the most critical bugs are.
 
-But manually writting test cases is not an simple task. The engineer must read through all the specification, identify functionalities and the possibly many scenarios they can be executed. It requires experience and time to project test cases that have more probability to find defects and, therefore, will decrease the risk of using the application. We present in section \ref{implementTestGen} a method to automaticaly generate test cases for well defined statechart specifications.
+But manually writting test cases is not an simple task. The engineer must read through all the specification, identify functionalities and the possibly many scenarios they can be executed. It requires experience and time to project test cases that have more probability to find defects and, therefore, will decrease the risk of using the application. We present in chapter \ref{cap:testgen} a method to automaticaly generate test cases for well defined statechart specifications.
 
-To ilustrate, one test case example to test signing in functionality in a web application could be the following:
+To ilustrate, one test case example to test signing in functionality in a website could be the following:
 
 \begin{center}
 
@@ -68,11 +69,46 @@ Step & Requisites & Description & Expected result \\ \hline
 
 
 
-\subsection{Use cases vs Test cases}
+\subsubsection{Use cases vs Test cases}
 
-More detalied use cases provide a series of steps to perform flows related to a determined functionality. Each step might contain the description of system behaviour and user actions. There are also preconditions so that the use case be considered for execution and an actor is associate with the case. Besides, one use case might describe more than one flow for the functionality by extending the basic flow. 
+More detalied use cases provide a series of steps to perform flows related to a determined functionality. Each step might contain the description of system behaviour and user actions. There are also preconditions so that the use case be considered for execution and an actor is associate with the case. Besides, one use case might describe more than one flow for the functionality by extending the basic flow. Below, we can find an use case example of signing in of a website:
 
-@@@@@ ADICIONAR EXEMPLO DE CASO DE USO DE LOGIN
+\textbf{Use case:} Website sign in
+
+\textbf{Actor:} Registered user
+
+\textbf{Preconditions:} User has a register in the website and is able to access the home page. 
+
+\textbf{Basic flow:}
+
+\begin{itemize}
+
+\item[1] System loads the home page of the website, which contains a link to sign in
+
+\item[2] The user clicks on the sign in link is redirected to the sign in form
+
+\item[3] The user fills in the sign in form and clicks on button 'sign in'
+
+\item[4] The user is able to sign in and their personal home page is displayed
+\end{itemize}
+
+\textbf{Alternative flows:}
+
+\begin{itemize}
+
+\item[a] Sign in fails
+
+\begin{itemize}
+
+\item[1] System loads the home page of the website, which contains a link to sign in
+
+\item[2] The user clicks on the sign in link is redirected to the sign in form
+
+\item[3] The user fills in the sign in form with invalid information and clicks on button 'sign in'
+
+\item[4] The user is not able to sign in and system displays error messages
+\end{itemize} 
+\end{itemize}
 
 In a test case, however, one step have to specify one single action and its corresponding consequence in the system. We can add precondtions to each step in a test case, even if the precondition is that the previous step was executed successfully. In addition, it is not possible to have more than one flow in one test case, otherwise the tester would have no clear direction during the test run. Therefore, we need to create test cases for each flow.
 
