@@ -39,10 +39,13 @@ public class SequencePatternsInputHandler {
 	public EventList lineToEventList(String line) {
 		EventList list = new EventList();
 		if (line != ""){
+			//System.out.println("Erro aqui");
+			//System.out.println(line);
 			String eventosInOut[] = line.split(",");
 			for (int i = 0; i < eventosInOut.length; i++) {
-				String evento[] = eventosInOut[i].split("/");
-				Event e = new Event(evento[0],evento[1]);
+				//String evento[] = eventosInOut[i].split("/");
+				//Event e = new Event(evento[0],evento[1]);
+				Event e = new Event(eventosInOut[i],"null");
 				list.add(e);
 			}
 		}

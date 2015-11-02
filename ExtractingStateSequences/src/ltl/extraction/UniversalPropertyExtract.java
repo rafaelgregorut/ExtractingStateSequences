@@ -1,14 +1,19 @@
 package ltl.extraction;
 
+import io.handler.Output;
+
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import main.pack.Main;
 import mef.basics.Event;
 import mef.basics.EventList;
 
 public class UniversalPropertyExtract {
+	
+	Output out;
 	
 	private Hashtable<String,Property> propertyHash;
 	
@@ -18,6 +23,7 @@ public class UniversalPropertyExtract {
 	public UniversalPropertyExtract() {
 		propertyHash = new Hashtable<String,Property>();
 		combinedProps = "";
+		out = Main.out;
 	}
 
 	
@@ -37,7 +43,7 @@ public class UniversalPropertyExtract {
 	public void printAllUniversalProperties() {
 		Enumeration<String> allRep = propertyHash.keys();
 		while(allRep.hasMoreElements())
-			System.out.println(allRep.nextElement());
+			out.println(allRep.nextElement());
 	}
 
 	public void combineProperties() {
@@ -68,6 +74,6 @@ public class UniversalPropertyExtract {
 	}
 	
 	public void printCombinedProperties() {
-		System.out.println(combinedProps);
+		out.println(combinedProps);
 	}
 }

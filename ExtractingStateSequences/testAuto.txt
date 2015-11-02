@@ -1,0 +1,19 @@
+convertFileToXML -1 -2
+convertFileToXML -1 -2
+convertFileToXML -1 nextLine -1 -2
+convertFileToXML -1 nextLine -1 getProduct -1 -2
+convertFileToXML -1 nextLine -1 getProduct -1 getQuantity -1 -2
+convertFileToXML -1 nextLine -1 getProduct -1 getQuantity -1 EOF -1 -2
+convertFileToXML -1 nextLine -1 getProduct -1 getQuantity -1 EOF -1 sendXMLToIntegration -1 -2
+convertFileToXML -1 nextLine -1 getProduct -1 getQuantity -1 EOF -1 sendXMLToIntegration -1 sendXMLToMgmSys -1 -2
+convertFileToXML -1 nextLine -1 getProduct -1 getQuantity -1 nextLine -1 -2
+convertFileToXML -1 nextLine -1 getProduct -1 getQuantity -1 sendXMLToIntegration -1 -2
+convertFileToXML -1 nextLine -1 getProduct -1 getQuantity -1 sendXMLToIntegration -1 sendXMLToMgmSys -1 -2
+convertFileToXML -1 nextLine -1 getProduct -1 sendXMLToIntegration -1 -2
+convertFileToXML -1 nextLine -1 getProduct -1 sendXMLToIntegration -1 sendXMLToMgmSys -1 -2
+convertFileToXML -1 nextLine -1 sendXMLToIntegration -1 -2
+convertFileToXML -1 nextLine -1 sendXMLToIntegration -1 sendXMLToMgmSys -1 -2
+convertFileToXML -1 sendXMLToIntegration -1 -2
+convertFileToXML -1 sendXMLToIntegration -1 sendXMLToMgmSys -1 -2
+convertFileToXML -1 sendXMLToIntegration -1 -2
+convertFileToXML -1 sendXMLToIntegration -1 sendXMLToMgmSys -1 -2

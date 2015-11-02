@@ -1,0 +1,11 @@
+fazerLogin/null -1 -2
+fazerLogin/null -1 buscaLinhas/null -1 -2
+fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 -2
+fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 setUsuarioFuncionario/null -1 -2
+fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 setUsuarioFuncionario/null -1 esvaziaCarrinho/null -1 -2
+fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 setUsuarioRegular/null -1 -2
+fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 setUsuarioRegular/null -1 buscaContrato/null -1 -2
+fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 setUsuarioRegular/null -1 buscaContrato/null -1 setUsuarioComFidelizacao/null -1 -2
+fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 setUsuarioRegular/null -1 buscaContrato/null -1 setUsuarioComFidelizacao/null -1 esvaziaCarrinho/null -1 -2
+fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 setUsuarioRegular/null -1 buscaContrato/null -1 setUsuarioSemFidelizacao/null -1 -2
+fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 setUsuarioRegular/null -1 buscaContrato/null -1 setUsuarioSemFidelizacao/null -1 continuaCheckout/null -1 -2

@@ -1,5 +1,7 @@
 package ltl.extraction;
 
+import io.handler.Output;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -10,12 +12,15 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import main.pack.Main;
 import mef.basics.Event;
 import mef.basics.EventList;
 
 public class ResponsePropertyExtract {
 
 	private Hashtable<String,Property> propertyHash;
+	
+	Output out;
 	
 	//chave -> primeiro evento
 	//valor -> eventos de resposta
@@ -24,6 +29,7 @@ public class ResponsePropertyExtract {
 	public ResponsePropertyExtract() {
 		propertyHash = new Hashtable<String,Property>();
 		combinedProps = new Hashtable<String, String>();
+		out = Main.out;
 	}
 	
 	//S responds to P
@@ -57,9 +63,10 @@ public class ResponsePropertyExtract {
 				else {
 					Property needUpdate = propertyHash.remove(prop.getRepresentation());
 					prop.freq += needUpdate.freq;
+					//System.out.println("Entrei aqui de novo "+prop.getRepresentation());
 					propertyHash.put(prop.getRepresentation(), prop);
 				}
-				//System.out.println(prop.getRepresentation());
+				
 			}
 		}
 	}
@@ -68,10 +75,10 @@ public class ResponsePropertyExtract {
 		Collection<Property> allResp = propertyHash.values();
 		
 		for (Property it : allResp) {
-			System.out.println(it.getMeaning()+":");
-			System.out.println(it.getRepresentation());
+			out.println(it.getMeaning()+":");
+			out.println(it.getRepresentation());
 		}
-		System.out.println("TOTAL DE PROPRIEDADES: "+allResp.size());
+		out.println("TOTAL DE PROPRIEDADES: "+allResp.size());
 	}
 	
 	public void printAllResponseProperties(String e) {
@@ -86,10 +93,10 @@ public class ResponsePropertyExtract {
 		Collections.sort(allResp, comparator);
 		
 		for (Property it : allResp) {
-			System.out.println(it.getMeaning()+":");
-			System.out.println(it.getRepresentation()+" #"+it.freq);
+			out.println(it.getMeaning()+":");
+			out.println(it.getRepresentation()+" #"+it.freq);
 		}
-		System.out.println("TOTAL DE PROPRIEDADES: "+allResp.size());
+		out.println("TOTAL DE PROPRIEDADES: "+allResp.size());
 	}
 	
 	public void combineProperties() {
@@ -127,7 +134,8 @@ public class ResponsePropertyExtract {
 
 		while(firstEvents.hasMoreElements()) {
 			String next = firstEvents.nextElement();
-			System.out.println("[]("+next+" -> <>("+combinedProps.get(next)+"))");
+			if (!next.equals(""))
+				out.println("[]("+next+" -> <>("+combinedProps.get(next)+"))");
 		}
 	}
 	

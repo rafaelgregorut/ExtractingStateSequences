@@ -1,0 +1,12 @@
+startClearJob -1 -2
+startClearJob -1 retrieveReservedProducts -1 -2
+startClearJob -1 retrieveReservedProducts -1 nextProduct -1 -2
+startClearJob -1 retrieveReservedProducts -1 nextProduct -1 updateStockLevel -1 -2
+startClearJob -1 retrieveReservedProducts -1 nextProduct -1 updateStockLevel -1 finishClear -1 -2
+startClearJob -1 retrieveReservedProducts -1 nextProduct -1 updateStockLevel -1 finishClear -1 sleep -1 -2
+startClearJob -1 retrieveReservedProducts -1 nextProduct -1 updateStockLevel -1 nextProduct -1 -2
+startEmailJob -1 -2
+startEmailJob -1 filterStockUpdates -1 -2
+startEmailJob -1 filterStockUpdates -1 retrieveUsersEmails -1 -2
+startEmailJob -1 filterStockUpdates -1 retrieveUsersEmails -1 sendEmails -1 -2
+startEmailJob -1 filterStockUpdates -1 retrieveUsersEmails -1 sendEmails -1 sleep -1 -2
