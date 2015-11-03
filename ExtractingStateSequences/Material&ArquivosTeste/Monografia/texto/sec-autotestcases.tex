@@ -31,6 +31,11 @@ We can then concatenate SD to end of each $\beta-sequence$ to obtain the test ca
 
 For the automaton in figure \ref{fig:automatonDS_UIO}, we have one possible SD = \textbf{B B}. In table \ref{tableDS} we have the complete set of $\beta-sequences$ to demonstrate the Distinguishing Sequence criterion.
 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=7cm]{figuras/automatonDS_UIO}
+\caption{\label{fig:automatonDS_UIO} Automaton extracted from \cite{inpe10}}
+\end{figure}
 
 \begin{table}
 \begin{center}
@@ -71,7 +76,7 @@ Second, a process to find $\beta-sequences$ is performed in the same way as the 
 
 Then, we can check to which state each final transition os the $\beta-sequences$ leads to by applying the UES sequences and observing their output.
 
-For the automaton in \ref{fig:automatonDS_UIO}, table \ref{tableUES_1} shows the possible UES for each state. In table @@@@@ we the whole set of $\beta-sequences$ and their concatenation with the respective UES. Both tables can be used to ilustrate the Unique Input-Output criterion.
+For the automaton in \ref{fig:automatonDS_UIO}, table \ref{tableUES_1} shows the possible UES for each state. In table \ref{tableUES_2} we the whole set of $\beta-sequences$ and their concatenation with the respective UES. Both tables can be used to ilustrate the Unique Input-Output criterion.
 
 \end{itemize}
 
@@ -118,12 +123,8 @@ A A B & (4, 0) & A A B B \\
 \end{tabular}
 \end{center}
 \caption{Unique Input-Output cases for automaton \ref{fig:automatonDS_UIO}.\cite{inpe10}}
-\label{tableDS}
+\label{tableUES_2}
 \end{table}
 
-\begin{figure}[htb]
-\centering
-\includegraphics[width=7cm]{figuras/automatonDS_UIO}
-\caption{\label{fig:automatonDS_UIO} Automaton extracted from \cite{inpe10}}
-\end{figure}
+
 

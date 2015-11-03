@@ -1,41 +1,30 @@
 %% ------------------------------------------------------------------------- %%
-\chapter{Introdução}
+\chapter{Introduction}
 \label{cap:introducao}
 
-Uma monografia deve ter um capítulo inicial que é a Introdução e um
-capítulo final que é a Conclusão. Entre esses dois capítulos poderá
-ter uma sequência de capítulos que descrevem o trabalho em detalhes.
-Após o capítulo de conclusão, poderá ter apêndices e ao final deverá
-ter as referências bibliográficas.
+bla bla bla
+
+\section{Motivation}
+
+In the model driven development, test cases to validate systems can be generated from a model that represents how the system must behave. For instance, if the services to be provided by a system are described in Statecharts models, one can  automatically generate test cases for programs from such models. However, properties to be proved in a system are not synthesized from such models. In general, developers take the system specification and observe its restrictions to then define which properties should be satisfied. 
 
 
-Para a escrita de textos em Ciência da Computação, o livro de Justin Zobel, 
-\emph{Writing for Computer Science} \citep{zobel:04} é uma leitura obrigatória. 
-O livro \emph{Metodologia de Pesquisa para Ciência da Computação} de 
-\citet{waz:09} também merece uma boa lida.
+This project proposes a study on the set of test cases generated from specifications in order to guide properties definitions. First, a technique to automatically generate test cases from the specification is presented. Then, all test cases are observed and a technique to synthesize properties from the acquired tests is proposed.
 
-O uso desnecessário de termos em lingua estrangeira deve ser evitado. No entanto,
-quando isso for necessário, os termos devem aparecer \emph{em itálico}.
+\section{Goals}
 
-\begin{small}
-\begin{verbatim}
-Modos de citação:
-indesejável: [AF83] introduziu o algoritmo ótimo.
-indesejável: (Andrew e Foster, 1983) introduziram o algoritmo ótimo.
-certo : Andrew e Foster introduziram o algoritmo ótimo [AF83].
-certo : Andrew e Foster introduziram o algoritmo ótimo (Andrew e Foster, 1983).
-certo : Andrew e Foster (1983) introduziram o algoritmo ótimo.
-\end{verbatim}
-\end{small}
+\begin{itemize}
 
-Uma prática recomendável na escrita de textos é descrever as legendas das
-figuras e tabelas em forma auto-contida: as legendas devem ser razoavelmente
-completas, de modo que o leitor possa entender a figura sem ler o texto onde a
-figura ou tabela é citada.  
+\item Implement an algorithm to automatically generate test cases based on statechart specifications
 
-Apresentar os resultados de forma simples, clara e completa é uma tarefa que
-requer inspiração. Nesse sentido, o livro de \citet{tufte01:visualDisplay},
-\emph{The Visual Display of Quantitative Information}, serve de ajuda na
-criação de figuras que permitam entender e interpretar dados/resultados de forma
-eficiente.
+\item Implement a technique to automatically analyse a set of test cases and extract the events, and sequences of events, that are found in such whole set
 
+\item Using the previous information, synthesize properties to be used by model check programs 
+
+\item Develop a tool to help these tasks
+
+\end{itemize}
+
+\section{Organization}
+
+In chapter \ref{cap:conceitos}, we present the concepts studied to make this project possible. In chapter \ref{cap:testgen}, we describe an technique implemented to automatically generate test cases from statechart models. In chapter \ref{cap:propextract}, we propose a technique to synthesize formal properties based on the previously obtained test cases. Our conclusions regarding this project can be found in chapter \ref{cap:conclusoes}. Information about the tool used to create the statechart models are in apendix \ref{ape-yakindu}. Finally, the syntax of the linear temporal logic, the logic used in the generated formal properties, can be found in apedix \ref{ape-ltl}.

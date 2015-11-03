@@ -34,6 +34,11 @@ Lu~Luo.
 \newblock Technical report, Institute for Software Research International,
   Carnegie Mellon University, Pittsburgh,{USA}.
 
+\bibitem{Nizar}
+Nizar~R. Mabroukeh and C.~I. Ezeife.
+\newblock A taxonomy of sequential pattern mining algorithms.
+\newblock {\em ACM Computing Surveys}, 43, 2010.
+
 \bibitem{introSoftTest}
 José~Carlos Maldonado, Ellen~Franciane Barbosa, Auri M.~R. Vincenzi,
   Márcio~Eduardo Delamaro, Simone do~Roccio Senger~de Souza, and Mario Jino.
@@ -48,6 +53,17 @@ José~Carlos Maldonado, Márcio~Eduardo Delamaro, and Mario Jino.
 Glenford~J. Myers, Tom Badgett, and Corey Sandler.
 \newblock {\em The art of software testing}.
 \newblock John Wiley \& Sons, Inc, 3º edition, 2012.
+
+\bibitem{Pei}
+Jian Pei, Behzad Mortazavi-Asl, and Umeshwar Dayal.
+\newblock Mining sequential patterns by pattern-growth: The prefixspan
+  approach.
+\newblock {\em IEEE Transactions on Knowledge and Data Engineering}, 16, 2004.
+
+\bibitem{Rakesh}
+Ramakrishnan Srikant and Rakesh Agrawal.
+\newblock Mining sequential patterns: Generalizations and performance
+  improvements.
 
 \bibitem{inpe10}
 Érica Ferreira~de Souza.

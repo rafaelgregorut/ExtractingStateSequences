@@ -1,0 +1,48 @@
+\section{Sequential pattern mining}
+\label{sec-seqmining}
+
+Sequential pattern mining is a topic in data mining that discovers frequent subsequences as patterns in a sequence
+database \cite{Nizar}. Each sequence in a sequence database is called data-sequence and contains typically an ID and transactions ordered generally by time, where each transaction is a set of items.
+
+The problem is to find all sequential patterns with a user specified minimum support, where the support of a sequential pattern is the percentage of data-sequences that contain the pattern \cite{Rakesh}. In other words, if a user inputs a percentage $p$ and a sequence database $D$, then the mining will return the set of patterns that are present in at least $p\%$ of the data-sequences. The formal definition can be found in \cite{Nizar} and in \cite{Pei}.
+
+There are several applications for the problem, such as analysis of customer behaviour, purchase patterns in a store and study of DNA sequences. In section \ref{webusage}, a practical example is described based on \cite{Nizar}.
+
+\textbf{Notation}
+
+A data-sequence $S$ that has ID $T$ and $n \geq 1$ ordered transactions $t_1,t_2,...,t_n$ is denoted by $S = [T <t_1,t_2,...,t_n>]$. 
+
+Each transaction $t_i$ that is a set of $m \geq 1$ items $l_{i_1},...,l_{i_m}$ is denoted by $t_i = (l_{i_1},...,l_{i_m})$. Thus, $S = [T <(l_{1_1},...,l_{1_m}), ... ,(l_{n_1},...,l_{n_m})>]$. 
+
+To simplify the notation in the case in which each transaction contains only one item, we can avoid the parenthesis, for example: if $t_i = (l_i)$ for all $ 1 \leq i \leq n$ than it is possible to write $S = [T <l_1l_2...l_n>]$.
+
+
+\subsection{An example: Web usage mining}
+\label{webusage}
+
+Web usage mining, also known as web log mining, is an important application of sequential pattern mining. It is concerned with finding frequent patterns related to user navigation from the information presented in web system's log. Considering that a user is able to access only one page at a time, the data-sequences would only have transitions with a single event each.
+
+In a ecommerce application, for instance, we can have the set of items $I = {a, b, c, d, e, f}$ representing products that can be purchased. The ocurrence of one of these items in a transaction means that a user accessed the page of such item.
+
+Suppose the sequence database contains the following data-sequences extracted from the log: $[T1 <abdac>], [T2 <eaebcac>], [T3 <babfaec>]$ and $[T4 <abfac>]$. In this case, the analysis of the first transaction allows us to conclude that user $T1$ accessed the pages of products $a,b,d,a$ and $c$ in this order. By applying the web usage mining technique with support of 90\%, a manager would notice that $abac$ is a frequen pattern, indicating that 90\% of the users who visit product $a$ then visit $b$, then return to $a$ and later visit $c$. Hence, an offer could be placed in product $a$, which is visited many times in sequence, to increase the sales of other products. 
+
+
+\subsection{Sequential pattern mining algorithms}
+
+There are several algorithms to perform the sequential pattern mining taks, but they generally differ in two aspects\cite{Nizar}:
+
+\begin{itemize}
+
+\item The way in which candidate sequences are generated and stored. The goal is to reduce the amount of candidates created as well as decrease I/O costs.
+
+\item The way in which support is counted and how candidate sequences are tested for frequency. The goal is to eliminate data structures used for support or counting purposes only.
+
+\end{itemize}
+
+Based on these topics, algorithms for sequential pattern mining can be divided in three categories: apriori-based, pattern-growth and early-pruning algorithms
+
+\subsubsection{Apriori-based algorithms}
+
+\subsubsection{Pattern-growth algorithms}
+
+\subsubsection{Early-pruning algorithms}
