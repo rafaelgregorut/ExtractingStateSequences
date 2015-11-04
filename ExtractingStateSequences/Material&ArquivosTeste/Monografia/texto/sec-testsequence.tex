@@ -1,0 +1,6 @@
+\section{Test case mining}
+\label{sec-testsequence}
+
+In chapter \ref{cap:testgen}, we presented an method to automatically generate test cases for statecharts specifications. Each test case presented consisted of a transition $t$ we wished to test, a test path $p$ to activate the transition and a state $s$ which was the expected state $t$ would redirect us to.
+
+The test path $p$ is basically a sequence of consecutive events. Therefore, it is possible to analyze it with the concepts and notation shown in section \ref{sec-seqmining}. Let's say that $p$ is composed by events $e_1,e_2,...,e_n$ in this order. We can associate a sequence $s_p$ to the test path $p$ such that $s_p = [T_p < e_1e_2...e_n >]$, where $T_p$ is an arbitrary ID.
