@@ -39,10 +39,28 @@ There are several algorithms to perform the sequential pattern mining taks, but 
 
 \end{itemize}
 
-Based on these topics, algorithms for sequential pattern mining can be divided in three categories: apriori-based, pattern-growth and early-pruning algorithms
+Considering these topics, algorithms for sequential pattern mining can be divided in two categories: apriori-based, pattern-growth
 
 \subsubsection{Apriori-based algorithms}
 
+These algorithms mainly rely on the property that states that if a sequence $s$ is infrequent, then any other sequence that contains $s$ is all infrequent. An example for the category would be the $GSP$\cite{Rakesh}.
+
+Apriori-based algorithms use the \textit{generate-and-test} method to obtain the candidate patterns: the pattern is grown one item at a time and tested against the minimum support. By taking this approach, they have to maintain the support count for each candidate and test it at iteration of the algorithm.
+
+Generally, algorithms in this category generate an explosive number of candidate sequences, consuming a lot of memory. Besides,  methods such as \textit{GSP} generates a combinatorially explosive number of candidates when mining long sequential patterns. That may be the case of a DNA analysis application, in which many patterns are long.
+
+In addition, since they need to check at each iteration for the support count, multiple scans of the database ate performed, which requires a lot of processing time and IO cost. In general, to find a sequential pattern of length $l$, the a priori-based method must scan the database at least $l$ times. When long patterns exist, this characteristic will cause a non-trivial cost.
+
 \subsubsection{Pattern-growth algorithms}
 
-\subsubsection{Early-pruning algorithms}
+Pattern-growth algorithms try to use a certain data structure to prune candidates early in the mining process. Besides, the search space is partitioned for efficient memory management. \textit{PrefixSpan}\cite{Pei} is an example of such algorithm and, since it was used in our implementations, we will provide more information about it in this subsection.
+
+The general idea behind \textit{PrefixSpan} is as follows: Instead of repeatedly scanning the entire database and generating and testing large sets of candidate sequences, one can recursively project a sequence database into a set of smaller databases associated with the set of patterns mined so far and, then, mine locally frequent patterns in each projected database\cite{Pei}.
+
+To reduce the projections size and the number of access, \textit{PrefixSpan}, sorts the items inside each transaction and creates the projected databases based on patterns' prefixes. In order to do so, the algorithm assumes that the order of items in a transaction is irrelevant, and only the order of the whole transactions matters to the problem.
+
+Differently than apriori-based algorithms, in PrefixSpan does not generate or test candidate sequences. Patterns are grown from the shorter ones. Besides, projected databases keep shrinking, which is relevant in practice because usually, only a small set of
+sequential patterns grow long in a database and, thus, the number of sequences in a projected database usually reduces when prefix grows.
+
+In the worst case, \textit{PrefixSpan} constructs a projected database for every sequential pattern. With the intention to reduce the number of projected databases and improve the performance of the algorithm, \cite{Pei} proposes a technique called \textit{pseudo partition} that may reduce the number and size of projected databases.
+

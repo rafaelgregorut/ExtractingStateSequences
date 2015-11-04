@@ -29,22 +29,21 @@
 \contentsline {subsection}{\numberline {2.4.1}An example: Web usage mining}{16}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Sequential pattern mining algorithms}{16}{subsection.2.4.2}
 \contentsline {subsubsection}{Apriori-based algorithms}{16}{section*.23}
-\contentsline {subsubsection}{Pattern-growth algorithms}{16}{section*.24}
-\contentsline {subsubsection}{Early-pruning algorithms}{16}{section*.25}
-\contentsline {chapter}{\numberline {3}Implementation of test case generation for statecharts}{17}{chapter.3}
-\contentsline {section}{\numberline {3.1}Test cases for simple statecharts}{17}{section.3.1}
-\contentsline {section}{\numberline {3.2}Test cases for complex statecharts: hierarchy}{20}{section.3.2}
-\contentsline {section}{\numberline {3.3}Test cases for complex statecharts: orthogonality}{26}{section.3.3}
-\contentsline {chapter}{\numberline {4}Property extraction}{29}{chapter.4}
-\contentsline {section}{\numberline {4.1}Test case as a sequence of events}{29}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}The Prefix-Span algorithm}{29}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}The SPMF framework}{29}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Specification patterns}{29}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Ocurrence patterns}{29}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Order patterns}{29}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Extracting properties from most frequent subsequences}{29}{section.4.3}
-\contentsline {chapter}{\numberline {5}Conclusion}{31}{chapter.5}
-\contentsline {chapter}{\numberline {A}Yakindu Statecharts Tool}{33}{appendix.A}
-\contentsline {chapter}{\numberline {B}Linear Temporal Logic (LTL)}{35}{appendix.B}
-\contentsline {chapter}{Bibliography}{37}{appendix*.29}
+\contentsline {subsubsection}{Pattern-growth algorithms}{17}{section*.24}
+\contentsline {chapter}{\numberline {3}Implementation of test case generation for statecharts}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}Test cases for simple statecharts}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2}Test cases for complex statecharts: hierarchy}{22}{section.3.2}
+\contentsline {section}{\numberline {3.3}Test cases for complex statecharts: orthogonality}{28}{section.3.3}
+\contentsline {chapter}{\numberline {4}Property extraction}{31}{chapter.4}
+\contentsline {section}{\numberline {4.1}Test case as a sequence of events}{31}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}The Prefix-Span algorithm}{31}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}The SPMF framework}{31}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Specification patterns}{31}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Ocurrence patterns}{31}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Order patterns}{31}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Extracting properties from most frequent subsequences}{31}{section.4.3}
+\contentsline {chapter}{\numberline {5}Conclusion}{33}{chapter.5}
+\contentsline {chapter}{\numberline {A}Yakindu Statecharts Tool}{35}{appendix.A}
+\contentsline {chapter}{\numberline {B}Linear Temporal Logic (LTL)}{37}{appendix.B}
+\contentsline {chapter}{Bibliography}{39}{appendix*.28}
 \contentsfinish 
