@@ -36,13 +36,15 @@
 \contentsline {section}{\numberline {3.3}Test cases for complex statecharts: orthogonality}{28}{section.3.3}
 \contentsline {chapter}{\numberline {4}Property extraction from test cases}{31}{chapter.4}
 \contentsline {section}{\numberline {4.1}Test case mining}{31}{section.4.1}
-\contentsline {section}{\numberline {4.2}The SPMF framework}{31}{section.4.2}
-\contentsline {section}{\numberline {4.3}Specification patterns}{31}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Ocurrence patterns}{31}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Order patterns}{31}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Extracting properties from most frequent subsequences}{31}{section.4.4}
-\contentsline {chapter}{\numberline {5}Conclusion}{33}{chapter.5}
-\contentsline {chapter}{\numberline {A}Yakindu Statecharts Tool}{35}{appendix.A}
-\contentsline {chapter}{\numberline {B}Linear Temporal Logic (LTL)}{37}{appendix.B}
-\contentsline {chapter}{Bibliography}{39}{appendix*.28}
+\contentsline {subsection}{\numberline {4.1.1}The SPMF framework}{32}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}Specification patterns}{32}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Ocurrence patterns}{32}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Order patterns}{32}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Generation of properties from most frequent subsequences}{32}{section.4.3}
+\contentsline {section}{\numberline {4.4}Generation of properties for specific events}{32}{section.4.4}
+\contentsline {chapter}{\numberline {5}Case study}{33}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusion}{35}{chapter.6}
+\contentsline {chapter}{\numberline {A}Yakindu Statecharts Tool}{37}{appendix.A}
+\contentsline {chapter}{\numberline {B}Linear Temporal Logic (LTL)}{39}{appendix.B}
+\contentsline {chapter}{Bibliography}{41}{appendix*.28}
 \contentsfinish 

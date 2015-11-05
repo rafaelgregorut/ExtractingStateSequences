@@ -22,12 +22,14 @@
 \BOOKMARK [1][]{section.3.3}{Test cases for complex statecharts: orthogonality}{chapter.3}% 22
 \BOOKMARK [0][]{chapter.4}{Property extraction from test cases}{}% 23
 \BOOKMARK [1][]{section.4.1}{Test case mining}{chapter.4}% 24
-\BOOKMARK [1][]{section.4.2}{The SPMF framework}{chapter.4}% 25
-\BOOKMARK [1][]{section.4.3}{Specification patterns}{chapter.4}% 26
-\BOOKMARK [2][]{subsection.4.3.1}{Ocurrence patterns}{section.4.3}% 27
-\BOOKMARK [2][]{subsection.4.3.2}{Order patterns}{section.4.3}% 28
-\BOOKMARK [1][]{section.4.4}{Extracting properties from most frequent subsequences}{chapter.4}% 29
-\BOOKMARK [0][]{chapter.5}{Conclusion}{}% 30
-\BOOKMARK [0][]{appendix.A}{Yakindu Statecharts Tool}{}% 31
-\BOOKMARK [0][]{appendix.B}{Linear Temporal Logic \(LTL\)}{}% 32
-\BOOKMARK [0][]{appendix*.28}{Bibliography}{}% 33
+\BOOKMARK [2][]{subsection.4.1.1}{The SPMF framework}{section.4.1}% 25
+\BOOKMARK [1][]{section.4.2}{Specification patterns}{chapter.4}% 26
+\BOOKMARK [2][]{subsection.4.2.1}{Ocurrence patterns}{section.4.2}% 27
+\BOOKMARK [2][]{subsection.4.2.2}{Order patterns}{section.4.2}% 28
+\BOOKMARK [1][]{section.4.3}{Generation of properties from most frequent subsequences}{chapter.4}% 29
+\BOOKMARK [1][]{section.4.4}{Generation of properties for specific events}{chapter.4}% 30
+\BOOKMARK [0][]{chapter.5}{Case study}{}% 31
+\BOOKMARK [0][]{chapter.6}{Conclusion}{}% 32
+\BOOKMARK [0][]{appendix.A}{Yakindu Statecharts Tool}{}% 33
+\BOOKMARK [0][]{appendix.B}{Linear Temporal Logic \(LTL\)}{}% 34
+\BOOKMARK [0][]{appendix*.28}{Bibliography}{}% 35

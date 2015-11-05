@@ -16,6 +16,13 @@ Kirill Bogdanov.
 \newblock PhD thesis, Department of Computer Science, University of Sheffield,
   January 2000.
 
+\bibitem{spmf}
+P.~Fournier-Viger, A.~Gomariz, T.~Gueniche, A.~Soltani, C.~Wu., and V.~S.
+  Tseng.
+\newblock {SPMF: a Java Open-Source Pattern Mining Library}.
+\newblock {\em Journal of Machine Learning Research (JMLR)}, 15:3389--3393,
+  2014.
+
 \bibitem{harel87:semantics_statecharts}
 David Harel, Amir Pnueli, Jeanette Schmidt, and Rivi Sherman.
 \newblock On the formal semantics of statecharts.
