@@ -9,45 +9,45 @@ Warning--string name "june" is undefined
 --line 7 of file bibliografia.bib
 Warning--empty publisher in Beizer
 Warning--empty year in Luo
-You've used 14 entries,
+You've used 16 entries,
             2118 wiz_defined-function locations,
-            578 strings with 6089 characters,
-and the built_in function-call counts, 3972 in all, are:
-= -- 365
-> -- 223
+            587 strings with 6233 characters,
+and the built_in function-call counts, 4416 in all, are:
+= -- 403
+> -- 243
 < -- 1
-+ -- 90
-- -- 74
-* -- 246
-:= -- 707
-add.period$ -- 40
-call.type$ -- 14
-change.case$ -- 77
++ -- 98
+- -- 80
+* -- 263
+:= -- 782
+add.period$ -- 45
+call.type$ -- 16
+change.case$ -- 85
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 151
-empty$ -- 298
-format.name$ -- 74
-if$ -- 809
+cite$ -- 18
+duplicate$ -- 170
+empty$ -- 342
+format.name$ -- 80
+if$ -- 904
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 14
-newline$ -- 71
-num.names$ -- 28
-pop$ -- 100
+int.to.str$ -- 16
+missing$ -- 16
+newline$ -- 80
+num.names$ -- 32
+pop$ -- 117
 preamble$ -- 1
-purify$ -- 65
+purify$ -- 72
 quote$ -- 0
-skip$ -- 107
+skip$ -- 124
 stack$ -- 0
-substring$ -- 123
-swap$ -- 20
+substring$ -- 133
+swap$ -- 22
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 46
+type$ -- 52
 warning$ -- 2
-while$ -- 32
-width$ -- 16
-write$ -- 147
+while$ -- 36
+width$ -- 18
+write$ -- 164
 (There were 3 warnings)

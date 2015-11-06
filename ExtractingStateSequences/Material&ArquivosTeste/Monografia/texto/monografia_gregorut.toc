@@ -30,6 +30,8 @@
 \contentsline {subsection}{\numberline {2.4.2}Sequential pattern mining algorithms}{16}{subsection.2.4.2}
 \contentsline {subsubsection}{Apriori-based algorithms}{16}{section*.23}
 \contentsline {subsubsection}{Pattern-growth algorithms}{17}{section*.24}
+\contentsline {section}{\numberline {2.5}Model checking}{17}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Property definition}{18}{subsection.2.5.1}
 \contentsline {chapter}{\numberline {3}Implementation of test case generation for statecharts}{19}{chapter.3}
 \contentsline {section}{\numberline {3.1}Test cases for simple statecharts}{19}{section.3.1}
 \contentsline {section}{\numberline {3.2}Test cases for complex statecharts: hierarchy}{22}{section.3.2}

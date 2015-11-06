@@ -1,0 +1,14 @@
+\section{Model checking}
+\label{sec-modelcheck}
+
+Model checking is an automated technique that, given a finite-state model of a system and a formal property, systematically checks whether this property holds for that model\cite{Baier}. Typically, there is a hardware or software system specification containing the requirements, and we wish to verify that certains properties, such nonexistence of deadlocks are valid for the model of the system.
+
+
+
+
+\subsection{Property definition}
+
+The properties to be validated are mostly obtained from the system's specification\cite{Baier}. Hence, a property specifies a certain behaviour of the system that is being considered. The property is written in some kind of logic such as Linear Temporal Logic (LTL) or Computational Tree Logic (CTL). In this project the properties were generated using LTL and its syntax can be found in apendix \ref{ape-ltl}.
+
+The classic example for property definition is the absence of deadlocks, but properties can also specify safety protocols\cite{Merz}, occurrence and order of events.
+
