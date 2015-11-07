@@ -21,12 +21,38 @@ Kirill Bogdanov.
 \newblock PhD thesis, Department of Computer Science, University of Sheffield,
   January 2000.
 
+\bibitem{dwyer98}
+Matthew~B. Dwyer, George~S. Avrunin, and James~C. Corbett.
+\newblock Property specification patterns for finite-state verification.
+\newblock In {\em 2nd Workshop on Formal Methods in Software Practice}, May
+  1998.
+
+\bibitem{dwyer99:specpatt_survey}
+Matthew~B. Dwyer, George~S. Avrunin, and James~C. Corbett.
+\newblock Patterns in property specifications for finite-state verification.
+\newblock In {\em Proceedings of the 21st International Conference on Software
+  Engineering}, May 1999.
+
+\bibitem{Eriksson}
+L.-H. Eriksson and K.~Johansson.
+\newblock Using formal methods for quality assurance of interlocking systems.
+
 \bibitem{spmf}
 P.~Fournier-Viger, A.~Gomariz, T.~Gueniche, A.~Soltani, C.~Wu., and V.~S.
   Tseng.
 \newblock {SPMF: a Java Open-Source Pattern Mining Library}.
 \newblock {\em Journal of Machine Learning Research (JMLR)}, 15:3389--3393,
   2014.
+
+\bibitem{Prospec}
+Irbis Gallegos, Omar Ochoa, Ann Gates, Steve Roach, Salamah Salamah, and Corina
+  Vela.
+\newblock A property specification tool for generating formal specifications:
+  Prospec 2.0.
+
+\bibitem{patrice}
+Patrice Godefroid.
+\newblock Combining model checking and testing.
 
 \bibitem{harel87:semantics_statecharts}
 David Harel, Amir Pnueli, Jeanette Schmidt, and Rivi Sherman.
@@ -70,6 +96,13 @@ Glenford~J. Myers, Tom Badgett, and Corey Sandler.
 \newblock {\em The art of software testing}.
 \newblock John Wiley \& Sons, Inc, 3º edition, 2012.
 
+\bibitem{testVsModelCheck}
+NASA.
+\newblock Testing vs. model checking.
+\newblock
+  \url{http://babelfish.arc.nasa.gov/trac/jpf/wiki/intro/testing_vs_model_checking\#no1}.
+\newblock Last accessed in 11/07/2015.
+
 \bibitem{Pei}
 Jian Pei, Behzad Mortazavi-Asl, and Umeshwar Dayal.
 \newblock Mining sequential patterns by pattern-growth: The prefixspan
@@ -80,6 +113,11 @@ Jian Pei, Behzad Mortazavi-Asl, and Umeshwar Dayal.
 Ramakrishnan Srikant and Rakesh Agrawal.
 \newblock Mining sequential patterns: Generalizations and performance
   improvements.
+
+\bibitem{Tian}
+Jeff Tian.
+\newblock {\em Sofotware Quality Engineering}.
+\newblock John Wiley \& Sons, 2005.
 
 \bibitem{inpe10}
 Érica Ferreira~de Souza.

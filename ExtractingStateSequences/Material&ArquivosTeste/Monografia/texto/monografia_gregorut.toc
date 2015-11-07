@@ -25,28 +25,28 @@
 \contentsline {subsection}{\numberline {2.3.1}Desiging test cases}{10}{subsection.2.3.1}
 \contentsline {subsubsection}{Use cases vs Test cases}{12}{section*.18}
 \contentsline {subsection}{\numberline {2.3.2}Automatic generation of test cases}{13}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Sequential pattern mining}{15}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}An example: Web usage mining}{16}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Sequential pattern mining algorithms}{16}{subsection.2.4.2}
-\contentsline {subsubsection}{Apriori-based algorithms}{16}{section*.23}
-\contentsline {subsubsection}{Pattern-growth algorithms}{17}{section*.24}
-\contentsline {section}{\numberline {2.5}Model checking}{17}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Property definition}{18}{subsection.2.5.1}
-\contentsline {chapter}{\numberline {3}Implementation of test case generation for statecharts}{19}{chapter.3}
-\contentsline {section}{\numberline {3.1}Test cases for simple statecharts}{19}{section.3.1}
-\contentsline {section}{\numberline {3.2}Test cases for complex statecharts: hierarchy}{22}{section.3.2}
-\contentsline {section}{\numberline {3.3}Test cases for complex statecharts: orthogonality}{28}{section.3.3}
-\contentsline {chapter}{\numberline {4}Property extraction from test cases}{31}{chapter.4}
-\contentsline {section}{\numberline {4.1}Test case mining}{31}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}The SPMF framework}{32}{subsection.4.1.1}
-\contentsline {section}{\numberline {4.2}Specification patterns}{32}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Ocurrence patterns}{32}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Order patterns}{32}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Generation of properties from most frequent subsequences}{32}{section.4.3}
-\contentsline {section}{\numberline {4.4}Generation of properties for specific events}{32}{section.4.4}
-\contentsline {chapter}{\numberline {5}Case study}{33}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusion}{35}{chapter.6}
-\contentsline {chapter}{\numberline {A}Yakindu Statecharts Tool}{37}{appendix.A}
-\contentsline {chapter}{\numberline {B}Linear Temporal Logic (LTL)}{39}{appendix.B}
-\contentsline {chapter}{Bibliography}{41}{appendix*.28}
+\contentsline {section}{\numberline {2.4}Model checking}{15}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Property definition}{16}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Specification patterns}{17}{subsection.2.4.2}
+\contentsline {subsubsection}{Occurrence patterns}{17}{section*.23}
+\contentsline {subsubsection}{Order patterns}{17}{section*.24}
+\contentsline {section}{\numberline {2.5}Sequential pattern mining}{18}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}An example: Web usage mining}{18}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Sequential pattern mining algorithms}{18}{subsection.2.5.2}
+\contentsline {subsubsection}{Apriori-based algorithms}{19}{section*.25}
+\contentsline {subsubsection}{Pattern-growth algorithms}{19}{section*.26}
+\contentsline {chapter}{\numberline {3}Implementation of test case generation for statecharts}{21}{chapter.3}
+\contentsline {section}{\numberline {3.1}Test cases for simple statecharts}{21}{section.3.1}
+\contentsline {section}{\numberline {3.2}Test cases for complex statecharts: hierarchy}{24}{section.3.2}
+\contentsline {section}{\numberline {3.3}Test cases for complex statecharts: orthogonality}{30}{section.3.3}
+\contentsline {chapter}{\numberline {4}Property extraction from test cases}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}Test case mining}{33}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}The SPMF framework}{34}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}Generation of properties from most frequent subsequences}{34}{section.4.2}
+\contentsline {section}{\numberline {4.3}Generation of properties for specific events}{34}{section.4.3}
+\contentsline {chapter}{\numberline {5}Case study}{35}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusion}{37}{chapter.6}
+\contentsline {chapter}{\numberline {A}Yakindu Statecharts Tool}{39}{appendix.A}
+\contentsline {chapter}{\numberline {B}Linear Temporal Logic (LTL)}{41}{appendix.B}
+\contentsline {chapter}{Bibliography}{43}{appendix*.30}
 \contentsfinish 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.22)  5 NOV 2015 23:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.22)  7 NOV 2015 16:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -516,21 +516,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 Chapter 2.
 (./sec-statecharts.tex [3
 
-] <figuras/nfa1.png, id=254, 289.08pt x 289.08pt>
+] <figuras/nfa1.png, id=244, 289.08pt x 289.08pt>
 File: figuras/nfa1.png Graphic file (type png)
 
 <use figuras/nfa1.png>
 Package pdftex.def Info: figuras/nfa1.png used on input line 48.
 (pdftex.def)             Requested size: 144.54pt x 144.53964pt.
 
-<figuras/statechartExample1.png, id=257, 808.01875pt x 469.755pt>
+<figuras/statechartExample1.png, id=247, 808.01875pt x 469.755pt>
 File: figuras/statechartExample1.png Graphic file (type png)
 
 <use figuras/statechartExample1.png>
 Package pdftex.def Info: figuras/statechartExample1.png used on input line 76.
 (pdftex.def)             Requested size: 468.33257pt x 272.27173pt.
  [4 <./figuras/nfa1.png>] [5 <./figuras/statechartExample1.png>]
-<figuras/statechartExample2.png, id=286, 407.5225pt x 407.5225pt>
+<figuras/statechartExample2.png, id=276, 407.5225pt x 407.5225pt>
 File: figuras/statechartExample2.png Graphic file (type png)
 
 <use figuras/statechartExample2.png>
@@ -538,7 +538,7 @@ Package pdftex.def Info: figuras/statechartExample2.png used on input line 109.
 
 (pdftex.def)             Requested size: 284.52756pt x 284.54248pt.
 
-<figuras/flatState.png, id=287, 796.47563pt x 597.73312pt>
+<figuras/flatState.png, id=277, 796.47563pt x 597.73312pt>
 File: figuras/flatState.png Graphic file (type png)
 
 <use figuras/flatState.png>
@@ -546,7 +546,7 @@ Package pdftex.def Info: figuras/flatState.png used on input line 115.
 (pdftex.def)             Requested size: 284.52756pt x 213.52379pt.
 ) (./sec-tests.tex [6 <./figuras/statechartExample2.png>] [7 <./figuras/flatSta
 te.png>]
-<figuras/vModel.png, id=316, 796.47563pt x 597.73312pt>
+<figuras/vModel.png, id=305, 796.47563pt x 597.73312pt>
 File: figuras/vModel.png Graphic file (type png)
 
 <use figuras/vModel.png>
@@ -594,104 +594,109 @@ Underfull \hbox (badness 2351) in paragraph at lines 63--63
  []
 
 [11] [12]) (./sec-autotestcases.tex [13]
-<figuras/automatonDS_UIO.png, id=363, 423.5825pt x 302.12875pt>
+<figuras/automatonDS_UIO.png, id=353, 423.5825pt x 302.12875pt>
 File: figuras/automatonDS_UIO.png Graphic file (type png)
 
 <use figuras/automatonDS_UIO.png>
 Package pdftex.def Info: figuras/automatonDS_UIO.png used on input line 36.
 (pdftex.def)             Requested size: 199.16928pt x 142.06046pt.
  [14 <./figuras/automatonDS_UIO.png>]))
-(./sec-seqmining.tex [15] [16]) (./sec-modelcheck.tex [17])) (./cap-testgen.tex
-[18]
-Chapter 3.
-(./sec-testcasesimple.tex [19
+(./sec-modelcheck.tex [15]
+Overfull \hbox (10.43234pt too wide) in paragraph at lines 33--34
+[]\T1/cmr/m/n/12 The for-mal prop-er-ties to be val-i-dated are mostly ob-taine
+d from the sys-tem's specification[[]][].
+ []
+
+[16]) (./sec-seqmining.tex [17] [18])) (./cap-testgen.tex [19] [20
 
 ]
-<figuras/trocaPlano.png, id=465, 466.74374pt x 646.66594pt>
+Chapter 3.
+(./sec-testcasesimple.tex [21]
+<figuras/trocaPlano.png, id=482, 466.74374pt x 646.66594pt>
 File: figuras/trocaPlano.png Graphic file (type png)
 
 <use figuras/trocaPlano.png>
 Package pdftex.def Info: figuras/trocaPlano.png used on input line 88.
 (pdftex.def)             Requested size: 284.52756pt x 394.21896pt.
- [20] [21 <./figuras/trocaPlano.png>])
-(./sec-testhierarchy.tex [22] [23] [24]
-<figuras/webEDI.png, id=617, 555.57562pt x 342.5297pt>
+ [22] [23 <./figuras/trocaPlano.png>])
+(./sec-testhierarchy.tex [24] [25] [26]
+<figuras/webEDI.png, id=635, 555.57562pt x 342.5297pt>
 File: figuras/webEDI.png Graphic file (type png)
 
 <use figuras/webEDI.png>
 Package pdftex.def Info: figuras/webEDI.png used on input line 120.
 (pdftex.def)             Requested size: 426.79134pt x 263.13194pt.
- [25 <./figuras/webEDI.png>] [26])
-(./sec-testorthogonality.tex [27] [28]
-<figuras/stockUpdateEmail.png, id=670, 612.78937pt x 428.35031pt>
+ [27 <./figuras/webEDI.png>] [28])
+(./sec-testorthogonality.tex [29] [30]
+<figuras/stockUpdateEmail.png, id=687, 612.78937pt x 428.35031pt>
 File: figuras/stockUpdateEmail.png Graphic file (type png)
 
 <use figuras/stockUpdateEmail.png>
 Package pdftex.def Info: figuras/stockUpdateEmail.png used on input line 82.
 (pdftex.def)             Requested size: 426.79134pt x 298.33333pt.
- [29]
+ [31]
 Overfull \hbox (11.21414pt too wide) in paragraph at lines 127--128
 []\T1/cmr/m/n/12 Path: \T1/cmr/m/it/12 e e start-Clear-Job re-trieveRe-served-P
 rod-ucts nextProd-uct up-date-Stock-Level nextProd-
  []
 
-)) (./cap-propextract.tex [30 <./figuras/stockUpdateEmail.png>]
+)) (./cap-propextract.tex [32 <./figuras/stockUpdateEmail.png>]
 Chapter 4.
-(./sec-testsequence.tex (./sec-spmf.tex [31
+(./sec-testsequence.tex (./sec-spmf.tex [33
 
-]))) (./cap-casestudy.tex [32]
+]))) (./cap-casestudy.tex [34]
 Chapter 5.
-) (./cap-conclusoes.tex [33
+) (./cap-conclusoes.tex [35
 
-] [34
+] [36
 
 ]
 Chapter 6.
-) [35]
+) [37]
 \openout2 = `ape-yakindu.aux'.
 
- (./ape-yakindu.tex [36
+ (./ape-yakindu.tex [38
 
 
 ]
 Appendix A.
-) [37]
+) [39]
 \openout2 = `ape-ltl.aux'.
 
- (./ape-ltl.tex [38
+ (./ape-ltl.tex [40
 
 
 
 ]
 Appendix B.
-) [39] [40
+) [41] [42
 
 
 ] (./monografia_gregorut.bbl (./monografia_gregorut.brf)
 \tf@brf=\write6
 \openout6 = `monografia_gregorut.brf'.
 
- [41
+ [43
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 284.
 
-[42]
+[44]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 284.
  (./monografia_gregorut.aux (./ape-yakindu.aux) (./ape-ltl.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 284.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 284.
 Package rerunfilecheck Info: File `monografia_gregorut.out' has not changed.
-(rerunfilecheck)             Checksum: 6D48C87A5FBD05B1DA7B7A0639FDBD45;2555.
+(rerunfilecheck)             Checksum: 8897D7818DA81F4543A2A8C4C91D65FF;2424.
 Package rerunfilecheck Info: File `monografia_gregorut.brf' has not changed.
-(rerunfilecheck)             Checksum: 5668ED0C21D26834BF25135AD5DCBE29;1960.
+(rerunfilecheck)             Checksum: 8AB85F14E2DF1BA3E8EB4B82A2BC0CF6;2405.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 284.
  ) 
 Here is how much of TeX's memory you used:
- 10924 strings out of 495004
- 161562 string characters out of 6180662
+ 10959 strings out of 495004
+ 162033 string characters out of 6180662
  379140 words of memory out of 5000000
- 13576 multiletter control sequences out of 15000+600000
+ 13602 multiletter control sequences out of 15000+600000
  25396 words of font info for 65 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  36i,13n,45p,1117b,1736s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -705,23 +710,24 @@ ic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/greg
-orut/texmf/fonts/type1/public/cm-super/sfbi1200.pfb></home/gregorut/texmf/fonts
-/type1/public/cm-super/sfbx1000.pfb></home/gregorut/texmf/fonts/type1/public/cm
--super/sfbx1095.pfb></home/gregorut/texmf/fonts/type1/public/cm-super/sfbx1200.
-pfb></home/gregorut/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></home/grego
-rut/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></home/gregorut/texmf/fonts/
-type1/public/cm-super/sfbx2488.pfb></home/gregorut/texmf/fonts/type1/public/cm-
-super/sfrm0700.pfb></home/gregorut/texmf/fonts/type1/public/cm-super/sfrm0800.p
-fb></home/gregorut/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></home/gregor
-ut/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></home/gregorut/texmf/fonts/t
-ype1/public/cm-super/sfrm1728.pfb></home/gregorut/texmf/fonts/type1/public/cm-s
-uper/sfti1000.pfb></home/gregorut/texmf/fonts/type1/public/cm-super/sfti1095.pf
-b></home/gregorut/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on monografia_gregorut.pdf (48 pages, 962764 bytes).
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></home/grego
+rut/texmf/fonts/type1/public/cm-super/sfbi1200.pfb></home/gregorut/texmf/fonts/
+type1/public/cm-super/sfbx1000.pfb></home/gregorut/texmf/fonts/type1/public/cm-
+super/sfbx1095.pfb></home/gregorut/texmf/fonts/type1/public/cm-super/sfbx1200.p
+fb></home/gregorut/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></home/gregor
+ut/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></home/gregorut/texmf/fonts/t
+ype1/public/cm-super/sfbx2488.pfb></home/gregorut/texmf/fonts/type1/public/cm-s
+uper/sfrm0700.pfb></home/gregorut/texmf/fonts/type1/public/cm-super/sfrm0800.pf
+b></home/gregorut/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></home/gregoru
+t/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></home/gregorut/texmf/fonts/ty
+pe1/public/cm-super/sfrm1728.pfb></home/gregorut/texmf/fonts/type1/public/cm-su
+per/sfti1000.pfb></home/gregorut/texmf/fonts/type1/public/cm-super/sfti1095.pfb
+></home/gregorut/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on monografia_gregorut.pdf (50 pages, 978861 bytes).
 PDF statistics:
- 965 PDF objects out of 1000 (max. 8388607)
- 854 compressed objects within 9 object streams
- 325 named destinations out of 1000 (max. 500000)
- 342 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 996 PDF objects out of 1000 (max. 8388607)
+ 882 compressed objects within 9 object streams
+ 334 named destinations out of 1000 (max. 500000)
+ 326 words of extra memory for PDF output out of 10000 (max. 10000000)
 
