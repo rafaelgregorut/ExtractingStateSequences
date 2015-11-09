@@ -1,11 +1,11 @@
-fazerLogin/null -1 -2
-fazerLogin/null -1 buscaLinhas/null -1 -2
-fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 -2
-fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 setUsuarioFuncionario/null -1 -2
-fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 setUsuarioFuncionario/null -1 esvaziaCarrinho/null -1 -2
-fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 setUsuarioRegular/null -1 -2
-fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 setUsuarioRegular/null -1 buscaContrato/null -1 -2
-fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 setUsuarioRegular/null -1 buscaContrato/null -1 setUsuarioComFidelizacao/null -1 -2
-fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 setUsuarioRegular/null -1 buscaContrato/null -1 setUsuarioComFidelizacao/null -1 esvaziaCarrinho/null -1 -2
-fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 setUsuarioRegular/null -1 buscaContrato/null -1 setUsuarioSemFidelizacao/null -1 -2
-fazerLogin/null -1 buscaLinhas/null -1 buscaFuncionario/null -1 setUsuarioRegular/null -1 buscaContrato/null -1 setUsuarioSemFidelizacao/null -1 continuaCheckout/null -1 -2
+doLogin -1 -2
+doLogin -1 searchLineNumber -1 -2
+doLogin -1 searchLineNumber -1 searchEmployee -1 -2
+doLogin -1 searchLineNumber -1 searchEmployee -1 setEmployeeUser -1 -2
+doLogin -1 searchLineNumber -1 searchEmployee -1 setEmployeeUser -1 emptyCart -1 -2
+doLogin -1 searchLineNumber -1 searchEmployee -1 setRegularUser -1 -2
+doLogin -1 searchLineNumber -1 searchEmployee -1 setRegularUser -1 searchContract -1 -2
+doLogin -1 searchLineNumber -1 searchEmployee -1 setRegularUser -1 searchContract -1 setCommittedUser -1 -2
+doLogin -1 searchLineNumber -1 searchEmployee -1 setRegularUser -1 searchContract -1 setCommittedUser -1 emptyCart -1 -2
+doLogin -1 searchLineNumber -1 searchEmployee -1 setRegularUser -1 searchContract -1 setNotCommittedUser -1 -2
+doLogin -1 searchLineNumber -1 searchEmployee -1 setRegularUser -1 searchContract -1 setNotCommittedUser -1 proceedCheckout -1 -2

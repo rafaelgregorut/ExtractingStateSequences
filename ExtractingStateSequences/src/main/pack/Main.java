@@ -22,7 +22,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import ltl.extraction.ResponsePropertyExtract;
-import ltl.extraction.UniversalPropertyExtract;
+import ltl.extraction.ExistencePropertyExtract;
 import mef.basics.EventList;
 import ca.pfv.spmf.algorithms.sequentialpatterns.BIDE_and_prefixspan_with_strings.AlgoPrefixSpan_with_Strings;
 import ca.pfv.spmf.input.sequence_database_list_strings.SequenceDatabase;
@@ -126,14 +126,14 @@ public class Main {
 						sequencePatt_Universal = seqPattIn.parseSequencePatternsString(sequencePatt_Universal);
 					
 					ArrayList<EventList> sequencias_universais = seqPattIn.seqPattStringsToManyEventLists(sequencePatt_Universal);
-					UniversalPropertyExtract uniExtract = new UniversalPropertyExtract();
+					ExistencePropertyExtract uniExtract = new ExistencePropertyExtract();
 					
 					for (Iterator<EventList> it = sequencias_universais.iterator(); it.hasNext(); ){
-						uniExtract.extractUniversalProperties(it.next());
+						uniExtract.extractExistenceProperties(it.next());
 					}
 					out.println("Todas as propriedades universais criadas:");
 					out.println("==============================================");
-					uniExtract.printAllUniversalProperties();
+					uniExtract.printAllExistenceProperties();
 					out.println("==============================================");
 					
 					/*
@@ -328,14 +328,14 @@ public class Main {
 		sequencePatt_Universal = seqPattIn.parseSequencePatternsString(sequencePatt_Universal);
 		
 		ArrayList<EventList> sequencias_universais = seqPattIn.seqPattStringsToManyEventLists(sequencePatt_Universal);
-		UniversalPropertyExtract uniExtract = new UniversalPropertyExtract();
+		ExistencePropertyExtract uniExtract = new ExistencePropertyExtract();
 		
 		for (Iterator<EventList> it = sequencias_universais.iterator(); it.hasNext(); ){
-			uniExtract.extractUniversalProperties(it.next());
+			uniExtract.extractExistenceProperties(it.next());
 		}
 		System.out.println("Todas as propriedades universais criadas:");
 		System.out.println("==============================================");
-		uniExtract.printAllUniversalProperties();
+		uniExtract.printAllExistenceProperties();
 		System.out.println("==============================================");
 		
 		/*

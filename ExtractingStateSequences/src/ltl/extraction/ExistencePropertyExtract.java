@@ -11,7 +11,7 @@ import main.pack.Main;
 import mef.basics.Event;
 import mef.basics.EventList;
 
-public class UniversalPropertyExtract {
+public class ExistencePropertyExtract {
 	
 	Output out;
 	
@@ -20,14 +20,14 @@ public class UniversalPropertyExtract {
 	String combinedProps;
 
 	
-	public UniversalPropertyExtract() {
+	public ExistencePropertyExtract() {
 		propertyHash = new Hashtable<String,Property>();
 		combinedProps = "";
 		out = Main.out;
 	}
 
 	
-	public void extractUniversalProperties(EventList listaDeEventos) {
+	public void extractExistenceProperties(EventList listaDeEventos) {
 		//listaDeEventos.print();
 
 		for (int i = 0; i < listaDeEventos.size(); i++) {
@@ -40,7 +40,7 @@ public class UniversalPropertyExtract {
 		}
 	}
 	
-	public void printAllUniversalProperties() {
+	public void printAllExistenceProperties() {
 		Enumeration<String> allRep = propertyHash.keys();
 		while(allRep.hasMoreElements())
 			out.println(allRep.nextElement());
@@ -55,7 +55,7 @@ public class UniversalPropertyExtract {
 			String prop = propReps.nextElement();
 			matcher = pattern.matcher(prop);
 			if (matcher.find()) {
-				combinedProps = "[]("+matcher.group(1);
+				combinedProps = "<>("+matcher.group(1);
 			}
 		}
 
