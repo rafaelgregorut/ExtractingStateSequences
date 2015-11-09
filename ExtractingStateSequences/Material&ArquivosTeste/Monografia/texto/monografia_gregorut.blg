@@ -1,53 +1,53 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: monografia_gregorut.aux
-A level-1 auxiliary file: ape-yakindu.aux
 A level-1 auxiliary file: ape-ltl.aux
 The style file: plain.bst
 Database file #1: bibliografia.bib
 Warning--string name "june" is undefined
 --line 7 of file bibliografia.bib
+Warning--to sort, need author or key in Yakindu
 Warning--empty publisher in Beizer
 Warning--empty year in Luo
-You've used 23 entries,
+You've used 24 entries,
             2118 wiz_defined-function locations,
-            618 strings with 7179 characters,
-and the built_in function-call counts, 6231 in all, are:
-= -- 555
-> -- 346
+            622 strings with 7262 characters,
+and the built_in function-call counts, 6399 in all, are:
+= -- 572
+> -- 347
 < -- 1
-+ -- 140
++ -- 141
 - -- 114
-* -- 356
-:= -- 1087
-add.period$ -- 64
-call.type$ -- 23
-change.case$ -- 122
+* -- 361
+:= -- 1106
+add.period$ -- 67
+call.type$ -- 24
+change.case$ -- 125
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 238
-empty$ -- 508
+cite$ -- 27
+duplicate$ -- 245
+empty$ -- 531
 format.name$ -- 114
-if$ -- 1285
+if$ -- 1327
 int.to.chr$ -- 0
-int.to.str$ -- 23
+int.to.str$ -- 24
 missing$ -- 20
-newline$ -- 113
+newline$ -- 118
 num.names$ -- 46
-pop$ -- 185
+pop$ -- 195
 preamble$ -- 1
-purify$ -- 103
+purify$ -- 105
 quote$ -- 0
-skip$ -- 180
+skip$ -- 185
 stack$ -- 0
-substring$ -- 169
-swap$ -- 31
+substring$ -- 174
+swap$ -- 32
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 78
-warning$ -- 2
+type$ -- 82
+warning$ -- 3
 while$ -- 50
-width$ -- 25
-write$ -- 226
-(There were 3 warnings)
+width$ -- 26
+write$ -- 235
+(There were 4 warnings)

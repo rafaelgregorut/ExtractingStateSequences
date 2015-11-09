@@ -1,0 +1,55 @@
+\subsection{Test case mining example}
+\label{exampleTestMin}
+
+To ilustrate the mining technique, let's consider the test paths gerenated for the statechart in \ref{fig:trocaPlano} presented in table \ref{testPathsTrocaPlano}. The $PrefixSpan$ implementaion in $SPMF$ requires an input file such that there must be one sequence per line, each event must be delimited by $-1$ and each line must end with $-2$.
+
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|p{15cm}|}
+\hline
+\textbf{Test paths for \ref{fig:trocaPlano}}\\ \hline
+
+doLogin -1 -2 \\ \hline
+doLogin -1 searchLineNumber -1 -2\\ \hline
+doLogin -1 searchLineNumber -1 searchEmployee -1 -2\\ \hline
+doLogin -1 searchLineNumber -1 searchEmployee -1 setEmployeeUser -1 -2\\ \hline
+doLogin -1 searchLineNumber -1 searchEmployee -1 setEmployeeUser -1 emptyCart -1 -2\\ \hline
+doLogin -1 searchLineNumber -1 searchEmployee -1 setRegularUser -1 -2\\ \hline
+doLogin -1 searchLineNumber -1 searchEmployee -1 setRegularUser -1 searchContract -1 -2\\ \hline
+doLogin -1 searchLineNumber -1 searchEmployee -1 setRegularUser -1 searchContract -1 setCommittedUser -1 -2\\ \hline
+doLogin -1 searchLineNumber -1 searchEmployee -1 setRegularUser -1 searchContract -1 setCommittedUser -1 emptyCart -1 -2\\ \hline
+doLogin -1 searchLineNumber -1 searchEmployee -1 setRegularUser -1 searchContract -1 setNotCommittedUser -1 -2\\ \hline
+doLogin -1 searchLineNumber -1 searchEmployee -1 setRegularUser -1 searchContract -1 setNotCommittedUser -1 proceedCheckout -1 -2\\
+
+\hline
+\end{tabular}
+\end{center}
+\caption{Test paths obtained from the test cases generated for statechart \ref{fig:trocaPlano}}
+\label{testPathsTrocaPlano}
+\end{table}
+
+
+Inputing sequences in table \ref{testPathsTrocaPlano} to $PrefixSpan$ with minimum support of $70\%$, we get as output the patterns presented in table \ref{patternsTrocaPlano}. We can then notice, for instance, that events \textit{doLogin, searchLineNumber} and \textit{searchEmployee} occur in this order in at least $70\%$ of that automatically generated test cases.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|}
+
+\hline
+
+doLogin -1  \\ \hline
+doLogin -1 searchEmployee -1 \\ \hline
+doLogin -1 searchLineNumber -1  \\ \hline
+doLogin -1 searchLineNumber -1 searchEmployee -1  \\ \hline
+searchLineNumber -1  \\ \hline
+searchLineNumber -1 searchEmployee -1  \\ \hline
+searchEmployee -1 \\
+
+\hline
+\end{tabular}
+\end{center}
+\caption{Patterns extracted from sequences in \ref{testPathsTrocaPlano} with minimum support of $70\%$.}
+\label{patternsTrocaPlano}
+\end{table}
+

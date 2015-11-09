@@ -1,0 +1,7 @@
+buscaLinhas -1  #SUP: 10
+buscaLinhas -1 buscaFuncionario -1  #SUP: 9
+buscaFuncionario -1  #SUP: 9
+fazerLogin -1  #SUP: 11
+fazerLogin -1 buscaFuncionario -1  #SUP: 9
+fazerLogin -1 buscaLinhas -1  #SUP: 10
+fazerLogin -1 buscaLinhas -1 buscaFuncionario -1  #SUP: 9

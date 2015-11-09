@@ -153,8 +153,14 @@ year ={2008}
 @Book{Tian,
  author   = {Jeff Tian},
  title    = {Sofotware Quality Engineering},
- publisher= {John Wiley & Sons},
+ publisher= {John Wiley \& Sons},
  year     = {2005},
+}
+
+@Misc{Yakindu,
+ title    = {Yakindu Statechart Tools},
+ note     = {Last accessed in 11/09/2015},
+ howpublished= {\url{http://babelfish.arc.nasa.gov/trac/jpf/wiki/intro/testing_vs_model_checking\#no1}},
 }
 
 %%---------------------------------------------------------------------------------%%
