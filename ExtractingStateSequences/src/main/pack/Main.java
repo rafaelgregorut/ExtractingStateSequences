@@ -131,7 +131,7 @@ public class Main {
 					for (Iterator<EventList> it = sequencias_universais.iterator(); it.hasNext(); ){
 						uniExtract.extractExistenceProperties(it.next());
 					}
-					out.println("Todas as propriedades universais criadas:");
+					out.println("Todas as propriedades de existencia criadas:");
 					out.println("==============================================");
 					uniExtract.printAllExistenceProperties();
 					out.println("==============================================");
