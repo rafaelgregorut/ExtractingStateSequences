@@ -104,15 +104,15 @@ public class Main {
 					for (Iterator<EventList> it = sequencias.iterator(); it.hasNext(); ){
 						respExtract.extractResponseProperties(it.next());
 					}
-					out.println("Todas as propriedades de resposta criadas:");
+					out.println("Response properties created:");
 					out.println("==============================================");
 					respExtract.printAllResponseProperties();
-					System.out.println("==============================================");
+					out.println("==============================================");
 					
 					/*
 					 * Combinacao das propriedades de resposta
 					 */
-					out.println("Propriedades de resposta combinadas:");
+					out.println("Combined response properties:");
 					out.println("==============================================");
 					respExtract.combineProperties();
 					respExtract.printCombinedProperties();
@@ -131,7 +131,7 @@ public class Main {
 					for (Iterator<EventList> it = sequencias_universais.iterator(); it.hasNext(); ){
 						uniExtract.extractExistenceProperties(it.next());
 					}
-					out.println("Todas as propriedades de existencia criadas:");
+					out.println("Existence properties created:");
 					out.println("==============================================");
 					uniExtract.printAllExistenceProperties();
 					out.println("==============================================");
@@ -140,7 +140,7 @@ public class Main {
 					 * Combinacao das propriedades universais
 					 */
 					
-					out.println("Propriedades universais combinadas:");
+					out.println("Combined existence properties:");
 					out.println("==============================================");
 					uniExtract.combineProperties();
 					uniExtract.printCombinedProperties();
@@ -152,9 +152,9 @@ public class Main {
 					Set<Integer> notUsed = sequenceDatabase.getSequenceIDs();
 					notUsed.removeAll(sequenceDatabase.getUsedSequences());
 					
-					out.println("Sequencias de teste nao utilizadas: ");
+					out.println("Test paths that were not used:");
 					for(Integer i : notUsed) 
-						out.print(i+" ");
+						out.print(i+1+" ");
 					out.println("\n==============================================");
 	
 					/*Seria interessate mostrar os eventos nao usados tbm...*/
@@ -238,13 +238,15 @@ public class Main {
 					SequencePatternsInputHandler seqPattIn = new SequencePatternsInputHandler();
 					sequencePatt_Spec = seqPattIn.parseSequencePatternsString(sequencePatt_Spec);
 					
+					System.out.println(sequencePatt_Spec);
+					
 					ArrayList<EventList> sequencias_spec = seqPattIn.seqPattStringsToManyEventLists(sequencePatt_Spec);
 					ResponsePropertyExtract respSpecExtract = new ResponsePropertyExtract();
 					
 					for (Iterator<EventList> it = sequencias_spec.iterator(); it.hasNext(); ){
 						respSpecExtract.extractSpecificReponseProperties(it.next(),eventSpec);
 					}
-					out.println("Todas as propriedades de resposta relacionadas ao evento "+eventSpec+":");
+					out.println("Response properties with event "+eventSpec+":");
 					out.println("==============================================");
 					respSpecExtract.printAllResponseProperties(eventSpec);
 					out.println("==============================================");
@@ -252,7 +254,7 @@ public class Main {
 					/*
 					 * Combinacao das propriedades de resposta
 					 */
-					out.println("Propriedades de resposta combinadas:");
+					out.println("Combined response properties:");
 					out.println("==============================================");
 					respSpecExtract.combinePropertiesSpecific(eventSpec);
 					respSpecExtract.printCombinedProperties();
@@ -268,154 +270,4 @@ public class Main {
 		frame.getContentPane().add(btnCreateSpecifcProperties);
 	}
 
-
-	
-	public static void main2(String[] args) throws IOException {
-		String filePath = args[0];
-		double minSupRelative = Double.parseDouble(args[1]);
-		
-		SequenceDatabase sequenceDatabase = new SequenceDatabase(); 
-		String databaseInString = sequenceDatabase.loadFile(filePath);
-		//System.out.println("AQUI: "+databaseInString);		
-		
-		AlgoPrefixSpan_with_Strings algo = new AlgoPrefixSpan_with_Strings(); 
-				
-		int absoluteMinSup = (int)Math.ceil((minSupRelative * sequenceDatabase.size()));
-		
-		algo.runAlgorithm(sequenceDatabase, null, absoluteMinSup);   
-		String sequencePatt = algo.getFileContent();
-		/*System.out.println("Padroes presentes em pelo menos "+minSupRelative+"% dos casos de teste");
-		System.out.println("==============================================");
-		System.out.print(sequencePatt);
-		System.out.println("TOTAL DE PADROES: "+algo.getPatternCount());
-		System.out.println("==============================================");*/
-
-		SequencePatternsInputHandler seqPattIn = new SequencePatternsInputHandler();
-		sequencePatt = seqPattIn.parseSequencePatternsString(sequencePatt);
-		
-		//System.out.println("Padroes:");
-		//System.out.println(sequencePatt);
-		ArrayList<EventList> sequencias = seqPattIn.seqPattStringsToManyEventLists(sequencePatt);
-		ResponsePropertyExtract respExtract = new ResponsePropertyExtract();
-		
-		for (Iterator<EventList> it = sequencias.iterator(); it.hasNext(); ){
-			respExtract.extractResponseProperties(it.next());
-		}
-		System.out.println("Todas as propriedades de resposta criadas:");
-		System.out.println("==============================================");
-		respExtract.printAllResponseProperties();
-		System.out.println("==============================================");
-		
-		/*
-		 * Combinacao das propriedades de resposta
-		 */
-		System.out.println("Propriedades de resposta combinadas:");
-		System.out.println("==============================================");
-		respExtract.combineProperties();
-		respExtract.printCombinedProperties();
-		System.out.println("==============================================");
-		
-		AlgoPrefixSpan_with_Strings algo_uni = new AlgoPrefixSpan_with_Strings(); 
-		
-		algo_uni.runAlgorithm(sequenceDatabase, null, sequenceDatabase.size());
-		String sequencePatt_Universal = algo_uni.getFileContent();
-
-		/*System.out.println("Padroes presentes em todos os casos de teste");
-		System.out.println("==============================================");
-		System.out.print(sequencePatt_Universal);
-		System.out.println("==============================================");*/
-				
-		sequencePatt_Universal = seqPattIn.parseSequencePatternsString(sequencePatt_Universal);
-		
-		ArrayList<EventList> sequencias_universais = seqPattIn.seqPattStringsToManyEventLists(sequencePatt_Universal);
-		ExistencePropertyExtract uniExtract = new ExistencePropertyExtract();
-		
-		for (Iterator<EventList> it = sequencias_universais.iterator(); it.hasNext(); ){
-			uniExtract.extractExistenceProperties(it.next());
-		}
-		System.out.println("Todas as propriedades universais criadas:");
-		System.out.println("==============================================");
-		uniExtract.printAllExistenceProperties();
-		System.out.println("==============================================");
-		
-		/*
-		 * Combinacao das propriedades universais
-		 */
-		
-		System.out.println("Propriedades universais combinadas:");
-		System.out.println("==============================================");
-		uniExtract.combineProperties();
-		uniExtract.printCombinedProperties();
-		System.out.println("==============================================");
-		
-		/*
-		 * Aqui preciso mostrar quais sequencias de teste nao foram usados para criacao de propriedades
-		 * */
-		Set<Integer> notUsed = sequenceDatabase.getSequenceIDs();
-		notUsed.removeAll(sequenceDatabase.getUsedSequences());
-		
-		System.out.println("Sequencias de teste nao utilizadas: ");
-		for(Integer i : notUsed) 
-			System.out.print(i+" ");
-		System.out.println("\n==============================================");
-
-		/*Seria interessate mostrar os eventos nao usados tbm...*/
-		
-		/*
-		 * Usuario pode passar eventos especificos para gerar as propriedades de resposta
-		 */
-		
-		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("Digite evento para o qual deseja propriedades de resposta:");
-		while (sc.hasNext()) {
-			String eventSpec = sc.next();
-			if(eventSpec.equals("Q"))
-				break;
-			
-			SequenceDatabase databaseSpecific = new SequenceDatabase();
-			databaseSpecific.loadFromStringWithSubstring(databaseInString, eventSpec);
-			
-			//databaseSpecific.printDatabase();
-			
-			AlgoPrefixSpan_with_Strings algoSpec = new AlgoPrefixSpan_with_Strings();
-			algoSpec.runAlgorithm(databaseSpecific, null, 0);
-			
-			String sequencePatt_Spec = algoSpec.getFileContent(eventSpec);
-			/*System.out.println("Padroes presentes em nas sequencias que contem "+eventSpec);
-			System.out.println("==============================================");
-			System.out.print(sequencePatt_Spec);
-			//System.out.println("TOTAL DE PADROES: "+algoSpec.getPatternCount());
-			System.out.println("==============================================");*/
-
-			sequencePatt_Spec = seqPattIn.parseSequencePatternsString(sequencePatt_Spec);
-			
-			ArrayList<EventList> sequencias_spec = seqPattIn.seqPattStringsToManyEventLists(sequencePatt_Spec);
-			ResponsePropertyExtract respSpecExtract = new ResponsePropertyExtract();
-			
-			for (Iterator<EventList> it = sequencias_spec.iterator(); it.hasNext(); ){
-				//EventList elIt = it.next();
-				//System.out.println("Vou gerar prop spec para sequencia ");
-				//elIt.print();
-				respSpecExtract.extractSpecificReponseProperties(it.next(),eventSpec);
-			}
-			System.out.println("Todas as propriedades de resposta relacionadas ao evento "+eventSpec+":");
-			System.out.println("==============================================");
-			respSpecExtract.printAllResponseProperties(eventSpec);
-			System.out.println("==============================================");
-			
-			/*
-			 * Combinacao das propriedades de resposta
-			 */
-			System.out.println("Propriedades de resposta combinadas:");
-			System.out.println("==============================================");
-			respSpecExtract.combinePropertiesSpecific(eventSpec);
-			respSpecExtract.printCombinedProperties();
-			System.out.println("==============================================");
-			
-			System.out.println("Digite evento para o qual deseja propriedades de resposta:");
-
-		}
-		sc.close();
-	}
 }

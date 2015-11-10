@@ -78,7 +78,7 @@ public class ResponsePropertyExtract {
 			out.println(it.getMeaning()+":");
 			out.println(it.getRepresentation());
 		}
-		out.println("TOTAL DE PROPRIEDADES: "+allResp.size());
+		out.println("TOTAL OF PROPERTIES: "+allResp.size());
 	}
 	
 	public void printAllResponseProperties(String e) {
@@ -96,7 +96,7 @@ public class ResponsePropertyExtract {
 			out.println(it.getMeaning()+":");
 			out.println(it.getRepresentation()+" #"+it.freq);
 		}
-		out.println("TOTAL DE PROPRIEDADES: "+allResp.size());
+		out.println("TOTAL OF PROPERTIES: "+allResp.size());
 	}
 	
 	public void combineProperties() {
