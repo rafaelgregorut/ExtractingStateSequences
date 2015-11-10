@@ -4,6 +4,7 @@
 Based on the patterns obtained through the usage of $PrefixSpan$ shown previously, we can automatically define formal properties to be verified. For this project we chose two property specification patterns, explained in subsection \ref{specpatterns}, from \cite{dwyer98}: the response and existence patterns. First, we go through the most frequent patterns based on a user minimum support and compute the formal response properties. Secondly, we  try to find patterns that are common to all of the test cases to be able to apply the existence specification.
 
 \subsection{Response property specification}
+\label{responseSpec}
 
 The creation of response properties is done using as input the patterns mined by $PrefixSpan$ in the previous step. In each sequence pattern, we obtain pairs of consecutive events and establish a property that the second event must respond to the first event of the pair. The global scope was used. The pseudocode can be found below:
 

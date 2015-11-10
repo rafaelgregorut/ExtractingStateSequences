@@ -47,8 +47,10 @@
 \contentsline {subsection}{\numberline {4.2.1}Response property specification}{35}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Existence property specification}{36}{subsection.4.2.2}
 \contentsline {section}{\numberline {4.3}Generation of properties for specific events}{37}{section.4.3}
-\contentsline {chapter}{\numberline {5}Case study}{39}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusion}{41}{chapter.6}
-\contentsline {chapter}{\numberline {A}Linear Temporal Logic (LTL)}{43}{appendix.A}
-\contentsline {chapter}{Bibliography}{45}{appendix*.35}
+\contentsline {chapter}{\numberline {5}Tools demonstration}{41}{chapter.5}
+\contentsline {section}{\numberline {5.1}Test case generation tool}{41}{section.5.1}
+\contentsline {section}{\numberline {5.2}Formal property specification tool}{42}{section.5.2}
+\contentsline {chapter}{\numberline {6}Conclusion}{45}{chapter.6}
+\contentsline {chapter}{\numberline {A}Linear Temporal Logic (LTL)}{47}{appendix.A}
+\contentsline {chapter}{Bibliography}{49}{appendix*.45}
 \contentsfinish 

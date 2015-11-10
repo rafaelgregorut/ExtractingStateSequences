@@ -31,7 +31,9 @@
 \BOOKMARK [2][]{subsection.4.2.1}{Response property specification}{section.4.2}% 31
 \BOOKMARK [2][]{subsection.4.2.2}{Existence property specification}{section.4.2}% 32
 \BOOKMARK [1][]{section.4.3}{Generation of properties for specific events}{chapter.4}% 33
-\BOOKMARK [0][]{chapter.5}{Case study}{}% 34
-\BOOKMARK [0][]{chapter.6}{Conclusion}{}% 35
-\BOOKMARK [0][]{appendix.A}{Linear Temporal Logic \(LTL\)}{}% 36
-\BOOKMARK [0][]{appendix*.35}{Bibliography}{}% 37
+\BOOKMARK [0][]{chapter.5}{Tools demonstration}{}% 34
+\BOOKMARK [1][]{section.5.1}{Test case generation tool}{chapter.5}% 35
+\BOOKMARK [1][]{section.5.2}{Formal property specification tool}{chapter.5}% 36
+\BOOKMARK [0][]{chapter.6}{Conclusion}{}% 37
+\BOOKMARK [0][]{appendix.A}{Linear Temporal Logic \(LTL\)}{}% 38
+\BOOKMARK [0][]{appendix*.45}{Bibliography}{}% 39
