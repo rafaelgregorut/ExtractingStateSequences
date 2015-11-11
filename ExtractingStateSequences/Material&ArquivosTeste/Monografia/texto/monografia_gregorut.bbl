@@ -26,6 +26,11 @@ Kirill Bogdanov.
 \newblock PhD thesis, Department of Computer Science, University of Sheffield,
   January 2000.
 
+\bibitem{fortest}
+Jonathan~P. Bowen, Kirill Bogdanov, John~A. Clark, Robert~M. Hierons, and Paul
+  Krause.
+\newblock Fortest: Formal methods and testing.
+
 \bibitem{dwyer98}
 Matthew~B. Dwyer, George~S. Avrunin, and James~C. Corbett.
 \newblock Property specification patterns for finite-state verification.

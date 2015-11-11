@@ -2,7 +2,7 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Goals}{1}{section.1.2}
-\contentsline {section}{\numberline {1.3}Organization}{1}{section.1.3}
+\contentsline {section}{\numberline {1.3}Organization}{2}{section.1.3}
 \contentsline {chapter}{\numberline {2}Concepts}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Statecharts and Automata}{3}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Nondeterministic finite automata}{3}{subsection.2.1.1}
@@ -51,6 +51,7 @@
 \contentsline {section}{\numberline {5.1}Test case generation tool}{41}{section.5.1}
 \contentsline {section}{\numberline {5.2}Formal property specification tool}{42}{section.5.2}
 \contentsline {chapter}{\numberline {6}Conclusion}{45}{chapter.6}
-\contentsline {chapter}{\numberline {A}Linear Temporal Logic (LTL)}{47}{appendix.A}
-\contentsline {chapter}{Bibliography}{49}{appendix*.45}
+\contentsline {chapter}{\numberline {7}Subjective impressions}{47}{chapter.7}
+\contentsline {chapter}{\numberline {A}Linear Temporal Logic (LTL)}{49}{appendix.A}
+\contentsline {chapter}{Bibliography}{51}{appendix*.45}
 \contentsfinish 

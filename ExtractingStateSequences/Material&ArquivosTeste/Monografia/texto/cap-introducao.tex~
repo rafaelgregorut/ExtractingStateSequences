@@ -6,7 +6,7 @@ Testing is one of the most used methods to assure the quality of a system in sof
 
 Paragrafo sobre statecharts. Explicar brevemente.
 
-Paragrafo falando de metodos formais. Contexto, historia, usos.
+Paragrafo falando de metodos formais. Contexto, historia.
 
 Formal methods and testing can be considered complementary techniques in software engineering to reduce the number of errors and increase the reliability of the system\cite{fortest}. Even though testing is the activity that is most commonly used in industry to assure the software quality, it cannot guarantee the absence of errors in the code. Formal approaches, such as formal verification, on the other hand, can prove that no bugs are left. The model checking technique, for instance, proves that, certain user defined properties are true for a given model of the system.
 

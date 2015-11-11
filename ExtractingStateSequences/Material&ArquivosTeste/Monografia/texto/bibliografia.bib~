@@ -160,7 +160,21 @@ year ={2008}
 @Misc{Yakindu,
  title    = {Yakindu Statechart Tools},
  note     = {Last accessed in 11/09/2015},
- howpublished= {\url{http://babelfish.arc.nasa.gov/trac/jpf/wiki/intro/testing_vs_model_checking\#no1}},
+ howpublished= {\url{http://www.statecharts.org/}},
+}
+
+@Misc{fortest,
+ title    = {FORTEST: Formal Methods and Testing},
+ author = {Jonathan P. Bowen and Kirill Bogdanov and John A. Clark and Robert M. Hierons and Paul Krause},
+}
+
+@Techreport{Luo,
+ author   = {Gordon Fraser and Franz Wotawa and Paul E. Ammann},
+ title    = {Testing with model checkers: A survey},
+ institution= {COMPETENCE NETWORK SOFTNET AUSTRIA},
+ address  = {Austria},
+ year     = {2007},
+ number   = {SNA-TR-2007-P2-04},
 }
 
 %%---------------------------------------------------------------------------------%%
