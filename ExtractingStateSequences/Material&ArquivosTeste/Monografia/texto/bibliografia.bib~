@@ -168,13 +168,42 @@ year ={2008}
  author = {Jonathan P. Bowen and Kirill Bogdanov and John A. Clark and Robert M. Hierons and Paul Krause},
 }
 
-@Techreport{Luo,
+@Techreport{Gordon,
  author   = {Gordon Fraser and Franz Wotawa and Paul E. Ammann},
  title    = {Testing with model checkers: A survey},
  institution= {COMPETENCE NETWORK SOFTNET AUSTRIA},
  address  = {Austria},
  year     = {2007},
  number   = {SNA-TR-2007-P2-04},
+}
+
+@Misc{NASAlangley,
+ author   = {NASA Langley Formal Methods},
+ title    = {What is Formal Methods?},
+ note     = {Last accessed in 11/11/2015},
+ howpublished= {\url{http://shemesh.larc.nasa.gov/fm/fm-what.html}},
+}
+
+@Misc{FMEurope,
+ author   = {Formal Methods Europe},
+ title    = {Formal Methods},
+ note     = {Last accessed in 11/11/2015},
+ howpublished= {\url{http://www.fmeurope.org/?page_id=2}},
+}
+
+@Book{Hauth,
+ author   = {Michael Hauth and Mark Ryan},
+ title    = {Logic in computer science. Modelling and reasoning about systems},
+ edition  = {2},
+ publisher= {Cambridge University Press},
+ year     = {2004}
+}
+
+@Misc{wikiLTL,
+ author   = {Wikipedia},
+ title    = {Formal Methods},
+ note     = {Last accessed in 11/11/2015},
+ howpublished= {\url{http://www.fmeurope.org/?page_id=2}},
 }
 
 %%---------------------------------------------------------------------------------%%

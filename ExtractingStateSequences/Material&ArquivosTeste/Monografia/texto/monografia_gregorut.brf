@@ -1,7 +1,10 @@
 \backcite {Luo}{{1}{1}{chapter.1}}
 \backcite {Ammann:08}{{1}{1}{chapter.1}}
+\backcite {harel87:semantics_statecharts}{{1}{1}{chapter.1}}
+\backcite {FMEurope}{{1}{1}{chapter.1}}
+\backcite {NASAlangley}{{1}{1}{chapter.1}}
 \backcite {fortest}{{1}{1}{chapter.1}}
-\backcite {Prospec}{{1}{1.1}{section.1.1}}
+\backcite {Prospec}{{2}{1.1}{section.1.1}}
 \backcite {harel87:semantics_statecharts}{{3}{2.1}{section.2.1}}
 \backcite {Lewis:98}{{3}{2.1.1}{subsection.2.1.1}}
 \backcite {Lewis:98}{{3}{2.1.1}{subsection.2.1.1}}
@@ -54,3 +57,5 @@
 \backcite {spmf}{{34}{4.1.1}{subsection.4.1.1}}
 \backcite {Pei}{{34}{4.1.1}{subsection.4.1.1}}
 \backcite {dwyer98}{{35}{4.2}{section.4.2}}
+\backcite {Hauth}{{49}{A}{appendix.A}}
+\backcite {wikiLTL}{{49}{A}{appendix.A}}

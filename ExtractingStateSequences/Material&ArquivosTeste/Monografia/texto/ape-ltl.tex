@@ -1,7 +1,55 @@
 \chapter{Linear Temporal Logic (LTL)}
 \label{ape-ltl}
 
-Texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto.
+In the next sections we present the syntax and semantics of linear temporal logic based on \cite{Hauth} and \cite{wikiLTL}.
 
+\section{Syntax}
+
+LTL has the following syntax given in the Backus Naur form:
+
+\begin{center}
+
+$\phi ::= \top \mid \bot \mid p \mid \neg\phi \mid \phi\wedge\phi \mid \phi\vee\phi \mid \phi\rightarrow\phi \mid \Diamond\phi \mid \Box\phi \mid X\phi \mid \phi U \phi \mid \phi W \phi \mid \phi R \phi$
+
+\end{center}
+
+where $p \in A$, the set of propositional atoms.
+
+\section{Semantics}
+
+\begin{itemize}
+\item \textbf{Definition:} A transition system $M = (S, \rightarrow, L)$ is a set of states $S$ endowed with a transition relation $\rightarrow$ (binary relation on $S$), such that every $s \in S$ has some $s' \in S$, and a labeling function $L:S \rightarrow 2^A$. 
+
+\item \textbf{Definition:} A path $\pi$ in model $M = (S, \rightarrow, L)$ is an infinite sequence $s_1,s_2,...$ in $S$ such that, for each $i \geq 1, s_i \rightarrow s_{i+1}$. We write $\pi^i$ for the suffix starting at $s_i$.
+\end{itemize}
+
+Let $M = (S, \rightarrow, L)$ be a model and $\pi = s_1 \rightarrow ...$ be a path in $M$ Whether $\pi$ satisfies an LTL formula is defined by the satisfaction relation $\models$ as follows:
+
+\begin{itemize}
+
+\item[1] $\pi \models \top$
+
+\item[2] $\pi \not\models \bot$
+
+\item[3] $\pi \models p \Leftrightarrow p \in L(s_1)$
+
+\item[4] $\pi \models \neg \phi \Leftrightarrow \pi \not\models \phi$
+
+\item[5] $\pi \models \phi_1 \wedge \phi_2 \Leftrightarrow \pi \models \phi_1$ and $\pi \models \phi_2$
+
+\item[6] $\pi \models \phi_1 \vee \phi_2 \Leftrightarrow \pi \models \phi_1$ or $\pi \models \phi_2$
+
+\item[7] $\pi \models \phi_1 \rightarrow \phi_2 \Leftrightarrow \pi \models \phi_2$ whenever $\pi \models \phi_1$
+
+\item[8] $\pi \models \Box \phi \Leftrightarrow,$ for all $i \geq 1, \pi^i \models \phi$
+
+\item[9] $\pi \models \Diamond \phi \Leftrightarrow$ there is some $i \geq 1$ such that $\pi^i \models \phi$
+
+\item[10] $\pi \models X\phi \Leftrightarrow \pi^2 \models \phi$
+
+\item[11] $\pi \models \phi U \psi \Leftrightarrow$ there is some $i \geq 1$ such that $\pi^i \models \psi$ and for all $j = 1,...,i - 1$ we have $\pi^j \models \phi$
+
+\item[12] $\pi \models \phi W \psi \Leftrightarrow$ either there is some $i \geq 1$ such that $\pi^i \models \psi$ and for all $j = 1,...,i -1$ wwe have $\pi^j \models \phi$; or for all $n \geq 1$ we have $\pi^n \models \phi$
+
+\item[13] $\pi \models \phi R \psi \Leftrightarrow$ either there is some $i \geq 1$ such that $\pi^i \models \phi$ and for all $j = 1,...,i -1$ wwe have $\pi^j \models \psi$; or for all $n \geq 1$ we have $\pi^n \models \psi$
+\end{itemize} 

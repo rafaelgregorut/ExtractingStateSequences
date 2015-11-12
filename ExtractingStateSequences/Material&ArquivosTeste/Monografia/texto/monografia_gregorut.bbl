@@ -47,6 +47,12 @@ Matthew~B. Dwyer, George~S. Avrunin, and James~C. Corbett.
 L.-H. Eriksson and K.~Johansson.
 \newblock Using formal methods for quality assurance of interlocking systems.
 
+\bibitem{FMEurope}
+Formal~Methods Europe.
+\newblock Formal methods.
+\newblock \url{http://www.fmeurope.org/?page_id=2}.
+\newblock Last accessed in 11/11/2015.
+
 \bibitem{spmf}
 P.~Fournier-Viger, A.~Gomariz, T.~Gueniche, A.~Soltani, C.~Wu., and V.~S.
   Tseng.
@@ -69,6 +75,12 @@ David Harel, Amir Pnueli, Jeanette Schmidt, and Rivi Sherman.
 \newblock On the formal semantics of statecharts.
 \newblock In {\em Proceedings of Symposium on Logic in Computer Science}, pages
   55--64, 1987.
+
+\bibitem{Hauth}
+Michael Hauth and Mark Ryan.
+\newblock {\em Logic in computer science. Modelling and reasoning about
+  systems}.
+\newblock Cambridge University Press, 2 edition, 2004.
 
 \bibitem{Lewis:98}
 Harry~R. Lewis and Christos~H. Papadimitriou.
@@ -101,6 +113,12 @@ José~Carlos Maldonado, Márcio~Eduardo Delamaro, and Mario Jino.
 Stephan Merz.
 \newblock Model checking: A tutorial overview.
 
+\bibitem{NASAlangley}
+NASA Langley~Formal Methods.
+\newblock What is formal methods?
+\newblock \url{http://shemesh.larc.nasa.gov/fm/fm-what.html}.
+\newblock Last accessed in 11/11/2015.
+
 \bibitem{Myers:12}
 Glenford~J. Myers, Tom Badgett, and Corey Sandler.
 \newblock {\em The art of software testing}.
@@ -128,6 +146,12 @@ Ramakrishnan Srikant and Rakesh Agrawal.
 Jeff Tian.
 \newblock {\em Sofotware Quality Engineering}.
 \newblock John Wiley \& Sons, 2005.
+
+\bibitem{wikiLTL}
+Wikipedia.
+\newblock Linear temporal logic.
+\newblock \url{https://en.wikipedia.org/wiki/Linear_temporal_logic}.
+\newblock Last accessed in 11/11/2015.
 
 \bibitem{inpe10}
 Érica Ferreira~de Souza.

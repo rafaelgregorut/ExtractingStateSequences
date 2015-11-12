@@ -9,45 +9,45 @@ Warning--string name "june" is undefined
 Warning--to sort, need author or key in Yakindu
 Warning--empty publisher in Beizer
 Warning--empty year in Luo
-You've used 25 entries,
+You've used 29 entries,
             2118 wiz_defined-function locations,
-            625 strings with 7397 characters,
-and the built_in function-call counts, 6721 in all, are:
-= -- 597
-> -- 375
+            645 strings with 7839 characters,
+and the built_in function-call counts, 7619 in all, are:
+= -- 684
+> -- 409
 < -- 1
-+ -- 152
-- -- 124
-* -- 383
-:= -- 1161
-add.period$ -- 69
-call.type$ -- 25
-change.case$ -- 133
++ -- 166
+- -- 134
+* -- 412
+:= -- 1314
+add.period$ -- 84
+call.type$ -- 29
+change.case$ -- 150
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 252
-empty$ -- 553
-format.name$ -- 124
-if$ -- 1391
+cite$ -- 32
+duplicate$ -- 285
+empty$ -- 641
+format.name$ -- 134
+if$ -- 1587
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 20
-newline$ -- 122
-num.names$ -- 48
-pop$ -- 207
+int.to.str$ -- 29
+missing$ -- 22
+newline$ -- 145
+num.names$ -- 56
+pop$ -- 245
 preamble$ -- 1
-purify$ -- 112
+purify$ -- 125
 quote$ -- 0
-skip$ -- 195
+skip$ -- 217
 stack$ -- 0
-substring$ -- 179
-swap$ -- 33
+substring$ -- 199
+swap$ -- 37
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 86
+type$ -- 100
 warning$ -- 3
-while$ -- 52
-width$ -- 27
-write$ -- 242
+while$ -- 60
+width$ -- 31
+write$ -- 286
 (There were 4 warnings)
