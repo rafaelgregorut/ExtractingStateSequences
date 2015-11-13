@@ -34,6 +34,7 @@ public class ExistencePropertyExtract {
 			Event P = listaDeEventos.get(i);
 			Property prop = new Property();
 			prop.setRepresentation("[]("+P.getName()+")");
+			prop.setMeaning(P.getName()+" must occur");
 			if (!propertyHash.containsKey(prop.getRepresentation()))
 				propertyHash.put(prop.getRepresentation(), prop);
 			//System.out.println(prop.getRepresentation());
@@ -42,8 +43,10 @@ public class ExistencePropertyExtract {
 	
 	public void printAllExistenceProperties() {
 		Enumeration<String> allRep = propertyHash.keys();
-		while(allRep.hasMoreElements())
-			out.println(allRep.nextElement());
+		while(allRep.hasMoreElements()) {
+			String representationKey = allRep.nextElement();
+			out.printRowExistGen(propertyHash.get(representationKey).meaning,representationKey);
+		}
 	}
 
 	public void combineProperties() {
@@ -74,6 +77,6 @@ public class ExistencePropertyExtract {
 	}
 	
 	public void printCombinedProperties() {
-		out.println(combinedProps);
+		out.printRowExistGen("Combination of properties", combinedProps);
 	}
 }

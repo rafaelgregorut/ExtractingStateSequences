@@ -1,24 +1,43 @@
 package io.handler;
 
+import javax.swing.JTable;
 import javax.swing.JTextArea;
+import javax.swing.table.DefaultTableModel;
 
 public class Output {
 
-	JTextArea textArea;
+	JTextArea textAreaNotUsed;
+	JTable tableRespGen;
+	JTable tableRespSpec;
+	JTable tableExistGen;
 	
-	public Output(JTextArea textArea) {
-		this.textArea = textArea;
+	
+	
+	public Output(JTable respGen, JTable existGen, JTable respSpec, JTextArea ta) {
+		tableRespGen = respGen;
+		tableExistGen = existGen;
+		tableRespSpec = respSpec;
+		textAreaNotUsed = ta;
 	}
 	
-	public void println(String str) {
-		textArea.append(str+"\n");
+	
+	
+	public void printRowRespSpec(String informal, String prop) {
+		DefaultTableModel myModel = (DefaultTableModel) tableRespSpec.getModel();
+		myModel.addRow(new Object[]{informal,prop});
 	}
 	
-	public void print(String str) {
-		textArea.append(str);
+	public void printRowRespGen(String informal, String prop) {
+		DefaultTableModel myModel = (DefaultTableModel) tableRespGen.getModel();
+		myModel.addRow(new Object[]{informal,prop});
 	}
 	
-	public void clear() {
-		textArea.setText(null);
+	public void printRowExistGen(String informal, String prop) {
+		DefaultTableModel myModel = (DefaultTableModel) tableExistGen.getModel();
+		myModel.addRow(new Object[]{informal,prop});
+	}
+	
+	public void printNotUsed(String str) {
+		textAreaNotUsed.append(", "+str);
 	}
 }

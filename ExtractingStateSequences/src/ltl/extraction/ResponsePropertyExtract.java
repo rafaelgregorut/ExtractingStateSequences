@@ -75,10 +75,11 @@ public class ResponsePropertyExtract {
 		Collection<Property> allResp = propertyHash.values();
 		
 		for (Property it : allResp) {
-			out.println(it.getMeaning()+":");
-			out.println(it.getRepresentation());
+			//out.println(it.getMeaning()+":");
+			//out.println(it.getRepresentation());
+			out.printRowRespGen(it.getMeaning(), it.getRepresentation());
 		}
-		out.println("TOTAL OF PROPERTIES: "+allResp.size());
+		//out.println("TOTAL OF PROPERTIES: "+allResp.size());
 	}
 	
 	public void printAllResponseProperties(String e) {
@@ -93,10 +94,11 @@ public class ResponsePropertyExtract {
 		Collections.sort(allResp, comparator);
 		
 		for (Property it : allResp) {
-			out.println(it.getMeaning()+":");
-			out.println(it.getRepresentation()+" #"+it.freq);
+			//out.println(it.getMeaning()+":");
+			//out.println(it.getRepresentation()+" #"+it.freq);
+			out.printRowRespSpec(it.getMeaning(), it.getRepresentation());
 		}
-		out.println("TOTAL OF PROPERTIES: "+allResp.size());
+		//out.println("TOTAL OF PROPERTIES: "+allResp.size());
 	}
 	
 	public void combineProperties() {
@@ -135,7 +137,8 @@ public class ResponsePropertyExtract {
 		while(firstEvents.hasMoreElements()) {
 			String next = firstEvents.nextElement();
 			if (!next.equals(""))
-				out.println("[]("+next+" -> <>("+combinedProps.get(next)+"))");
+				//out.println("[]("+next+" -> <>("+combinedProps.get(next)+"))");
+				out.printRowRespGen("Combination of properties", "[]("+next+" -> <>("+combinedProps.get(next)+"))");
 		}
 	}
 	
@@ -167,5 +170,16 @@ public class ResponsePropertyExtract {
 			disjunctionFirst += ")";
 		
 		combinedProps.put(disjunctionFirst, e);
+	}
+	
+	public void printCombinedProperties(String e) {
+		Enumeration<String> firstEvents = combinedProps.keys();
+
+		while(firstEvents.hasMoreElements()) {
+			String next = firstEvents.nextElement();
+			if (!next.equals(""))
+				//out.println("[]("+next+" -> <>("+combinedProps.get(next)+"))");
+				out.printRowRespSpec("Combination of properties", "[]("+next+" -> <>("+combinedProps.get(next)+"))");
+		}
 	}
 }

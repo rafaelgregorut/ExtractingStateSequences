@@ -1,0 +1,20 @@
+submitOrder -1 -2
+submitOrder -1 -2
+submitOrder -1 nextEntry -1 -2
+submitOrder -1 nextEntry -1 getProduct -1 -2
+submitOrder -1 nextEntry -1 getProduct -1 getQuantity -1 -2
+submitOrder -1 nextEntry -1 getProduct -1 getQuantity -1 end -1 -2
+submitOrder -1 nextEntry -1 getProduct -1 getQuantity -1 end -1 sendXMLToIntegration -1 -2
+submitOrder -1 nextEntry -1 getProduct -1 getQuantity -1 nextEntry -1 -2
+submitOrder -1 nextEntry -1 getProduct -1 getQuantity -1 sendXMLToIntegration -1 -2
+submitOrder -1 nextEntry -1 getProduct -1 sendXMLToIntegration -1 -2
+submitOrder -1 nextEntry -1 sendXMLToIntegration -1 -2
+submitOrder -1 sendXMLToIntegration -1 -2
+submitOrder -1 startEmailJob -1 -2
+submitOrder -1 startEmailJob -1 composeEmail -1 -2
+submitOrder -1 startEmailJob -1 composeEmail -1 sendEmail -1 -2
+submitOrder -1 startEmailJob -1 composeEmail -1 sendEmail -1 sendXMLToIntegration -1 -2
+submitOrder -1 startEmailJob -1 composeEmail -1 sendEmail -1 sleep -1 -2
+submitOrder -1 startEmailJob -1 composeEmail -1 sendXMLToIntegration -1 -2
+submitOrder -1 startEmailJob -1 sendXMLToIntegration -1 -2
+submitOrder -1 sendXMLToIntegration -1 -2
