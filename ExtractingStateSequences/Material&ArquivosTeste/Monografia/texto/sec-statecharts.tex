@@ -4,7 +4,7 @@
 
 A software specification is a reference document which contains the requisites the program should satisfy. It can also be understood as a model of how the system should behave. A specification may be developed with natural language, with user cases for example, or usisng formal software engeering techniques.
 
-Statechats are a type of formal software specification based on finite states machines (FSM) specially used in complex systems modeling, such as reactive systems and were defined in \cite{harel87:semantics_statecharts}. Similar to an automaton, a statechart has sets of states, transitions and input events that cause change of state. However, a statechart has additional features: orthogonality, hierarchy, broadcasting and history.
+Statechats are a type of formal software specification based on finite states machines (FSM) specially used in complex systems modeling, such as reactive systems and were defined in \cite{harel87:semantics_statecharts}. Similar to an automaton, a statechart has sets of states, transitions and input events that cause change of state. However, a statechart has additional features: orthogonality, hierarchy, broadcasting, guard conditions and history.
 
 \subsection{Nondeterministic finite automata}
 
@@ -23,9 +23,9 @@ Statechats are a type of formal software specification based on finite states ma
 \item $F \subseteq K$ is the set of final states
 \end{itemize}
 
-Each tripe $(q,a,p) \in \Delta$ is a transition of $M$. If $M$ is currently in state $q$ and the next input is $a$, then $M$ may follow any transition of the form $(q,a,p)$ or $(q,e,p)$. In the later case, no input is read. A configuration of $M$ is an element of $K\time \Sigma^*$ and the relation $\vdash$ (yields one step) between two configuarions is defined as: $(q,w) \vdash (q',w') \Leftrightarrow$ there is a $u \in \Sigma \cup {e}$ such that $w = uw'$ and $(q,u,q') \in \Delta$.
+Each triple $(q,a,p) \in \Delta$ is a transition of $M$. If $M$ is currently in state $q$ and the next input is $a$, then $M$ may follow any transition of the form $(q,a,p)$ or $(q,e,p)$. In the later case, no input is read. A configuration of $M$ is an element of $K\time \Sigma^*$ and the relation $\vdash$ (yields one step) between two configuarions is defined as: $(q,w) \vdash (q',w') \Leftrightarrow$ there is a $u \in \Sigma \cup {e}$ such that $w = uw'$ and $(q,u,q') \in \Delta$.
 
-Further information and formalism regarding finite automata can be obtained in \cite{Lewis:98}. 
+Further information and formalisms regarding finite automata can be obtained in \cite{Lewis:98}. 
 
 \subsubsection{A nondeterministic finite automaton example}
 
@@ -53,7 +53,7 @@ Find below an example of a nondeterministic finite automaton extracted from \cit
 
 \subsection{Statechart models}
 
-A statechart model can be considered a extended finite state machine. The syntax of statechart is defined over the set of states, transitions, events, actions, conditions, expressions and labels \cite{harel87:semantics_statecharts}. In short terms:
+A statechart model can be considered an extended finite state machine. The syntax of statechart is defined over the set of states, transitions, events, actions, conditions, expressions and labels \cite{harel87:semantics_statecharts}. In short terms:
 
 \begin{itemize}
 
@@ -63,14 +63,14 @@ A statechart model can be considered a extended finite state machine. The syntax
 
 \item Actions are generally triggered when a transition occurs
 
-\item Conditions are boolean verifications added to a transition in order to restrict the occurence of that transitions
+\item Conditions are boolean verifications added to a transition in order to restrict the occurrence of that transitions
 
-\item Expressions are composed are variables and algebraic operations over them
+\item Expressions are composed by variables and algebraic operations over them
 
-\item A label is a pair made of an event and an action that is used to label a transition
+\item A label is a pair made of an event and an action that is used to name a transition
 \end{itemize}
 
-Furthermore, it is worth noting that a statechart model possess other features, described over the next sections of this chapter, that do not appear in a common finite state machine. These extra resources are useful, for instance, to model concurrency and different abstraction levels in a more practical way.
+Furthermore, it is worth noting that a statechart model possesses other features, described over the next sections of this chapter, that do not appear in a common finite state machine. These extra resources are useful, for instance, to model concurrency and different abstraction levels in a more practical way.
 
 \begin{figure}[htb]
 \includegraphics[width=1.0\textwidth]{figuras/statechartExample1}
@@ -79,30 +79,30 @@ Furthermore, it is worth noting that a statechart model possess other features, 
 
 \subsubsection{Orthogonality}
 
-More than one state may be active at the same time in a statechart, which is called orthogonality. It can be used to model concurrent and parallel situations. The set of active states in a certain moment is called configuration. In figure~\ref{fig:stateClock}, parallel regions inside the state $Clock$: $r1$ and $r2$. At the same moment, then, states $Display$ and $AlarmOff$ can be active.
+More than one state may be active at the same time in a statechart, such behaviour is called orthogonality. It can be used to model concurrent and parallel situations. The set of active states in a certain moment is called configuration. In figure~\ref{fig:stateClock}, we have parallel regions inside the state $Clock$: $r1$ and $r2$. At the same moment, then, states $Display$ and $AlarmOff$ can be active.
 
 \subsubsection{Hierarchy}
 
-It is possible that a state contains other states, called substates, and internal transitions, increasing the abstraction and encapsulation level of the model. In figure~\ref{fig:stateClock}, we have that $Display, Settings, AlarmOff, AlarmOn$ and $AlarmRinging$ are sub-states of $Clock$. $Display$ also contains the sub-states: $DisplayHour, DisplayMinutes$ and $hist$. And the states $SetHour, SetMinutes$ and $ActivateAlarm$ are inside state $Settings$. 
+It is possible that a state contains other states, called substates, and internal transitions, increasing the abstraction and encapsulation level of the model. In figure~\ref{fig:stateClock}, we have that $Display, Settings, AlarmOff, AlarmOn$ and $AlarmRinging$ are substates of $Clock$. $Display$ also contains the substates: $DisplayHour, DisplayMinutes$ and $hist$. And the states $SetHour, SetMinutes$ and $ActivateAlarm$ are inside state $Settings$. 
 
 \subsubsection{Guard conditions}
 
-In a transition, a guard condition is always verified before the change of states take place. If the condition is satisfied, in other words, e expression returns true, the transition will happen. Otherwise, that transition is not allowed to happen. A expression in a guard condition involve variables and operations. It is possible to check whether a state was entered for example. In figure~\ref{fig:stateClock}, the transition from $AlarmOff$ to $AlarmOn$ is guarded by the condition $[alarm]$, meaning that the trasition will only happen if the value of the variable $alarm$ is $true$.
+In a transition, a guard condition is always verified before the change of states take place. If the condition is satisfied, in other words, if the expression returns true, the transition will happen. Otherwise, that transition is not allowed to happen. A expression in a guard condition involve variables and operations. In figure~\ref{fig:stateClock}, the transition from $AlarmOff$ to $AlarmOn$ is guarded by the condition $[alarm]$, meaning that the trasition will only happen if the value of the variable $alarm$ is $true$.
 
 \subsubsection{Broadcasting}
 
-Besides an input event, a transition might have a action that is triggered when the transition is done.  An action may cause another transition to happen, that is called broadcasting. This features makes it possible that chain reactions occurr in a statechart model. Consider figure~\ref{fig:stateClock}, if we are currently in states $ActivateAlarm$ and $AlarmOff$ and the $mode$ event occurs, we will have the following situation: the transition will be execute and we will stay at state $ActivateAlarm$, the value of variable $alarm$ will be changed to its opposite (let's supposed it was $false$, so now it will be $true$) and we will also go to state $AlarmOn$ since the condition $[alarm]$ guarding the transition between these last two state is satified. Therefore, not only the transition starting at $ActivateAlarm$ happened when $mode$ occured, but also the transition between $AlarmOff$ and $AlarmOn$. The change of the value of variable $alsarm$ was broadcasted to the whole statechart and a chain reaction happened.
+A transition might have a action that is triggered once the transition is performed.  An action may cause another transitions to happen, which is called broadcasting. This feature makes it possible that chain reactions occurr in a statechart model. Consider figure~\ref{fig:stateClock}, if we are currently in states $ActivateAlarm$ and $AlarmOff$ and the $mode$ event occurs, we will have the following situation: the transition will be execute and we will stay at state $ActivateAlarm$, the value of variable $alarm$ will be changed to its opposite (let's supposed it was $false$, so now it will be $true$) and we will also go to state $AlarmOn$ since the condition $[alarm]$ guarding the transition between these last two state is satisfied. Therefore, not only the transition starting at $ActivateAlarm$ happened when $mode$ occured, but also the transition between $AlarmOff$ and $AlarmOn$. The change of the value of variable $alsarm$ was broadcasted to the whole statechart and a chain reaction happened.
 
 \subsubsection{History}
 
-A statechart is capable of remembering previously visited states by accessing the history state. Considering figure~\ref{fig:stateClock}, suppose we are in state $DisplayMinutes$ and event $set$ happened three times in a row. So, we went to $SetHour$, and then $SetMinutes$ and now we are at $ActivateAlarm$. If there is another occurance of $set$ we will be directed to the history state $hist$. Since the last active sub-state in $Display$ was $DisplayMinutes$, we will actually be directed to $DisplayMinutes$.
+A statechart is capable of remembering previously visited states by accessing the history state. Consider figure~\ref{fig:stateClock}, suppose we are in state $DisplayMinutes$ and event $set$ happened three times in a row. So, we went to $SetHour$, and then $SetMinutes$ and now we are at $ActivateAlarm$. If there is another occurrence of $set$, we will be directed to the history state $hist$. Since the last active substate in $Display$ was $DisplayMinutes$, we will actually be directed to $DisplayMinutes$.
 
 \subsubsection{A statechart and its correponding automaton}
 \label{flattening}
 
-It is possible to get an automaton from a statechart by flattening the statechart. The hierarchy and cocurrency need to be eliminated. In addition, statechart elements such as guard conditions and actions are not present in an automaton. 
+It is possible to obtain an automaton from a statechart by flattening the statechart. The hierarchy and cocurrency need to be eliminated. In addition, statechart elements such as guard conditions and actions are not present in an automaton. 
 
-The following examples were extracted from \cite{harel87:semantics_statecharts}. In figure~\ref{fig:stateFlat} we a statechart and in figure~\ref{fig:flatStateNFA} we have the flat version that would correspond to an automaton.
+The following examples were extracted from \cite{harel87:semantics_statecharts}. In figure~\ref{fig:stateFlat} we have a statechart and in figure~\ref{fig:flatStateNFA} its flat version that would correspond to an automaton.
 
 \begin{figure}[htb]
 \centering
@@ -116,7 +116,7 @@ The following examples were extracted from \cite{harel87:semantics_statecharts}.
 \caption{\label{fig:flatStateNFA} The statechart from~\ref{fig:stateFlat} after flattening to the corresponding automaton}
 \end{figure}
 
-To flat a statechart and get the corresponding automaton, we need to pass transitions from the composed states to their sub-states to eliminiate the hierarchy. To remove orthogonality, we need to do the product of the states in each concurrent region. Such operation causes will cause state and transition explosions in the automaton if the original statechart model has many concurrent states. Besides, in the statechart we can make usage of guard transitions and broadcasting, enriching the model with more information. Note that in the automaton, the initial state is the product of the initial states from each parallel region in the statechart.
+To flat a statechart and get the corresponding automaton, we need to pass transitions from the composed states to their substates to eliminiate hierarchy. To remove orthogonality, we need to do the cartesian product of the states in each concurrent region. Such operation will cause state and transition explosions in the automaton, if the original statechart model has many concurrent states. Besides, in the statechart we can use guard transitions and broadcasting, enriching the model with more information, but both features are absent in the automaton. Note that, in the automaton, the initial state is the product of the initial states from each parallel region in the statechart.
 
 \iffalse
 \begin{itemize}

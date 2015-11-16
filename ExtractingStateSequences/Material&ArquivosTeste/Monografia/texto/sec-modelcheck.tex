@@ -1,7 +1,7 @@
 \section{Model checking}
 \label{sec-modelcheck}
 
-Formal methods refers to the use of precise logical and mathematical methods to reason about properties of the system \cite{Eriksson}. They are contribute to the software and hardware engineering fields with formal specification and formal verification techniques aiming to contribute the reliability of the system or hardware. Formal verification techniques, such as model checking, have the goal to verify the correctness, or absence of faults, of some given program code or design against its formal specifications\cite{Tian}.
+Formal methods refers to the use of precise logical and mathematical methods to reason about properties of the system \cite{Eriksson}. They contribute to the software and hardware engineering fields with formal specification and formal verification techniques, for example, aiming to increase the reliability of the system or hardware. Formal verification techniques, such as model checking, have the goal to verify the correctness, or absence of faults, of some given program code or design against its formal specifications\cite{Tian}.
 
 Model checking is an automated technique that, given a finite-state model of a system and a formal property, systematically checks whether this property holds for that model\cite{Baier}. Typically, there is a hardware or software system specification containing the requirements, and we wish to verify that certain properties, such nonexistence of deadlocks are valid for the model of the system. The specification is the basis for what the system should and should not do, therefore it generally is the source for the process of creating properties.
 
@@ -33,9 +33,9 @@ We will focus on the definition of properties in the modeling phase, since prope
 
 The formal properties to be validated are mostly obtained from the system's specification\cite{Baier}. Hence, a property specifies a certain behaviour of the system that is being considered. One has to manually read through the specification and manually definy relevant properties to the system. Identifying which scenarios and behaviours should be considered when specifying properties tends to be a difficult creative process, in which human intervention becomes necessary. 
 
-The person responsible to write the formal property specification must have a mathematical background and knowledge of the specification language \cite{Prospec}. Many model checkers such as SPIN and NuSMV accept as input properties written in Linear Temporal Logic (LTL), which is difficult to write, read and validate. Translating system requirements to formal properties is not easy.
+The person responsible to write the formal property specification must have a mathematical background and knowledge of the specification language \cite{Prospec}. Many model checkers such as SPIN and NuSMV accept as input properties written in Linear Temporal Logic (LTL), which is difficult to write, read and validate. Therefore, translating system requirements to formal properties is not easy.
 
-The classic example for property definition is the absence of deadlocks, but properties can also specify safety protocols\cite{Merz}, occurrence and order of events. Let's consider, for example, that one of the requirements of a system is that always after a call to the method $open$ to open a file there should be a call to the method $close$ to close the file. One could specify the following LTL property to verify the requirement:
+The classic example for property definition is the absence of deadlocks, but properties can also specify safety protocols\cite{Merz}, occurrence and order of events. Let's consider, for example, that one of the requirements of a system is that always after a call to the method $open$, to open a file, there should be a call to the method $close$, to close the file. One could specify the following LTL property to verify this requirement:
 
 \begin{center}
 $\Box (open \rightarrow \Diamond close)$
@@ -46,9 +46,9 @@ The LTL syntax can be found in apendix \ref{ape-ltl}.
 \subsection{Specification patterns}
 \label{specpatterns}
 
-The effectiveness of the assurance offered by model checking depends on the quality of the formal properties that were defined \cite{Prospec}. To assist this process, a set property specification patterns were proposed in \cite{dwyer98}. A property specification pattern is a high-level property template that can be adapted based on the requirements to be verified. The patterns were obtained from a survey of 555 specifications collected from 35 different sources, including literature and several projects \cite{dwyer99:specpatt_survey}.
+The effectiveness of the assurance offered by model checking depends on the quality of the formal properties that were defined \cite{Prospec}. To assist this process, a set of property specification patterns were proposed in \cite{dwyer98}. A property specification pattern is a high-level property template that can be adapted based on the requirements to be verified. The patterns were obtained from a survey of 555 specifications collected from 35 different sources, including literature and several projects \cite{dwyer99:specpatt_survey}.
 
-A hierarchy was establised to facilitate browsing through the patterns and picking the most appropriate one to one's need. The first level of the hierarchy is composed by the occurrence and order categories described in more details in the next subsections.
+A hierarchy was established to facilitate browsing through the patterns and picking the most appropriate one to one's need. The first level of the hierarchy is composed by the occurrence and order categories described in more details in the next subsections.
 
 For each pattern, a scope is required to define an interval of the specification in which the property should hold. The available scopes are: global, before $Q$, after $Q$, between $Q$ and $R$, after $Q$ until $R$, where $Q$ and $R$ are states or events in the specification.
 

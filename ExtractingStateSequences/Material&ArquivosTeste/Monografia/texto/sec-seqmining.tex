@@ -4,7 +4,7 @@
 Sequential pattern mining is a topic in data mining that discovers frequent subsequences as patterns in a sequence
 database \cite{Nizar}. Each sequence in a sequence database is called data-sequence and contains typically an ID and transactions ordered generally by time, where each transaction is a set of items.
 
-The problem is to find all sequential patterns with a user specified minimum support, where the support of a sequential pattern is the percentage of data-sequences that contain the pattern \cite{Rakesh}. In other words, if a user inputs a percentage $p$ and a sequence database $D$, then the mining will return the set of patterns that are present in at least $p\%$ of the data-sequences. The formal definition can be found in \cite{Nizar} and in \cite{Pei}.
+The problem is to find all sequential patterns with a user specified minimum support, where the support of a sequential pattern is the percentage of data-sequences that contain the pattern \cite{Rakesh}. In other words, if a user inputs a percentage $p$ and a sequence database $D$ is given, then the mining will return the set of patterns that are present in at least $p\%$ of the data-sequences. The formal definition can be found in \cite{Nizar} and in \cite{Pei}.
 
 There are several applications for the problem, such as analysis of customer behaviour, purchase patterns in a store and study of DNA sequences. In section \ref{webusage}, a practical example is described based on \cite{Nizar}.
 
@@ -12,7 +12,7 @@ There are several applications for the problem, such as analysis of customer beh
 
 A data-sequence $S$ that has ID $T$ and $n \geq 1$ ordered transactions $t_1,t_2,...,t_n$ is denoted by $S = [T <t_1,t_2,...,t_n>]$. 
 
-Each transaction $t_i$ that is a set of $m \geq 1$ items $l_{i_1},...,l_{i_m}$ is denoted by $t_i = (l_{i_1},...,l_{i_m})$. Thus, $S = [T <(l_{1_1},...,l_{1_m}), ... ,(l_{n_1},...,l_{n_m})>]$. 
+Each transaction $t_i$ that is a set of $m \geq 1$ items $l_{i_1},...,l_{i_m}$ and is denoted by $t_i = (l_{i_1},...,l_{i_m})$. Thus, $S = [T <(l_{1_1},...,l_{1_m}), ... ,(l_{n_1},...,l_{n_m})>]$. 
 
 To simplify the notation in the case in which each transaction contains only one item, we can avoid the parenthesis, for example: if $t_i = (l_i)$ for all $ 1 \leq i \leq n$ than it is possible to write $S = [T <l_1l_2...l_n>]$.
 
@@ -24,12 +24,12 @@ Web usage mining, also known as web log mining, is an important application of s
 
 In a ecommerce application, for instance, we can have the set of items $I = {a, b, c, d, e, f}$ representing products that can be purchased. The ocurrence of one of these items in a transaction means that a user accessed the page of such item.
 
-Suppose the sequence database contains the following data-sequences extracted from the log: $[T1 <abdac>], [T2 <eaebcac>], [T3 <babfaec>]$ and $[T4 <abfac>]$. In this case, the analysis of the first transaction allows us to conclude that user $T1$ accessed the pages of products $a,b,d,a$ and $c$ in this order. By applying the web usage mining technique with support of 90\%, a manager would notice that $abac$ is a frequen pattern, indicating that 90\% of the users who visit product $a$ then visit $b$, then return to $a$ and later visit $c$. Hence, an offer could be placed in product $a$, which is visited many times in sequence, to increase the sales of other products. 
+Suppose the sequence database contains the following data-sequences extracted from the log: $[T1 <abdac>], [T2 <eaebcac>], [T3 <babfaec>]$ and $[T4 <abfac>]$. In this case, the analysis of the first transaction allows us to conclude that user $T1$ accessed the pages of products $a,b,d,a$ and $c$ in this order. By applying the web usage mining technique with support of 90\%, a manager would notice that $abac$ is a frequen pattern, indicating that $90\%$ of the users who visit product $a$ then visit $b$, then return to $a$ and later visit $c$. Hence, an offer could be placed in product $a$, which is visited many times in sequence, to increase the sales of other products. 
 
 
 \subsection{Sequential pattern mining algorithms}
 
-There are several algorithms to perform the sequential pattern mining taks, but they generally differ in two aspects\cite{Nizar}:
+There are several algorithms to perform the sequential pattern mining, but they generally differ in two aspects\cite{Nizar}:
 
 \begin{itemize}
 
@@ -43,24 +43,23 @@ Considering these topics, algorithms for sequential pattern mining can be divide
 
 \subsubsection{Apriori-based algorithms}
 
-These algorithms mainly rely on the property that states that if a sequence $s$ is infrequent, then any other sequence that contains $s$ is all infrequent. An example for the category would be the $GSP$\cite{Rakesh}.
+These algorithms mainly rely on the property that states that if a sequence $s$ is infrequent, then any other sequence that contains $s$ is also infrequent. An example for the category would be the $GSP$\cite{Rakesh} algorithm.
 
-Apriori-based algorithms use the \textit{generate-and-test} method to obtain the candidate patterns: the pattern is grown one item at a time and tested against the minimum support. By taking this approach, they have to maintain the support count for each candidate and test it at iteration of the algorithm.
+Apriori-based algorithms use the \textit{generate-and-test} method to obtain the candidate patterns: the pattern is grown one item at a time and tested against the minimum support. By taking this approach, they have to maintain the support count for each candidate and test it at each iteration of the algorithm.
 
-Generally, algorithms in this category generate an explosive number of candidate sequences, consuming a lot of memory. Besides,  methods such as \textit{GSP} generates a combinatorially explosive number of candidates when mining long sequential patterns. That may be the case of a DNA analysis application, in which many patterns are long.
+Generally, algorithms in this category generate an explosive number of candidate sequences, consuming a lot of memory. \textit{GSP}, for instance, generates a combinatorially explosive number of candidates when mining long sequential patterns. That may be the case of a DNA analysis application, in which many patterns are long.
 
-In addition, since they need to check at each iteration for the support count, multiple scans of the database ate performed, which requires a lot of processing time and IO cost. In general, to find a sequential pattern of length $l$, the a priori-based method must scan the database at least $l$ times. When long patterns exist, this characteristic will cause a non-trivial cost.
+In addition, since they need to check at each iteration for the support count, multiple scans of the database are performed, which requires a lot of processing time and I/O cost. In general, to find a sequential pattern of length $l$, the apriori-based method must scan the database at least $l$ times, which leads to great cost when long patterns exist.
 
 \subsubsection{Pattern-growth algorithms}
 
 Pattern-growth algorithms try to use a certain data structure to prune candidates early in the mining process. Besides, the search space is partitioned for efficient memory management. \textit{PrefixSpan}\cite{Pei} is an example of such algorithm and, since it was used in our implementations, we will provide more information about it in this subsection.
 
-The general idea behind \textit{PrefixSpan} is as follows: Instead of repeatedly scanning the entire database and generating and testing large sets of candidate sequences, one can recursively project a sequence database into a set of smaller databases associated with the set of patterns mined so far and, then, mine locally frequent patterns in each projected database\cite{Pei}.
+The general idea behind \textit{PrefixSpan} is as follows: Instead of repeatedly scanning the entire database, generating and testing large sets of candidate sequences, one can recursively project a sequence database into a set of smaller databases associated with the set of patterns mined so far and, then, mine locally frequent patterns in each projected database\cite{Pei}.
 
 To reduce the projections size and the number of access, \textit{PrefixSpan}, sorts the items inside each transaction and creates the projected databases based on patterns' prefixes. In order to do so, the algorithm assumes that the order of items in a transaction is irrelevant, and only the order of the whole transactions matters to the problem.
 
-Differently than apriori-based algorithms, in PrefixSpan does not generate or test candidate sequences. Patterns are grown from the shorter ones. Besides, projected databases keep shrinking, which is relevant in practice because usually, only a small set of
-sequential patterns grow long in a database and, thus, the number of sequences in a projected database usually reduces when prefix grows.
+Differently than apriori-based algorithms, \textit{PrefixSpan} does not generate or test candidate sequences. Patterns are grown from the shorter ones. Besides, projected databases keep shrinking, which is relevant in practice because usually, only a small set of sequential patterns grow long in a database and, thus, the number of sequences in a projected database usually reduces when prefix grows.
 
 In the worst case, \textit{PrefixSpan} constructs a projected database for every sequential pattern. With the intention to reduce the number of projected databases and improve the performance of the algorithm, \cite{Pei} proposes a technique called \textit{pseudo partition} that may reduce the number and size of projected databases.
 

@@ -35,25 +35,28 @@
 \contentsline {subsection}{\numberline {2.5.2}Sequential pattern mining algorithms}{18}{subsection.2.5.2}
 \contentsline {subsubsection}{Apriori-based algorithms}{19}{section*.25}
 \contentsline {subsubsection}{Pattern-growth algorithms}{19}{section*.26}
-\contentsline {chapter}{\numberline {3}Implementation of test case generation for statecharts}{21}{chapter.3}
+\contentsline {chapter}{\numberline {3}Test case generation for statecharts}{21}{chapter.3}
 \contentsline {section}{\numberline {3.1}Test cases for simple statecharts}{21}{section.3.1}
 \contentsline {section}{\numberline {3.2}Test cases for complex statecharts: hierarchy}{24}{section.3.2}
 \contentsline {section}{\numberline {3.3}Test cases for complex statecharts: orthogonality}{30}{section.3.3}
-\contentsline {chapter}{\numberline {4}Implementation of property extraction from test cases}{33}{chapter.4}
+\contentsline {chapter}{\numberline {4}Formal property extraction from test cases}{33}{chapter.4}
 \contentsline {section}{\numberline {4.1}Test case mining}{33}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}The SPMF framework}{34}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Test case mining example}{34}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Generation of properties from most frequent test case patterns}{35}{section.4.2}
+\contentsline {section}{\numberline {4.2}Generation of properties from most frequent test case patterns}{34}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Response property specification}{35}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Existence property specification}{36}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}Existence property specification}{37}{subsection.4.2.2}
 \contentsline {section}{\numberline {4.3}Generation of properties for specific events}{37}{section.4.3}
 \contentsline {chapter}{\numberline {5}Tools demonstration}{41}{chapter.5}
-\contentsline {section}{\numberline {5.1}Test case generation tool}{41}{section.5.1}
+\contentsline {section}{\numberline {5.1}Test case generation tool}{42}{section.5.1}
 \contentsline {section}{\numberline {5.2}Formal property specification tool}{42}{section.5.2}
-\contentsline {chapter}{\numberline {6}Conclusion}{45}{chapter.6}
-\contentsline {chapter}{\numberline {7}Subjective impressions}{47}{chapter.7}
-\contentsline {chapter}{\numberline {A}Linear Temporal Logic (LTL)}{49}{appendix.A}
-\contentsline {section}{\numberline {A.1}Syntax}{49}{section.A.1}
-\contentsline {section}{\numberline {A.2}Semantics}{49}{section.A.2}
-\contentsline {chapter}{Bibliography}{51}{appendix*.45}
+\contentsline {chapter}{\numberline {6}Conclusion}{49}{chapter.6}
+\contentsline {chapter}{\numberline {7}Subjective chapter}{51}{chapter.7}
+\contentsline {section}{\numberline {7.1}Learning}{51}{section.7.1}
+\contentsline {section}{\numberline {7.2}Challenges}{51}{section.7.2}
+\contentsline {section}{\numberline {7.3}Courses}{51}{section.7.3}
+\contentsline {chapter}{\numberline {A}Linear Temporal Logic (LTL)}{53}{appendix.A}
+\contentsline {section}{\numberline {A.1}Syntax}{53}{section.A.1}
+\contentsline {section}{\numberline {A.2}Semantics}{53}{section.A.2}
+\contentsline {chapter}{Bibliography}{55}{appendix*.45}
 \contentsfinish 
