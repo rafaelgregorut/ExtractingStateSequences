@@ -95,3 +95,49 @@ The structure of the code implementation is considered to create the test cases 
 Tests obtained via the structural technique contribute specially to code maintenance and increase the reliability of the implementation. But, they do not represent a way to validate the system against the customer's requirements, since the specified requirements are not considered in their design.
 
 %\subsection{Formal methods and tests}
+
+\iffalse
+
+Testar é o processo de executar um programa com o objetivo de encontrar erros \citep{Myers:12}. Muitas vezes o processo de teste é visto erroneamente somente como um meio de garantir que um programa faz aquilo que deveria fazer. Entretanto, a atividade de testar uma aplicação deve ser encarada como uma forma de encontrar comportamentos e resultados inesperados. Sendo assim, pode-se dizer que um teste bem sucessido é aquele que encontra um defeito no sistema\citep{Myers:12}, embora tal terminologia seja comumente utilzada na indústria para referir-se a testes que não detectem nenhuma anomalia.
+
+As técnicas de testes podem ser classificadas em duas categorias:
+
+\begin{itemize}
+\item Técnica funcional (caixa-preta)
+
+Considera-se as funcionalidades descritas na especificação para a criação dos casos de teste. É necessário estudar os comportamentos e funcionalidades especificados, criar os casos de teste correspondentes, submeter o sistema aos casos criados e analisar os resultados comparando-os com a descrição da especificação. Alguns exemplos de critérios dessa técnica são\citep{introSoftTest}:
+
+	\begin{itemize}
+	\item Particionamento em classes de equivalência
+	
+	Os dados de entrada são particionados em classes válidas e inválidas de acordo com a condições presentes na especificação. Os casos de teste são criados com base em cada classe selecionando-se um elemento de cada classe como representante da classe toda. Com esse critério, os casos de teste podem ser executados de maneira sistemática de acordo com os requisitos.
+	\item Análise do valor limite
+	
+	Semelhante ao critério antetior, porém a seleção do representante de cada classe é feita na fronteira entre as classes. Desse modo, as condições associadas a valores limites são exercitadas mais rigorosamente.
+	\end{itemize}
+
+Como a maioria das especificações é feita de modo descritivo, os casos de teste gerados pela técnica funcional podem ser informais e imprecisos, o que dificulta a automação de sua execução e torna necessária a intervenção humana. Entretanto, essa técnica exige somente que sejam identificados os requisitos, as entradas e saídas correspondentes, o que a torna praticável durante todas as fases de teste (unidade, integração e sistema).
+
+\item Técnica Estrutural (caixa-branca)
+
+Considera-se a estrutura da implementação do código para a criação dos casos de teste. Nessa técnica, o programa é representado por um grafo orientado de fluxo de controle, onde cada vértice corresponde a um bloco de código, um comando por exemplo, e cada arco corresponde à transição entre os blocos. São critérios dessa técnica:
+
+	\begin{itemize}
+	\item Todos-nós
+
+	Exige que todos os vértices, ou seja, todos os comandos, sejam exercitados.
+	
+	\item Todos-arcos
+
+	Exige que todos os arcos, ou seja, todas as mudanças de fluxo, sejam exercitados
+
+	\item Todos-caminhos
+
+	Exige que todos os caminhos possíveis do programa sejam exercitados
+	\end{itemize}
+
+Os testes derivados da técnica estrutural contribuem especialmente para a manutenção, depuração e aumento da confiabilidade da implementação do programa. Entretanto, eles não representam um meio de validar o sistema, pois não levam em consideração os requisitos especificados.
+\end{itemize}
+
+Portanto, percebe-se que as duas técnicas devem ser usadas de maneira complementar. Os testes funcionais colaboram para a validaçãos dos requisitos com base na especificação e os testes estruturais são relevantes para analisar a cobertura e confiabilidade do código escrito.
+\fi

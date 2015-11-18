@@ -94,7 +94,7 @@ searchEmployee responds to searchLineNumber & $\Box (searchLineNumber \rightarro
 
 \subsection{Existence property specification}
 
-In order to use the existence specification pattern, we must find sequence patterns that are present in the whole set of test cases. In other words, we should perform the test case mining stage with a minimum support of $100\%$. If any such pattern is found, we use the global scope and define a existence property, meaning that for every path taken, we will eventually find that pattern. Considering that a list of events was found as patterns with support of $100\%$, the following pseudocode can be used:
+In order to use the existence specification pattern, we must find sequence patterns that are present in the whole set of test cases. In other words, we should perform the test case mining stage with a minimum support of $100\%$. If any such pattern is found, we use the global scope and define an existence property, meaning that for every path taken, we will eventually find that pattern. Considering that a list of events was found as patterns with support of $100\%$, the following pseudocode can be used:
 
 \begin{lstlisting}[mathescape]
 //Method to write the specification of formal existence properties
@@ -136,7 +136,7 @@ doLogin must occur & $\Diamond (doLogin)$ \\
 \label{existencePropertyTrocaPlano}
 \end{table}
 
-In case more than one event is present in all test cases, then we can combine them to create a single existence property to be verified by the model checker. Suppose events $a, b$ and $c$ are present in all test cases of a certain statechart model. Then, we could combine their existence in the following property:
+In case more than one event is present in all test cases, then we can combine them to create a single existence property to be verified by the model checker. Suppose events $a, b$ and $c$ are present in all test cases of a certain statechart model. Then, we could combine their existence properties in the following single property:
 
 \begin{center}
 $\Diamond (a \wedge b \wedge c)$

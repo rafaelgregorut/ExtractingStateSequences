@@ -2,17 +2,18 @@
 \chapter{Introduction}
 \label{cap:introducao}
 
-Testing is one of the most used methods to assure the quality of a system in software engineering and it typically consumes from 40\% up to 50\% of the software development effort \cite{Luo}. As presented in \cite{Ammann:08}, the goal of testing ranges depending on the maturity level of the organization that is executing the tests: from debugging code, at a more inexperienced level, to a mental discipline that helps all professionals in the software industry to increase quality, at a higher level. Generally, the testing techniques are categorized in structural, or white-box, and functional, or black-box, tests. The first category considers the code as the source for test cases and contributes mainly the code maintenance. Functional tests make usage of the specified requirements in order to create the test cases and are useful to validate the observed behaviour of the system against what was expected in the requisites.
+Testing is one of the most used techniques to assure the quality of systems in software engineering and it typically consumes from 40\% up to 50\% of the software development effort \cite{Luo}. As presented in \cite{Ammann:08}, the goal of testing depends on the maturity level of the organization that is executing the tests: from debugging code, at a more inexperienced level, to a mental discipline that helps all professionals in the software industry to increase quality, at a higher level. In the literature, the testing techniques are categorized in structural (white-box) and functional (black-box), tests. The first category considers the code as the source for test cases and contributes mainly to code maintenance. Functional tests make usage of the specified requirements in order to create the test cases and are useful to validate the observed behaviour of the system against what was expected in the requisites.
 
-Thus, it is notable that the requirement specification is an important source of material not only the development of the code, but for testing as well. Statecharts, defined by \cite{harel87:semantics_statecharts}, are a type of formal software specification based on finite states machines (FSM) specially used in complex systems modeling, such as reactive systems. They contain states, transitions and input events similar to an automaton, but offer resources to model hierarchy of states, concurrency and communication between process.
-
-Statecharts are one technique to rigorously specify behaviour, but formal methods offer several others. In fact, formal methods are a set of techniques and tools which supports not only rigorous specification, but also design and verification of computer systems \cite{FMEurope}. They are mostly used in critical components of safety critical systems and some approaches can be used to apply them in general systems: apply formal methods to requirements and high-level designs where most of the details are abstracted away, apply them to only the most critical components, automate as much of the verification as possible \cite{NASAlangley}. 
+Thus, it is notable that the requirement specification is an important source of material not only for the development of the code, but for testing as well. Statecharts are a type of formal software specification based on finite states machines (FSM) specially used in complex systems modeling, such as reactive systems\cite{harel87:semantics_statecharts}. They contain states, transitions and input events similar to an automaton, but offer resources to model hierarchy of states, concurrency and communication between process.
 
 
-Formal methods and testing can be considered complementary techniques in software engineering, both with the target to reduce the number of errors and increase the reliability of the system\cite{fortest}. Even though testing is the activity that is most commonly used in industry to assure the software quality, it cannot guarantee the absence of bugs in the code, as stated by Dijkstra. Formal approaches, such as formal verification, on the other hand, can prove the correctness of the code regarding a specification. The model checking technique, for instance, proves that, certain user defined properties are true for a given model of the system.
+Formal methods are a set of techniques and tools which supports not only rigorous specification, but also design and verification of computer systems \cite{FMEurope}. They are mostly used in critical components of safety critical systems and some approaches can be used to apply them in systems: apply formal methods to requirements and high-level designs where most of the details are abstracted away, apply them to only the most critical components, automate as much of the verification as possible \cite{NASAlangley}. 
 
 
-This project proposes a study on the set of test cases generated from specifications in order to guide formal properties definitions. First, a technique to automatically generate test cases from statechart specifications is presented. Then, all test cases are observed and a technique to synthesize formal properties, in linear temporal logic, from the acquired test cases is proposed. 
+Formal methods and testing can be considered complementary techniques in software engineering, both with the target to reduce the number of errors and increase the reliability of the system\cite{fortest}. Even though testing is the activity that is most commonly used in industry to assure the software quality, it cannot guarantee the absence of bugs in the code, as stated by Dijkstra \cite{dijkstra}. Formal approaches, such as formal verification, on the other hand, can prove the correctness of the code regarding a specification. The model checking technique, for instance, proves that certain user defined properties are true for a given model of the system.
+
+
+This project proposes a study on the set of test cases generated from specifications in order to guide formal properties definitions. First, a technique to automatically generate test cases from statechart specifications is presented. Then, all test cases are observed and a technique to synthesize formal properties (written in linear temporal logic\cite{Hauth,wikiLTL}) from the acquired test cases is proposed. 
 
 \section{Motivation}
 
@@ -28,7 +29,7 @@ In the model driven development, test cases to validate systems can be generated
 
 \item Using the previous information, implement a technique to synthesize properties that can be used in formal verification 
 
-\item Develop tools to help these tasks
+\item Develop tools to help in these tasks
 
 \end{itemize}
 

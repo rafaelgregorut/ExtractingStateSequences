@@ -201,9 +201,16 @@ year ={2008}
 
 @Misc{wikiLTL,
  author   = {Wikipedia},
- title    = {Formal Methods},
+ title    = {Linear temporal logic},
  note     = {Last accessed in 11/11/2015},
- howpublished= {\url{http://www.fmeurope.org/?page_id=2}},
+ howpublished= {\url{https://en.wikipedia.org/wiki/Linear_temporal_logic}},
+}
+
+@Misc{dijkstra,
+ author   = {Edsger W. Dijkstra},
+ title    = {The Humble Programmer},
+ note     = {Last accessed in 11/11/2015},
+ howpublished= {\url{https://en.wikipedia.org/wiki/Linear_temporal_logic}},
 }
 
 %%---------------------------------------------------------------------------------%%

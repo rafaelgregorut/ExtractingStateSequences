@@ -31,6 +31,11 @@ Jonathan~P. Bowen, Kirill Bogdanov, John~A. Clark, Robert~M. Hierons, and Paul
   Krause.
 \newblock Fortest: Formal methods and testing.
 
+\bibitem{dijkstra}
+Edsger~W. Dijkstra.
+\newblock The humble programmer.
+\newblock ACM Turing Lecture 1972.
+
 \bibitem{dwyer98}
 Matthew~B. Dwyer, George~S. Avrunin, and James~C. Corbett.
 \newblock Property specification patterns for finite-state verification.

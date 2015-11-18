@@ -1,7 +1,7 @@
 \chapter{Tools demonstration}
 \label{cap:casestudy}
 
-To ilustrate the whole process of generating test cases and extracting formal properties and how our implemented tools work, we will use as an example the statechart model given in \ref{webOrderProc} created with the Yakindu Statechart Tools \cite{Yakindu}. It models the order processing of a ecommerce portal after the user concluded the purchase. An order is made of entries, each one containing a product and its corresponding quantity. The order information must be converted in a XML file that will be sent to an integration layer. In parallel to the XML preparation, a job is executed to send customers an email informing that their order was received and is being processed.
+To ilustrate the whole process of generating test cases and extracting formal properties and how our implemented tools work, we will use as an example the statechart model given in \ref{webOrderProc} created with the Yakindu Statechart Tools \cite{Yakindu}. It models the order processing of an ecommerce portal after the user concluded the purchase. An order is made of entries, each one containing a product and its corresponding quantity. The order information must be converted in a XML file that will be sent to an integration layer. In parallel to the XML preparation, a job is executed to send customers an email informing that their order was received and is being processed.
 
 \begin{figure}[htb]
 \centering
@@ -19,7 +19,7 @@ The interface of test generation tool is displayed in figure \ref{testGenClean}.
 \caption{\label{testGenClean} Test case generator interface.}
 \end{figure}
 
-We start by opening the statechart in our machine. Then, we click on button \textit{Create test cases} and the created test cases will be outputed in the screen, as shown in figure \ref{testGenResults}. Note that the table is divided in four columns: 
+We start by opening the statechart we created. Then, we click on button \textit{Create test cases} and the created test cases will be outputed in the screen, as shown in figure \ref{testGenResults}. Note that the table is divided in four columns: 
 \begin{itemize}
 \item \textit{State}, which tells from which state we are taking a transition
 \item \textit{Transition}, which informs the transition that is being tested 
@@ -33,7 +33,7 @@ We start by opening the statechart in our machine. Then, we click on button \tex
 \caption{\label{testGenResults} Test cases created for statechart \ref{webOrderProc}.}
 \end{figure}
 
-If we click to \textit{export in SPMF format}, we are able to save the test paths in a text file with the format that the framework SPMF and our second tool need as input. Test paths are then saved in the way displayed by figure \ref{resultsSPMFFile}.
+If we click to \textit{export in SPMF format}, we are able to save the test paths in a text file with the format that the framework $SPMF$ and our second tool need as input. Test paths are then saved in the way displayed by figure \ref{resultsSPMFFile}.
 
 \begin{figure}[htb]
 \centering
@@ -59,7 +59,7 @@ The interface of our formal property specification tool is displayed in figure \
 \caption{\label{propGenClean} Property generator tool interface.}
 \end{figure}
 
-Initially, we open the file created by our test case generator in SPMF input format, pass a minimum support of 0.3 ($30\%$) and click on \textit{Specify properties} to generate the properties, as displayed in figure \ref{propGenMining}
+Initially, we open the file created by our test case generator in $SPMF$ input format, pass a minimum support of 0.3 ($30\%$) and click on \textit{Specify properties} to generate the properties, as displayed in figure \ref{propGenMining}
 
 \begin{figure}[htb]
 \centering

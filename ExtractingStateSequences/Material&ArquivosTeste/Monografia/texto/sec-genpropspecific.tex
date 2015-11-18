@@ -1,7 +1,7 @@
 \section{Generation of properties for specific events}
 \label{sec-genpropspecific}
 
-Due to the fact the only the patterns returned by the sequential mining are considered to derive the property specifications, only the events that often appear in the test cases are going to be selected to create properties. Rare events are discarded when the minimum support is too high. An immediate solution would be to set the minimum support as a low value, but that would cause too many patterns to be selected and many irrelevant properties may be specified making the model checking process more costy in time and resources.
+Due to the fact the only the patterns returned by the sequential mining are considered to derive the property specifications, only the events that appear more often in the test cases are going to be selected to create properties. Rare events are discarded when the minimum support is too high. An immediate solution would be to set the minimum support as a low value, but that would cause too many patterns to be selected and many irrelevant properties may be specified making the model checking process more costy in time and resources.
 
 Taking these aspects into consideration, we propose a solution that gives the users the option to input specific events to which they want properties to be specified. This approach allows rare events to be handled properly and, since the user is able to check which properties we were automatically generated with mining, becomes a general solution to formally specify event-based requirements.
 
@@ -9,7 +9,7 @@ For the specific event $l$ passed by the user, we initially select the test case
 
 As an example, consider the \textit{setRegularUser} event, which is not present in the properties in table \ref{propertiesTrocaPlano} generated with minimum support of $70\%$. Suppose a user wishes to obtain reponse properties with this event and inputs it in our implementation.
 
-We, then, construct a new sequence database that has only sequences that contain the event \textit{setRegularUser}. The next step, is to run $PrefixSpan$ with minimum support of 0. With that input value, the algorithm will generate all possible combinations that can be derive from the specific database. To ilustrate this, we provide the specific database in table \ref{specificDatabase} and some of the possible combinations in table \ref{combinations}.
+We, then, construct a new sequence database that has only sequences that contain the event \textit{setRegularUser}. The next step, is to run $PrefixSpan$ with minimum support of 0. With that input value, the algorithm will generate all possible combinations that can be derived from the specific database. To ilustrate this, we provide the specific database in table \ref{specificDatabase} and some of the possible combinations in table \ref{combinations}.
 
 \begin{table}[]
 \begin{center}
