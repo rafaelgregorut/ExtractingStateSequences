@@ -1,9 +1,0 @@
-\section{Test cases}
-\label{sec-testcases}
-
-In this section, we will be concerned with test case creation from the functional perspective. The structure of the code will not be analysed. Instead, the specifications with the requisites are going to be the source to derive the test cases.
-
-
-\input sec-testcasedesign
-\input sec-autotestcases
-%\input sec-autoexectestcases

@@ -3,11 +3,11 @@
 
 In this section, the test cases generated will be obtained from statecharts that have hierarchy: a state may contain many substates and so on. We do not limit the level of nested hierarchy for the automatic generation. Consider states $a$ and $b$, such that $a$ contains $b$. We will say that $a$ is the superstate of $b$ and $b$ is the substate of $a$.
 
-One way to deal with hierarchy is to eliminate it from the model by flattening the statechart as shown in \ref{flattening}. The statechart would become an automaton and the thecniques for simple statecharts explained in the previous section could be used to generate test cases. But, the approach taken in this project, as in \cite{bogdanov}, was to keep the structure of the statechart and create the test cases incrementally.
+One way to deal with hierarchy is to eliminate it from the model by flattening the statechart as shown in \ref{flattening}. The statechart would become an automaton and the techniques for simple statecharts explained in the previous section could be used to generate test cases. But, the approach taken in this project, as in \cite{bogdanov}, was to keep the structure of the statechart and create the test cases incrementally.
 
 Similarly to the previous simpler case, for statecharts with hierarchy we still need to cover all states by constructing the set $C$ and then test all transitions in the model. The construction of $C$, however, needs to take into consideration substates in order to cover them as well. It is important to note that we considered only statecharts that do not have transitions between different hierarchy levels. 
 
-When we get to a state, we should check if it contains substates. If it does, we can compute substates' coverage paths going deeper in the hierarchy level. Later, we concatenate the coverage path of the superstate to the begining of each coverage path of the substates. Then, the coverage path of the super state should be removed from $C$ and the paths to the substates will be kept in $C$ instead. Besides, consider the case in which the coverage path $p$ of a certain state $s$ passes through a superstate $q$. We need to mark in $p$ that it passed by $q$ and that the coverage paths of $q$'s substates should be used when creating test cases for transitions leaving $s$. To mark that, we will use the notation $\Delta_q$
+When we get to a state, we should check if it contains substates. If it does, we can compute substates' coverage paths going deeper in the hierarchy level. Later, we concatenate the coverage path of the superstate to the beginning of each coverage path of the substates. Then, the coverage path of the super state should be removed from $C$ and the paths to the substates will be kept in $C$ instead. Besides, consider the case in which the coverage path $p$ of a certain state $s$ passes through a superstate $q$. We need to mark in $p$ that it passed by $q$ and that the coverage paths of $q$'s substates should be used when creating test cases for transitions leaving $s$. To mark that, we will use the notation $\Delta_q$
 
 The algorithm to construct $C$ needs some changes. Regarding the pseudocode presented in the previous section, we need to modify the recursive function:
 
@@ -65,7 +65,7 @@ Set constructSetCRec(State s, Path p, Set setC, List visited) {
 \end{lstlisting}
  
 
-After the set $C$ is complete, we need to in fact create the test cases based on every transition that leaves each state. In states that do not have substates and whose coverage did not pass by any superstate, the process is the one presented in the previuos section.
+After the set $C$ is complete, we need to in fact create the test cases based on every transition that leaves each state. In states that do not have substates and whose coverage did not pass by any superstate, the process is the one presented in the previous section.
 
 In case, the state's coverage path $p$ went through a superstate, we need to expand the path with the coverage paths of the subtates. In other words, for each substate with coverage path $u$,  there will be a $p'$ with $u$ replacing the notation $\Delta_s$, where $s$ is the superstate. Follows the algorithm for the expansion:
 
@@ -121,7 +121,7 @@ Let's take as an example the statechart in figure \ref{fig:webEDI}. It models an
 \caption{\label{fig:webEDI} Statechart for order file processing and transference}
 \end{figure}
 
-In figure \ref{fig:webEDI}, to contruct the coverage path to \textit{Idle} we do not need to worry about hierarchy, so approach described in the prior section (\ref{testSimpeState}) is enough.
+In figure \ref{fig:webEDI}, to construct the coverage path to \textit{Idle} we do not need to worry about hierarchy, so approach described in the prior section (\ref{testSimpeState}) is enough.
 
 \begin{center}
 \begin{tabular}{| l | l|}
@@ -161,7 +161,7 @@ XML creation & e convertFileToXML e nextLine getProduct getQuantity EOF\\
 \end{tabular}
 \end{center}
 
-Notice that the coverage path for the superstate \textit{File processing} is removed from $C$, because we are considering its substates only. Therefore, the testcases that would be created based on the superstate will be created based on the substates. Besides, the empty string $e$ is added twice in each of these paths. That is beacuse they pass through two initial states with unlabeled transitions: the first one is the general initial state, and the second one is the initial state inside \textit{File processing}.
+Notice that the coverage path for the superstate \textit{File processing} is removed from $C$, because we are considering its substates only. Therefore, the test cases that would be created based on the superstate will be created based on the substates. Besides, the empty string $e$ is added twice in each of these paths. That is because they pass through two initial states with unlabelled transitions: the first one is the general initial state, and the second one is the initial state inside \textit{File processing}.
 
 We still need to cover states \textit{Integration layer} and \textit{Management system}. Observe that to cover these states, we need to pass by \textit{File processing}, a superstate. Therefore, in their coverage path, we need to use a specific notation to guide the later expansion with the substates coverage paths. We will use the notation $\Delta_{File\ processing}$ to indicate that, when creating the test cases, we need to expand the path considering the coverage of \textit{File processing}'s substates. Thus, the coverage paths for \textit{Integration layer} and \textit{Management system} are the following:
 

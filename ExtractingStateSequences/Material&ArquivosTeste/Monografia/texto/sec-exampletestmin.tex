@@ -1,7 +1,7 @@
 \subsection{Test case mining example}
 \label{exampleTestMin}
 
-To ilustrate the mining technique, let's consider the test paths gerenated for the statechart in \ref{fig:trocaPlano} presented in table \ref{testPathsTrocaPlano}. The $PrefixSpan$ implementaion in $SPMF$ requires an input file such that there must be one sequence per line, each event must be delimited by $-1$ and each line must end with $-2$.
+To illustrate the mining technique, let's consider the test paths generated for the statechart in \ref{fig:trocaPlano} presented in table \ref{testPathsTrocaPlano}. The $PrefixSpan$ implementation in $SPMF$ requires an input file such that there must be one sequence per line, each event must be delimited by $-1$ and each line must end with $-2$.
 
 
 \begin{table}[h]
@@ -30,7 +30,7 @@ doLogin -1 searchLineNumber -1 searchEmployee -1 setRegularUser -1 searchContrac
 \end{table}
 
 
-Inputing sequences in table \ref{testPathsTrocaPlano} to $PrefixSpan$ with minimum support of $70\%$, we get as output the patterns presented in table \ref{patternsTrocaPlano}. We can then notice, for instance, that events \textit{doLogin, searchLineNumber} and \textit{searchEmployee} occur in this order in at least $70\%$ of the generated test cases.
+Inputting sequences in table \ref{testPathsTrocaPlano} to $PrefixSpan$ with minimum support of $70\%$, we get as output the patterns presented in table \ref{patternsTrocaPlano}. We can then notice, for instance, that events \textit{doLogin, searchLineNumber} and \textit{searchEmployee} occur in this order in at least $70\%$ of the generated test cases.
 
 \begin{table}[h]
 \begin{center}

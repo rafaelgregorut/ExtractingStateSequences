@@ -30,7 +30,7 @@ Set extractResponseProperties(Sequence pattern) {
 }
 \end{lstlisting}
 
-To ilustrate this phase, take as example the test cases automatically generated for statechart \ref{fig:trocaPlano} presented in table \ref{testPathsTrocaPlano}. With a minimum support of $70\%$, the most frequent patterns returned are displayed in table \ref{patternsTrocaPlano}. Applying each one of these patterns as input to the method \textit{extractResponseProperties}, we obtain the following response properties:
+To illustrate this phase, take as example the test cases automatically generated for statechart \ref{fig:trocaPlano} presented in table \ref{testPathsTrocaPlano}. With a minimum support of $70\%$, the most frequent patterns returned are displayed in table \ref{patternsTrocaPlano}. Applying each one of these patterns as input to the method \textit{extractResponseProperties}, we obtain the following response properties:
 
 \begin{table}[h]
 \begin{center}
@@ -55,7 +55,7 @@ searchEmployee responds to searchLineNumber & $\Box (searchLineNumber \rightarro
 
 These properties reflect some of the requirements of the specification. The fact that the login has to be performed so that we can access the users information, such as their line number or check if they are employees of the company, for example. Besides, according to the flow described by the statechart \ref{fig:trocaPlano}, the employee verification should be done after the line number is retrieved, as stated by the third property. 
 
-It is possible to realize that some of the generated properties contain events in common. Therefore, we can combine them in order to reduce the number of properties that should be verified by the model checker. Let's conseider, for example, the first and second properties described in table \ref{propertiesTrocaPlano}: 
+It is possible to realize that some of the generated properties contain events in common. Therefore, we can combine them in order to reduce the number of properties that should be verified by the model checker. Let's consider, for example, the first and second properties described in table \ref{propertiesTrocaPlano}: 
 
 \begin{center}
 
@@ -65,7 +65,7 @@ $\Box (doLogin \rightarrow \Diamond searchEmployee)$
 
 \end{center}
 
-Events \textit{searchLineNumber} and \textit{searchEmployee} respond to the same event \textit{doLogin}. Hence, we synthesize both properties in a new more concise one:
+Events \textit{searchLineNumber} and \textit{searchEmployee} respond to the same event \textit{doLogin}. Hence, we synthesise both properties in a new more concise one:
 
 \begin{center}
 $\Box (doLogin \rightarrow \Diamond (searchLineNumber \wedge searchEmployee))$
@@ -117,7 +117,7 @@ Set extractExistenceProperties(List commonEvents) {
 }
 \end{lstlisting}
 
-Still considering test cases in \ref{testPathsTrocaPlano} to ilustrate the process, the only event returned by the mining phase with $100\%$ of support is \textit{doLogin}. Thus, we are able to specify one existence property that indicates that the event \textit{doLogin} must occur, no matter the execution path taken:
+Still considering test cases in \ref{testPathsTrocaPlano} to illustrate the process, the only event returned by the mining phase with $100\%$ of support is \textit{doLogin}. Thus, we are able to specify one existence property that indicates that the event \textit{doLogin} must occur, no matter the execution path taken:
 
 \begin{table}[h]
 \begin{center}

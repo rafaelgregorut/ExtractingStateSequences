@@ -22,9 +22,9 @@ To simplify the notation in the case in which each transaction contains only one
 
 Web usage mining, also known as web log mining, is an important application of sequential pattern mining. It is concerned with finding frequent patterns related to user navigation from the information presented in web system's log. Considering that a user is able to access only one page at a time, the data-sequences would only have transitions with a single event each.
 
-In a ecommerce application, for instance, we can have the set of items $I = {a, b, c, d, e, f}$ representing products that can be purchased. The ocurrence of one of these items in a transaction means that a user accessed the page of such item.
+In a ecommerce application, for instance, we can have the set of items $I = {a, b, c, d, e, f}$ representing products that can be purchased. The occurrence of one of these items in a transaction means that a user accessed the page of such item.
 
-Suppose the sequence database contains the following data-sequences extracted from the log: $[T1 <abdac>], [T2 <eaebcac>], [T3 <babfaec>]$ and $[T4 <abfac>]$. In this case, the analysis of the first transaction allows us to conclude that user $T1$ accessed the pages of products $a,b,d,a$ and $c$ in this order. By applying the web usage mining technique with support of 90\%, a manager would notice that $abac$ is a frequen pattern, indicating that $90\%$ of the users who visit product $a$ then visit $b$, then return to $a$ and later visit $c$. Hence, an offer could be placed in product $a$, which is visited many times in sequence, to increase the sales of other products. 
+Suppose the sequence database contains the following data-sequences extracted from the log: $[T1 <abdac>], [T2 <eaebcac>], [T3 <babfaec>]$ and $[T4 <abfac>]$. In this case, the analysis of the first transaction allows us to conclude that user $T1$ accessed the pages of products $a,b,d,a$ and $c$ in this order. By applying the web usage mining technique with support of 90\%, a manager would notice that $abac$ is a frequent pattern, indicating that $90\%$ of the users who visit product $a$ then visit $b$, then return to $a$ and later visit $c$. Hence, an offer could be placed in product $a$, which is visited many times in sequence, to increase the sales of other products. 
 
 
 \subsection{Sequential pattern mining algorithms}
@@ -41,15 +41,15 @@ There are several algorithms to perform the sequential pattern mining, but they 
 
 Considering these topics, algorithms for sequential pattern mining can be divided in two categories: apriori-based, pattern-growth
 
-\subsubsection{Apriori-based algorithms}
+\subsubsection{A priori-based algorithms}
 
 These algorithms mainly rely on the property that states that if a sequence $s$ is infrequent, then any other sequence that contains $s$ is also infrequent. An example for the category would be the $GSP$\cite{Rakesh} algorithm.
 
-Apriori-based algorithms use the \textit{generate-and-test} method to obtain the candidate patterns: the pattern is grown one item at a time and tested against the minimum support. By taking this approach, they have to maintain the support count for each candidate and test it at each iteration of the algorithm.
+A priori-based algorithms use the \textit{generate-and-test} method to obtain the candidate patterns: the pattern is grown one item at a time and tested against the minimum support. By taking this approach, they have to maintain the support count for each candidate and test it at each iteration of the algorithm.
 
 Generally, algorithms in this category generate an explosive number of candidate sequences, consuming a lot of memory. \textit{GSP}, for instance, generates a combinatorially explosive number of candidates when mining long sequential patterns. That may be the case of a DNA analysis application, in which many patterns are long.
 
-In addition, since they need to check at each iteration for the support count, multiple scans of the database are performed, which requires a lot of processing time and I/O cost. In general, to find a sequential pattern of length $l$, the apriori-based method must scan the database at least $l$ times, which leads to great cost when long patterns exist.
+In addition, since they need to check at each iteration for the support count, multiple scans of the database are performed, which requires a lot of processing time and I/O cost. In general, to find a sequential pattern of length $l$, the a priori-based method must scan the database at least $l$ times, which leads to great cost when long patterns exist.
 
 \subsubsection{Pattern-growth algorithms}
 
@@ -59,7 +59,7 @@ The general idea behind \textit{PrefixSpan} is as follows: Instead of repeatedly
 
 To reduce the projections size and the number of access, \textit{PrefixSpan}, sorts the items inside each transaction and creates the projected databases based on patterns' prefixes. In order to do so, the algorithm assumes that the order of items in a transaction is irrelevant, and only the order of the whole transactions matters to the problem.
 
-Differently than apriori-based algorithms, \textit{PrefixSpan} does not generate or test candidate sequences. Patterns are grown from the shorter ones. Besides, projected databases keep shrinking, which is relevant in practice because usually, only a small set of sequential patterns grow long in a database and, thus, the number of sequences in a projected database usually reduces when prefix grows.
+Differently than a priori-based algorithms, \textit{PrefixSpan} does not generate or test candidate sequences. Patterns are grown from the shorter ones. Besides, projected databases keep shrinking, which is relevant in practice because usually, only a small set of sequential patterns grow long in a database and, thus, the number of sequences in a projected database usually reduces when prefix grows.
 
 In the worst case, \textit{PrefixSpan} constructs a projected database for every sequential pattern. With the intention to reduce the number of projected databases and improve the performance of the algorithm, \cite{Pei} proposes a technique called \textit{pseudo partition} that may reduce the number and size of projected databases.
 

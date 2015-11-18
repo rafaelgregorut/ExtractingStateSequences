@@ -93,11 +93,11 @@ Hierarchy and orthogonality are not found in statechart \ref{fig:trocaPlano}. He
 
 The construction of the \textit{State Cover} set, or $C$, goes as follows:
 
-We start at the inital state \textit{Unlogged User}. Since it is the initial state, its coverage path is the emtpy string, denoted by $e$.
+We start at the initial state \textit{Unlogged User}. Since it is the initial state, its coverage path is the empty string, denoted by $e$.
 
 Next, we recursively visit the states that can be reached from \textit{Unlogged User}. In our example, we get to state \textit{Logged in User}. In order to get to this state, it was necessary to go through transition $doLogin$. Therefore, the coverage path for \textit{Logged in User} is \textit{e doLogin}. Note that we concatenate the coverage path of the previous state to the transition taken.
 
-When the construction of $C$ is concluded, we have the following covage paths:
+When the construction of $C$ is concluded, we have the following coverage paths:
 
 \begin{center}
 \begin{tabular}{| l | p{10cm}|}
@@ -131,9 +131,9 @@ Checkout & doLogin searchLineNumber searchEmployee setRegularUser searchContract
 \end{tabular}
 \end{center}
 
-Notice the empty string $e$ is present due to the unlabeled transition leaving the initial state.
+Notice the empty string $e$ is present due to the unlabelled transition leaving the initial state.
 
-Then, we have to create a test case for every transition leaving each state. Let's take state \textit{Employee Authentication} for example. It has two leaving transitions: $setEmployeeUser$ and $setRegularUser$. To guarantee they are exercided at least once during testing and that they go to their appropriate destiny states, we need the following test cases:
+Then, we have to create a test case for every transition leaving each state. Let's take state \textit{Employee Authentication} for example. It has two leaving transitions: $setEmployeeUser$ and $setRegularUser$. To guarantee they are exercised at least once during testing and that they go to their appropriate destiny states, we need the following test cases:
 
 \begin{itemize}
 
