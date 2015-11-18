@@ -9,10 +9,8 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Scanner;
 import java.util.Set;
 
 import javax.swing.JButton;
@@ -21,7 +19,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JSeparator;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
@@ -30,8 +27,8 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
-import ltl.extraction.ResponsePropertyExtract;
 import ltl.extraction.ExistencePropertyExtract;
+import ltl.extraction.ResponsePropertyExtract;
 import mef.basics.EventList;
 import ca.pfv.spmf.algorithms.sequentialpatterns.BIDE_and_prefixspan_with_strings.AlgoPrefixSpan_with_Strings;
 import ca.pfv.spmf.input.sequence_database_list_strings.SequenceDatabase;
@@ -76,7 +73,176 @@ public class Main {
 
 	}
 	
+	//method to specify and print on the screen the response properties based on mining
+	private void specifyResponseProperties(String sequencePatt, SequencePatternsInputHandler seqPattIn) {
+		//parse the sequence in the SPMF format
+		sequencePatt = seqPattIn.parseSequencePatternsString(sequencePatt);
+		
+		//Convert the string in event lists
+		ArrayList<EventList> sequencias = seqPattIn.seqPattStringsToManyEventLists(sequencePatt);
+		
+		ResponsePropertyExtract respExtract = new ResponsePropertyExtract();
+		
+		//Extract response properties from each event list
+		for (Iterator<EventList> it = sequencias.iterator(); it.hasNext(); ){
+			respExtract.extractResponseProperties(it.next());
+		}
+		respExtract.printAllResponseProperties();
+		
+		//combine properties that can be combined
+		respExtract.combineProperties();
+		respExtract.printCombinedProperties();
+	}
 	
+	//method to specify and print on the screen the existence properties based on mining
+	private void specifyExistenceProperties(String sequencePattExist, SequencePatternsInputHandler seqPattIn) {
+		//parse the sequence in the SPMF format
+		sequencePattExist = seqPattIn.parseSequencePatternsString(sequencePattExist);
+		
+		//Convert the string in event lists
+		ArrayList<EventList> sequencesExistence = seqPattIn.seqPattStringsToManyEventLists(sequencePattExist);
+		ExistencePropertyExtract existExtract = new ExistencePropertyExtract();
+		
+		//Extract existence properties from each event list
+		for (Iterator<EventList> it = sequencesExistence.iterator(); it.hasNext(); ){
+			existExtract.extractExistenceProperties(it.next());
+		}
+		existExtract.printAllExistenceProperties();
+		
+		//combine properties that can be combined
+		existExtract.combineProperties();
+		existExtract.printCombinedProperties();
+		
+	}
+	
+	//print the sequences' ID that were not used in mining
+	private void printNotUsed(SequenceDatabase sequenceDatabase) {
+		Set<Integer> notUsed = sequenceDatabase.getSequenceIDs();
+		notUsed.removeAll(sequenceDatabase.getUsedSequences());
+		
+		for(Integer i : notUsed) 
+			out.printNotUsed(i+1+" ");
+
+	}
+	
+	//method triggered by button Specify Properties in the mining tab
+	private void specifyPropertiesFromMining() {
+		try {
+			//get the file path
+			String filePath = textFieldFilePath.getText();
+			
+			//get the minimum support
+			double minSupRelative = Double.parseDouble(textFieldMinSup.getText());
+			
+			SequenceDatabase sequenceDatabase = new SequenceDatabase(); 
+			//Load the file into the database
+			sequenceDatabase.loadFile(filePath);
+			
+			AlgoPrefixSpan_with_Strings algo = new AlgoPrefixSpan_with_Strings(); 
+				
+			//calculate the minimum support
+			int absoluteMinSup = (int)Math.ceil((minSupRelative * sequenceDatabase.size()));
+			
+			//run the algorithm
+			algo.runAlgorithm(sequenceDatabase, null, absoluteMinSup);   
+			
+			//get the results (most frequent patterns)
+			String sequencePatt = algo.getFileContent();
+			
+			//Object to handle the results format
+			SequencePatternsInputHandler seqPattIn = new SequencePatternsInputHandler();
+			
+			//Specify the response properties based on the mining results
+			specifyResponseProperties(sequencePatt,seqPattIn);
+	
+			//It is necessary to create another object to run the algorithm
+			AlgoPrefixSpan_with_Strings algoExist = new AlgoPrefixSpan_with_Strings(); 
+			
+			//run the algorithm to get the patterns in all sequences
+			algoExist.runAlgorithm(sequenceDatabase, null, sequenceDatabase.size());
+			
+			//get the results
+			String sequencePattExist = algoExist.getFileContent();
+	
+			//specify the existence properties
+			specifyExistenceProperties(sequencePattExist,seqPattIn);
+			
+			//print the sequences that were not used
+			printNotUsed(sequenceDatabase);
+			
+			/*Seria interessate mostrar os eventos nao usados tbm...*/
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	//specify and prints on the screen response properties for a specific event
+	private void specifyResponsePropertiesForSpecificEvent(String sequencePatt_Spec, SequencePatternsInputHandler seqPattIn, String eventSpec) {
+		//parse the sequence in the SPMF format
+		sequencePatt_Spec = seqPattIn.parseSequencePatternsString(sequencePatt_Spec);
+		
+		//Convert the string in event lists
+		ArrayList<EventList> sequencias_spec = seqPattIn.seqPattStringsToManyEventLists(sequencePatt_Spec);
+		ResponsePropertyExtract respSpecExtract = new ResponsePropertyExtract();
+		
+		//Extract existence properties from each event list
+		for (Iterator<EventList> it = sequencias_spec.iterator(); it.hasNext(); ){
+			respSpecExtract.extractSpecificReponseProperties(it.next(),eventSpec);
+		}
+		respSpecExtract.printAllResponseProperties(eventSpec);
+		
+		//combine properties that can be combined
+		respSpecExtract.combinePropertiesSpecific(eventSpec);
+		respSpecExtract.printCombinedProperties(eventSpec);
+	}
+	
+	//Methos triggered by button Specify properties in tab for specific event
+	private void specifyPropertySpecific() {
+		try {
+			//get the file path
+			String filePath = textFieldFilePath.getText();
+			
+			//load the whole database
+			SequenceDatabase sequenceDatabase = new SequenceDatabase(); 
+			String databaseInString = sequenceDatabase.loadFile(filePath);
+			
+			//get the specific event
+			String eventSpec = textFieldSpecEvent.getText();
+			
+			//create the specific database
+			SequenceDatabase databaseSpecific = new SequenceDatabase();
+			databaseSpecific.loadFromStringWithSubstring(databaseInString, eventSpec);
+			
+			AlgoPrefixSpan_with_Strings algoSpec = new AlgoPrefixSpan_with_Strings();
+			//run the algorithm
+			algoSpec.runAlgorithm(databaseSpecific, null, 0);
+			
+			//get the results
+			String sequencePatt_Spec = algoSpec.getFileContent(eventSpec);
+
+			SequencePatternsInputHandler seqPattIn = new SequencePatternsInputHandler();
+			
+			//specify and prints on the screen the specific response properties
+			specifyResponsePropertiesForSpecificEvent(sequencePatt_Spec,seqPattIn,eventSpec);
+			
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+
+	}
+	
+	//Action for the button to open the test paths file
+	private void actionOpenButton() {
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+		int result = fileChooser.showOpenDialog(frame);
+		if (result == JFileChooser.APPROVE_OPTION) {
+		    File selectedFile = fileChooser.getSelectedFile();
+		    textFieldFilePath.setText(selectedFile.getAbsolutePath());
+		}
+	}
+	
+	//Initializes and places the elements on the frame
 	private void initialize() {		
 		
 		frame = new JFrame();
@@ -155,64 +321,7 @@ public class Main {
 		textFieldNotUsed.setColumns(10);
 		btnCreateGenProps.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try {
-					
-					String filePath = textFieldFilePath.getText();
-					double minSupRelative = Double.parseDouble(textFieldMinSup.getText());
-					
-					SequenceDatabase sequenceDatabase = new SequenceDatabase(); 
-					String databaseInString = sequenceDatabase.loadFile(filePath);
-					
-					AlgoPrefixSpan_with_Strings algo = new AlgoPrefixSpan_with_Strings(); 
-							
-					int absoluteMinSup = (int)Math.ceil((minSupRelative * sequenceDatabase.size()));
-					
-					algo.runAlgorithm(sequenceDatabase, null, absoluteMinSup);   
-					String sequencePatt = algo.getFileContent();
-					
-					SequencePatternsInputHandler seqPattIn = new SequencePatternsInputHandler();
-					sequencePatt = seqPattIn.parseSequencePatternsString(sequencePatt);
-					
-					ArrayList<EventList> sequencias = seqPattIn.seqPattStringsToManyEventLists(sequencePatt);
-					ResponsePropertyExtract respExtract = new ResponsePropertyExtract();
-					
-					for (Iterator<EventList> it = sequencias.iterator(); it.hasNext(); ){
-						respExtract.extractResponseProperties(it.next());
-					}
-					respExtract.printAllResponseProperties();
-					
-					respExtract.combineProperties();
-					respExtract.printCombinedProperties();
-
-					AlgoPrefixSpan_with_Strings algo_uni = new AlgoPrefixSpan_with_Strings(); 
-					
-					algo_uni.runAlgorithm(sequenceDatabase, null, sequenceDatabase.size());
-					String sequencePatt_Universal = algo_uni.getFileContent();
-	
-						sequencePatt_Universal = seqPattIn.parseSequencePatternsString(sequencePatt_Universal);
-					
-					ArrayList<EventList> sequencias_universais = seqPattIn.seqPattStringsToManyEventLists(sequencePatt_Universal);
-					ExistencePropertyExtract uniExtract = new ExistencePropertyExtract();
-					
-					for (Iterator<EventList> it = sequencias_universais.iterator(); it.hasNext(); ){
-						uniExtract.extractExistenceProperties(it.next());
-					}
-					uniExtract.printAllExistenceProperties();
-					
-					uniExtract.combineProperties();
-					uniExtract.printCombinedProperties();
-					
-					Set<Integer> notUsed = sequenceDatabase.getSequenceIDs();
-					notUsed.removeAll(sequenceDatabase.getUsedSequences());
-					
-					for(Integer i : notUsed) 
-						out.printNotUsed(i+1+" ");
-	
-					/*Seria interessate mostrar os eventos nao usados tbm...*/
-				} catch (Exception ex) {
-					ex.printStackTrace();
-				}
-				
+				specifyPropertiesFromMining();
 			}
 		});
 		
@@ -223,39 +332,7 @@ public class Main {
 		JButton btnCreateSpecifcProperties = new JButton("Specify properties");
 		btnCreateSpecifcProperties.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try {
-					String filePath = textFieldFilePath.getText();
-					
-					SequenceDatabase sequenceDatabase = new SequenceDatabase(); 
-					String databaseInString = sequenceDatabase.loadFile(filePath);
-					String eventSpec = textFieldSpecEvent.getText();
-					
-					SequenceDatabase databaseSpecific = new SequenceDatabase();
-					databaseSpecific.loadFromStringWithSubstring(databaseInString, eventSpec);
-					
-					AlgoPrefixSpan_with_Strings algoSpec = new AlgoPrefixSpan_with_Strings();
-					algoSpec.runAlgorithm(databaseSpecific, null, 0);
-					
-					String sequencePatt_Spec = algoSpec.getFileContent(eventSpec);
-	
-					SequencePatternsInputHandler seqPattIn = new SequencePatternsInputHandler();
-					sequencePatt_Spec = seqPattIn.parseSequencePatternsString(sequencePatt_Spec);
-										
-					ArrayList<EventList> sequencias_spec = seqPattIn.seqPattStringsToManyEventLists(sequencePatt_Spec);
-					ResponsePropertyExtract respSpecExtract = new ResponsePropertyExtract();
-					
-					for (Iterator<EventList> it = sequencias_spec.iterator(); it.hasNext(); ){
-						respSpecExtract.extractSpecificReponseProperties(it.next(),eventSpec);
-					}
-					respSpecExtract.printAllResponseProperties(eventSpec);
-					
-					respSpecExtract.combinePropertiesSpecific(eventSpec);
-					respSpecExtract.printCombinedProperties(eventSpec);
-					
-				} catch (Exception ex) {
-					ex.printStackTrace();
-				}
-
+				specifyPropertySpecific();
 			}
 		});
 		btnCreateSpecifcProperties.setBounds(291, 6, 157, 29);
@@ -288,13 +365,7 @@ public class Main {
 		JButton btnOpen = new JButton("Open");
 		btnOpen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFileChooser fileChooser = new JFileChooser();
-				fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-				int result = fileChooser.showOpenDialog(frame);
-				if (result == JFileChooser.APPROVE_OPTION) {
-				    File selectedFile = fileChooser.getSelectedFile();
-				    textFieldFilePath.setText(selectedFile.getAbsolutePath());
-				}
+				actionOpenButton();
 			}
 		});
 		btnOpen.setBounds(663, 12, 117, 29);

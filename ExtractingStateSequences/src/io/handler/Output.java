@@ -38,6 +38,9 @@ public class Output {
 	}
 	
 	public void printNotUsed(String str) {
-		textAreaNotUsed.append(", "+str);
+		if(textAreaNotUsed.getText().equals(""))
+			textAreaNotUsed.append(str);
+		else
+			textAreaNotUsed.append(", "+str);
 	}
 }

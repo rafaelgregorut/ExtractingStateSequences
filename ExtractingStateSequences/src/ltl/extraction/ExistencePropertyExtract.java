@@ -19,28 +19,25 @@ public class ExistencePropertyExtract {
 	
 	String combinedProps;
 
-	
 	public ExistencePropertyExtract() {
 		propertyHash = new Hashtable<String,Property>();
 		combinedProps = "";
 		out = Main.out;
 	}
 
-	
+	//Create the existence properties, given a list of events that occur in all test paths
 	public void extractExistenceProperties(EventList listaDeEventos) {
-		//listaDeEventos.print();
-
 		for (int i = 0; i < listaDeEventos.size(); i++) {
 			Event P = listaDeEventos.get(i);
 			Property prop = new Property();
-			prop.setRepresentation("[]("+P.getName()+")");
+			prop.setRepresentation("<>("+P.getName()+")");
 			prop.setMeaning(P.getName()+" must occur");
 			if (!propertyHash.containsKey(prop.getRepresentation()))
 				propertyHash.put(prop.getRepresentation(), prop);
-			//System.out.println(prop.getRepresentation());
 		}
 	}
 	
+	//print all existence properties in the hash
 	public void printAllExistenceProperties() {
 		Enumeration<String> allRep = propertyHash.keys();
 		while(allRep.hasMoreElements()) {
@@ -49,9 +46,10 @@ public class ExistencePropertyExtract {
 		}
 	}
 
+	//combine the existence propeties in a single one
 	public void combineProperties() {
 		Enumeration<String> propReps = propertyHash.keys();
-		Pattern pattern = Pattern.compile("\\[\\]\\((.*?)\\)");
+		Pattern pattern = Pattern.compile("\\<\\>\\((.*?)\\)");
 		Matcher matcher;
 		
 		if (propReps.hasMoreElements()) {
@@ -62,10 +60,8 @@ public class ExistencePropertyExtract {
 			}
 		}
 
-		
 		while (propReps.hasMoreElements()) {
 			String prop = propReps.nextElement();
-			//System.out.println(prop);
 			matcher = pattern.matcher(prop);
 			if (matcher.find()) {
 				combinedProps += " ^ "+matcher.group(1);
@@ -76,7 +72,9 @@ public class ExistencePropertyExtract {
 			combinedProps += ")";
 	}
 	
+	//print the combined properties
 	public void printCombinedProperties() {
-		out.printRowExistGen("Combination of properties", combinedProps);
+		if(!combinedProps.equals(""))
+			out.printRowExistGen("Combination of properties", combinedProps);
 	}
 }

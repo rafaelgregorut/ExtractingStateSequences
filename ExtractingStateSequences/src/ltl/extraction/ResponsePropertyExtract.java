@@ -20,10 +20,11 @@ public class ResponsePropertyExtract {
 
 	private Hashtable<String,Property> propertyHash;
 	
+	
 	Output out;
 	
-	//chave -> primeiro evento
-	//valor -> eventos de resposta
+	//key -> primeiro evento
+	//value -> eventos de resposta
 	private Hashtable<String, String> combinedProps;
 	
 	public ResponsePropertyExtract() {
@@ -34,10 +35,8 @@ public class ResponsePropertyExtract {
 	
 	//S responds to P
 	//Globally: [](P -> <>S)
-	
+	//Finds the response properties contained in a list of events
 	public void extractResponseProperties(EventList listaDeEventos) {
-		//listaDeEventos.print();
-
 		for (int i = 0; i < listaDeEventos.size()-1; i++) {
 			Event P = listaDeEventos.get(i);
 			Event S = listaDeEventos.get(i+1);
@@ -46,10 +45,12 @@ public class ResponsePropertyExtract {
 			prop.setMeaning(S.getName()+" responds to "+P.getName());
 			if (!propertyHash.containsKey(prop.getRepresentation()))
 				propertyHash.put(prop.getRepresentation(), prop);
-			//System.out.println(prop.getRepresentation());
 		}
 	}
 	
+	//S responds to P
+	//Globally: [](P -> <>S)
+	//Finds the response properties of a given event contained in a list of events
 	public void extractSpecificReponseProperties(EventList listaDeEventos, String eventSpec) {
 		for (int i = 0; i < listaDeEventos.size()-1; i++) {
 			Event P = listaDeEventos.get(i);
@@ -63,7 +64,6 @@ public class ResponsePropertyExtract {
 				else {
 					Property needUpdate = propertyHash.remove(prop.getRepresentation());
 					prop.freq += needUpdate.freq;
-					//System.out.println("Entrei aqui de novo "+prop.getRepresentation());
 					propertyHash.put(prop.getRepresentation(), prop);
 				}
 				
@@ -71,17 +71,16 @@ public class ResponsePropertyExtract {
 		}
 	}
 	
+	//print all response properties in the property hash
 	public void printAllResponseProperties() {
 		Collection<Property> allResp = propertyHash.values();
 		
 		for (Property it : allResp) {
-			//out.println(it.getMeaning()+":");
-			//out.println(it.getRepresentation());
 			out.printRowRespGen(it.getMeaning(), it.getRepresentation());
 		}
-		//out.println("TOTAL OF PROPERTIES: "+allResp.size());
 	}
 	
+	//print all response properties in the property hash for a specific event
 	public void printAllResponseProperties(String e) {
 		List<Property> allResp = new ArrayList<Property>(propertyHash.values());
 		
@@ -91,16 +90,15 @@ public class ResponsePropertyExtract {
 		    }
 		};
 
+		//sort based in the frequence that the property was generated
 		Collections.sort(allResp, comparator);
 		
 		for (Property it : allResp) {
-			//out.println(it.getMeaning()+":");
-			//out.println(it.getRepresentation()+" #"+it.freq);
 			out.printRowRespSpec(it.getMeaning(), it.getRepresentation());
 		}
-		//out.println("TOTAL OF PROPERTIES: "+allResp.size());
 	}
 	
+	//combine the properties obtained from mining
 	public void combineProperties() {
 		
 		Enumeration<String> propReps = propertyHash.keys();
@@ -110,11 +108,9 @@ public class ResponsePropertyExtract {
 		
 		while (propReps.hasMoreElements()) {
 			String prop = propReps.nextElement();
-			//System.out.println(prop);
 			matcher = pattern1.matcher(prop);
 			if (matcher.find()) {
 				String firstEvent = matcher.group(1);
-				//System.out.println(firstEvent);
 				matcher = pattern2.matcher(prop);
 				if (matcher.find()) {
 					String secEvent = matcher.group(1);
@@ -130,18 +126,18 @@ public class ResponsePropertyExtract {
 		}
 	}
 	
+	//print the combined properties
 	public void printCombinedProperties() {
 		Enumeration<String> firstEvents = combinedProps.keys();
-		Matcher matcher;
 
 		while(firstEvents.hasMoreElements()) {
 			String next = firstEvents.nextElement();
 			if (!next.equals(""))
-				//out.println("[]("+next+" -> <>("+combinedProps.get(next)+"))");
 				out.printRowRespGen("Combination of properties", "[]("+next+" -> <>("+combinedProps.get(next)+"))");
 		}
 	}
 	
+	//combines properties of a specific event
 	public void combinePropertiesSpecific(String e) {
 		combineProperties();
 		Enumeration<String> propReps = propertyHash.keys();
@@ -172,13 +168,13 @@ public class ResponsePropertyExtract {
 		combinedProps.put(disjunctionFirst, e);
 	}
 	
+	//prints properties of a specific event
 	public void printCombinedProperties(String e) {
 		Enumeration<String> firstEvents = combinedProps.keys();
 
 		while(firstEvents.hasMoreElements()) {
 			String next = firstEvents.nextElement();
 			if (!next.equals(""))
-				//out.println("[]("+next+" -> <>("+combinedProps.get(next)+"))");
 				out.printRowRespSpec("Combination of properties", "[]("+next+" -> <>("+combinedProps.get(next)+"))");
 		}
 	}
