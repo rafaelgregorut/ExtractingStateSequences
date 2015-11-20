@@ -1,0 +1,174 @@
+\begin{thebibliography}{10}
+
+\bibitem{Yakindu}
+Yakindu statechart tools.
+\newblock \url{http://www.statecharts.org/}.
+\newblock Last accessed in 11/09/2015.
+
+\bibitem{Ammann:08}
+Paul Ammann and Jeff Offutt.
+\newblock {\em Introduction to Software Testing}.
+\newblock Cambridge University Press, 2008.
+
+\bibitem{Baier}
+Christel Baier and Joost-Pieter Katoen.
+\newblock {\em Principles of Model Checking}.
+\newblock The MIT Press, 2008.
+
+\bibitem{Beizer}
+Boris Beizer.
+\newblock {\em Software Testing Techniques}.
+\newblock 2 edition, 1990.
+
+\bibitem{bogdanov}
+Kirill Bogdanov.
+\newblock {\em Automated testing of Harel's statecharts}.
+\newblock PhD thesis, Department of Computer Science, University of Sheffield,
+  January 2000.
+
+\bibitem{fortest}
+Jonathan~P. Bowen, Kirill Bogdanov, John~A. Clark, Robert~M. Hierons, and Paul
+  Krause.
+\newblock Fortest: Formal methods and testing.
+
+\bibitem{dijkstra}
+Edsger~W. Dijkstra.
+\newblock The humble programmer.
+\newblock ACM Turing Lecture 1972.
+
+\bibitem{dwyer98}
+Matthew~B. Dwyer, George~S. Avrunin, and James~C. Corbett.
+\newblock Property specification patterns for finite-state verification.
+\newblock In {\em 2nd Workshop on Formal Methods in Software Practice}, May
+  1998.
+
+\bibitem{dwyer99:specpatt_survey}
+Matthew~B. Dwyer, George~S. Avrunin, and James~C. Corbett.
+\newblock Patterns in property specifications for finite-state verification.
+\newblock In {\em Proceedings of the 21st International Conference on Software
+  Engineering}, May 1999.
+
+\bibitem{Eriksson}
+L.-H. Eriksson and K.~Johansson.
+\newblock Using formal methods for quality assurance of interlocking systems.
+
+\bibitem{FMEurope}
+Formal~Methods Europe.
+\newblock Formal methods.
+\newblock \url{http://www.fmeurope.org/?page_id=2}.
+\newblock Last accessed in 11/11/2015.
+
+\bibitem{spmf}
+P.~Fournier-Viger, A.~Gomariz, T.~Gueniche, A.~Soltani, C.~Wu., and V.~S.
+  Tseng.
+\newblock {SPMF: a Java Open-Source Pattern Mining Library}.
+\newblock {\em Journal of Machine Learning Research (JMLR)}, 15:3389--3393,
+  2014.
+
+\bibitem{Prospec}
+Irbis Gallegos, Omar Ochoa, Ann Gates, Steve Roach, Salamah Salamah, and Corina
+  Vela.
+\newblock A property specification tool for generating formal specifications:
+  Prospec 2.0.
+
+\bibitem{patrice}
+Patrice Godefroid.
+\newblock Combining model checking and testing.
+
+\bibitem{harel87:semantics_statecharts}
+David Harel, Amir Pnueli, Jeanette Schmidt, and Rivi Sherman.
+\newblock On the formal semantics of statecharts.
+\newblock In {\em Proceedings of Symposium on Logic in Computer Science}, pages
+  55--64, 1987.
+
+\bibitem{Hauth}
+Michael Hauth and Mark Ryan.
+\newblock {\em Logic in computer science. Modelling and reasoning about
+  systems}.
+\newblock Cambridge University Press, 2 edition, 2004.
+
+\bibitem{Lewis:98}
+Harry~R. Lewis and Christos~H. Papadimitriou.
+\newblock {\em Elements of the Theory of Computation}.
+\newblock Prentice Hall, Inc, 2 edition, 1998.
+
+\bibitem{Luo}
+Lu~Luo.
+\newblock Software testing techniques - technology maturation and research
+  strategy.
+\newblock Technical report, Institute for Software Research International,
+  Carnegie Mellon University, Pittsburgh,{USA}.
+
+\bibitem{Nizar}
+Nizar~R. Mabroukeh and C.~I. Ezeife.
+\newblock A taxonomy of sequential pattern mining algorithms.
+\newblock {\em ACM Computing Surveys}, 43, 2010.
+
+\bibitem{introSoftTest}
+José~Carlos Maldonado, Ellen~Franciane Barbosa, Auri M.~R. Vincenzi,
+  Márcio~Eduardo Delamaro, Simone do~Roccio Senger~de Souza, and Mario Jino.
+\newblock Introdução ao teste de software, 2004.
+
+\bibitem{Maldonado:07}
+José~Carlos Maldonado, Márcio~Eduardo Delamaro, and Mario Jino.
+\newblock {\em Introdução ao Teste de Software}.
+\newblock Elsevier, 2007.
+
+\bibitem{YakinduVideos}
+Tom Mens.
+\newblock Yakindu statechart tools video tutorials.
+\newblock \url{http://statecharts.org/videos.html}.
+\newblock Last accessed in 11/18/2015.
+
+\bibitem{Merz}
+Stephan Merz.
+\newblock Model checking: A tutorial overview.
+
+\bibitem{NASAlangley}
+NASA Langley~Formal Methods.
+\newblock What is formal methods?
+\newblock \url{http://shemesh.larc.nasa.gov/fm/fm-what.html}.
+\newblock Last accessed in 11/11/2015.
+
+\bibitem{Myers:12}
+Glenford~J. Myers, Tom Badgett, and Corey Sandler.
+\newblock {\em The art of software testing}.
+\newblock John Wiley \& Sons, Inc, 3º edition, 2012.
+
+\bibitem{testVsModelCheck}
+NASA.
+\newblock Testing vs. model checking.
+\newblock
+  \url{http://babelfish.arc.nasa.gov/trac/jpf/wiki/intro/testing_vs_model_checking\#no1}.
+\newblock Last accessed in 11/07/2015.
+
+\bibitem{Pei}
+Jian Pei, Behzad Mortazavi-Asl, and Umeshwar Dayal.
+\newblock Mining sequential patterns by pattern-growth: The prefixspan
+  approach.
+\newblock {\em IEEE Transactions on Knowledge and Data Engineering}, 16, 2004.
+
+\bibitem{Rakesh}
+Ramakrishnan Srikant and Rakesh Agrawal.
+\newblock Mining sequential patterns: Generalizations and performance
+  improvements.
+
+\bibitem{Tian}
+Jeff Tian.
+\newblock {\em Sofotware Quality Engineering}.
+\newblock John Wiley \& Sons, 2005.
+
+\bibitem{wikiLTL}
+Wikipedia.
+\newblock Linear temporal logic.
+\newblock \url{https://en.wikipedia.org/wiki/Linear_temporal_logic}.
+\newblock Last accessed in 11/11/2015.
+
+\bibitem{inpe10}
+Érica Ferreira~de Souza.
+\newblock Geração de casos de teste para sistemas da área espacial usando
+  critérios de teste para máquinas de estados finitos.
+\newblock Master's thesis, Instituto Nacional de Pesquisas Espaciais - INPE,
+  São José dos Campos,{Brazil}, February 2010.
+
+\end{thebibliography}

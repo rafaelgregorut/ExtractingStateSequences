@@ -1,14 +1,14 @@
 \section{Generation of properties from most frequent test case patterns}
 \label{genproppatterns}
 
-Based on the patterns obtained through the usage of $PrefixSpan$ shown previously, we can automatically define formal properties to be verified. For this project we chose two property specification patterns, explained in subsection \ref{specpatterns}, from \cite{dwyer98}: the response and existence patterns. First, we go through the most frequent patterns based on a user minimum support and compute the formal response properties. Secondly, we  try to find patterns that are common to all of the test cases to be able to apply the existence specification.
+Based on the patterns obtained through the usage of $PrefixSpan$ shown previously, we can automatically define formal properties to be verified. For this project we chose two property specification patterns, explained in Section \ref{specpatterns}, from \cite{dwyer98}: the response and existence patterns. First, we go through the most frequent patterns based on a user minimum support and compute the formal response properties. Second, we  try to find patterns that are common to all of the test cases to be able to apply the existence specification.
 
 \subsection{Response property specification}
 \label{responseSpec}
 
 The creation of response properties is done using as input the patterns mined by $PrefixSpan$ in the previous step. In each sequence pattern, we obtain pairs of consecutive events and establish a property that the second event must respond to the first event of the pair. The global scope was used. The pseudocode can be found below:
 
-\begin{lstlisting}[mathescape]
+\begin{lstlisting}[mathescape,caption={Pseudocode to extract response properties from the mining results}]
 //Method to write the specification of formal response properties
 //It receives as argument a sequence pattern 
 
@@ -30,7 +30,7 @@ Set extractResponseProperties(Sequence pattern) {
 }
 \end{lstlisting}
 
-To illustrate this phase, take as example the test cases automatically generated for statechart \ref{fig:trocaPlano} presented in table \ref{testPathsTrocaPlano}. With a minimum support of $70\%$, the most frequent patterns returned are displayed in table \ref{patternsTrocaPlano}. Applying each one of these patterns as input to the method \textit{extractResponseProperties}, we obtain the following response properties:
+To illustrate this phase, take as example the test cases automatically generated for statechart in Figure\ref{fig:trocaPlano}, presented in Table \ref{testPathsTrocaPlano}. With a minimum support of $70\%$, the most frequent patterns returned are displayed in Table \ref{patternsTrocaPlano}. Applying each one of these patterns as input to the method \textit{extractResponseProperties}, we obtain the following response properties:
 
 \begin{table}[h]
 \begin{center}
@@ -53,9 +53,9 @@ searchEmployee responds to searchLineNumber & $\Box (searchLineNumber \rightarro
 \label{propertiesTrocaPlano}
 \end{table}
 
-These properties reflect some of the requirements of the specification. The fact that the login has to be performed so that we can access the users information, such as their line number or check if they are employees of the company, for example. Besides, according to the flow described by the statechart \ref{fig:trocaPlano}, the employee verification should be done after the line number is retrieved, as stated by the third property. 
+These properties reflect some of the requirements of the specification. The login has to be performed so that the system can access users information: the corresponding users line number or if users are employees of the company, for example. Besides that, according to the flow described by the statechart (Figure \ref{fig:trocaPlano}), the employee verification should be done after the line number is retrieved, as stated in the third property. 
 
-It is possible to realize that some of the generated properties contain events in common. Therefore, we can combine them in order to reduce the number of properties that should be verified by the model checker. Let's consider, for example, the first and second properties described in table \ref{propertiesTrocaPlano}: 
+It is possible to realise that some of the generated properties contain events in common. Therefore, we can combine them in order to reduce the number of properties that should be verified by the model checker. Let's consider, for example, the first and second properties described in Table \ref{propertiesTrocaPlano}: 
 
 \begin{center}
 
@@ -96,7 +96,7 @@ searchEmployee responds to searchLineNumber & $\Box (searchLineNumber \rightarro
 
 In order to use the existence specification pattern, we must find sequence patterns that are present in the whole set of test cases. In other words, we should perform the test case mining stage with a minimum support of $100\%$. If any such pattern is found, we use the global scope and define an existence property, meaning that for every path taken, we will eventually find that pattern. Considering that a list of events was found as patterns with support of $100\%$, the following pseudocode can be used:
 
-\begin{lstlisting}[mathescape]
+\begin{lstlisting}[mathescape,caption={Pseudocode to extract existence properties from the mining results}]
 //Method to write the specification of formal existence properties
 //It receives as argument a list of events that  were found during mining with support of $100\%$
 
@@ -117,7 +117,7 @@ Set extractExistenceProperties(List commonEvents) {
 }
 \end{lstlisting}
 
-Still considering test cases in \ref{testPathsTrocaPlano} to illustrate the process, the only event returned by the mining phase with $100\%$ of support is \textit{doLogin}. Thus, we are able to specify one existence property that indicates that the event \textit{doLogin} must occur, no matter the execution path taken:
+Still considering test cases in Section \ref{testPathsTrocaPlano} to illustrate the process, the only event returned by the mining phase with $100\%$ of support is \textit{doLogin}. Thus, we are able to specify one existence property that indicates that the event \textit{doLogin} must occur, no matter the execution path is taken:
 
 \begin{table}[h]
 \begin{center}
@@ -136,7 +136,7 @@ doLogin must occur & $\Diamond (doLogin)$ \\
 \label{existencePropertyTrocaPlano}
 \end{table}
 
-In case more than one event is present in all test cases, then we can combine them to create a single existence property to be verified by the model checker. Suppose events $a, b$ and $c$ are present in all test cases of a certain statechart model. Then, we could combine their existence properties in the following single property:
+In the that case more than one event is present in all test cases, then we can combine them to create a single existence property to be verified by the model checker. Suppose events $a, b$ and $c$ are present in all test cases of a certain statechart model. Then, we could combine their existence properties in the following single property:
 
 \begin{center}
 $\Diamond (a \wedge b \wedge c)$

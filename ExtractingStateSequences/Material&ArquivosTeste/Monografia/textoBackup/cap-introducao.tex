@@ -1,0 +1,38 @@
+%% ------------------------------------------------------------------------- %%
+\chapter{Introduction}
+\label{cap:introducao}
+
+Testing is one of the most used techniques to assure the quality of systems in software engineering and it typically consumes from 40\% up to 50\% of the software development effort \cite{Luo}. As presented in \cite{Ammann:08}, the goal of testing depends on the maturity level of the organization that is executing the tests: from debugging code, at a more inexperienced level, to a mental discipline that helps all professionals in the software industry to increase quality, at a higher level. In the literature, the testing techniques are categorized in structural (white-box) and functional (black-box), tests. The first category considers the code as the source for test cases and contributes mainly to code maintenance. Functional tests make usage of the specified requirements in order to create the test cases and are useful to validate the observed behaviour of the system against what was expected in the requisites.
+
+Thus, it is notable that the requirement specification is an important source of material not only for the development of the code, but for testing as well. Statecharts are a type of formal software specification based on finite states machines (FSM) specially used in complex systems modeling, such as reactive systems\cite{harel87:semantics_statecharts}. They contain states, transitions and input events similar to an automaton, but offer resources to model hierarchy of states, concurrency and communication between process.
+
+
+Formal methods are a set of techniques and tools which supports not only rigorous specification, but also design and verification of computer systems \cite{FMEurope}. These techniques are mostly used in critical components of safety critical systems to assure the quality of the software. But they can also be applied to requirements and high-level designs where most of the details are abstracted away and to the verification process as well, using as much automation as possible\cite{NASAlangley}.
+
+
+Formal methods and testing can be considered complementary techniques in software engineering, both with the target to reduce the number of errors and increase the reliability of the system\cite{fortest}. Even though testing is the activity that is most commonly used in industry to assure the software quality, it cannot guarantee the absence of bugs in the code, as stated by Dijkstra \cite{dijkstra}. Formal approaches, such as formal verification, on the other hand, can prove the correctness of the code regarding a specification. The model checking technique, for instance, proves that certain user defined properties are true for a given model of the system.
+
+
+This project proposes a study on the set of test cases generated from specifications in order to guide formal properties definitions. First, a technique to automatically generate test cases from statechart specifications is presented. Then, all test cases are observed and a technique to synthesize formal properties (written in linear temporal logic\cite{Hauth,wikiLTL}) from the acquired test cases is proposed. 
+
+\section{Motivation}
+
+In the model driven development, test cases to validate systems can be generated from a model that represents how the system must behave. For instance, if the services to be provided by a system are described in Statecharts models, one can  automatically generate test cases for programs from such models. However, properties to be proved in a system are not synthesized from such models. In general, developers take the system specification and observe its restrictions to then define which properties should be satisfied. However, creating such properties requires a strong mathematical background and translating system requirements to formal properties is not trivial process\cite{Prospec}.
+
+\section{Goals}
+
+\begin{itemize}
+
+\item Implement a technique to automatically generate test cases based on statechart specifications
+
+\item Analyse a set of test cases and extract the events, and sequences of events, that are found in such whole set
+
+\item Using the previous information, implement a technique to synthesize properties that can be used in formal verification 
+
+\item Develop tools to help in these tasks
+
+\end{itemize}
+
+\section{Organization}
+
+In chapter \ref{cap:conceitos}, we present the concepts studied to make this project possible. In chapter \ref{cap:testgen}, we describe a technique implemented to automatically generate test cases from statechart models. In chapter \ref{cap:propextract}, we propose a technique to synthesize formal properties based on the previously obtained test cases. Chapter \ref{cap:casestudy} presents a demonstration of the implemented tools. Our conclusions regarding this project can be found in chapter \ref{cap:conclusoes}. In chapter \ref{cap:subjective}, subjective aspects of the project that were relevant to the author are presented. Finally, the syntax of linear temporal logic, used in the generated formal properties, can be found in apedix \ref{ape-ltl}.

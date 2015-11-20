@@ -3,8 +3,8 @@
 
 In our implementation, we used the \textit{Sequential Pattern Mining Framework} (\textit{SPMF})\cite{spmf} to perform the test case mining. \textit{SPMF} is an open-source data mining library written in Java, specialised in sequential mining. It was easily integrated with our Java code, even though it can be used as a standalone application.
 
-It offers several mining algorithms implementations, not only for sequential mining, but for association rule and clustering classification, for instance, as well. For the purpose of this project, we chose the provided \textit{PrefixSpan} algorithm due to the empirical analysis presented in \cite{Pei} demonstrating that it would be more efficient than other classic sequential pattern mining algorithms such as $GSP$.
+It offers several mining algorithms implementations, not only for sequential mining, but for association rule and clustering classification. For the purpose of this project, we chose the provided \textit{PrefixSpan} algorithm due to the empirical analysis presented in \cite{Pei} demonstrating that it would be more efficient than other classic sequential pattern mining algorithms, such as the $GSP$ algorithm.
 
-The algorithm receives as input the sequence database and the minimum support value as the user wishes. It then computes the most frequent subsequence patterns, which are internally stored and used during the creation of the formal properties. Note that our implementation does not output the discovered patterns, since this is not the final goal of the project. We use the subsequence patterns returned by \textit{SPMF} for the property generation. 
+The algorithm receives as input the sequence database and the minimum support value provided by the user. It then computes the most frequent subsequence patterns, which are internally stored and used during the creation of the formal properties. Note that our implementation does not output the discovered patterns, since this is not the final goal of the project. We use the subsequence patterns returned by \textit{SPMF} for the property generation. 
 
 

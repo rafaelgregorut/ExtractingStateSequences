@@ -1,0 +1,41 @@
+\section{Working example}
+\label{sec:workingExample}
+
+In this section we describe the requirements of a system that are going be used as examples in the next chapters. Consider an e-commerce portal of a telecommunication company in which users can buy new cellphones or change their current mobile plan. Orders can be sent by the regular purchase process, through the website, or by a special type of file. The requirements explored are further described in the next sections.
+
+\subsection{Requirement 1: Change current mobile plan}
+
+A user can change their current mobile plan by adding a new one to their shopping cart. But, in order to conclude the change, the user must first log in, so the system can retrieve their line number.
+
+The system should check whether the user is an employee of the company or not. If the user is an employee, the plan change will not be allowed, because employees have a special plan with discount. Otherwise the system should proceed in the validation flow. 
+
+It is also necessary to check whether the user is committed to a loyalty contract, in which case, he or she will not be allowed to conclude the process. If no loyalty contract was found in the records, the user is redirected to checkout and is able to finish the plan change. 
+
+In any case in which the continuation of the process was not allowed, the user's shopping cart should become empty.
+
+\subsection{Requirement 2: Process orders received in the portal}
+
+After a purchase of cellphones was conclude in the portal, the order must be processed and converted in a XML file. An order is made of entries and each entry contains a product (the cellphone) and the quantity that was bought.
+
+The information in each entry should be processed and written in the XML file, which will be sent to an integration layer.
+
+At the same time the order is being processed, a job to send an email, informing the user that the order is being processed, should be triggered.
+
+\subsection{Requirement 3:  Process orders received by file}
+
+This e-commerce offers, to selected customers, the feature of purchasing products through a file. This is specially useful if the customer is another company that wishes to buy a great amount of different products.
+
+Each line of the file should contain the product code and the corresponding quantity, both delimited by the character "|".
+
+All the information in the file should be processed and inserted in a XML file that will first be sent to an integration layer and then to a management software.
+
+\subsection{Requirement 4: Update stock levels of products}
+
+When a product (a cellphone) is out-of-stock, users can still demonstrated their interest in buying it by leaving their email on the waiting list. Once the product is back in stock, they will be informed by email.
+
+The admin of this e-commerce portal is allowed to execute a job to clear the reservation on products and update their respective stock levels.
+
+The admin is also capable of executing a job to send emails to those users who are interested in products that were out-of-stock.
+
+These two jobs should be allowed to run in parallel.
+

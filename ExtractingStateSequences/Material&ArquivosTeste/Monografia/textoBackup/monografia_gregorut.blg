@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: monografia_gregorut.aux
+A level-1 auxiliary file: ape-ltl.aux
+The style file: plain.bst
+Database file #1: bibliografia.bib
+Warning--string name "june" is undefined
+--line 7 of file bibliografia.bib
+Warning--I didn't find a database entry for "fig:nfa1"
+Warning--to sort, need author or key in Yakindu
+Warning--empty publisher in Beizer
+Warning--empty year in Luo
+You've used 31 entries,
+            2118 wiz_defined-function locations,
+            656 strings with 8058 characters,
+and the built_in function-call counts, 8038 in all, are:
+= -- 724
+> -- 423
+< -- 1
++ -- 173
+- -- 138
+* -- 422
+:= -- 1384
+add.period$ -- 91
+call.type$ -- 31
+change.case$ -- 158
+chr.to.int$ -- 0
+cite$ -- 34
+duplicate$ -- 299
+empty$ -- 685
+format.name$ -- 138
+if$ -- 1679
+int.to.chr$ -- 0
+int.to.str$ -- 31
+missing$ -- 22
+newline$ -- 156
+num.names$ -- 60
+pop$ -- 263
+preamble$ -- 1
+purify$ -- 131
+quote$ -- 0
+skip$ -- 230
+stack$ -- 0
+substring$ -- 210
+swap$ -- 39
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 108
+warning$ -- 3
+while$ -- 64
+width$ -- 33
+write$ -- 306
+(There were 5 warnings)

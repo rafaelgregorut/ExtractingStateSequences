@@ -1,15 +1,15 @@
 \section{Generation of properties for specific events}
 \label{sec-genpropspecific}
 
-Due to the fact the only the patterns returned by the sequential mining are considered to derive the property specifications, only the events that appear more often in the test cases are going to be selected to create properties. Rare events are discarded when the minimum support is too high. An immediate solution would be to set the minimum support as a low value, but that would cause too many patterns to be selected and many irrelevant properties may be specified making the model checking process more costly in time and resources.
+Due to the fact only the patterns returned by the sequential mining are considered to derive the property specifications, only the events that appear more often in the test cases are going to be selected to create properties. Rare events are discarded when the minimum support is too high. An immediate solution would be to set the minimum support as a lower value, but that would cause too many patterns to be selected and many irrelevant properties might be specified, making the model checking process more costly in time and resources.
 
-Taking these aspects into consideration, we propose a solution that gives the users the option to input specific events to which they want properties to be specified. This approach allows rare events to be handled properly and, since the user is able to check which properties we were automatically generated with mining, becomes a general solution to formally specify event-based requirements.
+Taking these aspects into account, we propose a solution that gives to users the option to input specific events to which they want properties to be specified. This approach allows rare events to be handled properly and, since the user is able to check which properties were automatically generated with mining, becomes a general solution to formally specify event-based requirements.
 
-For the specific event $l$ passed by the user, we initially select the test cases that contain $l$ to construct our sequence database. Secondly, we run the $PrefixSpan$ provided by $SPMF$ with minimum support of $0$, which will output all possible sequence combination present in the database that contain the event $l$. Then, we are able to construct response property specifications for $l$.
+For the specific event $l$ defined by user, we initially select the test cases that contain $l$ to construct our sequence database. Secondly, we run the $PrefixSpan$ provided by $SPMF$ with minimum support of $0$, which will output all possible sequence combination present in the database that contains the event $l$. Then, we are able to construct response property specifications for $l$.
 
-As an example, consider the \textit{setRegularUser} event, which is not present in the properties in table \ref{propertiesTrocaPlano} generated with minimum support of $70\%$. Suppose a user wishes to obtain response properties with this event and inputs it in our implementation.
+As an example, consider the \textit{setRegularUser} event, which is not present in the properties of Table \ref{propertiesTrocaPlano} generated with minimum support of $70\%$. Suppose a user wishes to obtain response properties with this event and inputs it in our implementation.
 
-We, then, construct a new sequence database that has only sequences that contain the event \textit{setRegularUser}. The next step, is to run $PrefixSpan$ with minimum support of 0. With that input value, the algorithm will generate all possible combinations that can be derived from the specific database. To illustrate this, we provide the specific database in table \ref{specificDatabase} and some of the possible combinations in table \ref{combinations}.
+We, then, construct a new sequence database that has only sequences comprising the event \textit{setRegularUser}. The next step is to run $PrefixSpan$ with minimum support of 0. With that input value, the algorithm will generate all possible combinations that can be derived from the specific database. To illustrate this, we provide a database in Table \ref{specificDatabase} and some of the possible combinations in Table \ref{combinations}.
 
 \begin{table}[]
 \begin{center}
@@ -27,7 +27,7 @@ doLogin -1 searchLineNumber -1 searchEmployee -1 setRegularUser -1 searchContrac
 \hline
 \end{tabular}
 \end{center}
-\caption{Specific database for event \textit{setRegularUser}.}
+\caption{A database for event \textit{setRegularUser}.}
 \label{specificDatabase}
 \end{table}
 
@@ -54,9 +54,9 @@ doLogin, searchEmployee, setRegularUser, searchContract, setNotCommittedUser, pr
 \label{combinations}
 \end{table}
 
-Finally, for each sequence combination returned, we can specify the related response property. The pseudocode is similar to the one shown in \ref{responseSpec} and goes as follows:
+Finally, for each sequence combination returned, we can specify the related response property. The pseudocode is similar to the one in Section \ref{responseSpec}:
 
-\begin{lstlisting}[mathescape]
+\begin{lstlisting}[mathescape,caption={Pseudocode to extract response properties for a specific event}]
 //Method to write the specification of formal response properties
 //It receives as argument a sequence combination and the specific event 
 
@@ -104,7 +104,7 @@ proceedCheckout responds to setRegularUser & $\Box (setRegularUser \rightarrow \
 \label{specificProperties}
 \end{table}
 
-Moreover, we can summarise the extracted properties by combining them in a similar process as presented in section \ref{responseSpec}. There are properties in which some event responds to \textit{setRegularUser} and in others \textit{setRegularUser} responds to some event. Hence, we are left with the following two concise properties to use in the model checking verification:
+Moreover, we can summarise the extracted properties by combining them in a similar process as presented in Section \ref{responseSpec}. There are properties in which some event responds to \textit{setRegularUser}, while in other properties \textit{setRegularUser} responds to some event. Hence, we are left with the following two more concise properties to use in the model checking verification:
 
 \begin{itemize}
 
