@@ -167,7 +167,7 @@ year ={2008}
  title    = {Yakindu Statechart Tools Video Tutorials},
  author = {Tom Mens},
  note     = {Last accessed in 11/18/2015},
- howpublished= {\ur{http://statecharts.org/videos.html}},
+ howpublished= {\url{http://statecharts.org/videos.html}},
 }
 
 

@@ -1,14 +1,14 @@
 \section{Test case mining}
 \label{sec-testsequence}
 
-In Chapter \ref{cap:testgen}, we presented a method to automatically generate test cases from statecharts specifications. Each test case presented consisted of a transition $t$ we wished to test, a test path $p$ to activate the transition and a state $s$ which was the expected state $t$ would redirect to.
+In Chapter \ref{cap:testgen}, we presented a technique to automatically generate test cases from statecharts specifications. Each test case presented consisted of a transition $t$ we wished to test, a test path $p$ to activate the transition and a state $s$ which was the expected state $t$ would redirect to.
 
 The test path $p$ is basically a sequence of consecutive events. Therefore, it is possible to analyse it with the concepts and notation shown in Section \ref{sec-seqmining}. Let's say that $p$ is a sequence of events $e_1,e_2,...,e_n$ (in this order). We can associate a sequence $s_p$ to the test path $p$ such that $s_p = [T_p < e_1e_2...e_n >]$, where $T_p$ is an arbitrary unique ID.
 
 
 The set of test cases automatically generated from the statechart, can then be seen as a sequence database. Hence, we are able to apply sequential pattern mining algorithms, such as \textit{PrefixSpan} (Section \ref{sec-seqmining}), to acquire the most frequent patterns in the set of test cases. The user defines the minimum support for the mining algorithm and then obtains the most frequent subsequences in the set of test paths.
 
-The most frequent subsequences returned by the mining play an important rôle during testing, due to the fact that they are the ones mostly stressed in the testing criterion. If a subsequence $< a b c >$ is considered a frequent pattern with minimum support of $60\%$, it means that events $a, b$ and $c$ will be executed in this order at least $60\%$ of the time during the test activity.
+The most frequent subsequences returned by the mining play an important role during testing, due to the fact that they are the ones mostly stressed in the testing criterion. If a subsequence $< a b c >$ is considered a frequent pattern with minimum support of $60\%$, it means that events $a, b$ and $c$ will be executed in this order at least $60\%$ of the time during the test activity.
 
 Furthermore, mining these sequences also points out which event subsequences most test cases rely on. This means that a defect in any of them would block a considerable amount of test cases execution. Considering the previous example with pattern $< a b c >$ and $60\%$ of minimum support. If there is bug in the system that damages the execution of events $a, b$ and $c$ in this order, then it implies that at least $60\%$ of the test case execution would be harmed as well, impacting on the system delivery to the client.
 

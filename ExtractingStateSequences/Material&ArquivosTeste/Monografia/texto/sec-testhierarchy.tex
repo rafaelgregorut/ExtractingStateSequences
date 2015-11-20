@@ -65,25 +65,25 @@ Set constructSetCRec(State s, Path p, Set setC, List visited) {
 \end{lstlisting}
  
 
-Once the set $C$ is complete, we can create the test cases based on every transition that leaves each state. In states with no substates and whose coverage did not pass by any superstate, the previous process is applied.
-%
-On the other hand, if the state's coverage path $p$ went through a superstate, we need to expand the path with the coverage paths of the substates. In other words, for each substate with coverage path $u$,  there will be a $p'$ with $u$ replacing the notation $\Delta_s$, where $s$ is the superstate. The algorithm for the expansion is:
+Once the set $C$ is complete, we can create the test cases based on every transition that leaves each state. In states with no substates and whose coverage did not pass by any superstate, the previous process (presented in \ref{pseudocodeTestCase}) is applied.
+
+On the other hand, if the state's coverage path $p$ went through a superstate $s$, we need to expand the path with the coverage paths of the substates. In other words, for each substate with coverage path $u$,  there will be a $p'$ with $u$ replacing the notation $\Delta_s$, where $s$ is the superstate. The algorithm for the expansion is:
 
 \begin{lstlisting}[mathescape,caption={Expansion psseudocode for a path that passes through a superstate}]
 //Pseudocode for an expansion function
 //Receives the original, not expanded, path and the super state it passes through
 //Returns the set of paths resulting from the expansion
-Set pathExpansion(Path originalPath, State super) {
+Set pathExpansion(Path originalPath, State superState) {
 		
-	Set subPaths = super.getSubpaths();
+	Set subPaths = superState.getSubpaths();
 
 	Set expansionResults = new Set();
 
-	for (State substate in super.getSubstates()) {
+	for (State substate in superState.getSubstates()) {
 		
 		Path subPath = subPaths.getPath(substate);
 
-		Path expanded = originalPath.replace($\Delta_{super}$, subPath);
+		Path expanded = originalPath.replace($\Delta_{superState}$, subPath);
 
 		expansionResults.add(expanded);
 	}
@@ -111,9 +111,9 @@ void transferFromSuperToSub(State super) {
 
 \end{lstlisting}
 
-The pseudocode to create the final test cases is the same as the one presented in Section\ref{pseudocodeTestCase}.
+The pseudocode to create the final test cases is the same as the one presented in \ref{pseudocodeTestCase}.
 
-Let's take the statechart in Figure \ref{fig:webEDI} to illustrate the technique. It models an application that receives order files in an specific format and converts them into a well formatted xml. Each order file contains several lines, and each line contains a product and its corresponding amount. The application also has an integration layer: it receives the xml file and then send it to the management system. This statechart model corresponds to the requirement described in Subsection \ref{req3}.
+Let's take the statechart in Figure \ref{fig:webEDI} to illustrate the technique. It models an application that receives order files in an specific format and converts them into a well formatted xml. Each order file contains several lines, and each line contains a product and its corresponding amount. The application also has an integration layer: it receives the xml file and then send it to the management system. This statechart models the requirement described in Subsection \ref{req3}.
 
 \begin{figure}[htb]
 \centering
@@ -121,7 +121,7 @@ Let's take the statechart in Figure \ref{fig:webEDI} to illustrate the technique
 \caption{\label{fig:webEDI} Statechart for order file processing and transference}
 \end{figure}
 
-Now, to construct the coverage path to \textit{Idle} we do not need to worry about hierarchy, so approach described in the prior section (\ref{testSimpeState}) is enough.
+Now, to construct the coverage path to \textit{Idle} we do not need to worry about hierarchy, so approach described in the prior Section \ref{testSimpeState} is enough.
 
 \begin{center}
 \begin{tabular}{| l | l|}
@@ -136,7 +136,7 @@ Idle & e \\
 \end{tabular}
 \end{center}
 
-Notice that once again the empty string $e$ is present due to the unlabelled transition leaving the initial state.
+Notice that once again the empty string $e$ is present due to the default unlabelled transition entering the \textit{Idle} state.
 %
 When creating the coverage path for state \textit{File processing}, however, we realise that it is a superstate. So, we go deeper in the hierarchy level to obtain the coverage paths of substates \textit{File received, Line retrieved, Product processed, Quantity processed} and \textit{XML creation}. Then,  the following paths are added to set $C$:
 
@@ -161,7 +161,7 @@ XML creation & e convertFileToXML e nextLine getProduct getQuantity EOF\\
 \end{tabular}
 \end{center}
 
-Note that the coverage path for the superstate \textit{File processing} is removed from $C$ because we are considering its substates. Therefore, the test cases that would be created based on the superstate will be created based on the substates, instead. Also, the empty string $e$ is added twice in each of these paths. This is necessary because they pass through two initial states with unlabelled transitions: the first one is the general initial state, and the second one is the initial state inside \textit{File processing}.
+Note that the coverage path for the superstate \textit{File processing} is removed from $C$ because we are considering its substates. Therefore, the test cases that would be created based on the superstate will be created based on the substates, instead. Also, the empty string $e$ is added twice in each of these paths. This is necessary because these paths pass through two default unlabelled transitions: the first one entering the \textit{Idle} state, and the second one entering \textit{File processing}.
 
 Now, states \textit{Integration layer} and \textit{Management system} must also be covered. Observe that to cover these states, we need to pass by \textit{File processing}, a superstate. Therefore, in their coverage path, we need to use an specific notation to guide the later expansion with the substates coverage paths. Notation $\Delta_{File\ processing}$ is used for this particular purpose. When creating the test cases, we need to expand the path considering the coverage of \textit{File processing}'s substates. Thus, the coverage paths for the \textit{Integration layer} and \textit{Management system} states are:
 
@@ -182,7 +182,7 @@ Management system & e convertFileToXML $\Delta_{File\ processing}$ sendXMLToInte
 
 At this point, when the set $C$ is complete, we can actually create the test cases. To illustrate this, we will examine transitions \textit{getProduct, sendXMLToIntegration} and \textit{sendXMLToMgmSys} more closely.
 
-For \textit{getProduct}, a transition leaving a substate, the process will be the same as the one presented in the Section \ref{testSimpeState}. Hence, we have the following test case:
+For \textit{getProduct}, a transition leaving a substate, the process will be the same as the one presented in the pseudocode \ref{pseudocodeTestCase}. Hence, we have the following test case:
 
 \begin{itemize}
 

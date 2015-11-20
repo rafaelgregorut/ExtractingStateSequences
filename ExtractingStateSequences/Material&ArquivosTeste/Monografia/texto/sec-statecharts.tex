@@ -2,7 +2,7 @@
 \section{Statecharts and Automata}
 \label{sec:statecharts}
 
-A software specification is a reference document which contains the requirements the program should satisfy. It can also be understood as a model of how the system should behave. A specification can be developed with natural language, with user cases for example, or using formal software engineering techniques.
+A software specification is a reference document which contains the requirements the program should satisfy. It can also be understood as a model of how the system should behave. A specification can be developed with natural language, with use cases for example, or using formal software engineering techniques.
 
 Statechats are a type of formal software specification based on finite states machines (FSM) specially used in complex systems modelling, such as reactive systems, and were defined in \cite{harel87:semantics_statecharts}. Similar to an automaton, a statechart has sets of states, transitions and input events that cause change of state. However, a statechart has additional features: orthogonality, hierarchy, broadcasting, guard conditions and history. Due to these additional features, statecharts have been used in industry to specify mission critical systems.
 
@@ -25,7 +25,7 @@ To understand how statecharts can be used to specify systems, we must first have
 \item $F \subseteq K$ is the set of final states
 \end{itemize}
 
-Each triple $(q,a,p) \in \Delta$ is a transition of $M$. If $M$ is currently in state $q$ and the next input is $a$, then $M$ may follow any transition of the form $(q,a,p)$ from state $q$ to state $p$. In nondeterministic finite automaton, it also possible to have transitions labelled with the empty string $e$. In this case, when such transition is taken, no input is read and the transition still occurs. For example, if from state $q$ there is a transition $(q,e,p)$, we can de redirected to state $p$ even though no input was received.
+Each triple $(q,a,p) \in \Delta$ is a transition of $M$. If $M$ is currently in state $q$ and the next input is $a$, then $M$ may follow any transition of the form $(q,a,p)$ from state $q$ to state $p$. In nondeterministic finite automaton, it also possible to have transitions labelled with the empty string $e$. In this case, when such transition is taken, no input is read and the transition still occurs. For example, if from state $q$ there is a transition $(q,e,p)$, we can be redirected to state $p$ even though no input was received.
 
 A configuration of $M$ is an element of $K\time \Sigma^*$ and the relation $\vdash$ (yields one step) between two configurations is defined as: $(q,w) \vdash (q',w') \Leftrightarrow$ there is a $u \in \Sigma \cup {e}$ such that $w = uw'$ and $(q,u,q') \in \Delta$.
 
@@ -47,7 +47,7 @@ Find below an example of a nondeterministic finite automaton extracted from \cit
 \item $F = \{q_0\}$ (the set of final states)
 \end{itemize}
 
-The corresponding graphical representation is given in Figure \cite{fig:nfa1}.
+The corresponding graphical representation is given in Figure \ref{fig:nfa1}.
 
 \begin{figure}[htb]
 \centering
@@ -55,7 +55,7 @@ The corresponding graphical representation is given in Figure \cite{fig:nfa1}.
 \caption{\label{fig:nfa1}A nondeterministic finite automaton that accpets language $L = (ab \cup aba)^{*}$.}
 \end{figure}
 
-Consider the case in which we have the automaton represented in Figure \ref{fig:nfa1} and the input $ab$. We start at state $q_0$, the initial state, and take as input the symbol $a$. Since there is a transition $(q_0,a,q_1)$ we are redirected to state $q_1$. Next, we receive as input the symbol $b$ and analogously, we are redirected to state $q_2$. At this point, there is no input left to read, but since there is a transition $(q_2,e,q_1)$ we are still able to proceed to state $q_0$ without receiving any input. Hence, we finished the input processing in $q_0$ and, because $q_0 \in F$, we conclude that $ab$ is a valid input for the described automaton.
+Consider the case in which we have the automaton represented in Figure \ref{fig:nfa1} and the input $ab$. We start at state $q_0$, the initial state, and take as input the symbol $a$. Since there is a transition $(q_0,a,q_1)$ we are redirected to state $q_1$. Next, we receive as input the symbol $b$ and analogously, we are redirected to state $q_2$. At this point, there is no input left to read, but since there is a transition $(q_2,e,q_0)$ we are still able to proceed to state $q_0$ without receiving any input. Hence, we finished the input processing in $q_0$ and, because $q_0 \in F$, we conclude that $ab$ is a valid input for the described automaton.
 
 \subsection{Statechart models}
 
@@ -96,7 +96,7 @@ It is possible that a state contains other states, called substates, and interna
 
 \subsubsection{Guard conditions}
 
-In a transition, a guard condition is always verified before the change of states take place. If the condition is satisfied (if its expression returns true), the transition will be engaged. Otherwise, that transition is not allowed to happen. A expression in a guard condition involve variables and operations. In Figure \ref{fig:stateClock}, the transition from $AlarmOff$ to $AlarmOn$ is guarded by the condition $[alarm]$, meaning that the transition will only happen if the value of the variable $alarm$ is $true$.
+In a transition, a guard condition is always verified before the change of states take place. If the condition is satisfied (if its expression returns true), the transition will be engaged. Otherwise, that transition is not allowed to happen. An expression in a guard condition involve variables and operations. In Figure \ref{fig:stateClock}, the transition from $AlarmOff$ to $AlarmOn$ is guarded by the condition $[alarm]$, meaning that the transition will only happen if the value of the variable $alarm$ is $true$.
 
 \subsubsection{Broadcasting}
 

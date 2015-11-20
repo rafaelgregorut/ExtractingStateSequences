@@ -34,7 +34,7 @@ Set constructSetC(State initialState) {
 
 	List visited = new List();
 
-	return constructSetCRec(initalState,emptyPath,setC);
+	return constructSetCRec(initalState,emptyPath,setC,visited);
 }
 \end{lstlisting}
 
@@ -67,7 +67,7 @@ Set constructSetCRec(State s, Path p, Set setC, List visited) {
 
 Now that we have the coverage for every reachable state, we need to trigger each transition on each state and create the test cases. For each transition there will be a test case, thus every transition in the diagram will be exercised at least once during testing.
 
-Consider transition $t = (s,l,q)$, where $s$ is the original state, $l$ is the event label that triggers $t$ and $q$ is the incoming state. In the aforementioned algorithm, we computed that $s$ has coverage path $p$ such that $p \in C$ and $p$ is a sequence of labels. The test case $TC$ for transition $t$ ($t = (s,l,q)$) concatenates event labelled by $l$ to the end of $p$ that reaches state $q$. The process is repeated to all transitions in the statechart. The following algorithm describes the test cases creation: 
+Consider transition $t = (s,l,q)$, where $s$ is the original state, $l$ is the event label that triggers $t$ and $q$ is the incoming state. In the aforementioned algorithm, we computed that $s$ has coverage path $p$ such that $p \in C$ and $p$ is a sequence of labels. The test case $TC$ for transition $t$ ($t = (s,l,q)$) concatenates event labelled by $l$ to the end of $p$ that reaches state $q$. The process is repeated to all transitions in the statechart. The following algorithm describes the test cases creation:
 
 \begin{lstlisting}[label={pseudocodeTestCase},caption{Test case creation for simple a simple statechart}]
 //Function that prints the test cases for all transitions in a statechart
@@ -75,17 +75,17 @@ void generateTestCases(Statechart sc, Set setC) {
 
 	for (State s in sc.getStates()) {
 	
-		print("At state "+s.getName());
-
 		Path coveragePath = setC.getCoveragePath(s);
 
 		for (Transition t in s.getOutgGoingTransitions()) {
 
 			print("Test case for "+t.getLabel());
 
+			print("Origin state "+s.getName());
+
 			Path testPath = coveragePath + t.getLabel();
 
-			print("Test path: "+testPath);
+			print("Test Path: "+testPath);
 
 			State expectedState = t.getDestiny();
 
@@ -96,7 +96,7 @@ void generateTestCases(Statechart sc, Set setC) {
 \end{lstlisting}
 
 
-Consider the statechart in Figure \ref{fig:trocaPlano}, a model for purchase flow of a telco e-commerce. The model describes the flow for users changing their cellphone plan. They will be able to change plan if they are not employees from the telco company and are not committed to a loyalty contract. Additionally, they must perform the login so that the system is able to retrieve their information. This statechart model represents the requirement described in Subsection \ref{req1}.
+Consider the statechart in Figure \ref{fig:trocaPlano}, a model for purchase flow of a telco e-commerce. The model describes the flow for users changing their cellphone plan. They will be able to change plan if they are not employees from the telco company and are not committed to a loyalty contract. Additionally, they must perform the login so that the system is able to retrieve their information. This statechart models the requirement described in Subsection \ref{req1}.
 
 \begin{figure}[htb]
 \centering
@@ -150,7 +150,7 @@ Checkout & doLogin searchLineNumber searchEmployee setRegularUser searchContract
 \end{tabular}
 \end{center}
 
-Note that the empty string $e$ appears in the paths due to the unlabelled transition leaving the initial state.
+Note that the empty string $e$ appears in the paths due to the unlabelled default transition entering the initial state \textit{Unlogged User}.
 
 Then, we have to create a test case for every transition leaving each state. Let's take state \textit{Employee Authentication}, for example. It has two leaving transitions: $setEmployeeUser$ and $setRegularUser$. To guarantee they are exercised at least once during testing and that they go to their appropriate states, the following test cases are needed:
 

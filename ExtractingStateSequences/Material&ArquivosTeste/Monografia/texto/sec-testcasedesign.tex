@@ -18,7 +18,10 @@ Writing test cases manually is not a trivial task. The engineer must read throug
 
 %To illustrate a test case generation, 
 
-Let us consider a web application defined as follows: A web application requires that users sign in to access their personal homepage. To do so, the user should first access the regular homepage and click on the button labelled \textit{sign in}. Then, the user will be redirected to the sign in page, which contains a form with fields \textit{email} and \textit{password}. Once the form is filled in and another button \textit{sign in} is clicked, the system should validate the user's email and password. If the credentials are valid, them the user will be redirected to their personal homepage. Otherwise, an error message will be displayed and the user will remain in the form page.
+More detailed use cases provide sequences of steps to perform flows related to a particular requirement. Each step might contain the description of system behaviour and user actions, including preconditions and actors that take part in the use case. Besides that, one use case might describe more than one scenario for the requirement by extending the basic flow. 
+
+
+Let us consider the problem of a web application defined as follows: A web application requires that users sign in to access their personal homepage. To do so, the user should first access the regular homepage and click on the link \textit{sign in}. Then, the user will be redirected to the sign in page, which contains a form with fields \textit{email} and \textit{password}. Once the form is filled in and the button \textit{sign in} is clicked, the system should validate the user's email and password. If the credentials are valid, them the user will be redirected to their personal homepage. Otherwise, an error message will be displayed and the user will remain in the form page.
 
 For the given problem, we can have an use case of signing in a website:
 
@@ -60,7 +63,7 @@ For the given problem, we can have an use case of signing in a website:
 \end{itemize}
 
 
-More detailed use cases provide sequences of steps to perform flows related to a particular requirement. Each step might contain the description of system behaviour and user actions, including preconditions and actors that take part in the use case. Besides that, one use case might describe more than one scenario for the requirement by extending the basic flow. 
+%More detailed use cases provide sequences of steps to perform flows related to a particular requirement. Each step might contain the description of system behaviour and user actions, including preconditions and actors that take part in the use case. Besides that, one use case might describe more than one scenario for the requirement by extending the basic flow. 
 
 To provide the corresponding test cases, however, each step in the test case must specify a single action and its corresponding consequences to the system. We can add preconditions to give a more precise definition of each step in a test case, even if the precondition only says that the previous step was executed successfully. In addition, it is not possible to have more than one flow in one test case, otherwise the tester would have no clear direction during the test run. Therefore, we need to create test cases for each flow separately.
 
@@ -77,9 +80,9 @@ Step & Precondition & Description & Expected result \\ \hline
 
 2 & Step 1 was successful & Click on Sing in link & Sign in page is displayed with the sign in form \\ \hline
 
-3 & Step 2 was successful & Check the sign in form & It should contain fields login, password and a button sign in \\ \hline
+3 & Step 2 was successful & Check the sign in form & It should contain fields email, password and a button sign in \\ \hline
 
-4 & Step 3 was successful & Type the user's email in field login & Login field will hold the data\\ \hline
+4 & Step 3 was successful & Type the user's email in field email & Login field will hold the data\\ \hline
 
 5 & Step 4 was successful & Type the user's password in password field & Password field will hold the data \\ \hline
 
@@ -104,9 +107,9 @@ Step & Precondition & Description & Expected result \\ \hline
 
 2 & Step 1 was successful & Click on Sing in link & Sign in page is displayed with the sign in form \\ \hline
 
-3 & Step 2 was successful & Check the sign in form & It should contain fields login, password and a button sign in \\ \hline
+3 & Step 2 was successful & Check the sign in form & It should contain fields email, password and a button sign in \\ \hline
 
-4 & Step 3 was successful & Type the user's email in field login & Login field will hold the data\\ \hline
+4 & Step 3 was successful & Type the user's email in field email & Login field will hold the data\\ \hline
 
 5 & Step 4 was successful & Type the user's password in password field & Password field will hold the data \\ \hline
 

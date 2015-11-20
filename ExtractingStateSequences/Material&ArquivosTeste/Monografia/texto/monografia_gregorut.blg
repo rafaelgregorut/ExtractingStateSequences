@@ -6,13 +6,12 @@ The style file: plain.bst
 Database file #1: bibliografia.bib
 Warning--string name "june" is undefined
 --line 7 of file bibliografia.bib
-Warning--I didn't find a database entry for "fig:nfa1"
 Warning--to sort, need author or key in Yakindu
 Warning--empty publisher in Beizer
 Warning--empty year in Luo
 You've used 31 entries,
             2118 wiz_defined-function locations,
-            656 strings with 8058 characters,
+            655 strings with 8049 characters,
 and the built_in function-call counts, 8038 in all, are:
 = -- 724
 > -- 423
@@ -51,4 +50,4 @@ warning$ -- 3
 while$ -- 64
 width$ -- 33
 write$ -- 306
-(There were 5 warnings)
+(There were 4 warnings)
